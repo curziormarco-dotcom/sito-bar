@@ -18,8 +18,8 @@ export function NavLink({ href, children }: NavLinkProps) {
       href={href}
       className={
         isActive
-          ? "text-amber-400 font-semibold"
-          : "text-white/80 hover:text-white"
+          ? "text-amber-600 font-semibold"
+          : "text-neutral-600 hover:text-neutral-900"
       }
     >
       {children}

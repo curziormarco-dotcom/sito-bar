@@ -82,59 +82,11 @@ const FRIDAY_ROTATION: Record<Language, string[]> = {
   ],
 };
 
-const SIGNATURES = [
-  {
-    name: {
-      it: "Margherita Classica",
-      en: "Classic Margherita",
-      fr: "Margherita classique",
-      de: "Klassische Margherita",
-      es: "Margherita clásica",
-    },
-    desc: {
-      it: "Pomodoro San Marzano, fior di latte, basilico",
-      en: "San Marzano tomatoes, fior di latte, basil",
-      fr: "Tomates San Marzano, fior di latte, basilic",
-      de: "San-Marzano-Tomaten, Fior di Latte, Basilikum",
-      es: "Tomate San Marzano, fior di latte, albahaca",
-    },
-    price: 8.5,
-  },
-  {
-    name: {
-      it: "Carbonara",
-      en: "Carbonara",
-      fr: "Carbonara",
-      de: "Carbonara",
-      es: "Carbonara",
-    },
-    desc: {
-      it: "Guanciale croccante, uovo, pecorino, pepe",
-      en: "Crispy guanciale, egg, pecorino, pepper",
-      fr: "Guanciale croustillant, œuf, pecorino, poivre",
-      de: "Knuspriger Guanciale, Ei, Pecorino, Pfeffer",
-      es: "Guanciale crujiente, huevo, pecorino, pimienta",
-    },
-    price: 12,
-  },
-  {
-    name: {
-      it: "Tiramisù",
-      en: "Tiramisù",
-      fr: "Tiramisù",
-      de: "Tiramisù",
-      es: "Tiramisù",
-    },
-    desc: {
-      it: "Crema vellutata, caffè espresso, cacao",
-      en: "Velvety cream, espresso, cocoa",
-      fr: "Crème veloutée, expresso, cacao",
-      de: "Samtige Creme, Espresso, Kakao",
-      es: "Crema aterciopelada, espresso, cacao",
-    },
-    price: 6,
-  },
-];
+const SIGNATURES: {
+  name: Record<Language, string>;
+  desc: Record<Language, string>;
+  price: number;
+}[] = [];
 
 const HOME_COPY: Record<Language, Record<string, string>> = {
   it: {
@@ -359,53 +311,54 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SIGNATURE */}
-        <section className="rounded-[28px] border border-neutral-200 bg-white p-10 sm:p-12">
-          <div className="flex items-end justify-between gap-6">
-            <div>
-              <h2 className="text-3xl font-semibold tracking-tight">
-                {t("signatureTitle")}
-              </h2>
-              <p className="mt-2 text-neutral-600">
-                {t("signatureSubtitle")}
-              </p>
-            </div>
-            <Link
-              href="/menu"
-              className="hidden sm:inline-flex rounded-full border border-neutral-300 px-6 py-3 text-sm font-semibold hover:bg-neutral-50 transition"
-            >
-              {t("seeAll")}
-            </Link>
-          </div>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {SIGNATURES.map((item) => (
-              <div
-                key={item.name.it}
-                className="rounded-2xl border border-neutral-200 bg-[#fbfaf7] p-6"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="font-semibold">{item.name[lang]}</h3>
-                    <p className="mt-2 text-sm text-neutral-600">
-                      {item.desc[lang]}
-                    </p>
-                  </div>
-                  <div className="font-semibold">{formatEUR(item.price)}</div>
-                </div>
+        {SIGNATURES.length > 0 && (
+          <section className="rounded-[28px] border border-neutral-200 bg-white p-10 sm:p-12">
+            <div className="flex items-end justify-between gap-6">
+              <div>
+                <h2 className="text-3xl font-semibold tracking-tight">
+                  {t("signatureTitle")}
+                </h2>
+                <p className="mt-2 text-neutral-600">
+                  {t("signatureSubtitle")}
+                </p>
               </div>
-            ))}
-          </div>
+              <Link
+                href="/menu"
+                className="hidden sm:inline-flex rounded-full border border-neutral-300 px-6 py-3 text-sm font-semibold hover:bg-neutral-50 transition"
+              >
+                {t("seeAll")}
+              </Link>
+            </div>
 
-          <div className="mt-6 sm:hidden">
-            <Link
-              href="/menu"
-              className="inline-flex rounded-full border border-neutral-300 px-6 py-3 text-sm font-semibold hover:bg-neutral-50 transition"
-            >
-              {t("seeAll")}
-            </Link>
-          </div>
-        </section>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {SIGNATURES.map((item) => (
+                <div
+                  key={item.name.it}
+                  className="rounded-2xl border border-neutral-200 bg-[#fbfaf7] p-6"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="font-semibold">{item.name[lang]}</h3>
+                      <p className="mt-2 text-sm text-neutral-600">
+                        {item.desc[lang]}
+                      </p>
+                    </div>
+                    <div className="font-semibold">{formatEUR(item.price)}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 sm:hidden">
+              <Link
+                href="/menu"
+                className="inline-flex rounded-full border border-neutral-300 px-6 py-3 text-sm font-semibold hover:bg-neutral-50 transition"
+              >
+                {t("seeAll")}
+              </Link>
+            </div>
+          </section>
+        )}
 
         {/* PRENOTA */}
         <section

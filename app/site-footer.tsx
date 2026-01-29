@@ -16,8 +16,8 @@ export function SiteFooter() {
   const text = FOOTER_COPY[lang].replace("{year}", String(year));
 
   return (
-    <footer className="border-t border-white/10">
-      <div className="mx-auto max-w-5xl px-6 py-6 text-sm text-white/60">
+    <footer className="border-t border-neutral-200">
+      <div className="mx-auto max-w-5xl px-6 py-6 text-sm text-neutral-500">
         {text}
       </div>
     </footer>

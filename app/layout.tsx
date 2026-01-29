@@ -10,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="it">
-      <body className="min-h-screen bg-neutral-950 text-white">
+      <body className="min-h-screen bg-[#fbfaf7] text-neutral-900">
         <LocaleProvider>
           <SiteHeader />
 

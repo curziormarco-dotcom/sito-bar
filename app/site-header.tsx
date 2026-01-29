@@ -18,11 +18,11 @@ export function SiteHeader() {
   const labels = NAV_COPY[lang];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-neutral-950/70 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white/80 backdrop-blur">
       <div className="mx-auto max-w-5xl px-6 py-4 flex items-center justify-between">
         <Link
           href="/"
-          className="font-bold text-lg tracking-tight hover:text-amber-400 transition"
+          className="font-bold text-lg tracking-tight text-neutral-900 hover:text-amber-600 transition"
         >
           BAR DA LUCIANO
         </Link>
