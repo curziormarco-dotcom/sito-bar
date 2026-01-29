@@ -301,7 +301,7 @@ export default function HomePage() {
 
           {/* riga in basso: immagine e mappa affiancate */}
           <div className="relative md:col-span-2 h-[280px] overflow-hidden rounded-2xl border border-neutral-200 bg-white">
-            <div className="absolute inset-0 z-10 flex items-center justify-center">
+            <div className="absolute inset-0 z-10 flex items-center justify-center translate-y-4">
               <Link
                 href="/menu#aperitivi-alcolici"
                 className="inline-flex rounded-full border border-white/20 bg-white/5 px-6 py-2 text-sm font-semibold text-white shadow-sm backdrop-blur-sm hover:bg-white/15"
