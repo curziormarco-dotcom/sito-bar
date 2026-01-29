@@ -196,54 +196,55 @@ export default function HomePage() {
 
   return (
     <main className="bg-[#fbfaf7] text-neutral-900">
-      <div className="mx-auto max-w-6xl px-6 py-14 sm:py-20 space-y-12">
-        {/* HERO */}
-        <section
-          className="relative overflow-hidden rounded-[28px] min-h-[420px]"
-          style={{
-            backgroundImage: "url('/images/hero.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          {/* overlay */}
-          <div className="absolute inset-0 bg-black/20" />
+      {/* HERO full-width */}
+      <section
+        className="relative overflow-hidden min-h-[420px] w-full"
+        style={{
+          backgroundImage: "url('/images/hero.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* overlay */}
+        <div className="absolute inset-0 bg-black/20" />
 
-          <div className="relative p-10 sm:p-14 text-white">
-            <p className="text-xs tracking-[0.28em] text-white/85">
-              {t("heroKicker")}
-            </p>
+        <div className="relative mx-auto max-w-6xl px-6 py-14 sm:px-10 sm:py-20 text-white">
+          <p className="text-xs tracking-[0.28em] text-white/85">
+            {t("heroKicker")}
+          </p>
 
-            <h1 className="mt-4 text-4xl sm:text-6xl font-semibold leading-tight tracking-tight">
-              {t("heroTitle").split("\n").map((line, index) => (
-                <span key={`${line}-${index}`}>
-                  {line}
-                  {index === 0 && <br />}
-                </span>
-              ))}
-            </h1>
+          <h1 className="mt-4 text-4xl sm:text-6xl font-semibold leading-tight tracking-tight">
+            {t("heroTitle").split("\n").map((line, index) => (
+              <span key={`${line}-${index}`}>
+                {line}
+                {index === 0 && <br />}
+              </span>
+            ))}
+          </h1>
 
-            <p className="mt-6 max-w-2xl text-white/85 sm:text-lg">
-              {t("heroSubtitle")}
-            </p>
+          <p className="mt-6 max-w-2xl text-white/85 sm:text-lg">
+            {t("heroSubtitle")}
+          </p>
 
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link
-                href="/menu"
-                className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-neutral-900 hover:bg-neutral-100 transition"
-              >
-                {t("ctaMenu")}
-              </Link>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <Link
+              href="/menu"
+              className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-neutral-900 hover:bg-neutral-100 transition"
+            >
+              {t("ctaMenu")}
+            </Link>
 
-              <a
-                href="#prenota"
-                className="rounded-full border border-white/70 px-7 py-3 text-sm font-semibold text-white hover:bg-white/10 transition"
-              >
-                {t("ctaBook")}
-              </a>
-            </div>
+            <a
+              href="#prenota"
+              className="rounded-full border border-white/70 px-7 py-3 text-sm font-semibold text-white hover:bg-white/10 transition"
+            >
+              {t("ctaBook")}
+            </a>
           </div>
-        </section>
+        </div>
+      </section>
+
+      <div className="mx-auto max-w-6xl px-6 py-14 sm:py-20 space-y-12">
 
         {/* HIGHLIGHTS + MAPPA */}
         <section className="grid gap-4 md:grid-cols-4 items-stretch">
