@@ -300,7 +300,19 @@ export default function HomePage() {
           </div>
 
           {/* riga in basso: immagine e mappa affiancate */}
-          <div className="md:col-span-2 h-[280px] overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+          <div className="relative md:col-span-2 h-[280px] overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+            <div className="absolute inset-0 z-10 flex items-center justify-center">
+              <Link
+                href="/menu#aperitivi-alcolici"
+                className="inline-flex rounded-full border border-white/40 bg-white/20 px-6 py-2 text-sm font-semibold text-white shadow-sm backdrop-blur-sm hover:bg-white/30"
+                style={{
+                  backgroundImage:
+                    "repeating-linear-gradient(135deg, rgba(255,255,255,0.18) 0, rgba(255,255,255,0.18) 6px, rgba(255,255,255,0.08) 6px, rgba(255,255,255,0.08) 12px)",
+                }}
+              >
+                Cocktail
+              </Link>
+            </div>
             <Link href="/menu#aperitivi-alcolici" className="block h-full w-full">
               <img
                 src="/images/negroni.jpg"
