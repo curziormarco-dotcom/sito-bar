@@ -317,7 +317,7 @@ export default function HomePage() {
               <img
                 src="/images/negroni.jpg"
                 alt={t("drinkAlt")}
-                className="h-full w-full object-cover object-[60%_90%] sm:object-[80%_82%]"
+                className="h-full w-full object-cover object-[85%_90%] sm:object-[80%_82%]"
               />
             </Link>
           </div>
