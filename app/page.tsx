@@ -304,10 +304,10 @@ export default function HomePage() {
             <div className="absolute inset-0 z-10 flex items-center justify-center">
               <Link
                 href="/menu#aperitivi-alcolici"
-                className="inline-flex rounded-full border border-white/40 bg-white/20 px-6 py-2 text-sm font-semibold text-white shadow-sm backdrop-blur-sm hover:bg-white/30"
+                className="inline-flex rounded-full border border-white/20 bg-white/5 px-6 py-2 text-sm font-semibold text-white shadow-sm backdrop-blur-sm hover:bg-white/15"
                 style={{
                   backgroundImage:
-                    "repeating-linear-gradient(135deg, rgba(255,255,255,0.18) 0, rgba(255,255,255,0.18) 6px, rgba(255,255,255,0.08) 6px, rgba(255,255,255,0.08) 12px)",
+                    "repeating-linear-gradient(135deg, rgba(255,255,255,0.08) 0, rgba(255,255,255,0.08) 6px, rgba(255,255,255,0.03) 6px, rgba(255,255,255,0.03) 12px)",
                 }}
               >
                 Cocktail
