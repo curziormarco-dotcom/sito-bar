@@ -23,11 +23,11 @@ const HIGHLIGHTS = [
   },
   {
     title: {
-      it: "Venerdì",
-      en: "Friday",
-      fr: "Vendredi",
-      de: "Freitag",
-      es: "Viernes",
+      it: "Venerdì aperitivo di pesce",
+      en: "Friday seafood aperitivo",
+      fr: "Vendredi apéritif de poisson",
+      de: "Freitag Fisch‑Aperitif",
+      es: "Viernes aperitivo de pescado",
     },
     text: {
       it: "Aperitivo con pesce",
@@ -190,7 +190,7 @@ export default function HomePage() {
     setFridayIndex(0);
     const timer = setInterval(() => {
       setFridayIndex((prev) => (prev + 1) % fridayMessages.length);
-    }, 5000);
+    }, 1500);
     return () => clearInterval(timer);
   }, [fridayMessages.length]);
 
@@ -269,17 +269,6 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* riga in basso: immagine e mappa affiancate */}
-          <div className="md:col-span-2 h-[280px] overflow-hidden rounded-2xl border border-neutral-200 bg-white">
-            <Link href="/menu#aperitivi-alcolici" className="block h-full w-full">
-              <img
-                src="/images/negroni.jpg"
-                alt={t("drinkAlt")}
-                className="h-full w-full object-cover object-[70%_82%] opacity-85"
-              />
-            </Link>
-          </div>
-
           {/* card mappa: occupa 2 colonne su desktop */}
           <div className="rounded-2xl border border-neutral-200 bg-white p-6 md:col-span-2 h-[280px] flex flex-col">
             <h3 className="text-lg font-semibold">{t("whereTitle")}</h3>
@@ -308,6 +297,17 @@ export default function HomePage() {
     className="block h-full w-full"
   />
 </div>
+          </div>
+
+          {/* riga in basso: immagine e mappa affiancate */}
+          <div className="md:col-span-2 h-[280px] overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+            <Link href="/menu#aperitivi-alcolici" className="block h-full w-full">
+              <img
+                src="/images/negroni.jpg"
+                alt={t("drinkAlt")}
+                className="h-full w-full object-cover object-[70%_82%]"
+              />
+            </Link>
           </div>
         </section>
 

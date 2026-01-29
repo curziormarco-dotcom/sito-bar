@@ -35,7 +35,7 @@ export function LanguageSwitcher() {
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
-        className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white/80 hover:bg-white/10"
+        className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-2 text-sm font-semibold text-neutral-800 hover:bg-neutral-50"
         aria-haspopup="listbox"
         aria-expanded={open}
       >
@@ -44,7 +44,7 @@ export function LanguageSwitcher() {
       </button>
 
       {open && (
-        <div className="absolute right-0 mt-2 w-44 rounded-xl border border-white/10 bg-neutral-950 p-2 shadow-xl">
+        <div className="absolute right-0 mt-2 w-44 rounded-xl border border-neutral-200 bg-white p-2 shadow-xl">
           <ul role="listbox" className="space-y-1">
             {LANGUAGES.map((opt) => (
               <li key={opt.code}>
@@ -54,8 +54,8 @@ export function LanguageSwitcher() {
                     setLang(opt.code);
                     setOpen(false);
                   }}
-                  className={`w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/10 ${
-                    lang === opt.code ? "text-white" : "text-white/70"
+                  className={`w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-neutral-100 ${
+                    lang === opt.code ? "text-neutral-900" : "text-neutral-600"
                   }`}
                   role="option"
                   aria-selected={lang === opt.code}
