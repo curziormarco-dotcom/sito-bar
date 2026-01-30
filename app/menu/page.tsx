@@ -783,6 +783,7 @@ export default function MenuPage() {
     timeZone: "Europe/Rome",
   }).format(new Date());
   const isBefore1830 = romeTime <= "18:30";
+  const forceCentrifugheNotice = true;
 
   useEffect(() => {
     const openFromHash = () => {
@@ -887,7 +888,7 @@ export default function MenuPage() {
             {/* HEADER */}
             <button
               onClick={() => {
-                if (isCentrifughe && !isBefore1830) {
+                if (isCentrifughe && (!isBefore1830 || forceCentrifugheNotice)) {
                   setShowCentrifugheNotice(true);
                   return;
                 }
