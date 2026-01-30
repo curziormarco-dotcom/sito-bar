@@ -66,6 +66,8 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     allergenLegend: "Legenda allergeni",
     close: "Chiudi",
     comingSoon: "Disponibile presto.",
+    fridayOnly: "Disponibile solo il venerdì.",
+    until1830: "Disponibile fino alle 18:30.",
   },
   en: {
     menu: "Menu",
@@ -73,6 +75,8 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     allergenLegend: "Allergen legend",
     close: "Close",
     comingSoon: "Coming soon.",
+    fridayOnly: "Available only on Fridays.",
+    until1830: "Available until 6:30 PM.",
   },
   fr: {
     menu: "Menu",
@@ -80,6 +84,8 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     allergenLegend: "Légende des allergènes",
     close: "Fermer",
     comingSoon: "Bientôt disponible.",
+    fridayOnly: "Disponible uniquement le vendredi.",
+    until1830: "Disponible jusqu’à 18h30.",
   },
   de: {
     menu: "Menü",
@@ -87,6 +93,8 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     allergenLegend: "Allergen-Legende",
     close: "Schließen",
     comingSoon: "Demnächst verfügbar.",
+    fridayOnly: "Nur freitags verfügbar.",
+    until1830: "Verfügbar bis 18:30 Uhr.",
   },
   es: {
     menu: "Menú",
@@ -94,6 +102,8 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     allergenLegend: "Leyenda de alérgenos",
     close: "Cerrar",
     comingSoon: "Disponible pronto.",
+    fridayOnly: "Disponible solo los viernes.",
+    until1830: "Disponible hasta las 18:30.",
   },
 };
 
@@ -616,6 +626,7 @@ const MENU: MenuSection[] = [
     items: [],
   },
   {
+    id: "centrifughe",
     title: {
       it: "Centrifughe",
       en: "Fresh Juices",
@@ -758,8 +769,20 @@ function formatEUR(value: number) {
 export default function MenuPage() {
   const [openSection, setOpenSection] = useState<string | null>(null);
   const [showLegend, setShowLegend] = useState(false);
+  const [showCentrifugheNotice, setShowCentrifugheNotice] = useState(false);
   const { lang } = useLanguage();
   const t = (key: string) => UI_COPY[lang][key] ?? key;
+  const isFriday = new Intl.DateTimeFormat("en-US", {
+    weekday: "short",
+    timeZone: "Europe/Rome",
+  }).format(new Date()) === "Fri";
+  const romeTime = new Intl.DateTimeFormat("en-GB", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+    timeZone: "Europe/Rome",
+  }).format(new Date());
+  const isBefore1830 = romeTime <= "18:30";
 
   useEffect(() => {
     const openFromHash = () => {
@@ -826,9 +849,34 @@ export default function MenuPage() {
           </div>
         </div>
       )}
+      {showCentrifugheNotice && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 px-4"
+          onClick={() => setShowCentrifugheNotice(false)}
+        >
+          <div className="w-full max-w-sm rounded-2xl border border-neutral-200 bg-white p-5 text-neutral-900 shadow-xl">
+            <h3 className="text-base font-semibold">Info</h3>
+            <p className="mt-2 text-sm text-neutral-600">
+              {t("until1830")}
+            </p>
+            <div className="mt-4 flex justify-end">
+              <button
+                type="button"
+                onClick={() => setShowCentrifugheNotice(false)}
+                className="rounded-full border border-neutral-200 px-4 py-2 text-sm font-semibold text-neutral-700 hover:bg-neutral-50"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {MENU.map((section) => {
         const isOpen = openSection === section.title.it;
+        const isPesce = section.id === "pesce";
+        const isCentrifughe = section.id === "centrifughe";
+        const isHiddenToday = (isPesce && !isFriday) || (isCentrifughe && !isBefore1830);
 
         return (
           <section
@@ -838,9 +886,13 @@ export default function MenuPage() {
           >
             {/* HEADER */}
             <button
-              onClick={() =>
-                setOpenSection(isOpen ? null : section.title.it)
-              }
+              onClick={() => {
+                if (isCentrifughe && !isBefore1830) {
+                  setShowCentrifugheNotice(true);
+                  return;
+                }
+                setOpenSection(isOpen ? null : section.title.it);
+              }}
               className="group relative flex w-full items-center justify-between px-1 py-6 text-left hover:bg-neutral-50"
             >
               <span className="absolute left-0 top-0 h-full w-0.5 bg-transparent transition-colors group-hover:bg-neutral-300" />
@@ -860,7 +912,11 @@ export default function MenuPage() {
             {/* CONTENUTO */}
             {isOpen && (
               <div className="px-1 pb-6 space-y-4">
-                {section.items.length === 0 ? (
+                {isHiddenToday ? (
+                  <p className="text-sm text-neutral-500">
+                    {isPesce ? t("fridayOnly") : t("until1830")}
+                  </p>
+                ) : section.items.length === 0 ? (
                   <p className="text-sm text-neutral-500">
                     {t("comingSoon")}
                   </p>
