@@ -782,8 +782,9 @@ export default function MenuPage() {
     hour12: false,
     timeZone: "Europe/Rome",
   }).format(new Date());
-  const isBefore1830 = romeTime <= "18:30";
-  const forceCentrifugheNotice = true;
+  const isAfter1830 = romeTime >= "18:30";
+  const isBefore0600 = romeTime < "06:00";
+  const isOutsideCentrifugheHours = isAfter1830 || isBefore0600;
 
   useEffect(() => {
     const openFromHash = () => {
@@ -877,7 +878,7 @@ export default function MenuPage() {
         const isOpen = openSection === section.title.it;
         const isPesce = section.id === "pesce";
         const isCentrifughe = section.id === "centrifughe";
-        const isHiddenToday = (isPesce && !isFriday) || (isCentrifughe && !isBefore1830);
+        const isHiddenToday = (isPesce && !isFriday) || (isCentrifughe && isOutsideCentrifugheHours);
 
         return (
           <section
@@ -888,7 +889,7 @@ export default function MenuPage() {
             {/* HEADER */}
             <button
               onClick={() => {
-                if (isCentrifughe && (!isBefore1830 || forceCentrifugheNotice)) {
+                if (isCentrifughe && isOutsideCentrifugheHours) {
                   setShowCentrifugheNotice(true);
                   return;
                 }
