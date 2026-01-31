@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useLanguage, type Language } from "../locale-provider";
 
 /* =======================
@@ -932,6 +932,9 @@ export default function MenuPage() {
   const [allergenHint, setAllergenHint] = useState<AllergenKey | null>(null);
   const [allergenHintItem, setAllergenHintItem] = useState<string | null>(null);
   const allergenHintTimer = useRef<number | null>(null);
+  const anchorRef = useRef<HTMLElement | null>(null);
+  const anchorTopRef = useRef<number | null>(null);
+  const pendingAnchorAdjust = useRef(false);
   const { lang } = useLanguage();
   const t = (key: string) => UI_COPY[lang][key] ?? key;
   const isFriday = new Intl.DateTimeFormat("en-US", {
@@ -948,15 +951,26 @@ export default function MenuPage() {
   const isBefore0600 = romeTime < "06:00";
   const isOutsideCentrifugheHours = isAfter1830 || isBefore0600;
 
-  const toggleSection = (sectionKey: string, isOpen: boolean) => {
-    const scrollY = window.scrollY;
+  const toggleSection = (sectionKey: string, isOpen: boolean, anchor?: HTMLElement) => {
+    if (anchor) {
+      anchorRef.current = anchor;
+      anchorTopRef.current = anchor.getBoundingClientRect().top;
+      pendingAnchorAdjust.current = true;
+    }
     setOpenSection(isOpen ? null : sectionKey);
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        window.scrollTo({ top: scrollY });
-      });
-    });
   };
+
+  useLayoutEffect(() => {
+    if (!pendingAnchorAdjust.current || !anchorRef.current || anchorTopRef.current === null) {
+      return;
+    }
+    const newTop = anchorRef.current.getBoundingClientRect().top;
+    const delta = newTop - anchorTopRef.current;
+    if (delta !== 0) {
+      window.scrollBy({ top: delta, left: 0, behavior: "auto" });
+    }
+    pendingAnchorAdjust.current = false;
+  }, [openSection]);
 
   useEffect(() => {
     const openFromHash = () => {
@@ -1085,12 +1099,12 @@ export default function MenuPage() {
           >
             {/* HEADER */}
             <button
-              onClick={() => {
+              onClick={(event) => {
                 if (isCentrifughe && isOutsideCentrifugheHours) {
                   setShowCentrifugheNotice(true);
                   return;
                 }
-                toggleSection(section.title.it, isOpen);
+                toggleSection(section.title.it, isOpen, event.currentTarget);
               }}
               onMouseDown={(event) => event.preventDefault()}
               className="group relative flex w-full items-center justify-between px-1 py-6 text-left hover:bg-neutral-50"
