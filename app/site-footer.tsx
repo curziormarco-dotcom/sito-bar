@@ -3,11 +3,11 @@
 import { useLanguage, type Language } from "./locale-provider";
 
 const FOOTER_COPY: Record<Language, string> = {
-  it: "© {year} Sito Bar",
-  en: "© {year} Bar website",
-  fr: "© {year} Site du bar",
-  de: "© {year} Bar-Website",
-  es: "© {year} Sitio del bar",
+  it: "© {year} Bar Da Luciano",
+  en: "© {year} Bar Da Luciano",
+  fr: "© {year} Bar Da Luciano",
+  de: "© {year} Bar Da Luciano",
+  es: "© {year} Bar Da Luciano",
 };
 
 export function SiteFooter() {
