@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage, type Language } from "../locale-provider";
 
 /* =======================
@@ -136,22 +136,7 @@ const ALLERGEN_ORDER: AllergenKey[] = [
   "senape",
   "sesamo",
   "glutine",
-  "grano",
-  "orzo",
-  "avena",
-  "segale",
-  "farro",
-  "kamut",
   "frutta_guscio",
-  "nocciole",
-  "noci",
-  "mandorle",
-  "pistacchi",
-  "arachidi",
-  "noci_brasiliane",
-  "anacardi",
-  "macadamia",
-  "noce_pecan",
   "alcol",
   "congelato",
   "vegano",
@@ -450,7 +435,7 @@ const MENU: MenuSection[] = [
           de: "Marocchino",
           es: "Marocchino",
         },
-        allergens: ["nocciole", "latte"],
+        allergens: ["frutta_guscio", "latte"],
         price: 2.2,
       },
       {
@@ -614,7 +599,7 @@ const MENU: MenuSection[] = [
           de: "Heiße Schokolade",
           es: "Chocolate caliente",
         },
-        allergens: ["nocciole", "latte"],
+        allergens: ["frutta_guscio", "latte"],
         price: 4.5,
       },
       {
@@ -625,7 +610,7 @@ const MENU: MenuSection[] = [
           de: "Heiße Schokolade mit Sahne",
           es: "Chocolate caliente con nata",
         },
-        allergens: ["latte", "nocciole"],
+        allergens: ["latte", "frutta_guscio"],
         price: 5.0,
       },
       {
@@ -657,6 +642,7 @@ const MENU: MenuSection[] = [
           de: "Croissants",
           es: "Cruasanes",
         },
+        allergens: ["latte", "glutine"],
         priceNote: "€1,80–€2,50",
       },
       {
@@ -943,6 +929,9 @@ export default function MenuPage() {
   const [showLegend, setShowLegend] = useState(false);
   const [showCentrifugheNotice, setShowCentrifugheNotice] = useState(false);
   const [allergenFilter, setAllergenFilter] = useState<AllergenKey | null>(null);
+  const [allergenHint, setAllergenHint] = useState<AllergenKey | null>(null);
+  const [allergenHintItem, setAllergenHintItem] = useState<string | null>(null);
+  const allergenHintTimer = useRef<number | null>(null);
   const { lang } = useLanguage();
   const t = (key: string) => UI_COPY[lang][key] ?? key;
   const isFriday = new Intl.DateTimeFormat("en-US", {
@@ -1135,13 +1124,37 @@ export default function MenuPage() {
                                 const allergen = ALLERGENS[key][lang];
                                 const styles = ALLERGEN_STYLES[key];
                                 return (
-                                  <span
-                                    key={key}
-                                    title={allergen}
-                                    aria-label={allergen}
-                                    className={`inline-flex h-5 w-5 items-center justify-center rounded-full border bg-white ${styles.ring} ${styles.text}`}
-                                  >
-                                    <AllergenIcon type={key} />
+                                  <span key={key} className="relative inline-flex">
+                                    <button
+                                      type="button"
+                                      onClick={() => {
+                                        if (allergenHintTimer.current) {
+                                          window.clearTimeout(allergenHintTimer.current);
+                                        }
+                                        const next =
+                                          allergenHint === key && allergenHintItem === item.name.it
+                                            ? null
+                                            : key;
+                                        setAllergenHint(next);
+                                        setAllergenHintItem(next ? item.name.it : null);
+                                        if (next) {
+                                          allergenHintTimer.current = window.setTimeout(() => {
+                                            setAllergenHint(null);
+                                            setAllergenHintItem(null);
+                                          }, 2000);
+                                        }
+                                      }}
+                                      aria-label={allergen}
+                                      className={`inline-flex h-5 w-5 items-center justify-center rounded-full border bg-white ${styles.ring} ${styles.text}`}
+                                    >
+                                      <AllergenIcon type={key} />
+                                    </button>
+                                    {allergenHint === key &&
+                                      allergenHintItem === item.name.it && (
+                                        <span className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md border border-neutral-200 bg-white px-2 py-1 text-[10px] text-neutral-700 shadow-sm">
+                                          {allergen}
+                                        </span>
+                                      )}
                                   </span>
                                 );
                               })}
