@@ -228,7 +228,7 @@ export default function HomePage() {
           </div>
         </div>
       )}
-      <div className="mx-auto max-w-6xl px-6 pt-2 pb-14 sm:pt-8 sm:pb-20 space-y-6">
+      <div className="mx-auto max-w-6xl px-6 pt-1 pb-14 sm:pt-6 sm:pb-20 space-y-6">
         {/* HERO */}
         <section
           className="relative overflow-hidden rounded-[28px] min-h-[360px]"
