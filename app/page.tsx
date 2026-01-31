@@ -228,7 +228,7 @@ export default function HomePage() {
           </div>
         </div>
       )}
-      <div className="mx-auto max-w-6xl px-6 pt-4 pb-14 sm:pt-10 sm:pb-20 space-y-10">
+      <div className="mx-auto max-w-6xl px-6 pt-4 pb-14 sm:pt-10 sm:pb-20 space-y-6">
         {/* HERO */}
         <section
           className="relative overflow-hidden rounded-[28px] min-h-[360px]"
@@ -278,9 +278,9 @@ export default function HomePage() {
         </section>
 
         {/* HIGHLIGHTS + MAPPA */}
-        <section className="flex flex-col gap-4 md:grid md:grid-cols-4 md:items-stretch">
+        <section className="flex flex-col gap-6 md:grid md:grid-cols-4 md:items-stretch md:gap-6">
           {/* riga in alto: orari + venerdì */}
-          <div className="md:col-span-4 grid gap-4 md:grid-cols-2">
+          <div className="md:col-span-4 grid gap-6 md:grid-cols-2">
             <div className="rounded-2xl border border-neutral-200 bg-white p-6 h-fit">
               <h3 className="text-xs tracking-[0.28em] text-neutral-500">
                 {HIGHLIGHTS[0].title[lang].toUpperCase()}
