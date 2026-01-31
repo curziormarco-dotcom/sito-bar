@@ -37,7 +37,11 @@ export default function GalleryPage() {
             <img
               src={image.src}
               alt={image.alt}
-              className="h-64 w-full object-cover"
+              className={
+                image.src === "/images/negroni.jpg"
+                  ? "h-64 w-full object-cover object-[85%_85%] sm:object-center"
+                  : "h-64 w-full object-cover"
+              }
             />
           </figure>
         ))}
