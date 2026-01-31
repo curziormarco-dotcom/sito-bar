@@ -231,7 +231,7 @@ export default function HomePage() {
       <div className="mx-auto max-w-6xl px-6 py-14 sm:py-20 space-y-12">
         {/* HERO */}
         <section
-          className="relative overflow-hidden rounded-[28px] min-h-[420px]"
+          className="relative overflow-hidden rounded-[28px] min-h-[360px]"
           style={{
             backgroundImage: "url('/images/hero.jpg')",
             backgroundSize: "cover",
@@ -241,12 +241,12 @@ export default function HomePage() {
           {/* overlay */}
           <div className="absolute inset-0 bg-black/20" />
 
-          <div className="relative p-10 sm:p-14 text-white">
+          <div className="relative p-8 sm:p-10 text-white">
             <p className="text-xs tracking-[0.28em] text-white/85">
               {t("heroKicker")}
             </p>
 
-            <h1 className="mt-4 text-4xl sm:text-6xl font-semibold leading-tight tracking-tight">
+            <h1 className="mt-2 text-4xl sm:text-6xl font-semibold leading-tight tracking-tight">
               {t("heroTitle").split("\n").map((line, index) => (
                 <span key={`${line}-${index}`}>
                   {line}
