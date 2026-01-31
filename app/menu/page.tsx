@@ -973,13 +973,29 @@ export default function MenuPage() {
   }, [openSection]);
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual";
+      }
+      window.scrollTo(0, 0);
+    }
+
     const openFromHash = () => {
       const hash = window.location.hash.replace("#", "");
       if (!hash) return;
       const target = MENU.find((section) => section.id === hash);
-      if (target) {
-        setOpenSection(target.title.it);
-      }
+      if (!target) return;
+      setOpenSection(target.title.it);
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ block: "start", behavior: "smooth" });
+          const button = el.querySelector("button");
+          if (button) {
+            (button as HTMLButtonElement).focus({ preventScroll: true });
+          }
+        }
+      }, 0);
     };
 
     openFromHash();
