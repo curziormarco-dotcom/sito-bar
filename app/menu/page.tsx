@@ -948,6 +948,16 @@ export default function MenuPage() {
   const isBefore0600 = romeTime < "06:00";
   const isOutsideCentrifugheHours = isAfter1830 || isBefore0600;
 
+  const toggleSection = (sectionKey: string, isOpen: boolean) => {
+    const scrollY = window.scrollY;
+    setOpenSection(isOpen ? null : sectionKey);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: scrollY });
+      });
+    });
+  };
+
   useEffect(() => {
     const openFromHash = () => {
       const hash = window.location.hash.replace("#", "");
@@ -964,7 +974,10 @@ export default function MenuPage() {
   }, []);
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-14 space-y-10 text-neutral-900 bg-[#fbfaf7]">
+    <main
+      className="mx-auto max-w-5xl px-6 py-14 space-y-10 text-neutral-900 bg-[#fbfaf7]"
+      style={{ overflowAnchor: "none" }}
+    >
       <div className="flex flex-wrap items-center gap-4">
         <h1 className="text-4xl font-semibold tracking-tight font-serif">{t("menu")}</h1>
         <button
@@ -1077,8 +1090,9 @@ export default function MenuPage() {
                   setShowCentrifugheNotice(true);
                   return;
                 }
-                setOpenSection(isOpen ? null : section.title.it);
+                toggleSection(section.title.it, isOpen);
               }}
+              onMouseDown={(event) => event.preventDefault()}
               className="group relative flex w-full items-center justify-between px-1 py-6 text-left hover:bg-neutral-50"
             >
               <span className="absolute left-0 top-0 h-full w-0.5 bg-transparent transition-colors group-hover:bg-neutral-300" />
