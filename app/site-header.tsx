@@ -5,12 +5,12 @@ import { NavLink } from "./nav-link";
 import { LanguageSwitcher } from "./language-switcher";
 import { useLanguage, type Language } from "./locale-provider";
 
-const NAV_COPY: Record<Language, { home: string; menu: string }> = {
-  it: { home: "Home", menu: "Menu" },
-  en: { home: "Home", menu: "Menu" },
-  fr: { home: "Accueil", menu: "Menu" },
-  de: { home: "Start", menu: "Menü" },
-  es: { home: "Inicio", menu: "Menú" },
+const NAV_COPY: Record<Language, { home: string; menu: string; gallery: string }> = {
+  it: { home: "Home", menu: "Menu", gallery: "Galleria" },
+  en: { home: "Home", menu: "Menu", gallery: "Gallery" },
+  fr: { home: "Accueil", menu: "Menu", gallery: "Galerie" },
+  de: { home: "Start", menu: "Menü", gallery: "Galerie" },
+  es: { home: "Inicio", menu: "Menú", gallery: "Galería" },
 };
 
 export function SiteHeader() {
@@ -30,6 +30,7 @@ export function SiteHeader() {
         <nav className="flex items-center gap-3">
           <NavLink href="/">{labels.home}</NavLink>
           <NavLink href="/menu">{labels.menu}</NavLink>
+          <NavLink href="/galleria">{labels.gallery}</NavLink>
           <LanguageSwitcher />
         </nav>
       </div>
