@@ -9,7 +9,8 @@ import { useLanguage, type Language } from "../locale-provider";
 type MenuItem = {
   name: Record<Language, string>;
   description?: string;
-  price: number;
+  price?: number;
+  priceNote?: string;
   tag?: string;
   allergens?: AllergenKey[];
 };
@@ -68,6 +69,9 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     comingSoon: "Disponibile presto.",
     fridayOnly: "Disponibile solo il venerdì.",
     until1830: "Disponibile fino alle 18:30.",
+    filterOn: "Filtro attivo:",
+    clearFilter: "Rimuovi filtro",
+    noMatches: "Nessun prodotto con questo allergene.",
   },
   en: {
     menu: "Menu",
@@ -77,6 +81,9 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     comingSoon: "Coming soon.",
     fridayOnly: "Available only on Fridays.",
     until1830: "Available until 6:30 PM.",
+    filterOn: "Filter active:",
+    clearFilter: "Clear filter",
+    noMatches: "No products with this allergen.",
   },
   fr: {
     menu: "Menu",
@@ -86,6 +93,9 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     comingSoon: "Bientôt disponible.",
     fridayOnly: "Disponible uniquement le vendredi.",
     until1830: "Disponible jusqu’à 18h30.",
+    filterOn: "Filtre actif :",
+    clearFilter: "Retirer le filtre",
+    noMatches: "Aucun produit avec cet allergène.",
   },
   de: {
     menu: "Menü",
@@ -95,6 +105,9 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     comingSoon: "Demnächst verfügbar.",
     fridayOnly: "Nur freitags verfügbar.",
     until1830: "Verfügbar bis 18:30 Uhr.",
+    filterOn: "Aktiver Filter:",
+    clearFilter: "Filter entfernen",
+    noMatches: "Keine Produkte mit diesem Allergen.",
   },
   es: {
     menu: "Menú",
@@ -104,6 +117,9 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     comingSoon: "Disponible pronto.",
     fridayOnly: "Disponible solo los viernes.",
     until1830: "Disponible hasta las 18:30.",
+    filterOn: "Filtro activo:",
+    clearFilter: "Quitar filtro",
+    noMatches: "No hay productos con este alérgeno.",
   },
 };
 
@@ -380,6 +396,7 @@ const MENU: MenuSection[] = [
           de: "Ginsengkaffee",
           es: "Café de ginseng",
         },
+        allergens: ["latte"],
         price: 1.8,
       },
       {
@@ -390,6 +407,7 @@ const MENU: MenuSection[] = [
           de: "Gerstenkaffee",
           es: "Café de cebada",
         },
+        allergens: ["orzo"],
         price: 1.8,
       },
       {
@@ -400,6 +418,7 @@ const MENU: MenuSection[] = [
           de: "Kaffee mit Likör",
           es: "Café con licor",
         },
+        allergens: ["alcol"],
         price: 2.0,
       },
       {
@@ -420,6 +439,7 @@ const MENU: MenuSection[] = [
           de: "Kaffee mit Sahne",
           es: "Café con nata",
         },
+        allergens: ["latte"],
         price: 2.2,
       },
       {
@@ -430,6 +450,7 @@ const MENU: MenuSection[] = [
           de: "Marocchino",
           es: "Marocchino",
         },
+        allergens: ["nocciole", "latte"],
         price: 2.2,
       },
       {
@@ -451,6 +472,7 @@ const MENU: MenuSection[] = [
           de: "Großer entkoffeinierter Macchiato",
           es: "Macchiato grande descafeinado",
         },
+        allergens: ["latte"],
         price: 1.8,
       },
       {
@@ -461,6 +483,7 @@ const MENU: MenuSection[] = [
           de: "Großer Soja-Macchiato",
           es: "Macchiato grande de soja",
         },
+        allergens: ["soia", "latte"],
         price: 2.0,
       },
       {
@@ -471,6 +494,7 @@ const MENU: MenuSection[] = [
           de: "Großer Gerste/Ginseng-Macchiato",
           es: "Macchiato grande cebada/ginseng",
         },
+        allergens: ["latte", "orzo"],
         price: 2.0,
       },
       {
@@ -481,6 +505,7 @@ const MENU: MenuSection[] = [
           de: "Cappuccino",
           es: "Capuchino",
         },
+        allergens: ["latte"],
         price: 1.9,
       },
       {
@@ -491,6 +516,7 @@ const MENU: MenuSection[] = [
           de: "Entkoffeinierter Cappuccino",
           es: "Capuchino descafeinado",
         },
+        allergens: ["latte"],
         price: 2.0,
       },
       {
@@ -511,6 +537,7 @@ const MENU: MenuSection[] = [
           de: "Soja-Cappuccino",
           es: "Capuchino de soja",
         },
+        allergens: ["latte", "soia"],
         price: 2.2,
       },
       {
@@ -521,6 +548,7 @@ const MENU: MenuSection[] = [
           de: "Gerste/Ginseng-Cappuccino",
           es: "Capuchino cebada/ginseng",
         },
+        allergens: ["latte", "orzo"],
         price: 2.2,
       },
       {
@@ -531,6 +559,7 @@ const MENU: MenuSection[] = [
           de: "Heiße Milch",
           es: "Leche caliente",
         },
+        allergens: ["latte"],
         price: 1.5,
       },
       {
@@ -541,6 +570,7 @@ const MENU: MenuSection[] = [
           de: "Latte macchiato",
           es: "Latte macchiato",
         },
+        allergens: ["latte"],
         price: 2.9,
       },
       {
@@ -551,6 +581,7 @@ const MENU: MenuSection[] = [
           de: "Entkoffeinierter Latte macchiato",
           es: "Latte macchiato descafeinado",
         },
+        allergens: ["latte"],
         price: 3.0,
       },
       {
@@ -561,7 +592,19 @@ const MENU: MenuSection[] = [
           de: "Sojamilch",
           es: "Leche de soja",
         },
+        allergens: ["soia"],
         price: 2.0,
+      },
+      {
+        name: {
+          it: "Latte macchiato soia",
+          en: "Soy latte macchiato",
+          fr: "Latte macchiato au soja",
+          de: "Soja-Latte macchiato",
+          es: "Latte macchiato de soja",
+        },
+        allergens: ["latte", "soia"],
+        price: 3.2,
       },
       {
         name: {
@@ -571,6 +614,7 @@ const MENU: MenuSection[] = [
           de: "Heiße Schokolade",
           es: "Chocolate caliente",
         },
+        allergens: ["nocciole", "latte"],
         price: 4.5,
       },
       {
@@ -581,6 +625,7 @@ const MENU: MenuSection[] = [
           de: "Heiße Schokolade mit Sahne",
           es: "Chocolate caliente con nata",
         },
+        allergens: ["latte", "nocciole"],
         price: 5.0,
       },
       {
@@ -593,16 +638,6 @@ const MENU: MenuSection[] = [
         },
         price: 3.0,
       },
-      {
-        name: {
-          it: "Latte macchiato soia",
-          en: "Soy latte macchiato",
-          fr: "Latte macchiato au soja",
-          de: "Soja-Latte macchiato",
-          es: "Latte macchiato de soja",
-        },
-        price: 3.2,
-      },
     ],
   },
   {
@@ -613,7 +648,144 @@ const MENU: MenuSection[] = [
       de: "Croissants & Gebäck",
       es: "Bollería y...",
     },
-    items: [],
+    items: [
+      {
+        name: {
+          it: "Brioches",
+          en: "Croissants",
+          fr: "Croissants",
+          de: "Croissants",
+          es: "Cruasanes",
+        },
+        priceNote: "€1,80–€2,50",
+      },
+      {
+        name: {
+          it: "Brioches vegana",
+          en: "Vegan croissant",
+          fr: "Croissant végan",
+          de: "Veganer Croissant",
+          es: "Cruasán vegano",
+        },
+        price: 2.0,
+      },
+      {
+        name: {
+          it: "Brioches mignon",
+          en: "Mini croissant",
+          fr: "Mini‑croissant",
+          de: "Mini‑Croissant",
+          es: "Mini cruasán",
+        },
+        price: 1.3,
+      },
+      {
+        name: {
+          it: "Pastine",
+          en: "Mini pastries",
+          fr: "Petites pâtisseries",
+          de: "Mini‑Gebäck",
+          es: "Pastelería pequeña",
+        },
+        description: "Riso, ricotta o ricotta e cioccolato",
+        price: 2.2,
+      },
+      {
+        name: {
+          it: "Pasticciotto",
+          en: "Pasticciotto",
+          fr: "Pasticciotto",
+          de: "Pasticciotto",
+          es: "Pasticciotto",
+        },
+        description: "Crema amarena o crema cioccolato",
+        price: 2.8,
+      },
+      {
+        name: {
+          it: "Sfogliatella con ricotta",
+          en: "Ricotta sfogliatella",
+          fr: "Sfogliatella à la ricotta",
+          de: "Ricotta‑Sfogliatella",
+          es: "Sfogliatella de ricotta",
+        },
+        price: 2.8,
+      },
+      {
+        name: {
+          it: "Biscotti da caffè",
+          en: "Coffee biscuits",
+          fr: "Biscuits pour le café",
+          de: "Kaffeekekse",
+          es: "Galletas para café",
+        },
+        price: 1.0,
+      },
+      {
+        name: {
+          it: "Muffin piccolo",
+          en: "Small muffin",
+          fr: "Petit muffin",
+          de: "Kleiner Muffin",
+          es: "Muffin pequeño",
+        },
+        description: "Marmellata",
+        price: 1.5,
+      },
+      {
+        name: {
+          it: "Muffin grande",
+          en: "Large muffin",
+          fr: "Grand muffin",
+          de: "Großer Muffin",
+          es: "Muffin grande",
+        },
+        description: "Marmellata o cioccolato",
+        price: 2.8,
+      },
+      {
+        name: {
+          it: "Donuts",
+          en: "Donuts",
+          fr: "Donuts",
+          de: "Donuts",
+          es: "Donuts",
+        },
+        price: 2.5,
+      },
+      {
+        name: {
+          it: "Pasticceria mignon",
+          en: "Mini pastries",
+          fr: "Pâtisseries mignon",
+          de: "Mignon‑Gebäck",
+          es: "Pastelería mignon",
+        },
+        price: 1.6,
+      },
+      {
+        name: {
+          it: "Frittella",
+          en: "Fritter",
+          fr: "Beignet",
+          de: "Krapfen",
+          es: "Buñuelo",
+        },
+        description: "Crema o zabaione",
+        price: 2.6,
+      },
+      {
+        name: {
+          it: "Frittella mignon",
+          en: "Mini fritter",
+          fr: "Mini beignet",
+          de: "Mini‑Krapfen",
+          es: "Mini buñuelo",
+        },
+        description: "Crema, zabaione o vuota con uvetta e pinoli",
+        price: 1.3,
+      },
+    ],
   },
   {
     title: {
@@ -770,6 +942,7 @@ export default function MenuPage() {
   const [openSection, setOpenSection] = useState<string | null>(null);
   const [showLegend, setShowLegend] = useState(false);
   const [showCentrifugheNotice, setShowCentrifugheNotice] = useState(false);
+  const [allergenFilter, setAllergenFilter] = useState<AllergenKey | null>(null);
   const { lang } = useLanguage();
   const t = (key: string) => UI_COPY[lang][key] ?? key;
   const isFriday = new Intl.DateTimeFormat("en-US", {
@@ -833,9 +1006,14 @@ export default function MenuPage() {
                 const allergen = ALLERGENS[key][lang];
                 const styles = ALLERGEN_STYLES[key];
                 return (
-                  <div
+                  <button
                     key={key}
-                    className="flex items-center gap-3 rounded-xl border border-neutral-100 bg-white px-3 py-2"
+                    type="button"
+                    onClick={() => {
+                      setAllergenFilter(key);
+                      setShowLegend(false);
+                    }}
+                    className="flex items-center gap-3 rounded-xl border border-neutral-100 bg-white px-3 py-2 text-left hover:bg-neutral-50"
                   >
                     <span
                       className={`inline-flex h-7 w-7 items-center justify-center rounded-full border bg-white ${styles.ring} ${styles.text}`}
@@ -844,7 +1022,7 @@ export default function MenuPage() {
                       <AllergenIcon type={key} />
                     </span>
                     <span className="text-sm text-neutral-700">{allergen}</span>
-                  </div>
+                  </button>
                 );
               })}
             </div>
@@ -874,11 +1052,28 @@ export default function MenuPage() {
         </div>
       )}
 
+      {allergenFilter && (
+        <div className="flex flex-wrap items-center gap-3 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm text-neutral-600">
+          <span className="font-semibold text-neutral-800">{t("filterOn")}</span>
+          <span>{ALLERGENS[allergenFilter][lang]}</span>
+          <button
+            type="button"
+            onClick={() => setAllergenFilter(null)}
+            className="ml-2 rounded-full border border-neutral-200 px-3 py-1 text-xs font-semibold text-neutral-700 hover:bg-neutral-50"
+          >
+            {t("clearFilter")}
+          </button>
+        </div>
+      )}
+
       {MENU.map((section) => {
         const isOpen = openSection === section.title.it;
         const isPesce = section.id === "pesce";
         const isCentrifughe = section.id === "centrifughe";
         const isHiddenToday = (isPesce && !isFriday) || (isCentrifughe && isOutsideCentrifugheHours);
+        const filteredItems = allergenFilter
+          ? section.items.filter((item) => item.allergens?.includes(allergenFilter))
+          : section.items;
 
         return (
           <section
@@ -918,12 +1113,12 @@ export default function MenuPage() {
                   <p className="text-sm text-neutral-500">
                     {isPesce ? t("fridayOnly") : t("until1830")}
                   </p>
-                ) : section.items.length === 0 ? (
+                ) : filteredItems.length === 0 ? (
                   <p className="text-sm text-neutral-500">
-                    {t("comingSoon")}
+                    {allergenFilter ? t("noMatches") : t("comingSoon")}
                   </p>
                 ) : (
-                  section.items.map((item) => (
+                  filteredItems.map((item) => (
                     <article
                       key={`${item.name.it}-${item.price}`}
                       className="border-t border-neutral-100 pt-4"
@@ -962,7 +1157,12 @@ export default function MenuPage() {
                         </div>
 
                         <div className="font-semibold text-neutral-800">
-                          {formatEUR(item.price)}
+                          {typeof item.price === "number" ? formatEUR(item.price) : null}
+                          {item.priceNote && (
+                            <span className={item.price ? "ml-2 text-xs font-normal text-neutral-500" : ""}>
+                              {item.priceNote}
+                            </span>
+                          )}
                         </div>
                       </div>
                     </article>
