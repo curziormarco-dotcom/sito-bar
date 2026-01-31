@@ -278,7 +278,7 @@ export default function HomePage() {
         </section>
 
         {/* HIGHLIGHTS + MAPPA */}
-        <section className="grid gap-4 md:grid-cols-4 items-stretch">
+        <section className="flex flex-col gap-4 md:grid md:grid-cols-4 md:items-stretch">
           {/* riga in alto: orari + venerdì */}
           <div className="md:col-span-4 grid gap-4 md:grid-cols-2">
             <div className="rounded-2xl border border-neutral-200 bg-white p-6 h-fit">
