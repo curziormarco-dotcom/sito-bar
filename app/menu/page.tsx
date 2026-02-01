@@ -781,7 +781,78 @@ const MENU: MenuSection[] = [
       de: "Fruchtsäfte",
       es: "Zumos de fruta",
     },
-    items: [],
+    items: [
+      {
+        name: {
+          it: "Succo pesca",
+          en: "Peach juice",
+          fr: "Jus de pêche",
+          de: "Pfirsichsaft",
+          es: "Zumo de melocotón",
+        },
+        price: 3.0,
+      },
+      {
+        name: {
+          it: "Succo ace",
+          en: "ACE juice",
+          fr: "Jus ACE",
+          de: "ACE-Saft",
+          es: "Zumo ACE",
+        },
+        price: 3.0,
+      },
+      {
+        name: {
+          it: "Succo pera",
+          en: "Pear juice",
+          fr: "Jus de poire",
+          de: "Birnensaft",
+          es: "Zumo de pera",
+        },
+        price: 3.0,
+      },
+      {
+        name: {
+          it: "Succo ananas",
+          en: "Pineapple juice",
+          fr: "Jus d'ananas",
+          de: "Ananassaft",
+          es: "Zumo de piña",
+        },
+        price: 3.0,
+      },
+      {
+        name: {
+          it: "Succo pompelmo",
+          en: "Grapefruit juice",
+          fr: "Jus de pamplemousse",
+          de: "Grapefruitsaft",
+          es: "Zumo de pomelo",
+        },
+        price: 3.0,
+      },
+      {
+        name: {
+          it: "Succo mirtillo",
+          en: "Blueberry juice",
+          fr: "Jus de myrtille",
+          de: "Blaubeersaft",
+          es: "Zumo de arándanos",
+        },
+        price: 3.5,
+      },
+      {
+        name: {
+          it: "Succo pomodoro",
+          en: "Tomato juice",
+          fr: "Jus de tomate",
+          de: "Tomatensaft",
+          es: "Zumo de tomate",
+        },
+        price: 4.0,
+      },
+    ],
   },
   {
     id: "centrifughe",
@@ -792,7 +863,63 @@ const MENU: MenuSection[] = [
       de: "Frischsäfte",
       es: "Zumos naturales",
     },
-    items: [],
+    items: [
+      {
+        name: {
+          it: "N°1",
+          en: "No. 1",
+          fr: "N°1",
+          de: "Nr. 1",
+          es: "N.º 1",
+        },
+        description: "Arancia, carota, limone",
+        price: 5.5,
+      },
+      {
+        name: {
+          it: "N°2",
+          en: "No. 2",
+          fr: "N°2",
+          de: "Nr. 2",
+          es: "N.º 2",
+        },
+        description: "Mela, arancia, carota, zenzero",
+        price: 5.5,
+      },
+      {
+        name: {
+          it: "N°3",
+          en: "No. 3",
+          fr: "N°3",
+          de: "Nr. 3",
+          es: "N.º 3",
+        },
+        description: "Sedano, mela, kiwi",
+        price: 5.5,
+      },
+      {
+        name: {
+          it: "N°4",
+          en: "No. 4",
+          fr: "N°4",
+          de: "Nr. 4",
+          es: "N.º 4",
+        },
+        description: "Pera, ananas, limone, cannella",
+        price: 5.5,
+      },
+      {
+        name: {
+          it: "N°5",
+          en: "No. 5",
+          fr: "N°5",
+          de: "Nr. 5",
+          es: "N.º 5",
+        },
+        description: "Mela, finocchio, ananas, carota",
+        price: 5.5,
+      },
+    ],
   },
   {
     title: {
@@ -802,7 +929,128 @@ const MENU: MenuSection[] = [
       de: "Getränke",
       es: "Bebidas",
     },
-    items: [],
+    items: [
+      {
+        name: {
+          it: "Spremuta d’arancio",
+          en: "Fresh orange juice",
+          fr: "Jus d’orange pressé",
+          de: "Frisch gepresster Orangensaft",
+          es: "Zumo de naranja natural",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Spremuta di pompelmo",
+          en: "Fresh grapefruit juice",
+          fr: "Jus de pamplemousse pressé",
+          de: "Frisch gepresster Grapefruitsaft",
+          es: "Zumo de pomelo natural",
+        },
+        price: 4.5,
+      },
+      {
+        name: {
+          it: "Coca‑Cola asporto",
+          en: "Coca‑Cola (to go)",
+          fr: "Coca‑Cola à emporter",
+          de: "Coca‑Cola (zum Mitnehmen)",
+          es: "Coca‑Cola para llevar",
+        },
+        price: 3.0,
+      },
+      {
+        name: {
+          it: "Coca‑Cola bottiglia vetro",
+          en: "Coca‑Cola (glass bottle)",
+          fr: "Coca‑Cola (bouteille en verre)",
+          de: "Coca‑Cola (Glasflasche)",
+          es: "Coca‑Cola (botella de vidrio)",
+        },
+        price: 3.5,
+      },
+      {
+        name: {
+          it: "Fanta",
+          en: "Fanta",
+          fr: "Fanta",
+          de: "Fanta",
+          es: "Fanta",
+        },
+        price: 3.5,
+      },
+      {
+        name: {
+          it: "Tè pesca/limone",
+          en: "Iced tea peach/lemon",
+          fr: "Thé glacé pêche/citron",
+          de: "Eistee Pfirsich/Zitrone",
+          es: "Té frío melocotón/limón",
+        },
+        price: 3.5,
+      },
+      {
+        name: {
+          it: "Acqua e menta/sambuco/lampone",
+          en: "Water with mint/elderflower/raspberry",
+          fr: "Eau à la menthe/sureau/framboise",
+          de: "Wasser mit Minze/Holunder/Himbeere",
+          es: "Agua con menta/sauco/frambuesa",
+        },
+        price: 2.5,
+      },
+      {
+        name: {
+          it: "Acqua tonica",
+          en: "Tonic water",
+          fr: "Eau tonique",
+          de: "Tonic Water",
+          es: "Agua tónica",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Chinotto",
+          en: "Chinotto",
+          fr: "Chinotto",
+          de: "Chinotto",
+          es: "Chinotto",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Limonata",
+          en: "Lemonade",
+          fr: "Limonade",
+          de: "Limonade",
+          es: "Limonada",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Tassoni",
+          en: "Tassoni",
+          fr: "Tassoni",
+          de: "Tassoni",
+          es: "Tassoni",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Bottiglietta d'acqua naturale/gasata 0,5l",
+          en: "Water bottle still/sparkling 0.5L",
+          fr: "Bouteille d’eau plate/gazeuse 0,5 l",
+          de: "Wasser still/sprudel 0,5 l",
+          es: "Botella de agua natural/con gas 0,5 l",
+        },
+        price: 1.5,
+      },
+    ],
   },
   {
     title: {
@@ -812,7 +1060,128 @@ const MENU: MenuSection[] = [
       de: "Snacks & Sandwiches",
       es: "Snacks y bocadillos",
     },
-    items: [],
+    items: [
+      {
+        name: {
+          it: "Tramezzini assortiti",
+          en: "Assorted tramezzini",
+          fr: "Tramezzini assortis",
+          de: "Gemischte Tramezzini",
+          es: "Tramezzini surtidos",
+        },
+        price: 2.2,
+      },
+      {
+        name: {
+          it: "Brioches salate",
+          en: "Savory brioches",
+          fr: "Brioches salées",
+          de: "Herzhafte Brioches",
+          es: "Brioches salados",
+        },
+        price: 3.0,
+      },
+      {
+        name: {
+          it: "Paninetti",
+          en: "Small sandwiches",
+          fr: "Petits sandwiches",
+          de: "Kleine Sandwiches",
+          es: "Bocadillos pequeños",
+        },
+        price: 2.5,
+      },
+      {
+        name: {
+          it: "Toast",
+          en: "Toast",
+          fr: "Toast",
+          de: "Toast",
+          es: "Tostada",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Tostone verdure",
+          en: "Veggie tostone",
+          fr: "Tostone aux légumes",
+          de: "Gemüse‑Tostone",
+          es: "Tostone de verduras",
+        },
+        price: 6.5,
+      },
+      {
+        name: {
+          it: "Piadine",
+          en: "Piadine",
+          fr: "Piadine",
+          de: "Piadine",
+          es: "Piadine",
+        },
+        price: 5.0,
+      },
+      {
+        name: {
+          it: "Focacce",
+          en: "Focaccia",
+          fr: "Focaccia",
+          de: "Focaccia",
+          es: "Focaccia",
+        },
+        price: 6.0,
+      },
+      {
+        name: {
+          it: "Pizzetta",
+          en: "Pizzetta",
+          fr: "Pizzetta",
+          de: "Pizzetta",
+          es: "Pizzetta",
+        },
+        price: 3.0,
+      },
+      {
+        name: {
+          it: "Focacce alla curcuma",
+          en: "Turmeric focaccia",
+          fr: "Focaccia au curcuma",
+          de: "Kurkuma‑Focaccia",
+          es: "Focaccia de cúrcuma",
+        },
+        price: 6.0,
+      },
+      {
+        name: {
+          it: "Panzerotto",
+          en: "Panzerotto",
+          fr: "Panzerotto",
+          de: "Panzerotto",
+          es: "Panzerotto",
+        },
+        price: 4.5,
+      },
+      {
+        name: {
+          it: "Rustico leccese",
+          en: "Rustico leccese",
+          fr: "Rustico leccese",
+          de: "Rustico leccese",
+          es: "Rustico leccese",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Polpette verdura o carne",
+          en: "Vegetable or meat meatballs",
+          fr: "Boulettes de légumes ou de viande",
+          de: "Gemüse- oder Fleischbällchen",
+          es: "Albóndigas de verdura o carne",
+        },
+        price: 2.5,
+      },
+    ],
   },
   {
     title: {
@@ -833,7 +1202,48 @@ const MENU: MenuSection[] = [
       de: "Fisch-Cicchetti",
       es: "Cicchetti de pescado",
     },
-    items: [],
+    items: [
+      {
+        name: {
+          it: "Salmone e Philadelphia",
+          en: "Salmon & Philadelphia",
+          fr: "Saumon & Philadelphia",
+          de: "Lachs & Philadelphia",
+          es: "Salmón y Philadelphia",
+        },
+        price: 3.0,
+      },
+      {
+        name: {
+          it: "Burrata e cantabrico",
+          en: "Burrata & Cantabrian anchovies",
+          fr: "Burrata & anchois cantabriques",
+          de: "Burrata & Kantabrische Sardellen",
+          es: "Burrata y anchoas cantábricas",
+        },
+        price: 3.0,
+      },
+      {
+        name: {
+          it: "Baccalà mantecato e porro",
+          en: "Creamed cod & leek",
+          fr: "Brandade de morue & poireau",
+          de: "Stockfischcreme & Lauch",
+          es: "Bacalao mantecado y puerro",
+        },
+        price: 3.0,
+      },
+      {
+        name: {
+          it: "Gambero in saor",
+          en: "Sweet‑sour shrimp",
+          fr: "Crevette en saor",
+          de: "Garnele in saor",
+          es: "Gamba en saor",
+        },
+        price: 3.0,
+      },
+    ],
   },
   {
     id: "pesce",
@@ -854,7 +1264,112 @@ const MENU: MenuSection[] = [
       de: "Alkoholfreie Aperitifs",
       es: "Aperitivos sin alcohol",
     },
-    items: [],
+    items: [
+      {
+        name: {
+          it: "Ginger fruit",
+          en: "Ginger fruit",
+          fr: "Ginger fruit",
+          de: "Ginger fruit",
+          es: "Ginger fruit",
+        },
+        description: "Passion fruit, granatina, limone, ginger beer",
+        price: 6.0,
+      },
+      {
+        name: {
+          it: "Mojito analcolico",
+          en: "Virgin mojito",
+          fr: "Mojito sans alcool",
+          de: "Virgin Mojito",
+          es: "Mojito sin alcohol",
+        },
+        description: "Succo di lime, zucchero, lemonsoda, menta",
+        price: 6.0,
+      },
+      {
+        name: {
+          it: "Yellow summer",
+          en: "Yellow summer",
+          fr: "Yellow summer",
+          de: "Yellow summer",
+          es: "Yellow summer",
+        },
+        description: "Succo di ananas, limone, ginger beer",
+        price: 6.0,
+      },
+      {
+        name: {
+          it: "Gin tonic analcolico",
+          en: "Non‑alcoholic gin tonic",
+          fr: "Gin tonic sans alcool",
+          de: "Alkoholfreier Gin Tonic",
+          es: "Gin tonic sin alcohol",
+        },
+        description: "Gin analcolico Tanqueray 0, acqua tonica",
+        price: 7.0,
+      },
+      {
+        name: {
+          it: "Sanbitter passion fruit",
+          en: "Sanbitter passion fruit",
+          fr: "Sanbitter passion fruit",
+          de: "Sanbitter passion fruit",
+          es: "Sanbitter passion fruit",
+        },
+        price: 4.5,
+      },
+      {
+        name: {
+          it: "Grapes al pompelmo",
+          en: "Grapes grapefruit",
+          fr: "Grapes pamplemousse",
+          de: "Grapes Grapefruit",
+          es: "Grapes pomelo",
+        },
+        price: 4.5,
+      },
+      {
+        name: {
+          it: "Ginger beer",
+          en: "Ginger beer",
+          fr: "Ginger beer",
+          de: "Ginger beer",
+          es: "Ginger beer",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Gingerino",
+          en: "Gingerino",
+          fr: "Gingerino",
+          de: "Gingerino",
+          es: "Gingerino",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Cordino",
+          en: "Cordino",
+          fr: "Cordino",
+          de: "Cordino",
+          es: "Cordino",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Sanbitter",
+          en: "Sanbitter",
+          fr: "Sanbitter",
+          de: "Sanbitter",
+          es: "Sanbitter",
+        },
+        price: 4.0,
+      },
+    ],
   },
   {
     id: "aperitivi-alcolici",
@@ -865,7 +1380,303 @@ const MENU: MenuSection[] = [
       de: "Alkoholische Aperitifs",
       es: "Aperitivos con alcohol",
     },
-    items: [],
+    items: [
+      {
+        name: {
+          it: "Spritz Aperol",
+          en: "Spritz Aperol",
+          fr: "Spritz Aperol",
+          de: "Spritz Aperol",
+          es: "Spritz Aperol",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Spritz Campari",
+          en: "Spritz Campari",
+          fr: "Spritz Campari",
+          de: "Spritz Campari",
+          es: "Spritz Campari",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Spritz Cynar",
+          en: "Spritz Cynar",
+          fr: "Spritz Cynar",
+          de: "Spritz Cynar",
+          es: "Spritz Cynar",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Spritz Select",
+          en: "Spritz Select",
+          fr: "Spritz Select",
+          de: "Spritz Select",
+          es: "Spritz Select",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Spritz Luxardo",
+          en: "Spritz Luxardo",
+          fr: "Spritz Luxardo",
+          de: "Spritz Luxardo",
+          es: "Spritz Luxardo",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Spritz bianco",
+          en: "White spritz",
+          fr: "Spritz blanc",
+          de: "Weißer Spritz",
+          es: "Spritz blanco",
+        },
+        price: 3.5,
+      },
+      {
+        name: {
+          it: "Hugo",
+          en: "Hugo",
+          fr: "Hugo",
+          de: "Hugo",
+          es: "Hugo",
+        },
+        price: 4.5,
+      },
+      {
+        name: {
+          it: "Campari soda",
+          en: "Campari soda",
+          fr: "Campari soda",
+          de: "Campari soda",
+          es: "Campari soda",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Americano",
+          en: "Americano",
+          fr: "Americano",
+          de: "Americano",
+          es: "Americano",
+        },
+        description: "Vermut rosso, Campari, acqua gasata",
+        price: 6.0,
+      },
+      {
+        name: {
+          it: "Negroni",
+          en: "Negroni",
+          fr: "Negroni",
+          de: "Negroni",
+          es: "Negroni",
+        },
+        description: "Vermut rosso, Campari, gin",
+        price: 7.0,
+      },
+      {
+        name: {
+          it: "Negroni sbagliato",
+          en: "Negroni sbagliato",
+          fr: "Negroni sbagliato",
+          de: "Negroni sbagliato",
+          es: "Negroni sbagliato",
+        },
+        description: "Vermut rosso, Campari, prosecco",
+        price: 7.0,
+      },
+      {
+        name: {
+          it: "Martini bianco/rosso",
+          en: "Martini white/red",
+          fr: "Martini blanc/rouge",
+          de: "Martini weiß/rot",
+          es: "Martini blanco/rojo",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Tassoni Aperol",
+          en: "Tassoni Aperol",
+          fr: "Tassoni Aperol",
+          de: "Tassoni Aperol",
+          es: "Tassoni Aperol",
+        },
+        price: 5.0,
+      },
+      {
+        name: {
+          it: "Gin tonic",
+          en: "Gin & tonic",
+          fr: "Gin tonic",
+          de: "Gin Tonic",
+          es: "Gin tonic",
+        },
+        description: "Greenall's London dry gin, acqua tonica",
+        price: 7.0,
+      },
+      {
+        name: {
+          it: "Bombay tonic",
+          en: "Bombay tonic",
+          fr: "Bombay tonic",
+          de: "Bombay Tonic",
+          es: "Bombay tonic",
+        },
+        description: "Bombay sapphire dry gin, acqua tonica",
+        price: 8.0,
+      },
+      {
+        name: {
+          it: "Tanqueray tonic",
+          en: "Tanqueray tonic",
+          fr: "Tanqueray tonic",
+          de: "Tanqueray Tonic",
+          es: "Tanqueray tonic",
+        },
+        description: "Tanqueray London dry gin, acqua tonica",
+        price: 8.0,
+      },
+      {
+        name: {
+          it: "Pompelmo tonic",
+          en: "Grapefruit tonic",
+          fr: "Tonic pamplemousse",
+          de: "Grapefruit Tonic",
+          es: "Tónico de pomelo",
+        },
+        description: "Malfi gin rosa al pompelmo, acqua tonica",
+        price: 9.0,
+      },
+      {
+        name: {
+          it: "Mare tonic",
+          en: "Mare tonic",
+          fr: "Mare tonic",
+          de: "Mare Tonic",
+          es: "Mare tonic",
+        },
+        description: "Gin mare mediterranean, acqua tonica",
+        price: 10.0,
+      },
+      {
+        name: {
+          it: "Brockmans tonic",
+          en: "Brockmans tonic",
+          fr: "Brockmans tonic",
+          de: "Brockmans Tonic",
+          es: "Brockmans tonic",
+        },
+        description: "Brockmans gin frutti di bosco, acqua tonica",
+        price: 10.0,
+      },
+      {
+        name: {
+          it: "Gin lemon",
+          en: "Gin lemon",
+          fr: "Gin lemon",
+          de: "Gin lemon",
+          es: "Gin lemon",
+        },
+        price: 7.0,
+      },
+      {
+        name: {
+          it: "Vodka redbull",
+          en: "Vodka Red Bull",
+          fr: "Vodka Red Bull",
+          de: "Wodka Red Bull",
+          es: "Vodka Red Bull",
+        },
+        price: 7.0,
+      },
+      {
+        name: {
+          it: "Mojito",
+          en: "Mojito",
+          fr: "Mojito",
+          de: "Mojito",
+          es: "Mojito",
+        },
+        price: 7.0,
+      },
+      {
+        name: {
+          it: "Mint/basil south side",
+          en: "Mint/basil south side",
+          fr: "Mint/basil south side",
+          de: "Mint/basil south side",
+          es: "Mint/basil south side",
+        },
+        description: "Vodka, lime, zucchero, menta o basilico",
+        price: 8.0,
+      },
+      {
+        name: {
+          it: "Moscow mule",
+          en: "Moscow mule",
+          fr: "Moscow mule",
+          de: "Moscow mule",
+          es: "Moscow mule",
+        },
+        description: "Vodka, ginger beer, succo di lime",
+        price: 8.0,
+      },
+      {
+        name: {
+          it: "Fernet mule",
+          en: "Fernet mule",
+          fr: "Fernet mule",
+          de: "Fernet mule",
+          es: "Fernet mule",
+        },
+        description: "Fernet branca, ginger beer, succo di lime",
+        price: 7.0,
+      },
+      {
+        name: {
+          it: "Italian 75",
+          en: "Italian 75",
+          fr: "Italian 75",
+          de: "Italian 75",
+          es: "Italian 75",
+        },
+        description: "Gin, succo di limone, zucchero, Trento DOC",
+        price: 9.0,
+      },
+      {
+        name: {
+          it: "Grapefruit fizz",
+          en: "Grapefruit fizz",
+          fr: "Grapefruit fizz",
+          de: "Grapefruit fizz",
+          es: "Grapefruit fizz",
+        },
+        description: "Succo di pompelmo, gin, Campari, seltz",
+        price: 9.0,
+      },
+      {
+        name: {
+          it: "Tropic sunset",
+          en: "Tropic sunset",
+          fr: "Tropic sunset",
+          de: "Tropic sunset",
+          es: "Tropic sunset",
+        },
+        description: "Succo di ananas, gin, limone, granatina",
+        price: 9.0,
+      },
+    ],
   },
   {
     title: {
