@@ -254,6 +254,18 @@ function AllergenIcon({ type }: { type: AllergenKey }) {
         </svg>
       );
     case "vegano":
+      return (
+        <svg viewBox="0 0 24 24" className={base} aria-hidden="true">
+          <g fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M4.5 13.5c3-3.6 6.4-5 10-5 2.3 0 3.9.7 4.8 2.1-2.7 2.4-5.6 3.9-9 3.9-3 0-5-1-5.8-1z" />
+            <path d="M13 11.5c-1.6 1.8-2.5 3.6-3 5.6" />
+          </g>
+          <g fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M3.5 8c2.2-1.9 4-2.4 6.2-2.4-1.2 2.2-2.8 3.7-5.2 4.4" />
+            <path d="M20.5 8c-2.2-1.9-4-2.4-6.2-2.4 1.2 2.2 2.8 3.7 5.2 4.4" />
+          </g>
+        </svg>
+      );
     case "vegetariano":
     case "bio":
       return (
