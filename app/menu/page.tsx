@@ -148,6 +148,14 @@ const ALLERGEN_ORDER: AllergenKey[] = [
   "abbattuto",
 ];
 
+const ALLERGEN_SORT_ORDER: Record<AllergenKey, number> = ALLERGEN_ORDER.reduce(
+  (acc, key, index) => {
+    acc[key] = index;
+    return acc;
+  },
+  {} as Record<AllergenKey, number>
+);
+
 const ALLERGENS: Record<AllergenKey, Record<Language, string>> = {
   latte: { it: "Latte", en: "Milk", fr: "Lait", de: "Milch", es: "Leche" },
   uova: { it: "Uova", en: "Eggs", fr: "Œufs", de: "Eier", es: "Huevos" },
@@ -245,7 +253,6 @@ function AllergenIcon({ type }: { type: AllergenKey }) {
           <ellipse cx="12" cy="13" rx="5.5" ry="7" fill="none" stroke="currentColor" strokeWidth="1.6" />
         </svg>
       );
-    case "soia":
     case "vegano":
     case "vegetariano":
     case "bio":
@@ -253,6 +260,25 @@ function AllergenIcon({ type }: { type: AllergenKey }) {
         <svg viewBox="0 0 24 24" className={base} aria-hidden="true">
           <path d="M6 14c6-1 8-6 12-8 0 6-4 11-10 11-1 0-2 0-2-3z" fill="none" stroke="currentColor" strokeWidth="1.6" />
           <path d="M9 12c2 2 4 3 6 4" stroke="currentColor" strokeWidth="1.6" />
+        </svg>
+      );
+    case "soia":
+      return (
+        <svg viewBox="0 0 24 24" className={base} aria-hidden="true">
+          <g fill="currentColor">
+            <g transform="translate(12 8) rotate(20) translate(-12 -8)">
+              <path d="M6.5 9.2c0-2.2 2.7-3.9 5.9-3.9 3.2 0 4.6 1.1 4.6 3 0 2-2.2 5.2-5.3 5.2-3 0-5.2-2.1-5.2-4.3z" />
+              <circle cx="12.2" cy="9.1" r="1.4" fill="white" />
+            </g>
+            <g transform="translate(8.2 14.2) rotate(-35) translate(-8.2 -14.2)">
+              <path d="M3.5 15.2c0-2.2 2.7-3.9 5.9-3.9 3.2 0 4.6 1.1 4.6 3 0 2-2.2 5.2-5.3 5.2-3 0-5.2-2.1-5.2-4.3z" />
+              <circle cx="9.2" cy="15.1" r="1.4" fill="white" />
+            </g>
+            <g transform="translate(15.8 15.2) rotate(45) translate(-15.8 -15.2)">
+              <path d="M11.1 16.2c0-2.2 2.7-3.9 5.9-3.9 3.2 0 4.6 1.1 4.6 3 0 2-2.2 5.2-5.3 5.2-3 0-5.2-2.1-5.2-4.3z" />
+              <circle cx="16.9" cy="16.1" r="1.4" fill="white" />
+            </g>
+          </g>
         </svg>
       );
     case "pesce":
@@ -642,7 +668,7 @@ const MENU: MenuSection[] = [
           de: "Croissants",
           es: "Cruasanes",
         },
-        allergens: ["latte", "glutine"],
+        allergens: ["latte", "glutine", "uova"],
         priceNote: "€1,80–€2,50",
       },
       {
@@ -653,6 +679,7 @@ const MENU: MenuSection[] = [
           de: "Veganer Croissant",
           es: "Cruasán vegano",
         },
+        allergens: ["vegano", "glutine", "soia"],
         price: 2.0,
       },
       {
@@ -663,6 +690,7 @@ const MENU: MenuSection[] = [
           de: "Mini‑Croissant",
           es: "Mini cruasán",
         },
+        allergens: ["uova", "latte", "glutine"],
         price: 1.3,
       },
       {
@@ -1975,7 +2003,13 @@ export default function MenuPage() {
                           </h3>
                           {item.allergens && item.allergens.length > 0 && (
                             <div className="flex items-center gap-1">
-                              {item.allergens.map((key) => {
+                              {[...item.allergens]
+                                .sort(
+                                  (a, b) =>
+                                    (ALLERGEN_SORT_ORDER[a] ?? 999) -
+                                    (ALLERGEN_SORT_ORDER[b] ?? 999)
+                                )
+                                .map((key) => {
                                 const allergen = ALLERGENS[key][lang];
                                 const styles = ALLERGEN_STYLES[key];
                                 return (
