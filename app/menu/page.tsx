@@ -256,14 +256,21 @@ function AllergenIcon({ type }: { type: AllergenKey }) {
     case "vegano":
       return (
         <svg viewBox="0 0 24 24" className={base} aria-hidden="true">
-          <g fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M4.5 13.5c3-3.6 6.4-5 10-5 2.3 0 3.9.7 4.8 2.1-2.7 2.4-5.6 3.9-9 3.9-3 0-5-1-5.8-1z" />
-            <path d="M13 11.5c-1.6 1.8-2.5 3.6-3 5.6" />
-          </g>
-          <g fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M3.5 8c2.2-1.9 4-2.4 6.2-2.4-1.2 2.2-2.8 3.7-5.2 4.4" />
-            <path d="M20.5 8c-2.2-1.9-4-2.4-6.2-2.4 1.2 2.2 2.8 3.7 5.2 4.4" />
-          </g>
+          <path
+            d="M12 3c4.6 3.2 7.5 6.7 7.5 9s-2.9 5.8-7.5 9c-4.6-3.2-7.5-6.7-7.5-9s2.9-5.8 7.5-9z"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M12 6.5v10.2"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.4"
+            strokeLinecap="round"
+          />
         </svg>
       );
     case "vegetariano":
@@ -713,6 +720,7 @@ const MENU: MenuSection[] = [
           de: "Mini‑Gebäck",
           es: "Pastelería pequeña",
         },
+        allergens: ["glutine", "uova", "latte"],
         description: "Riso, ricotta o ricotta e cioccolato",
         price: 2.2,
       },
@@ -724,6 +732,7 @@ const MENU: MenuSection[] = [
           de: "Pasticciotto",
           es: "Pasticciotto",
         },
+        allergens: ["glutine", "uova", "latte"],
         description: "Crema amarena o crema cioccolato",
         price: 2.8,
       },
@@ -735,6 +744,7 @@ const MENU: MenuSection[] = [
           de: "Ricotta‑Sfogliatella",
           es: "Sfogliatella de ricotta",
         },
+        allergens: ["latte", "uova", "glutine"],
         price: 2.8,
       },
       {
@@ -745,6 +755,8 @@ const MENU: MenuSection[] = [
           de: "Kaffeekekse",
           es: "Galletas para café",
         },
+        allergens: ["latte", "uova", "glutine"],
+        description: "Mais, cioccolato o caffè",
         price: 1.0,
       },
       {
@@ -755,6 +767,7 @@ const MENU: MenuSection[] = [
           de: "Kleiner Muffin",
           es: "Muffin pequeño",
         },
+        allergens: ["congelato", "latte", "uova", "glutine"],
         description: "Marmellata",
         price: 1.5,
       },
@@ -766,6 +779,7 @@ const MENU: MenuSection[] = [
           de: "Großer Muffin",
           es: "Muffin grande",
         },
+        allergens: ["congelato", "latte", "uova", "glutine"],
         description: "Marmellata o cioccolato",
         price: 2.8,
       },
@@ -777,6 +791,7 @@ const MENU: MenuSection[] = [
           de: "Donuts",
           es: "Donuts",
         },
+        allergens: ["congelato", "latte", "uova", "glutine"],
         price: 2.5,
       },
       {
@@ -787,6 +802,7 @@ const MENU: MenuSection[] = [
           de: "Mignon‑Gebäck",
           es: "Pastelería mignon",
         },
+        allergens: ["latte", "glutine", "uova"],
         price: 1.6,
       },
       {
@@ -797,6 +813,7 @@ const MENU: MenuSection[] = [
           de: "Krapfen",
           es: "Buñuelo",
         },
+        allergens: ["latte", "uova", "glutine"],
         description: "Crema o zabaione",
         price: 2.6,
       },
@@ -808,6 +825,7 @@ const MENU: MenuSection[] = [
           de: "Mini‑Krapfen",
           es: "Mini buñuelo",
         },
+        allergens: ["latte", "uova", "glutine"],
         description: "Crema, zabaione o vuota con uvetta e pinoli",
         price: 1.3,
       },
@@ -935,6 +953,7 @@ const MENU: MenuSection[] = [
           es: "N.º 3",
         },
         description: "Sedano, mela, kiwi",
+        allergens: ["sedano"],
         price: 5.5,
       },
       {
@@ -992,13 +1011,23 @@ const MENU: MenuSection[] = [
       },
       {
         name: {
+          it: "Spremuta di melograno",
+          en: "Fresh pomegranate juice",
+          fr: "Jus de grenade pressé",
+          de: "Frisch gepresster Granatapfelsaft",
+          es: "Zumo de granada natural",
+        },
+        price: 5.0,
+      },
+      {
+        name: {
           it: "Coca‑Cola asporto",
           en: "Coca‑Cola (to go)",
           fr: "Coca‑Cola à emporter",
           de: "Coca‑Cola (zum Mitnehmen)",
           es: "Coca‑Cola para llevar",
         },
-        price: 3.0,
+        price: 3.5,
       },
       {
         name: {
@@ -1294,7 +1323,72 @@ const MENU: MenuSection[] = [
       de: "Fisch",
       es: "Pescado",
     },
-    items: [],
+    items: [
+      {
+        name: {
+          it: "Ostriche",
+          en: "Oysters",
+          fr: "Huîtres",
+          de: "Austern",
+          es: "Ostras",
+        },
+        allergens: ["molluschi"],
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Scampi crudi",
+          en: "Raw scampi",
+          fr: "Scampis crus",
+          de: "Rohe Scampi",
+          es: "Cigalas crudas",
+        },
+        allergens: ["crostacei"],
+        price: 3.0,
+      },
+      {
+        name: {
+          it: "Tartare tonno",
+          en: "Tuna tartare",
+          fr: "Tartare de thon",
+          de: "Thunfischtatar",
+          es: "Tartar de atún",
+        },
+        price: 8.0,
+      },
+      {
+        name: {
+          it: "Cocktail di gamberetti",
+          en: "Shrimp cocktail",
+          fr: "Cocktail de crevettes",
+          de: "Garnelencocktail",
+          es: "Cóctel de gambas",
+        },
+        allergens: ["crostacei"],
+        price: 8.0,
+      },
+      {
+        name: {
+          it: "Carpaccio di piovra",
+          en: "Octopus carpaccio",
+          fr: "Carpaccio de poulpe",
+          de: "Oktopus‑Carpaccio",
+          es: "Carpaccio de pulpo",
+        },
+        price: 8.0,
+      },
+      {
+        name: {
+          it: "Capasanta gratinata",
+          en: "Gratinated scallop",
+          fr: "Coquille Saint‑Jacques gratinée",
+          de: "Überbackene Jakobsmuschel",
+          es: "Vieira gratinada",
+        },
+        allergens: ["molluschi"],
+        price: 4.5,
+      },
+    ],
   },
   {
     title: {
@@ -1779,6 +1873,7 @@ export default function MenuPage() {
   const [openSection, setOpenSection] = useState<string | null>(null);
   const [showLegend, setShowLegend] = useState(false);
   const [showCentrifugheNotice, setShowCentrifugheNotice] = useState(false);
+  const [showPesceNotice, setShowPesceNotice] = useState(false);
   const [allergenFilter, setAllergenFilter] = useState<AllergenKey | null>(null);
   const [allergenHint, setAllergenHint] = useState<AllergenKey | null>(null);
   const [allergenHintItem, setAllergenHintItem] = useState<string | null>(null);
@@ -1792,6 +1887,7 @@ export default function MenuPage() {
     weekday: "short",
     timeZone: "Europe/Rome",
   }).format(new Date()) === "Fri";
+  const showPesceAlways = true;
   const romeTime = new Intl.DateTimeFormat("en-GB", {
     hour: "2-digit",
     minute: "2-digit",
@@ -1934,6 +2030,28 @@ export default function MenuPage() {
           </div>
         </div>
       )}
+      {showPesceNotice && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 px-4"
+          onClick={() => setShowPesceNotice(false)}
+        >
+          <div className="w-full max-w-sm rounded-2xl border border-neutral-200 bg-white p-5 text-neutral-900 shadow-xl">
+            <h3 className="text-base font-semibold">Info</h3>
+            <p className="mt-2 text-sm text-neutral-600">
+              {t("fridayOnly")}
+            </p>
+            <div className="mt-4 flex justify-end">
+              <button
+                type="button"
+                onClick={() => setShowPesceNotice(false)}
+                className="rounded-full border border-neutral-200 px-4 py-2 text-sm font-semibold text-neutral-700 hover:bg-neutral-50"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {allergenFilter && (
         <div className="flex flex-wrap items-center gap-3 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm text-neutral-600">
@@ -1953,7 +2071,9 @@ export default function MenuPage() {
         const isOpen = openSection === section.title.it;
         const isPesce = section.id === "pesce";
         const isCentrifughe = section.id === "centrifughe";
-        const isHiddenToday = (isPesce && !isFriday) || (isCentrifughe && isOutsideCentrifugheHours);
+        const isHiddenToday =
+          (isPesce && !isFriday && !showPesceAlways) ||
+          (isCentrifughe && isOutsideCentrifugheHours);
         const filteredItems = allergenFilter
           ? section.items.filter((item) => item.allergens?.includes(allergenFilter))
           : section.items;
@@ -1970,6 +2090,9 @@ export default function MenuPage() {
                 if (isCentrifughe && isOutsideCentrifugheHours) {
                   setShowCentrifugheNotice(true);
                   return;
+                }
+                if (isPesce && !isFriday && !isOpen) {
+                  setShowPesceNotice(true);
                 }
                 toggleSection(section.title.it, isOpen, event.currentTarget);
               }}
