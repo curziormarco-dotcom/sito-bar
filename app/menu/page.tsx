@@ -1897,7 +1897,7 @@ export default function MenuPage() {
   const isAfter1830 = romeTime >= "18:30";
   const isBefore0600 = romeTime < "06:00";
   const isOutsideCentrifugheHours = isAfter1830 || isBefore0600;
-  const hashScrollOffset = 44;
+  const hashScrollOffset = 60;
 
   const toggleSection = (sectionKey: string, isOpen: boolean, anchor?: HTMLElement) => {
     if (anchor) {
