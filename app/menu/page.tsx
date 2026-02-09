@@ -1940,7 +1940,7 @@ export default function MenuPage() {
         const el = document.getElementById(hash);
         if (el) {
           const top = el.getBoundingClientRect().top + window.scrollY;
-          window.scrollTo({ top: Math.max(0, top - 28), behavior: "smooth" });
+          window.scrollTo({ top: Math.max(0, top - 44), behavior: "smooth" });
           const button = el.querySelector("button");
           if (button) {
             (button as HTMLButtonElement).focus({ preventScroll: true });
