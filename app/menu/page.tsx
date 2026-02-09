@@ -11,6 +11,8 @@ type MenuItem = {
   description?: string;
   price?: number;
   priceNote?: string;
+  glassPrice?: number;
+  bottlePrice?: number;
   tag?: string;
   allergens?: AllergenKey[];
 };
@@ -1831,7 +1833,7 @@ const MENU: MenuSection[] = [
         },
         description:
           "Un Trentodoc che è stato a lungo custodito e riservato esclusivamente per la famiglia e che veniva sboccato à la volée. In occasione dei suoi 130 anni, Endrizzi vuole condividere questa cuvée particolare a dosaggio zero con chi saprà apprezzarne l'unicità. Dopo una lunga maturazione di almeno 84 mesi sui lieviti, mostra aromi eleganti e maturi di tabacco bianco, frutta candita e liquirizia, insieme a note speziate abbinate a una mineralità vivace.",
-        price: 100.0,
+        bottlePrice: 100.0,
       },
       {
         name: {
@@ -1841,7 +1843,7 @@ const MENU: MenuSection[] = [
           de: "Champagne \"Launois Lebrun\" Millesime by Blanc de Blancs Brut Grand' Cru 100% Chardonnay",
           es: "Champagne \"Launois Lebrun\" Millesime by Blanc de Blancs Brut Grand' Cru 100% Chardonnay",
         },
-        price: 70.0,
+        bottlePrice: 70.0,
       },
       {
         name: {
@@ -1851,7 +1853,7 @@ const MENU: MenuSection[] = [
           de: "Champagne \"Launois Lebrun\" Tradition Brut 70% Chardonnay 30% Pinot Nero",
           es: "Champagne \"Launois Lebrun\" Tradition Brut 70% Chardonnay 30% Pinot Nero",
         },
-        price: 60.0,
+        bottlePrice: 60.0,
       },
       {
         name: {
@@ -1861,7 +1863,7 @@ const MENU: MenuSection[] = [
           de: "Trento DOC Riserva Piancastello Zero",
           es: "Trento DOC Riserva Piancastello Zero",
         },
-        price: 35.0,
+        bottlePrice: 35.0,
       },
       {
         name: {
@@ -1871,7 +1873,7 @@ const MENU: MenuSection[] = [
           de: "Chardonnay MASETTO D'ORÈ",
           es: "Chardonnay MASETTO D'ORÈ",
         },
-        price: 35.0,
+        bottlePrice: 35.0,
       },
       {
         name: {
@@ -1883,7 +1885,8 @@ const MENU: MenuSection[] = [
         },
         description:
           "Crémant è realizzato utilizzando il metodo tradizionale Champagne da un'annata. Le mele mature e gli aromi di agrumi profumano il naso. La bocca elegante e le bolle fini portano a un finale fresco.",
-        priceNote: "6€ 30€",
+        glassPrice: 6.0,
+        bottlePrice: 30.0,
       },
       {
         name: {
@@ -1894,8 +1897,9 @@ const MENU: MenuSection[] = [
           es: "Trento DOC brut",
         },
         description:
-          "Chardonnay. Maturazione sui lieviti in bottiglia di oltre 24 mesi. Sapido al gusto, ma allo stesso tempo vivace e fresco. [Bottiglia da asporto €25]",
-        price: 5.0,
+          "Chardonnay. Maturazione sui lieviti in bottiglia di oltre 24 mesi. Sapido al gusto, ma allo stesso tempo vivace e fresco.",
+        glassPrice: 5.0,
+        bottlePrice: 25.0,
       },
     ],
   },
@@ -1941,6 +1945,10 @@ function formatEUR(value: number) {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   }).format(value);
+}
+
+function formatEURSuffix(value: number) {
+  return `${value.toFixed(2).replace(".", ",")}€`;
 }
 
 /* =======================
@@ -2153,6 +2161,7 @@ export default function MenuPage() {
         const isOpen = openSection === section.title.it;
         const isPesce = section.id === "pesce";
         const isCentrifughe = section.id === "centrifughe";
+        const isViniBianchi = section.title.it === "Vini Bianchi";
         const isHiddenToday =
           (isPesce && !isFriday && !showPesceAlways) ||
           (isCentrifughe && isOutsideCentrifugheHours);
@@ -2198,6 +2207,14 @@ export default function MenuPage() {
             {/* CONTENUTO */}
             {isOpen && (
               <div className="px-1 pb-6 space-y-4">
+                {isViniBianchi && !isHiddenToday && filteredItems.length > 0 && (
+                  <div className="flex justify-end text-[11px] uppercase tracking-[0.18em] text-neutral-400">
+                    <div className="grid min-w-[140px] grid-cols-2 gap-4">
+                      <span className="text-left">Calice</span>
+                      <span className="text-right">Bottiglia</span>
+                    </div>
+                  </div>
+                )}
                 {isHiddenToday ? (
                   <p className="text-sm text-neutral-500">
                     {isPesce ? t("fridayOnly") : t("until1830")}
@@ -2275,14 +2292,35 @@ export default function MenuPage() {
                           )}
                         </div>
 
-                        <div className="font-semibold text-neutral-800">
-                          {typeof item.price === "number" ? formatEUR(item.price) : null}
-                          {item.priceNote && (
-                            <span className={item.price ? "ml-2 text-xs font-normal text-neutral-500" : ""}>
-                              {item.priceNote}
+                        {isViniBianchi ? (
+                          <div className="grid min-w-[140px] grid-cols-2 gap-4 text-sm font-semibold text-neutral-800">
+                            <span className="text-left">
+                              {typeof item.glassPrice === "number"
+                                ? formatEURSuffix(item.glassPrice)
+                                : ""}
                             </span>
-                          )}
-                        </div>
+                            <span className="text-right">
+                              {typeof item.bottlePrice === "number"
+                                ? formatEURSuffix(item.bottlePrice)
+                                : ""}
+                            </span>
+                          </div>
+                        ) : (
+                          <div className="font-semibold text-neutral-800">
+                            {typeof item.price === "number" ? formatEUR(item.price) : null}
+                            {item.priceNote && (
+                              <span
+                                className={
+                                  item.price
+                                    ? "ml-2 whitespace-nowrap text-xs font-normal text-neutral-500"
+                                    : "whitespace-nowrap"
+                                }
+                              >
+                                {item.priceNote}
+                              </span>
+                            )}
+                          </div>
+                        )}
                       </div>
                     </article>
                   ))
