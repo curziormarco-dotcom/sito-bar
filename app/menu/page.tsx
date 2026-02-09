@@ -1897,6 +1897,7 @@ export default function MenuPage() {
   const isAfter1830 = romeTime >= "18:30";
   const isBefore0600 = romeTime < "06:00";
   const isOutsideCentrifugheHours = isAfter1830 || isBefore0600;
+  const hashScrollOffset = 44;
 
   const toggleSection = (sectionKey: string, isOpen: boolean, anchor?: HTMLElement) => {
     if (anchor) {
@@ -1940,7 +1941,7 @@ export default function MenuPage() {
         const el = document.getElementById(hash);
         if (el) {
           const top = el.getBoundingClientRect().top + window.scrollY;
-          window.scrollTo({ top: Math.max(0, top - 44), behavior: "smooth" });
+          window.scrollTo({ top: Math.max(0, top - hashScrollOffset), behavior: "smooth" });
           const button = el.querySelector("button");
           if (button) {
             (button as HTMLButtonElement).focus({ preventScroll: true });
