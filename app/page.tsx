@@ -105,6 +105,9 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     call: "Chiama",
     drinkAlt: "Aperitivo",
     fridayOnlyAlert: "Disponibile solo il venerdì.",
+    leaveReviewTitle: "Lascia una recensione",
+    leaveReviewSubtitle: "Racconta la tua esperienza su Google.",
+    leaveReviewCta: "Apri recensioni",
   },
   en: {
     heroKicker: "BAR DA LUCIANO",
@@ -122,6 +125,9 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     call: "Call",
     drinkAlt: "Aperitif",
     fridayOnlyAlert: "Available only on Fridays.",
+    leaveReviewTitle: "Leave a review",
+    leaveReviewSubtitle: "Share your experience on Google.",
+    leaveReviewCta: "Open reviews",
   },
   fr: {
     heroKicker: "BAR DA LUCIANO",
@@ -139,6 +145,9 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     call: "Appeler",
     drinkAlt: "Apéritif",
     fridayOnlyAlert: "Disponible uniquement le vendredi.",
+    leaveReviewTitle: "Laisser un avis",
+    leaveReviewSubtitle: "Partage ton expérience sur Google.",
+    leaveReviewCta: "Ouvrir les avis",
   },
   de: {
     heroKicker: "BAR DA LUCIANO",
@@ -156,6 +165,9 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     call: "Anrufen",
     drinkAlt: "Aperitif",
     fridayOnlyAlert: "Nur freitags verfügbar.",
+    leaveReviewTitle: "Bewertung hinterlassen",
+    leaveReviewSubtitle: "Teile deine Erfahrung auf Google.",
+    leaveReviewCta: "Bewertungen öffnen",
   },
   es: {
     heroKicker: "BAR DA LUCIANO",
@@ -173,6 +185,9 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     call: "Llamar",
     drinkAlt: "Aperitivo",
     fridayOnlyAlert: "Disponible solo los viernes.",
+    leaveReviewTitle: "Deja una reseña",
+    leaveReviewSubtitle: "Comparte tu experiencia en Google.",
+    leaveReviewCta: "Abrir reseñas",
   },
 };
 
@@ -376,6 +391,27 @@ export default function HomePage() {
             </div>
           </section>
         )}
+
+        <section className="rounded-[28px] border border-neutral-200 bg-white p-10 sm:p-12">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight">
+                {t("leaveReviewTitle")}
+              </h2>
+              <p className="mt-2 text-neutral-600">
+                {t("leaveReviewSubtitle")}
+              </p>
+            </div>
+            <a
+              href="https://www.google.com/search?client=safari&hs=FPz9&sca_esv=074920bdea4960d4&rls=en&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_xztH0BMykLPYJ2yUKG24IswJDdqjMpbJsR6pZofdiNDCebTRuBkcKRCunEOQyf_gcLSItw9QjEmHthYUk5XMsr1zNmOf&q=Bar+Da+Luciano+Recensioni&sa=X&ved=2ahUKEwiAlZbHxM2SAxWXhP0HHUv-A6kQ0bkNegQIHxAH&biw=960&bih=933&dpr=1"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex rounded-full border border-neutral-300 px-6 py-3 text-sm font-semibold hover:bg-neutral-50 transition"
+            >
+              {t("leaveReviewCta")}
+            </a>
+          </div>
+        </section>
 
         {/* PRENOTA */}
         <section
