@@ -1933,6 +1933,9 @@ export default function MenuPage() {
       const target = MENU.find((section) => section.id === hash);
       if (!target) return;
       setOpenSection(target.title.it);
+      if (hash === "pesce" && !isFriday) {
+        setShowPesceNotice(true);
+      }
       setTimeout(() => {
         const el = document.getElementById(hash);
         if (el) {

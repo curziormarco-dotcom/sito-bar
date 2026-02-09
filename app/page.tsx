@@ -190,11 +190,6 @@ export default function HomePage() {
   const t = (key: string) => HOME_COPY[lang][key] ?? key;
   const [fridayIndex, setFridayIndex] = useState(0);
   const fridayMessages = FRIDAY_ROTATION[lang];
-  const [showFridayNotice, setShowFridayNotice] = useState(false);
-  const isFriday = new Intl.DateTimeFormat("en-US", {
-    weekday: "short",
-    timeZone: "Europe/Rome",
-  }).format(new Date()) === "Fri";
 
   useEffect(() => {
     setFridayIndex(0);
@@ -206,28 +201,6 @@ export default function HomePage() {
 
   return (
     <main className="bg-[#fbfaf7] text-neutral-900">
-      {showFridayNotice && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 px-4"
-          onClick={() => setShowFridayNotice(false)}
-        >
-          <div className="w-full max-w-sm rounded-2xl border border-neutral-200 bg-white p-5 text-neutral-900 shadow-xl">
-            <h3 className="text-base font-semibold">Info</h3>
-            <p className="mt-2 text-sm text-neutral-600">
-              {t("fridayOnlyAlert")}
-            </p>
-            <div className="mt-4 flex justify-end">
-              <button
-                type="button"
-                onClick={() => setShowFridayNotice(false)}
-                className="rounded-full border border-neutral-200 px-4 py-2 text-sm font-semibold text-neutral-700 hover:bg-neutral-50"
-              >
-                OK
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
       <div className="mx-auto max-w-6xl px-6 pt-1 pb-14 sm:pt-6 sm:pb-20 space-y-6">
         {/* HERO */}
         <section
@@ -291,12 +264,6 @@ export default function HomePage() {
             <Link
               href="/menu#pesce"
               className="rounded-2xl border border-neutral-200 bg-white p-6 h-fit transition hover:bg-neutral-50"
-              onClick={(event) => {
-                if (!isFriday) {
-                  event.preventDefault();
-                  setShowFridayNotice(true);
-                }
-              }}
             >
               <h3 className="text-xs tracking-[0.28em] text-neutral-500">
                 {HIGHLIGHTS[1].title[lang].toUpperCase()}
