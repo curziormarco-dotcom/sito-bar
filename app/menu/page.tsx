@@ -561,7 +561,7 @@ const MENU: MenuSection[] = [
       },
       {
         name: {
-          it: "Cappuccio soia",
+          it: "Cappuccino soia",
           en: "Soy cappuccino",
           fr: "Cappuccino au soja",
           de: "Soja-Cappuccino",
@@ -660,7 +660,7 @@ const MENU: MenuSection[] = [
       },
       {
         name: {
-          it: "The assortiti",
+          it: "Tè assortiti",
           en: "Assorted teas",
           fr: "Thés assortis",
           de: "Gemischte Tees",
@@ -1485,7 +1485,7 @@ const MENU: MenuSection[] = [
       },
       {
         name: {
-          it: "Cordino",
+          it: "Crodino",
           en: "Cordino",
           fr: "Cordino",
           de: "Cordino",
