@@ -1883,7 +1883,7 @@ const MENU: MenuSection[] = [
         },
         description:
           "Crémant è realizzato utilizzando il metodo tradizionale Champagne da un'annata. Le mele mature e gli aromi di agrumi profumano il naso. La bocca elegante e le bolle fini portano a un finale fresco.",
-        priceNote: "€6 / €30",
+        priceNote: "6€ 30€",
       },
       {
         name: {
