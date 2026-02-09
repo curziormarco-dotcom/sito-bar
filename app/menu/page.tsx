@@ -842,7 +842,7 @@ const MENU: MenuSection[] = [
     items: [
       {
         name: {
-          it: "Succo pesca",
+          it: "Succo di pesca",
           en: "Peach juice",
           fr: "Jus de pêche",
           de: "Pfirsichsaft",
@@ -852,7 +852,7 @@ const MENU: MenuSection[] = [
       },
       {
         name: {
-          it: "Succo ace",
+          it: "Succo ACE",
           en: "ACE juice",
           fr: "Jus ACE",
           de: "ACE-Saft",
@@ -862,7 +862,7 @@ const MENU: MenuSection[] = [
       },
       {
         name: {
-          it: "Succo pera",
+          it: "Succo di pera",
           en: "Pear juice",
           fr: "Jus de poire",
           de: "Birnensaft",
@@ -872,7 +872,7 @@ const MENU: MenuSection[] = [
       },
       {
         name: {
-          it: "Succo ananas",
+          it: "Succo di ananas",
           en: "Pineapple juice",
           fr: "Jus d'ananas",
           de: "Ananassaft",
@@ -882,7 +882,7 @@ const MENU: MenuSection[] = [
       },
       {
         name: {
-          it: "Succo pompelmo",
+          it: "Succo di pompelmo",
           en: "Grapefruit juice",
           fr: "Jus de pamplemousse",
           de: "Grapefruitsaft",
@@ -892,7 +892,7 @@ const MENU: MenuSection[] = [
       },
       {
         name: {
-          it: "Succo mirtillo",
+          it: "Succo di mirtillo",
           en: "Blueberry juice",
           fr: "Jus de myrtille",
           de: "Blaubeersaft",
@@ -902,7 +902,7 @@ const MENU: MenuSection[] = [
       },
       {
         name: {
-          it: "Succo pomodoro",
+          it: "Succo di pomodoro",
           en: "Tomato juice",
           fr: "Jus de tomate",
           de: "Tomatensaft",
@@ -1031,7 +1031,7 @@ const MENU: MenuSection[] = [
       },
       {
         name: {
-          it: "Coca‑Cola bottiglia vetro",
+          it: "Coca‑Cola bottiglia in vetro",
           en: "Coca‑Cola (glass bottle)",
           fr: "Coca‑Cola (bouteille en verre)",
           de: "Coca‑Cola (Glasflasche)",
@@ -1111,7 +1111,7 @@ const MENU: MenuSection[] = [
       },
       {
         name: {
-          it: "Bottiglietta d'acqua naturale/gasata 0,5l",
+          it: "Bottiglietta d'acqua naturale/gasata 0,5 L",
           en: "Water bottle still/sparkling 0.5L",
           fr: "Bouteille d’eau plate/gazeuse 0,5 l",
           de: "Wasser still/sprudel 0,5 l",
@@ -1486,10 +1486,10 @@ const MENU: MenuSection[] = [
       {
         name: {
           it: "Crodino",
-          en: "Cordino",
-          fr: "Cordino",
-          de: "Cordino",
-          es: "Cordino",
+          en: "Crodino",
+          fr: "Crodino",
+          de: "Crodino",
+          es: "Crodino",
         },
         price: 4.0,
       },
