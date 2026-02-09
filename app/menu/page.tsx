@@ -1939,7 +1939,8 @@ export default function MenuPage() {
       setTimeout(() => {
         const el = document.getElementById(hash);
         if (el) {
-          el.scrollIntoView({ block: "start", behavior: "smooth" });
+          const top = el.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({ top: Math.max(0, top - 28), behavior: "smooth" });
           const button = el.querySelector("button");
           if (button) {
             (button as HTMLButtonElement).focus({ preventScroll: true });
