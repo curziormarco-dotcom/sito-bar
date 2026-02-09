@@ -1820,7 +1820,84 @@ const MENU: MenuSection[] = [
       de: "Weißweine",
       es: "Vinos blancos",
     },
-    items: [],
+    items: [
+      {
+        name: {
+          it: "Trento DOC Masetto privè riserva millesima 2014 cantina Endrizzi /bottiglia con cofanetto in legno/",
+          en: "Trento DOC Masetto privè Riserva 2014, Endrizzi winery /bottle with wooden case/",
+          fr: "Trento DOC Masetto privè réserve 2014, cave Endrizzi /bouteille avec coffret en bois/",
+          de: "Trento DOC Masetto privè Riserva 2014, Weingut Endrizzi /Flasche mit Holzkassette/",
+          es: "Trento DOC Masetto privè reserva 2014, bodega Endrizzi /botella con estuche de madera/",
+        },
+        description:
+          "Un Trentodoc che è stato a lungo custodito e riservato esclusivamente per la famiglia e che veniva sboccato à la volée. In occasione dei suoi 130 anni, Endrizzi vuole condividere questa cuvée particolare a dosaggio zero con chi saprà apprezzarne l'unicità. Dopo una lunga maturazione di almeno 84 mesi sui lieviti, mostra aromi eleganti e maturi di tabacco bianco, frutta candita e liquirizia, insieme a note speziate abbinate a una mineralità vivace.",
+        price: 100.0,
+      },
+      {
+        name: {
+          it: "Champagne \"Launois Lebrun\" Millesime by Blanc de Blancs Brut Grand' Cru 100% Chardonnay",
+          en: "Champagne \"Launois Lebrun\" Millesime by Blanc de Blancs Brut Grand' Cru 100% Chardonnay",
+          fr: "Champagne \"Launois Lebrun\" Millesime by Blanc de Blancs Brut Grand' Cru 100% Chardonnay",
+          de: "Champagne \"Launois Lebrun\" Millesime by Blanc de Blancs Brut Grand' Cru 100% Chardonnay",
+          es: "Champagne \"Launois Lebrun\" Millesime by Blanc de Blancs Brut Grand' Cru 100% Chardonnay",
+        },
+        price: 70.0,
+      },
+      {
+        name: {
+          it: "Champagne \"Launois Lebrun\" Tradition Brut 70% Chardonnay 30% Pinot Nero",
+          en: "Champagne \"Launois Lebrun\" Tradition Brut 70% Chardonnay 30% Pinot Nero",
+          fr: "Champagne \"Launois Lebrun\" Tradition Brut 70% Chardonnay 30% Pinot Nero",
+          de: "Champagne \"Launois Lebrun\" Tradition Brut 70% Chardonnay 30% Pinot Nero",
+          es: "Champagne \"Launois Lebrun\" Tradition Brut 70% Chardonnay 30% Pinot Nero",
+        },
+        price: 60.0,
+      },
+      {
+        name: {
+          it: "Trento DOC riserva Piancastello zero",
+          en: "Trento DOC Riserva Piancastello Zero",
+          fr: "Trento DOC Riserva Piancastello Zero",
+          de: "Trento DOC Riserva Piancastello Zero",
+          es: "Trento DOC Riserva Piancastello Zero",
+        },
+        price: 35.0,
+      },
+      {
+        name: {
+          it: "Chardonnay MASETTO D'ORÈ",
+          en: "Chardonnay MASETTO D'ORÈ",
+          fr: "Chardonnay MASETTO D'ORÈ",
+          de: "Chardonnay MASETTO D'ORÈ",
+          es: "Chardonnay MASETTO D'ORÈ",
+        },
+        price: 35.0,
+      },
+      {
+        name: {
+          it: "Crémant brut",
+          en: "Crémant brut",
+          fr: "Crémant brut",
+          de: "Crémant brut",
+          es: "Crémant brut",
+        },
+        description:
+          "Crémant è realizzato utilizzando il metodo tradizionale Champagne da un'annata. Le mele mature e gli aromi di agrumi profumano il naso. La bocca elegante e le bolle fini portano a un finale fresco.",
+        priceNote: "€6 / €30",
+      },
+      {
+        name: {
+          it: "Trento DOC brut",
+          en: "Trento DOC brut",
+          fr: "Trento DOC brut",
+          de: "Trento DOC brut",
+          es: "Trento DOC brut",
+        },
+        description:
+          "Chardonnay. Maturazione sui lieviti in bottiglia di oltre 24 mesi. Sapido al gusto, ma allo stesso tempo vivace e fresco. [Bottiglia da asporto €25]",
+        price: 5.0,
+      },
+    ],
   },
   {
     title: {
