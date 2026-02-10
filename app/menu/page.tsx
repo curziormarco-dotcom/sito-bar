@@ -1959,6 +1959,7 @@ export default function MenuPage() {
   const [showLegend, setShowLegend] = useState(false);
   const [showCentrifugheNotice, setShowCentrifugheNotice] = useState(false);
   const [showPesceNotice, setShowPesceNotice] = useState(false);
+  const [openWineDescription, setOpenWineDescription] = useState<string | null>(null);
   const [allergenFilter, setAllergenFilter] = useState<AllergenKey | null>(null);
   const [allergenHint, setAllergenHint] = useState<AllergenKey | null>(null);
   const [allergenHintItem, setAllergenHintItem] = useState<string | null>(null);
@@ -2286,9 +2287,30 @@ export default function MenuPage() {
                         </div>
 
                           {item.description && (
-                            <p className="mt-1 text-sm text-neutral-500">
-                              {item.description}
-                            </p>
+                            isViniBianchi ? (
+                              <div className="mt-2">
+                                <button
+                                  type="button"
+                                  onClick={() =>
+                                    setOpenWineDescription((current) =>
+                                      current === item.name.it ? null : item.name.it
+                                    )
+                                  }
+                                  className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-400 hover:text-neutral-600"
+                                >
+                                  Descrizione
+                                </button>
+                                {openWineDescription === item.name.it && (
+                                  <p className="mt-2 text-sm text-neutral-500">
+                                    {item.description}
+                                  </p>
+                                )}
+                              </div>
+                            ) : (
+                              <p className="mt-1 text-sm text-neutral-500">
+                                {item.description}
+                              </p>
+                            )
                           )}
                         </div>
 
