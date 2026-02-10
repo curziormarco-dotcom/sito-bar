@@ -2209,7 +2209,7 @@ export default function MenuPage() {
               <div className="px-1 pb-6 space-y-4">
                 {isViniBianchi && !isHiddenToday && filteredItems.length > 0 && (
                   <div className="flex justify-end text-[11px] uppercase tracking-[0.18em] text-neutral-400">
-                    <div className="grid min-w-[140px] grid-cols-2 gap-4">
+                    <div className="grid min-w-[86px] grid-cols-2 gap-1 sm:min-w-[100px] sm:gap-2">
                       <span className="text-left">Calice</span>
                       <span className="text-right">Bottiglia</span>
                     </div>
@@ -2293,7 +2293,7 @@ export default function MenuPage() {
                         </div>
 
                         {isViniBianchi ? (
-                          <div className="grid min-w-[140px] grid-cols-2 gap-4 text-sm font-semibold text-neutral-800">
+                          <div className="grid min-w-[86px] grid-cols-2 gap-1 text-sm font-semibold text-neutral-800 sm:min-w-[100px] sm:gap-2">
                             <span className="text-left">
                               {typeof item.glassPrice === "number"
                                 ? formatEURSuffix(item.glassPrice)
