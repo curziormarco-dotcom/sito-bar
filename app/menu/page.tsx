@@ -8,7 +8,7 @@ import { useLanguage, type Language } from "../locale-provider";
 ======================= */
 type MenuItem = {
   name: Record<Language, string>;
-  description?: string;
+  description?: Record<Language, string> | string;
   price?: number;
   priceNote?: string;
   glassPrice?: number;
@@ -74,6 +74,9 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     filterOn: "Filtro attivo:",
     clearFilter: "Rimuovi filtro",
     noMatches: "Nessun prodotto con questo allergene.",
+    descriptionLabel: "Descrizione",
+    glassLabel: "Calice",
+    bottleLabel: "Bottiglia",
   },
   en: {
     menu: "Menu",
@@ -86,6 +89,9 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     filterOn: "Filter active:",
     clearFilter: "Clear filter",
     noMatches: "No products with this allergen.",
+    descriptionLabel: "Description",
+    glassLabel: "Glass",
+    bottleLabel: "Bottle",
   },
   fr: {
     menu: "Menu",
@@ -98,6 +104,9 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     filterOn: "Filtre actif :",
     clearFilter: "Retirer le filtre",
     noMatches: "Aucun produit avec cet allergène.",
+    descriptionLabel: "Description",
+    glassLabel: "Verre",
+    bottleLabel: "Bouteille",
   },
   de: {
     menu: "Menü",
@@ -110,6 +119,9 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     filterOn: "Aktiver Filter:",
     clearFilter: "Filter entfernen",
     noMatches: "Keine Produkte mit diesem Allergen.",
+    descriptionLabel: "Beschreibung",
+    glassLabel: "Glas",
+    bottleLabel: "Flasche",
   },
   es: {
     menu: "Menú",
@@ -122,6 +134,9 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     filterOn: "Filtro activo:",
     clearFilter: "Quitar filtro",
     noMatches: "No hay productos con este alérgeno.",
+    descriptionLabel: "Descripción",
+    glassLabel: "Copa",
+    bottleLabel: "Botella",
   },
 };
 
@@ -723,7 +738,13 @@ const MENU: MenuSection[] = [
           es: "Pastelería pequeña",
         },
         allergens: ["glutine", "uova", "latte"],
-        description: "Riso, ricotta o ricotta e cioccolato",
+        description: {
+          it: "Riso, ricotta o ricotta e cioccolato",
+          en: "Rice, ricotta or ricotta and chocolate",
+          fr: "Riz, ricotta ou ricotta et chocolat",
+          de: "Reis, Ricotta oder Ricotta und Schokolade",
+          es: "Arroz, ricotta o ricotta y chocolate",
+        },
         price: 2.2,
       },
       {
@@ -735,7 +756,13 @@ const MENU: MenuSection[] = [
           es: "Pasticciotto",
         },
         allergens: ["glutine", "uova", "latte"],
-        description: "Crema amarena o crema cioccolato",
+        description: {
+          it: "Crema amarena o crema cioccolato",
+          en: "Sour cherry cream or chocolate cream",
+          fr: "Crème à la griotte ou crème au chocolat",
+          de: "Sauerkirschcreme oder Schokocreme",
+          es: "Crema de guinda o crema de chocolate",
+        },
         price: 2.8,
       },
       {
@@ -758,7 +785,13 @@ const MENU: MenuSection[] = [
           es: "Galletas para café",
         },
         allergens: ["latte", "uova", "glutine"],
-        description: "Mais, cioccolato o caffè",
+        description: {
+          it: "Mais, cioccolato o caffè",
+          en: "Corn, chocolate or coffee",
+          fr: "Maïs, chocolat ou café",
+          de: "Mais, Schokolade oder Kaffee",
+          es: "Maíz, chocolate o café",
+        },
         price: 1.0,
       },
       {
@@ -770,7 +803,13 @@ const MENU: MenuSection[] = [
           es: "Muffin pequeño",
         },
         allergens: ["congelato", "latte", "uova", "glutine"],
-        description: "Marmellata",
+        description: {
+          it: "Marmellata",
+          en: "Jam",
+          fr: "Confiture",
+          de: "Marmelade",
+          es: "Mermelada",
+        },
         price: 1.5,
       },
       {
@@ -782,7 +821,13 @@ const MENU: MenuSection[] = [
           es: "Muffin grande",
         },
         allergens: ["congelato", "latte", "uova", "glutine"],
-        description: "Marmellata o cioccolato",
+        description: {
+          it: "Marmellata o cioccolato",
+          en: "Jam or chocolate",
+          fr: "Confiture ou chocolat",
+          de: "Marmelade oder Schokolade",
+          es: "Mermelada o chocolate",
+        },
         price: 2.8,
       },
       {
@@ -816,7 +861,13 @@ const MENU: MenuSection[] = [
           es: "Buñuelo",
         },
         allergens: ["latte", "uova", "glutine"],
-        description: "Crema o zabaione",
+        description: {
+          it: "Crema o zabaione",
+          en: "Custard or zabaione",
+          fr: "Crème pâtissière ou sabayon",
+          de: "Vanillecreme oder Zabaione",
+          es: "Crema pastelera o zabaione",
+        },
         price: 2.6,
       },
       {
@@ -828,7 +879,13 @@ const MENU: MenuSection[] = [
           es: "Mini buñuelo",
         },
         allergens: ["latte", "uova", "glutine"],
-        description: "Crema, zabaione o vuota con uvetta e pinoli",
+        description: {
+          it: "Crema, zabaione o vuota con uvetta e pinoli",
+          en: "Custard, zabaione or plain with raisins and pine nuts",
+          fr: "Crème, sabayon ou nature avec raisins secs et pignons",
+          de: "Vanillecreme, Zabaione oder pur mit Rosinen und Pinienkernen",
+          es: "Crema, zabaione o sola con pasas y piñones",
+        },
         price: 1.3,
       },
     ],
@@ -932,7 +989,13 @@ const MENU: MenuSection[] = [
           de: "Nr. 1",
           es: "N.º 1",
         },
-        description: "Arancia, carota, limone",
+        description: {
+          it: "Arancia, carota, limone",
+          en: "Orange, carrot, lemon",
+          fr: "Orange, carotte, citron",
+          de: "Orange, Karotte, Zitrone",
+          es: "Naranja, zanahoria, limón",
+        },
         price: 5.5,
       },
       {
@@ -943,7 +1006,13 @@ const MENU: MenuSection[] = [
           de: "Nr. 2",
           es: "N.º 2",
         },
-        description: "Mela, arancia, carota, zenzero",
+        description: {
+          it: "Mela, arancia, carota, zenzero",
+          en: "Apple, orange, carrot, ginger",
+          fr: "Pomme, orange, carotte, gingembre",
+          de: "Apfel, Orange, Karotte, Ingwer",
+          es: "Manzana, naranja, zanahoria, jengibre",
+        },
         price: 5.5,
       },
       {
@@ -954,7 +1023,13 @@ const MENU: MenuSection[] = [
           de: "Nr. 3",
           es: "N.º 3",
         },
-        description: "Sedano, mela, kiwi",
+        description: {
+          it: "Sedano, mela, kiwi",
+          en: "Celery, apple, kiwi",
+          fr: "Céleri, pomme, kiwi",
+          de: "Sellerie, Apfel, Kiwi",
+          es: "Apio, manzana, kiwi",
+        },
         allergens: ["sedano"],
         price: 5.5,
       },
@@ -966,7 +1041,13 @@ const MENU: MenuSection[] = [
           de: "Nr. 4",
           es: "N.º 4",
         },
-        description: "Pera, ananas, limone, cannella",
+        description: {
+          it: "Pera, ananas, limone, cannella",
+          en: "Pear, pineapple, lemon, cinnamon",
+          fr: "Poire, ananas, citron, cannelle",
+          de: "Birne, Ananas, Zitrone, Zimt",
+          es: "Pera, piña, limón, canela",
+        },
         price: 5.5,
       },
       {
@@ -977,7 +1058,13 @@ const MENU: MenuSection[] = [
           de: "Nr. 5",
           es: "N.º 5",
         },
-        description: "Mela, finocchio, ananas, carota",
+        description: {
+          it: "Mela, finocchio, ananas, carota",
+          en: "Apple, fennel, pineapple, carrot",
+          fr: "Pomme, fenouil, ananas, carotte",
+          de: "Apfel, Fenchel, Ananas, Karotte",
+          es: "Manzana, hinojo, piña, zanahoria",
+        },
         price: 5.5,
       },
     ],
@@ -1409,7 +1496,13 @@ const MENU: MenuSection[] = [
           de: "Ginger fruit",
           es: "Ginger fruit",
         },
-        description: "Passion fruit, granatina, limone, ginger beer",
+        description: {
+          it: "Passion fruit, granatina, limone, ginger beer",
+          en: "Passion fruit, grenadine, lemon, ginger beer",
+          fr: "Fruit de la passion, grenadine, citron, ginger beer",
+          de: "Maracuja, Grenadine, Zitrone, Ginger Beer",
+          es: "Maracuyá, granadina, limón, ginger beer",
+        },
         price: 6.0,
       },
       {
@@ -1420,7 +1513,13 @@ const MENU: MenuSection[] = [
           de: "Virgin Mojito",
           es: "Mojito sin alcohol",
         },
-        description: "Succo di lime, zucchero, lemonsoda, menta",
+        description: {
+          it: "Succo di lime, zucchero, lemonsoda, menta",
+          en: "Lime juice, sugar, lemon soda, mint",
+          fr: "Jus de citron vert, sucre, limonade, menthe",
+          de: "Limettensaft, Zucker, Zitronenlimonade, Minze",
+          es: "Zumo de lima, azúcar, limonada, menta",
+        },
         price: 6.0,
       },
       {
@@ -1431,7 +1530,13 @@ const MENU: MenuSection[] = [
           de: "Yellow summer",
           es: "Yellow summer",
         },
-        description: "Succo di ananas, limone, ginger beer",
+        description: {
+          it: "Succo di ananas, limone, ginger beer",
+          en: "Pineapple juice, lemon, ginger beer",
+          fr: "Jus d'ananas, citron, ginger beer",
+          de: "Ananassaft, Zitrone, Ginger Beer",
+          es: "Zumo de piña, limón, ginger beer",
+        },
         price: 6.0,
       },
       {
@@ -1442,7 +1547,13 @@ const MENU: MenuSection[] = [
           de: "Alkoholfreier Gin Tonic",
           es: "Gin tonic sin alcohol",
         },
-        description: "Gin analcolico Tanqueray 0, acqua tonica",
+        description: {
+          it: "Gin analcolico Tanqueray 0, acqua tonica",
+          en: "Tanqueray 0 non-alcoholic gin, tonic water",
+          fr: "Gin sans alcool Tanqueray 0, eau tonique",
+          de: "Alkoholfreier Gin Tanqueray 0, Tonic Water",
+          es: "Ginebra sin alcohol Tanqueray 0, agua tónica",
+        },
         price: 7.0,
       },
       {
@@ -1605,7 +1716,13 @@ const MENU: MenuSection[] = [
           de: "Americano",
           es: "Americano",
         },
-        description: "Vermut rosso, Campari, acqua gasata",
+        description: {
+          it: "Vermut rosso, Campari, acqua gasata",
+          en: "Red vermouth, Campari, soda water",
+          fr: "Vermouth rouge, Campari, eau gazeuse",
+          de: "Roter Wermut, Campari, Sodawasser",
+          es: "Vermut rojo, Campari, soda",
+        },
         price: 6.0,
       },
       {
@@ -1616,7 +1733,13 @@ const MENU: MenuSection[] = [
           de: "Negroni",
           es: "Negroni",
         },
-        description: "Vermut rosso, Campari, gin",
+        description: {
+          it: "Vermut rosso, Campari, gin",
+          en: "Red vermouth, Campari, gin",
+          fr: "Vermouth rouge, Campari, gin",
+          de: "Roter Wermut, Campari, Gin",
+          es: "Vermut rojo, Campari, ginebra",
+        },
         price: 7.0,
       },
       {
@@ -1627,7 +1750,13 @@ const MENU: MenuSection[] = [
           de: "Negroni sbagliato",
           es: "Negroni sbagliato",
         },
-        description: "Vermut rosso, Campari, prosecco",
+        description: {
+          it: "Vermut rosso, Campari, prosecco",
+          en: "Red vermouth, Campari, prosecco",
+          fr: "Vermouth rouge, Campari, prosecco",
+          de: "Roter Wermut, Campari, Prosecco",
+          es: "Vermut rojo, Campari, prosecco",
+        },
         price: 7.0,
       },
       {
@@ -1658,7 +1787,13 @@ const MENU: MenuSection[] = [
           de: "Gin Tonic",
           es: "Gin tonic",
         },
-        description: "Greenall's London dry gin, acqua tonica",
+        description: {
+          it: "Greenall's London dry gin, acqua tonica",
+          en: "Greenall's London dry gin, tonic water",
+          fr: "Gin Greenall's London dry, eau tonique",
+          de: "Greenall's London Dry Gin, Tonic Water",
+          es: "Ginebra Greenall's London dry, agua tónica",
+        },
         price: 7.0,
       },
       {
@@ -1669,7 +1804,13 @@ const MENU: MenuSection[] = [
           de: "Bombay Tonic",
           es: "Bombay tonic",
         },
-        description: "Bombay sapphire dry gin, acqua tonica",
+        description: {
+          it: "Bombay sapphire dry gin, acqua tonica",
+          en: "Bombay Sapphire dry gin, tonic water",
+          fr: "Gin Bombay Sapphire dry, eau tonique",
+          de: "Bombay Sapphire Dry Gin, Tonic Water",
+          es: "Ginebra Bombay Sapphire dry, agua tónica",
+        },
         price: 8.0,
       },
       {
@@ -1680,7 +1821,13 @@ const MENU: MenuSection[] = [
           de: "Tanqueray Tonic",
           es: "Tanqueray tonic",
         },
-        description: "Tanqueray London dry gin, acqua tonica",
+        description: {
+          it: "Tanqueray London dry gin, acqua tonica",
+          en: "Tanqueray London dry gin, tonic water",
+          fr: "Gin Tanqueray London dry, eau tonique",
+          de: "Tanqueray London Dry Gin, Tonic Water",
+          es: "Ginebra Tanqueray London dry, agua tónica",
+        },
         price: 8.0,
       },
       {
@@ -1691,7 +1838,13 @@ const MENU: MenuSection[] = [
           de: "Grapefruit Tonic",
           es: "Tónico de pomelo",
         },
-        description: "Malfi gin rosa al pompelmo, acqua tonica",
+        description: {
+          it: "Malfi gin rosa al pompelmo, acqua tonica",
+          en: "Malfi pink grapefruit gin, tonic water",
+          fr: "Gin Malfi rose au pamplemousse, eau tonique",
+          de: "Malfi Pink Grapefruit Gin, Tonic Water",
+          es: "Ginebra Malfi rosa al pomelo, agua tónica",
+        },
         price: 9.0,
       },
       {
@@ -1702,7 +1855,13 @@ const MENU: MenuSection[] = [
           de: "Mare Tonic",
           es: "Mare tonic",
         },
-        description: "Gin mare mediterranean, acqua tonica",
+        description: {
+          it: "Gin mare mediterranean, acqua tonica",
+          en: "Gin Mare Mediterranean, tonic water",
+          fr: "Gin Mare Mediterranean, eau tonique",
+          de: "Gin Mare Mediterranean, Tonic Water",
+          es: "Gin Mare Mediterranean, agua tónica",
+        },
         price: 10.0,
       },
       {
@@ -1713,7 +1872,13 @@ const MENU: MenuSection[] = [
           de: "Brockmans Tonic",
           es: "Brockmans tonic",
         },
-        description: "Brockmans gin frutti di bosco, acqua tonica",
+        description: {
+          it: "Brockmans gin frutti di bosco, acqua tonica",
+          en: "Brockmans gin (berries), tonic water",
+          fr: "Gin Brockmans aux fruits des bois, eau tonique",
+          de: "Brockmans Gin (Waldbeeren), Tonic Water",
+          es: "Ginebra Brockmans con frutos del bosque, agua tónica",
+        },
         price: 10.0,
       },
       {
@@ -1754,7 +1919,13 @@ const MENU: MenuSection[] = [
           de: "Mint/basil south side",
           es: "Mint/basil south side",
         },
-        description: "Vodka, lime, zucchero, menta o basilico",
+        description: {
+          it: "Vodka, lime, zucchero, menta o basilico",
+          en: "Vodka, lime, sugar, mint or basil",
+          fr: "Vodka, citron vert, sucre, menthe ou basilic",
+          de: "Wodka, Limette, Zucker, Minze oder Basilikum",
+          es: "Vodka, lima, azúcar, menta o albahaca",
+        },
         price: 8.0,
       },
       {
@@ -1765,7 +1936,13 @@ const MENU: MenuSection[] = [
           de: "Moscow mule",
           es: "Moscow mule",
         },
-        description: "Vodka, ginger beer, succo di lime",
+        description: {
+          it: "Vodka, ginger beer, succo di lime",
+          en: "Vodka, ginger beer, lime juice",
+          fr: "Vodka, ginger beer, jus de citron vert",
+          de: "Wodka, Ginger Beer, Limettensaft",
+          es: "Vodka, ginger beer, zumo de lima",
+        },
         price: 8.0,
       },
       {
@@ -1776,7 +1953,13 @@ const MENU: MenuSection[] = [
           de: "Fernet mule",
           es: "Fernet mule",
         },
-        description: "Fernet branca, ginger beer, succo di lime",
+        description: {
+          it: "Fernet branca, ginger beer, succo di lime",
+          en: "Fernet Branca, ginger beer, lime juice",
+          fr: "Fernet Branca, ginger beer, jus de citron vert",
+          de: "Fernet Branca, Ginger Beer, Limettensaft",
+          es: "Fernet Branca, ginger beer, zumo de lima",
+        },
         price: 7.0,
       },
       {
@@ -1787,7 +1970,13 @@ const MENU: MenuSection[] = [
           de: "Italian 75",
           es: "Italian 75",
         },
-        description: "Gin, succo di limone, zucchero, Trento DOC",
+        description: {
+          it: "Gin, succo di limone, zucchero, Trento DOC",
+          en: "Gin, lemon juice, sugar, Trento DOC",
+          fr: "Gin, jus de citron, sucre, Trento DOC",
+          de: "Gin, Zitronensaft, Zucker, Trento DOC",
+          es: "Ginebra, zumo de limón, azúcar, Trento DOC",
+        },
         price: 9.0,
       },
       {
@@ -1798,7 +1987,13 @@ const MENU: MenuSection[] = [
           de: "Grapefruit fizz",
           es: "Grapefruit fizz",
         },
-        description: "Succo di pompelmo, gin, Campari, seltz",
+        description: {
+          it: "Succo di pompelmo, gin, Campari, seltz",
+          en: "Grapefruit juice, gin, Campari, seltz",
+          fr: "Jus de pamplemousse, gin, Campari, seltz",
+          de: "Grapefruitsaft, Gin, Campari, Selters",
+          es: "Zumo de pomelo, ginebra, Campari, seltz",
+        },
         price: 9.0,
       },
       {
@@ -1809,7 +2004,13 @@ const MENU: MenuSection[] = [
           de: "Tropic sunset",
           es: "Tropic sunset",
         },
-        description: "Succo di ananas, gin, limone, granatina",
+        description: {
+          it: "Succo di ananas, gin, limone, granatina",
+          en: "Pineapple juice, gin, lemon, grenadine",
+          fr: "Jus d'ananas, gin, citron, grenadine",
+          de: "Ananassaft, Gin, Zitrone, Grenadine",
+          es: "Zumo de piña, ginebra, limón, granadina",
+        },
         price: 9.0,
       },
     ],
@@ -1825,14 +2026,19 @@ const MENU: MenuSection[] = [
     items: [
       {
         name: {
-          it: "Trento DOC Masetto privè riserva millesima 2014 - Cantina Endrizzi [bottiglia con cofanetto in legno]",
-          en: "Trento DOC Masetto privè Riserva 2014 - Endrizzi winery [bottle with wooden case]",
-          fr: "Trento DOC Masetto privè réserve 2014 - cave Endrizzi [bouteille avec coffret en bois]",
-          de: "Trento DOC Masetto privè Riserva 2014 - Weingut Endrizzi [Flasche mit Holzkassette]",
-          es: "Trento DOC Masetto privè reserva 2014 - bodega Endrizzi [botella con estuche de madera]",
+          it: "Trento DOC Masetto privè riserva millesima 2014 - Endrizzi [bottiglia con cofanetto in legno]",
+          en: "Trento DOC Masetto privè Riserva 2014 - Endrizzi [bottle with wooden case]",
+          fr: "Trento DOC Masetto privè réserve 2014 - Endrizzi [bouteille avec coffret en bois]",
+          de: "Trento DOC Masetto privè Riserva 2014 - Endrizzi [Flasche mit Holzkassette]",
+          es: "Trento DOC Masetto privè reserva 2014 - Endrizzi [botella con estuche de madera]",
         },
-        description:
-          "Un Trentodoc che è stato a lungo custodito e riservato esclusivamente per la famiglia e che veniva sboccato à la volée. In occasione dei suoi 130 anni, Endrizzi vuole condividere questa cuvée particolare a dosaggio zero con chi saprà apprezzarne l'unicità. Dopo una lunga maturazione di almeno 84 mesi sui lieviti, mostra aromi eleganti e maturi di tabacco bianco, frutta candita e liquirizia, insieme a note speziate abbinate a una mineralità vivace.",
+        description: {
+          it: "Un Trentodoc che è stato a lungo custodito e riservato esclusivamente per la famiglia e che veniva sboccato à la volée. In occasione dei suoi 130 anni, Endrizzi vuole condividere questa cuvée particolare a dosaggio zero con chi saprà apprezzarne l'unicità. Dopo una lunga maturazione di almeno 84 mesi sui lieviti, mostra aromi eleganti e maturi di tabacco bianco, frutta candita e liquirizia, insieme a note speziate abbinate a una mineralità vivace.",
+          en: "A Trentodoc long kept and reserved exclusively for the family, opened à la volée. For its 130th anniversary, Endrizzi shares this special zero‑dosage cuvée with those who can appreciate its uniqueness. After a long maturation of at least 84 months on the lees, it shows elegant, mature aromas of white tobacco, candied fruit and licorice, with spicy notes and a lively minerality.",
+          fr: "Un Trentodoc longtemps conservé et réservé exclusivement à la famille, ouvert à la volée. Pour ses 130 ans, Endrizzi partage cette cuvée particulière sans dosage avec ceux qui sauront en apprécier l'unicité. Après un long vieillissement d'au moins 84 mois sur lies, il révèle des arômes élégants et mûrs de tabac blanc, de fruits confits et de réglisse, accompagnés de notes épicées et d'une minéralité vive.",
+          de: "Ein Trentodoc, der lange gelagert und ausschließlich für die Familie reserviert wurde und à la volée geöffnet wurde. Zum 130‑jährigen Jubiläum teilt Endrizzi diese besondere Cuvée ohne Dosage mit allen, die ihre Einzigartigkeit schätzen. Nach einer langen Reifezeit von mindestens 84 Monaten auf der Hefe zeigt er elegante, reife Aromen von weißem Tabak, kandierten Früchten und Lakritz, begleitet von würzigen Noten und einer lebhaften Mineralität.",
+          es: "Un Trentodoc conservado durante mucho tiempo y reservado exclusivamente para la familia, abierto à la volée. Con motivo de sus 130 años, Endrizzi comparte esta cuvée especial sin dosificación con quienes sepan apreciar su unicidad. Tras una larga crianza de al menos 84 meses sobre lías, muestra aromas elegantes y maduros de tabaco blanco, fruta confitada y regaliz, junto con notas especiadas y una mineralidad viva.",
+        },
         bottlePrice: 100.0,
       },
       {
@@ -1857,21 +2063,21 @@ const MENU: MenuSection[] = [
       },
       {
         name: {
-          it: "Trento DOC riserva Piancastello zero - Cantina Endrizzi",
-          en: "Trento DOC Riserva Piancastello Zero - Endrizzi winery",
-          fr: "Trento DOC Riserva Piancastello Zero - cave Endrizzi",
-          de: "Trento DOC Riserva Piancastello Zero - Weingut Endrizzi",
-          es: "Trento DOC Riserva Piancastello Zero - bodega Endrizzi",
+          it: "Trento DOC riserva Piancastello zero - Endrizzi",
+          en: "Trento DOC Riserva Piancastello Zero - Endrizzi",
+          fr: "Trento DOC Riserva Piancastello Zero - Endrizzi",
+          de: "Trento DOC Riserva Piancastello Zero - Endrizzi",
+          es: "Trento DOC Riserva Piancastello Zero - Endrizzi",
         },
         bottlePrice: 35.0,
       },
       {
         name: {
-          it: "Chardonnay MASETTO D'ORÈ - Cantina Endrizzi",
-          en: "Chardonnay MASETTO D'ORÈ - Endrizzi winery",
-          fr: "Chardonnay MASETTO D'ORÈ - cave Endrizzi",
-          de: "Chardonnay MASETTO D'ORÈ - Weingut Endrizzi",
-          es: "Chardonnay MASETTO D'ORÈ - bodega Endrizzi",
+          it: "Chardonnay MASETTO D'ORÈ - Endrizzi",
+          en: "Chardonnay MASETTO D'ORÈ - Endrizzi",
+          fr: "Chardonnay MASETTO D'ORÈ - Endrizzi",
+          de: "Chardonnay MASETTO D'ORÈ - Endrizzi",
+          es: "Chardonnay MASETTO D'ORÈ - Endrizzi",
         },
         bottlePrice: 35.0,
       },
@@ -1883,23 +2089,217 @@ const MENU: MenuSection[] = [
           de: "Crémant brut",
           es: "Crémant brut",
         },
-        description:
-          "Crémant è realizzato utilizzando il metodo tradizionale Champagne da un'annata. Le mele mature e gli aromi di agrumi profumano il naso. La bocca elegante e le bolle fini portano a un finale fresco.",
+        description: {
+          it: "Crémant è realizzato utilizzando il metodo tradizionale Champagne da un'annata. Le mele mature e gli aromi di agrumi profumano il naso. La bocca elegante e le bolle fini portano a un finale fresco.",
+          en: "Crémant is made using the traditional Champagne method from a single vintage. Ripe apples and citrus aromas perfume the nose. The palate is elegant and the fine bubbles lead to a fresh finish.",
+          fr: "Le Crémant est élaboré selon la méthode traditionnelle champenoise à partir d'un seul millésime. Des pommes mûres et des arômes d'agrumes parfument le nez. La bouche est élégante et les fines bulles mènent à une finale fraîche.",
+          de: "Crémant wird nach der traditionellen Champagnermethode aus einem Jahrgang hergestellt. Reife Äpfel und Zitrusaromen prägen die Nase. Am Gaumen elegant, mit feiner Perlage und frischem Finale.",
+          es: "El Crémant se elabora con el método tradicional champenoise a partir de una sola añada. Manzanas maduras y aromas cítricos perfuman la nariz. En boca es elegante y las burbujas finas llevan a un final fresco.",
+        },
         glassPrice: 6.0,
         bottlePrice: 30.0,
       },
       {
         name: {
-          it: "Trento DOC brut - Cantina Endrizzi",
-          en: "Trento DOC brut - Endrizzi winery",
-          fr: "Trento DOC brut - cave Endrizzi",
-          de: "Trento DOC brut - Weingut Endrizzi",
-          es: "Trento DOC brut - bodega Endrizzi",
+          it: "Trento DOC brut - Endrizzi",
+          en: "Trento DOC brut - Endrizzi",
+          fr: "Trento DOC brut - Endrizzi",
+          de: "Trento DOC brut - Endrizzi",
+          es: "Trento DOC brut - Endrizzi",
         },
-        description:
-          "Chardonnay. Maturazione sui lieviti in bottiglia di oltre 24 mesi. Sapido al gusto, ma allo stesso tempo vivace e fresco.",
+        description: {
+          it: "Chardonnay. Maturazione sui lieviti in bottiglia di oltre 24 mesi. Sapido al gusto, ma allo stesso tempo vivace e fresco.",
+          en: "Chardonnay. Bottle ageing on the lees for over 24 months. Savory on the palate, yet lively and fresh.",
+          fr: "Chardonnay. Élevage sur lies en bouteille pendant plus de 24 mois. Savoureux en bouche, tout en restant vif et frais.",
+          de: "Chardonnay. Flaschengärung auf der Hefe über 24 Monate. Würzig am Gaumen, zugleich lebendig und frisch.",
+          es: "Chardonnay. Crianza sobre lías en botella durante más de 24 meses. Sabroso en boca, pero a la vez vivo y fresco.",
+        },
         glassPrice: 5.0,
         bottlePrice: 25.0,
+      },
+      {
+        name: {
+          it: "Lagrein rosè - Bortolotti",
+          en: "Lagrein rosé - Bortolotti",
+          fr: "Lagrein rosé - Bortolotti",
+          de: "Lagrein rosé - Bortolotti",
+          es: "Lagrein rosé - Bortolotti",
+        },
+        description: {
+          it: "Offre profumo fruttato, ma con delicate inflessioni di viola. Fresco nel carattere, il sapore è delicatamente fruttato con carezzevoli note di ciliegia, fragola e frutti di bosco per prolungarsi con un finale leggermente ammandorlato.",
+          en: "A fruity bouquet with delicate violet nuances. Fresh in character, the taste is gently fruity with caressing notes of cherry, strawberry and berries, finishing with a slightly almondy note.",
+          fr: "Un bouquet fruité aux délicates nuances de violette. Frais de caractère, le goût est délicatement fruité avec des notes de cerise, fraise et fruits des bois, pour se prolonger sur une finale légèrement amandée.",
+          de: "Fruchtiges Bouquet mit feinen Veilchennoten. Frisch im Charakter, zart fruchtig am Gaumen mit Noten von Kirsche, Erdbeere und Beeren, mit einem leicht mandeligen Finale.",
+          es: "Bouquet frutal con delicadas notas de violeta. Fresco de carácter, el sabor es suavemente frutal con notas de cereza, fresa y frutos del bosque, con un final ligeramente almendrado.",
+        },
+        glassPrice: 5.0,
+        bottlePrice: 25.0,
+      },
+      {
+        name: {
+          it: "Prosecco extra dry - Bortolotti",
+          en: "Prosecco extra dry - Bortolotti",
+          fr: "Prosecco extra dry - Bortolotti",
+          de: "Prosecco extra dry - Bortolotti",
+          es: "Prosecco extra dry - Bortolotti",
+        },
+        description: {
+          it: "Offre profumo fragrante, di timbro floreale dal glicine all’acacia e continua nel gusto appena morbido, gaio, tipicamente fruttato con note di mela, pesca nettarina e pera Williams.",
+          en: "It offers a fragrant aroma with floral tones from wisteria to acacia, and continues on the palate, softly smooth, cheerful and typically fruity with notes of apple, nectarine peach and Williams pear.",
+          fr: "Arôme parfumé aux accents floraux de glycine et d'acacia, puis une bouche souple, joyeuse, typiquement fruitée avec des notes de pomme, pêche nectarine et poire Williams.",
+          de: "Duftend mit floralen Noten von Glyzinie bis Akazie, am Gaumen weich, heiter und typisch fruchtig mit Noten von Apfel, Nektarine und Williamsbirne.",
+          es: "Aroma fragante con tonos florales de glicina a acacia, y en boca es suavemente amable, alegre y típicamente frutal con notas de manzana, melocotón nectarina y pera Williams.",
+        },
+        glassPrice: 4.5,
+        bottlePrice: 18.0,
+      },
+      {
+        name: {
+          it: "Lugana - Fattori",
+          en: "Lugana - Fattori",
+          fr: "Lugana - Fattori",
+          de: "Lugana - Fattori",
+          es: "Lugana - Fattori",
+        },
+        description: {
+          it: "Colore giallo paglierino con riflessi verdognoli anticipa un bouquet aromatico intenso e complesso, con note di fiori bianchi, frutta esotica e agrumi. In bocca è fresco e equilibrato, con una piacevole acidità e una persistenza aromatica.",
+          en: "Straw‑yellow color with greenish reflections precedes an intense and complex aromatic bouquet, with notes of white flowers, exotic fruit and citrus. On the palate it is fresh and balanced, with pleasant acidity and aromatic persistence.",
+          fr: "La robe jaune paille aux reflets verdâtres précède un bouquet aromatique intense et complexe, avec des notes de fleurs blanches, de fruits exotiques et d'agrumes. En bouche, il est frais et équilibré, avec une agréable acidité et une persistance aromatique.",
+          de: "Strohgelbe Farbe mit grünlichen Reflexen, dazu ein intensives und komplexes Bouquet mit Noten von weißen Blüten, exotischen Früchten und Zitrus. Am Gaumen frisch und ausgewogen, mit angenehmer Säure und aromatischer Persistenz.",
+          es: "Color amarillo pajizo con reflejos verdosos que anticipa un bouquet aromático intenso y complejo, con notas de flores blancas, fruta exótica y cítricos. En boca es fresco y equilibrado, con una agradable acidez y persistencia aromática.",
+        },
+        glassPrice: 4.5,
+        bottlePrice: 17.0,
+      },
+      {
+        name: {
+          it: "Chardonnay - Endrizzi",
+          en: "Chardonnay - Endrizzi",
+          fr: "Chardonnay - Endrizzi",
+          de: "Chardonnay - Endrizzi",
+          es: "Chardonnay - Endrizzi",
+        },
+        glassPrice: 4.5,
+        bottlePrice: 20.0,
+      },
+      {
+        name: {
+          it: "Gewürztraminer - Meran",
+          en: "Gewürztraminer - Meran",
+          fr: "Gewürztraminer - Meran",
+          de: "Gewürztraminer - Meran",
+          es: "Gewürztraminer - Meran",
+        },
+        description: {
+          it: "Il colore è un vivace giallo paglierino con riflessi muschiati. Il bouquet è fiorito con note di rose, menta e melissa. Il sapore è armoniosamente fresco, con morbidezza ed aroma ben equilibrato, retrogusto persistente.",
+          en: "The color is a vivid straw yellow with musky reflections. The bouquet is floral with notes of rose, mint and lemon balm. The taste is harmoniously fresh, with softness and a well‑balanced aroma, and a persistent finish.",
+          fr: "La couleur est un jaune paille vif aux reflets musqués. Le bouquet est floral avec des notes de rose, de menthe et de mélisse. La bouche est harmonieusement fraîche, avec de la rondeur et un arôme bien équilibré, finale persistante.",
+          de: "Die Farbe ist ein leuchtendes Strohgelb mit moschusartigen Reflexen. Das Bouquet ist floral mit Noten von Rose, Minze und Zitronenmelisse. Der Geschmack ist harmonisch frisch, mit Weichheit und gut ausbalanciertem Aroma, nachhaltiger Abgang.",
+          es: "El color es un amarillo pajizo vivo con reflejos almizclados. El bouquet es floral con notas de rosa, menta y melisa. El sabor es armoniosamente fresco, con suavidad y aroma bien equilibrado, con final persistente.",
+        },
+        glassPrice: 5.0,
+        bottlePrice: 27.0,
+      },
+      {
+        name: {
+          it: "Dalis bianco - Endrizzi",
+          en: "Dalis white - Endrizzi",
+          fr: "Dalis blanc - Endrizzi",
+          de: "Dalis weiß - Endrizzi",
+          es: "Dalis blanco - Endrizzi",
+        },
+        description: {
+          it: "Chardonnay, Sauvignon Blanc, Nosiola. Una cuvée da tre uve. Colore giallo paglierino scarico con riflessi verdolini. Profumo intenso floreale vegetale, con note di fiori di sambuco, ribes bianco, mela verde, buccia di cedro e miele. Al gusto fresco, immediato, pulito in ottima sintonia con quanto percepito al naso. Vino di buona struttura e con retrogusto piacevolmente lungo.",
+          en: "Chardonnay, Sauvignon Blanc, Nosiola. A cuvée from three grapes. Pale straw‑yellow with greenish reflections. Intense floral and vegetal aromas, with notes of elderflower, white currant, green apple, citron peel and honey. Fresh, immediate and clean on the palate, in harmony with what is perceived on the nose. A well‑structured wine with a pleasantly long finish.",
+          fr: "Chardonnay, Sauvignon Blanc, Nosiola. Une cuvée de trois cépages. Robe jaune paille pâle aux reflets verdâtres. Arômes intenses floraux et végétaux, avec des notes de fleurs de sureau, groseille blanche, pomme verte, zeste de cédrat et miel. En bouche, frais, immédiat et net, en parfaite harmonie avec le nez. Vin de bonne structure et à la finale agréablement longue.",
+          de: "Chardonnay, Sauvignon Blanc, Nosiola. Eine Cuvée aus drei Rebsorten. Helles Strohgelb mit grünlichen Reflexen. Intensives, floral‑vegetales Bouquet mit Noten von Holunderblüten, weißer Johannisbeere, grünem Apfel, Zitronatzeste und Honig. Am Gaumen frisch, direkt und sauber, in schöner Übereinstimmung mit der Nase. Gut strukturiert mit angenehm langem Nachhall.",
+          es: "Chardonnay, Sauvignon Blanc, Nosiola. Una cuvée de tres uvas. Color amarillo pajizo pálido con reflejos verdosos. Aroma intenso floral y vegetal, con notas de flor de saúco, grosella blanca, manzana verde, piel de cidra y miel. En boca es fresco, inmediato y limpio, en perfecta sintonía con lo percibido en nariz. Vino de buena estructura y con un final agradablemente largo.",
+        },
+        glassPrice: 4.5,
+        bottlePrice: 22.0,
+      },
+      {
+        name: {
+          it: "Kerner - Meran",
+          en: "Kerner - Meran",
+          fr: "Kerner - Meran",
+          de: "Kerner - Meran",
+          es: "Kerner - Meran",
+        },
+        description: {
+          it: "Incrocio di successo tra Schiava e Riesling. Colore giallo paglierino con riflessi verdi. Il bouquet è delicato con note di pesche e moscato. Al palato è ricco ed intenso, persistente.",
+          en: "A successful cross between Schiava and Riesling. Straw‑yellow with green reflections. Delicate bouquet with notes of peach and muscat. On the palate it is rich and intense, with a persistent finish.",
+          fr: "Croisement réussi entre Schiava et Riesling. Jaune paille aux reflets verts. Bouquet délicat avec des notes de pêche et de muscat. En bouche, riche et intense, finale persistante.",
+          de: "Erfolgreiche Kreuzung aus Schiava und Riesling. Strohgelb mit grünen Reflexen. Zartes Bouquet mit Pfirsich‑ und Muskatnoten. Am Gaumen reich und intensiv, mit anhaltendem Nachhall.",
+          es: "Cruce exitoso entre Schiava y Riesling. Amarillo pajizo con reflejos verdes. Bouquet delicado con notas de melocotón y moscatel. En boca es rico e intenso, con un final persistente.",
+        },
+        glassPrice: 4.5,
+        bottlePrice: 25.0,
+      },
+      {
+        name: {
+          it: "Pinot grigio",
+          en: "Pinot grigio",
+          fr: "Pinot grigio",
+          de: "Pinot grigio",
+          es: "Pinot grigio",
+        },
+        description: {
+          it: "Colore giallo paglierino solcato da riflessi ramati, piacevoli note di pera e pesca con richiami floreali.",
+          en: "Straw‑yellow color streaked with coppery reflections, pleasant notes of pear and peach with floral hints.",
+          fr: "Robe jaune paille aux reflets cuivrés, agréables notes de poire et de pêche avec des touches florales.",
+          de: "Strohgelbe Farbe mit kupferfarbenen Reflexen, angenehme Noten von Birne und Pfirsich mit floralen Anklängen.",
+          es: "Color amarillo pajizo con reflejos cobrizos, agradables notas de pera y melocotón con toques florales.",
+        },
+        glassPrice: 4.5,
+        bottlePrice: 17.0,
+      },
+      {
+        name: {
+          it: "Ribolla gialla",
+          en: "Ribolla gialla",
+          fr: "Ribolla gialla",
+          de: "Ribolla gialla",
+          es: "Ribolla gialla",
+        },
+        description: {
+          it: "Sentori di fiori di acacia e dal sapore secco, vellutato, ma allo stesso tempo acido e persistente.",
+          en: "Notes of acacia flowers and a dry, velvety taste, yet at the same time acidic and persistent.",
+          fr: "Notes de fleurs d’acacia et un goût sec, velouté, mais en même temps acide et persistant.",
+          de: "Noten von Akazienblüten und ein trockener, samtiger Geschmack, zugleich aber säurebetont und anhaltend.",
+          es: "Notas de flores de acacia y un sabor seco y aterciopelado, pero al mismo tiempo ácido y persistente.",
+        },
+        glassPrice: 4.5,
+        bottlePrice: 17.0,
+      },
+      {
+        name: {
+          it: "Riesling - Endrizzi",
+          en: "Riesling - Endrizzi",
+          fr: "Riesling - Endrizzi",
+          de: "Riesling - Endrizzi",
+          es: "Riesling - Endrizzi",
+        },
+        description: {
+          it: "Il suo colore è giallo paglierino con riflessi verdolini. Nel profumo si possono identificare note di pesca, pompelmo ed agrumi, unite a sentori floreali, speziati e minerali. Ha sapore fresco e deciso, piacevolmente acido, riporta fedelmente le caratteristiche degli ambienti nordici.",
+          en: "Its color is straw yellow with greenish reflections. On the nose you can identify notes of peach, grapefruit and citrus, along with floral, spicy and mineral hints. Fresh and decisive on the palate, pleasantly acidic, it faithfully reflects the characteristics of northern climates.",
+          fr: "Sa couleur est jaune paille aux reflets verdâtres. Au nez, on identifie des notes de pêche, de pamplemousse et d'agrumes, associées à des nuances florales, épicées et minérales. En bouche, il est frais et affirmé, agréablement acide, et reflète fidèlement les caractéristiques des climats nordiques.",
+          de: "Die Farbe ist strohgelb mit grünlichen Reflexen. In der Nase lassen sich Noten von Pfirsich, Grapefruit und Zitrus erkennen, verbunden mit floralen, würzigen und mineralischen Anklängen. Am Gaumen frisch und prägnant, angenehm säurebetont, spiegelt er die Eigenschaften nördlicher Lagen wider.",
+          es: "Su color es amarillo pajizo con reflejos verdosos. En nariz se identifican notas de melocotón, pomelo y cítricos, junto con matices florales, especiados y minerales. En boca es fresco y decidido, agradablemente ácido, y refleja fielmente las características de los climas del norte.",
+        },
+        glassPrice: 4.5,
+        bottlePrice: 25.0,
+      },
+      {
+        name: {
+          it: "Soave - Fattori",
+          en: "Soave - Fattori",
+          fr: "Soave - Fattori",
+          de: "Soave - Fattori",
+          es: "Soave - Fattori",
+        },
+        glassPrice: 3.5,
+        bottlePrice: 15.0,
       },
     ],
   },
@@ -1911,7 +2311,116 @@ const MENU: MenuSection[] = [
       de: "Rotweine",
       es: "Vinos tintos",
     },
-    items: [],
+    items: [
+      {
+        name: {
+          it: "Cabernet franc - Salvan",
+          en: "Cabernet franc - Salvan",
+          fr: "Cabernet franc - Salvan",
+          de: "Cabernet franc - Salvan",
+          es: "Cabernet franc - Salvan",
+        },
+        description: {
+          it: "Tipicamente erbaceo, con sentori di pepe e peperone verde.",
+          en: "Typically herbaceous, with notes of pepper and green bell pepper.",
+          fr: "Typiquement herbacé, avec des notes de poivre et de poivron vert.",
+          de: "Typisch kräuterig, mit Noten von Pfeffer und grüner Paprika.",
+          es: "Típicamente herbáceo, con notas de pimienta y pimiento verde.",
+        },
+        glassPrice: 4.5,
+        bottlePrice: 18.0,
+      },
+      {
+        name: {
+          it: "Merlot-Lagrein - Meran",
+          en: "Merlot-Lagrein - Meran",
+          fr: "Merlot-Lagrein - Meran",
+          de: "Merlot-Lagrein - Meran",
+          es: "Merlot-Lagrein - Meran",
+        },
+        description: {
+          it: "Colore rosso rubino scuro intenso, note tipiche di bacche, vaniglia e caffè, tannini vellutati, buona persistenza.",
+          en: "Deep dark ruby color, typical notes of berries, vanilla and coffee, velvety tannins, good persistence.",
+          fr: "Couleur rubis foncé intense, notes typiques de baies, vanille et café, tanins veloutés, belle persistance.",
+          de: "Tief dunkelrubin, typische Noten von Beeren, Vanille und Kaffee, samtige Tannine, gute Persistenz.",
+          es: "Color rubí oscuro intenso, notas típicas de frutos del bosque, vainilla y café, taninos aterciopelados, buena persistencia.",
+        },
+        glassPrice: 5.0,
+        bottlePrice: 27.0,
+      },
+      {
+        name: {
+          it: "Pinot nero Riserva - Meran",
+          en: "Pinot noir Riserva - Meran",
+          fr: "Pinot noir Riserva - Meran",
+          de: "Pinot noir Riserva - Meran",
+          es: "Pinot noir Riserva - Meran",
+        },
+        description: {
+          it: "Una parziale pigiatura dell'uva intera e la conservazione in botti di rovere dei piccoli grappoli d'uva fortemente selezionati danno il tocco finale ai re dei vini rossi. Un vino riserva con elevato potenziale d'invecchiamento, con un'acidità ben integrata e un finale persistente.",
+          en: "A partial pressing of whole grapes and ageing in oak barrels of small, carefully selected clusters give the final touch to the king of red wines. A reserve wine with great aging potential, well‑integrated acidity and a persistent finish.",
+          fr: "Un pressurage partiel de grappes entières et l'élevage en fûts de chêne de petites grappes soigneusement sélectionnées donnent la touche finale au roi des vins rouges. Un vin de réserve au grand potentiel de garde, avec une acidité bien intégrée et une finale persistante.",
+          de: "Teilweise Pressung ganzer Trauben und die Reifung in Eichenfässern ausgewählter kleiner Trauben geben dem König der Rotweine den letzten Schliff. Ein Reservewein mit hohem Reifepotenzial, gut integrierter Säure und anhaltendem Finale.",
+          es: "Un prensado parcial de uva entera y la crianza en barricas de roble de pequeños racimos cuidadosamente seleccionados dan el toque final al rey de los vinos tintos. Un vino reserva con gran potencial de envejecimiento, con una acidez bien integrada y un final persistente.",
+        },
+        glassPrice: 6.0,
+        bottlePrice: 35.0,
+      },
+      {
+        name: {
+          it: "Lagrein - Meran",
+          en: "Lagrein - Meran",
+          fr: "Lagrein - Meran",
+          de: "Lagrein - Meran",
+          es: "Lagrein - Meran",
+        },
+        description: {
+          it: "Il colore è rosso granato scuro. Nel naso ha profumi di viola, ciliegie e cioccolato amaro. Il sapore è armonico e delicato con tannini ben strutturati e un finale persistente.",
+          en: "The color is deep garnet red. On the nose it has aromas of violet, cherries and bitter chocolate. The taste is harmonious and delicate with well‑structured tannins and a persistent finish.",
+          fr: "La robe est rouge grenat foncé. Au nez, des arômes de violette, de cerise et de chocolat amer. La bouche est harmonieuse et délicate avec des tanins bien structurés et une finale persistante.",
+          de: "Die Farbe ist tief granatrot. In der Nase Aromen von Veilchen, Kirschen und Bitterschokolade. Am Gaumen harmonisch und fein, mit gut strukturierten Tanninen und anhaltendem Finale.",
+          es: "El color es rojo granate oscuro. En nariz presenta aromas de violeta, cereza y chocolate amargo. En boca es armonioso y delicado, con taninos bien estructurados y un final persistente.",
+        },
+        glassPrice: 5.0,
+        bottlePrice: 27.0,
+      },
+      {
+        name: {
+          it: "Valpolicella ripasso - Bisano",
+          en: "Valpolicella ripasso - Bisano",
+          fr: "Valpolicella ripasso - Bisano",
+          de: "Valpolicella ripasso - Bisano",
+          es: "Valpolicella ripasso - Bisano",
+        },
+        description: {
+          it: "Colore rosso rubino, forte bouquet di fiori con sentori di bacche selvatiche e marmellata; ricco e liscio al palato.",
+          en: "Ruby red color, strong floral bouquet with hints of wild berries and jam; rich and smooth on the palate.",
+          fr: "Robe rouge rubis, bouquet floral intense avec des notes de baies sauvages et de confiture ; riche et suave en bouche.",
+          de: "Rubinrote Farbe, kräftiges Blumenbouquet mit Noten von Waldbeeren und Marmelade; reich und weich am Gaumen.",
+          es: "Color rojo rubí, intenso bouquet floral con notas de frutos del bosque y mermelada; rico y suave en boca.",
+        },
+        glassPrice: 5.0,
+        bottlePrice: 18.0,
+      },
+      {
+        name: {
+          it: "Masetto nero - Endrizzi",
+          en: "Masetto nero - Endrizzi",
+          fr: "Masetto nero - Endrizzi",
+          de: "Masetto nero - Endrizzi",
+          es: "Masetto nero - Endrizzi",
+        },
+        description: {
+          it: "Una cuvée di tre vini rossi: Merlot, Cabernet Sauvignon e Teroldego. Un vino speziato e complesso dal sapore pieno e particolarmente armonico con sentori di mirtillo, lampone, cacao e vaniglia.",
+          en: "A cuvée of three red wines: Merlot, Cabernet Sauvignon and Teroldego. A spicy, complex wine with a full and particularly harmonious taste, with notes of blueberry, raspberry, cocoa and vanilla.",
+          fr: "Une cuvée de trois vins rouges : Merlot, Cabernet Sauvignon et Teroldego. Un vin épicé et complexe, au goût ample et particulièrement harmonieux, avec des notes de myrtille, framboise, cacao et vanille.",
+          de: "Eine Cuvée aus drei Rotweinen: Merlot, Cabernet Sauvignon und Teroldego. Ein würziger, komplexer Wein mit vollem, besonders harmonischem Geschmack und Noten von Heidelbeere, Himbeere, Kakao und Vanille.",
+          es: "Una cuvée de tres vinos tintos: Merlot, Cabernet Sauvignon y Teroldego. Un vino especiado y complejo, de sabor pleno y especialmente armonioso, con notas de arándano, frambuesa, cacao y vainilla.",
+        },
+        glassPrice: 5.0,
+        bottlePrice: 25.0,
+      },
+    ],
   },
   {
     title: {
@@ -1921,7 +2430,108 @@ const MENU: MenuSection[] = [
       de: "Biere",
       es: "Cervezas",
     },
-    items: [],
+    items: [
+      {
+        name: {
+          it: "Stella Artois piccola (0,20 lt) — alla spina",
+          en: "Stella Artois small (0.20 L) — draft",
+          fr: "Stella Artois petite (0,20 L) — pression",
+          de: "Stella Artois klein (0,20 L) — vom Fass",
+          es: "Stella Artois pequeña (0,20 L) — de barril",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Stella Artois media (0,40 lt) — alla spina",
+          en: "Stella Artois medium (0.40 L) — draft",
+          fr: "Stella Artois moyenne (0,40 L) — pression",
+          de: "Stella Artois mittel (0,40 L) — vom Fass",
+          es: "Stella Artois mediana (0,40 L) — de barril",
+        },
+        price: 5.5,
+      },
+      {
+        name: {
+          it: "Leffe rossa — bottiglietta",
+          en: "Leffe rouge — bottle",
+          fr: "Leffe rouge — bouteille",
+          de: "Leffe Rot — Flasche",
+          es: "Leffe roja — botella",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Birra artigianale IPA - Ca'Barley — bottiglietta",
+          en: "Craft beer IPA - Ca'Barley — bottle",
+          fr: "Bière artisanale IPA - Ca'Barley — bouteille",
+          de: "Craft-Bier IPA - Ca'Barley — Flasche",
+          es: "Cerveza artesanal IPA - Ca'Barley — botella",
+        },
+        price: 6.0,
+      },
+      {
+        name: {
+          it: "Birra artigianale HELLES - Ca'Barley — bottiglietta",
+          en: "Craft beer HELLES - Ca'Barley — bottle",
+          fr: "Bière artisanale HELLES - Ca'Barley — bouteille",
+          de: "Craft-Bier HELLES - Ca'Barley — Flasche",
+          es: "Cerveza artesanal HELLES - Ca'Barley — botella",
+        },
+        price: 6.0,
+      },
+      {
+        name: {
+          it: "Birra artigianale BIANCA - Ca'Barley — bottiglietta",
+          en: "Craft beer WHITE - Ca'Barley — bottle",
+          fr: "Bière artisanale BLANCHE - Ca'Barley — bouteille",
+          de: "Craft-Bier WEISS - Ca'Barley — Flasche",
+          es: "Cerveza artesanal BLANCA - Ca'Barley — botella",
+        },
+        price: 6.0,
+      },
+      {
+        name: {
+          it: "Corona — bottiglietta",
+          en: "Corona — bottle",
+          fr: "Corona — bouteille",
+          de: "Corona — Flasche",
+          es: "Corona — botella",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Messina — bottiglietta",
+          en: "Messina — bottle",
+          fr: "Messina — bouteille",
+          de: "Messina — Flasche",
+          es: "Messina — botella",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Ichnusa — bottiglietta",
+          en: "Ichnusa — bottle",
+          fr: "Ichnusa — bouteille",
+          de: "Ichnusa — Flasche",
+          es: "Ichnusa — botella",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Heineken — bottiglietta",
+          en: "Heineken — bottle",
+          fr: "Heineken — bouteille",
+          de: "Heineken — Flasche",
+          es: "Heineken — botella",
+        },
+        price: 4.0,
+      },
+    ],
   },
   {
     title: {
@@ -1931,7 +2541,68 @@ const MENU: MenuSection[] = [
       de: "Amari, Grappa, Whisky",
       es: "Amari, grappa, whisky",
     },
-    items: [],
+    items: [
+      {
+        name: {
+          it: "Amari",
+          en: "Amari",
+          fr: "Amari",
+          de: "Amari",
+          es: "Amari",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Grappa barrique 903",
+          en: "Grappa barrique 903",
+          fr: "Grappa barrique 903",
+          de: "Grappa barrique 903",
+          es: "Grappa barrique 903",
+        },
+        price: 5.0,
+      },
+      {
+        name: {
+          it: "Jack Daniel’s",
+          en: "Jack Daniel’s",
+          fr: "Jack Daniel’s",
+          de: "Jack Daniel’s",
+          es: "Jack Daniel’s",
+        },
+        price: 6.0,
+      },
+      {
+        name: {
+          it: "Ballantine’s",
+          en: "Ballantine’s",
+          fr: "Ballantine’s",
+          de: "Ballantine’s",
+          es: "Ballantine’s",
+        },
+        price: 6.0,
+      },
+      {
+        name: {
+          it: "Punch al rum",
+          en: "Rum punch",
+          fr: "Punch au rhum",
+          de: "Rum-Punsch",
+          es: "Ponche al ron",
+        },
+        price: 4.0,
+      },
+      {
+        name: {
+          it: "Grappa prime uve",
+          en: "Grappa prime uve",
+          fr: "Grappa prime uve",
+          de: "Grappa prime uve",
+          es: "Grappa prime uve",
+        },
+        price: 4.5,
+      },
+    ],
   },
 ];
 
@@ -2162,13 +2833,26 @@ export default function MenuPage() {
         const isOpen = openSection === section.title.it;
         const isPesce = section.id === "pesce";
         const isCentrifughe = section.id === "centrifughe";
-        const isViniBianchi = section.title.it === "Vini Bianchi";
+        const isWineSection =
+          section.title.it === "Vini Bianchi" || section.title.it === "Vini Rossi";
+        const isBeerSection = section.title.it === "Birre";
+        const isAmariSection = section.title.it === "Amari, Grappe, Whisky";
         const isHiddenToday =
           (isPesce && !isFriday && !showPesceAlways) ||
           (isCentrifughe && isOutsideCentrifugheHours);
         const filteredItems = allergenFilter
           ? section.items.filter((item) => item.allergens?.includes(allergenFilter))
           : section.items;
+        const shouldAddAlcoholIcon =
+          (isWineSection || isBeerSection || isAmariSection) && !allergenFilter;
+        const displayItems = shouldAddAlcoholIcon
+          ? filteredItems.map((item) => ({
+              ...item,
+              allergens: item.allergens
+                ? Array.from(new Set([...item.allergens, "alcol"]))
+                : ["alcol"],
+            }))
+          : filteredItems;
 
         return (
           <section
@@ -2208,11 +2892,11 @@ export default function MenuPage() {
             {/* CONTENUTO */}
             {isOpen && (
               <div className="px-1 pb-6 space-y-4">
-                {isViniBianchi && !isHiddenToday && filteredItems.length > 0 && (
+                {isWineSection && !isHiddenToday && filteredItems.length > 0 && (
                   <div className="flex justify-end text-[11px] uppercase tracking-[0.18em] text-neutral-400">
                     <div className="grid min-w-[86px] grid-cols-2 gap-1 sm:min-w-[100px] sm:gap-2">
-                      <span className="text-left">Calice</span>
-                      <span className="text-right">Bottiglia</span>
+                      <span className="text-left">{t("glassLabel")}</span>
+                      <span className="text-right">{t("bottleLabel")}</span>
                     </div>
                   </div>
                 )}
@@ -2220,12 +2904,12 @@ export default function MenuPage() {
                   <p className="text-sm text-neutral-500">
                     {isPesce ? t("fridayOnly") : t("until1830")}
                   </p>
-                ) : filteredItems.length === 0 ? (
+                ) : displayItems.length === 0 ? (
                   <p className="text-sm text-neutral-500">
                     {allergenFilter ? t("noMatches") : t("comingSoon")}
                   </p>
                 ) : (
-                  filteredItems.map((item) => (
+                  displayItems.map((item) => (
                     <article
                       key={`${item.name.it}-${item.price}`}
                       className="border-t border-neutral-100 pt-4"
@@ -2287,7 +2971,7 @@ export default function MenuPage() {
                         </div>
 
                           {item.description && (
-                            isViniBianchi ? (
+                            isWineSection ? (
                               <div className="mt-2">
                                 <button
                                   type="button"
@@ -2298,23 +2982,27 @@ export default function MenuPage() {
                                   }
                                   className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-400 hover:text-neutral-600"
                                 >
-                                  Descrizione
+                                  {t("descriptionLabel")}
                                 </button>
                                 {openWineDescription === item.name.it && (
                                   <p className="mt-2 text-sm text-neutral-500">
-                                    {item.description}
+                                    {typeof item.description === "string"
+                                      ? item.description
+                                      : item.description[lang]}
                                   </p>
                                 )}
                               </div>
                             ) : (
                               <p className="mt-1 text-sm text-neutral-500">
-                                {item.description}
+                                {typeof item.description === "string"
+                                  ? item.description
+                                  : item.description[lang]}
                               </p>
                             )
                           )}
                         </div>
 
-                        {isViniBianchi ? (
+                        {isWineSection ? (
                           <div className="grid min-w-[86px] grid-cols-2 gap-1 text-sm font-semibold text-neutral-800 sm:min-w-[100px] sm:gap-2">
                             <span className="text-left">
                               {typeof item.glassPrice === "number"
