@@ -30,11 +30,11 @@ const HIGHLIGHTS = [
       es: "Nuestras propuestas",
     },
     text: {
-      it: "colazioni • pranzi • aperitivi • feste di laurea • rinfreschi",
-      en: "breakfasts • lunches • aperitifs • graduation parties • refreshments",
-      fr: "petits‑déjeuners • déjeuners • apéritifs • fêtes de remise de diplôme • rafraîchissements",
-      de: "frühstück • mittagessen • aperitifs • abschlussfeiern • erfrischungen",
-      es: "desayunos • almuerzos • aperitivos • fiestas de graduación • refrigerios",
+      it: "• colazioni • pranzi • aperitivi • feste di laurea • rinfreschi",
+      en: "• breakfasts • lunches • aperitifs • graduation parties • refreshments",
+      fr: "• petits‑déjeuners • déjeuners • apéritifs • fêtes de remise de diplôme • rafraîchissements",
+      de: "• frühstück • mittagessen • aperitifs • abschlussfeiern • erfrischungen",
+      es: "• desayunos • almuerzos • aperitivos • fiestas de graduación • refrigerios",
     },
   },
   {
