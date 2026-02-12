@@ -537,6 +537,7 @@ const MENU: MenuSection[] = [
           de: "Cappuccino mit kalter Milchcreme",
           es: "Capuchino con crema de leche fría",
         },
+        allergens: ["latte"],
         price: 2.3,
       },
       {

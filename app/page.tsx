@@ -23,6 +23,22 @@ const HIGHLIGHTS = [
   },
   {
     title: {
+      it: "Le nostre proposte",
+      en: "Our offerings",
+      fr: "Nos propositions",
+      de: "Unsere Angebote",
+      es: "Nuestras propuestas",
+    },
+    text: {
+      it: "colazioni • pranzi • aperitivi • feste di laurea • rinfreschi",
+      en: "breakfasts • lunches • aperitifs • graduation parties • refreshments",
+      fr: "petits‑déjeuners • déjeuners • apéritifs • fêtes de remise de diplôme • rafraîchissements",
+      de: "frühstück • mittagessen • aperitifs • abschlussfeiern • erfrischungen",
+      es: "desayunos • almuerzos • aperitivos • fiestas de graduación • refrigerios",
+    },
+  },
+  {
+    title: {
       it: "Venerdì aperitivo di pesce",
       en: "Friday seafood aperitivo",
       fr: "Vendredi apéritif de poisson",
@@ -267,8 +283,8 @@ export default function HomePage() {
 
         {/* HIGHLIGHTS + MAPPA */}
         <section className="flex flex-col gap-6 md:grid md:grid-cols-4 md:items-stretch md:gap-6">
-          {/* riga in alto: orari + venerdì */}
-          <div className="md:col-span-4 grid gap-6 md:grid-cols-2">
+          {/* riga in alto: orari + info + venerdì */}
+          <div className="md:col-span-4 grid gap-6 md:grid-cols-3">
             <div className="rounded-2xl border border-neutral-200 bg-white p-6 h-fit">
               <h3 className="text-xs tracking-[0.28em] text-neutral-500">
                 {HIGHLIGHTS[0].title[lang].toUpperCase()}
@@ -276,12 +292,19 @@ export default function HomePage() {
               <p className="mt-3 text-sm text-neutral-700">{HIGHLIGHTS[0].text[lang]}</p>
             </div>
 
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6 h-fit">
+              <h3 className="text-xs tracking-[0.28em] text-neutral-500">
+                {HIGHLIGHTS[1].title[lang].toUpperCase()}
+              </h3>
+              <p className="mt-3 text-sm text-neutral-700">{HIGHLIGHTS[1].text[lang]}</p>
+            </div>
+
             <Link
               href="/menu#pesce"
               className="rounded-2xl border border-neutral-200 bg-white p-6 h-fit transition hover:bg-neutral-50"
             >
               <h3 className="text-xs tracking-[0.28em] text-neutral-500">
-                {HIGHLIGHTS[1].title[lang].toUpperCase()}
+                {HIGHLIGHTS[2].title[lang].toUpperCase()}
               </h3>
               <p className="mt-3 text-sm text-neutral-700">
                 {fridayMessages[fridayIndex]}
