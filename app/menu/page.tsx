@@ -2812,10 +2812,21 @@ export default function MenuPage() {
       {showLegend && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 px-4"
-          onClick={() => setShowLegend(false)}
+          onPointerDown={(event) => {
+            if (event.target !== event.currentTarget) return;
+            event.preventDefault();
+            event.stopPropagation();
+            setShowLegend(false);
+          }}
+          onClick={(event) => {
+            if (event.target !== event.currentTarget) return;
+            event.preventDefault();
+            event.stopPropagation();
+          }}
         >
           <div
             className="w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-2xl border border-neutral-100 bg-white p-6 text-neutral-900 shadow-xl"
+            onPointerDown={(event) => event.stopPropagation()}
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-center justify-between gap-4">
