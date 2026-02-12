@@ -23,7 +23,7 @@ type MenuSection = {
   items: MenuItem[];
 };
 
-type AllergenKey = keyof typeof ALLERGEN_SORT_ORDER;
+type AllergenKey = keyof typeof ALLERGEN_LABELS;
 
 const UI_COPY: Record<Language, Record<string, string>> = {
   it: {
@@ -126,17 +126,17 @@ const ALLERGEN_ORDER = [
   "bio",
   "piccante",
   "abbattuto",
-] as const;
+] as const satisfies ReadonlyArray<AllergenKey>;
 
-const ALLERGEN_SORT_ORDER = ALLERGEN_ORDER.reduce(
+const ALLERGEN_SORT_ORDER: Record<AllergenKey, number> = ALLERGEN_ORDER.reduce(
   (acc, key, index) => {
     acc[key] = index;
     return acc;
   },
-  {} as Record<(typeof ALLERGEN_ORDER)[number], number>
+  {} as Record<AllergenKey, number>
 );
 
-const ALLERGENS: Record<AllergenKey, Record<Language, string>> = {
+const ALLERGEN_LABELS = {
   latte: { it: "Latte", en: "Milk", fr: "Lait", de: "Milch", es: "Leche" },
   uova: { it: "Uova", en: "Eggs", fr: "Œufs", de: "Eier", es: "Huevos" },
   soia: { it: "Soia", en: "Soy", fr: "Soja", de: "Soja", es: "Soja" },
@@ -174,7 +174,7 @@ const ALLERGENS: Record<AllergenKey, Record<Language, string>> = {
   bio: { it: "Bio", en: "Organic", fr: "Bio", de: "Bio", es: "Bio" },
   piccante: { it: "Piccante", en: "Spicy", fr: "Épicé", de: "Scharf", es: "Picante" },
   abbattuto: { it: "Abbattuto", en: "Blast chilled", fr: "Abattu", de: "Schockgekühlt", es: "Ultracongelado" },
-};
+} as const;
 
 const ALLERGEN_STYLES: Record<AllergenKey, { ring: string; text: string }> = {
   latte: { ring: "border-rose-200", text: "text-rose-300" },
@@ -2735,7 +2735,7 @@ export default function MenuPage() {
 
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {ALLERGEN_ORDER.map((key) => {
-                const allergen = ALLERGENS[key][lang];
+                const allergen = ALLERGEN_LABELS[key][lang];
                 const styles = ALLERGEN_STYLES[key];
                 return (
                   <button
@@ -2809,7 +2809,7 @@ export default function MenuPage() {
       {allergenFilter && (
         <div className="flex flex-wrap items-center gap-3 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm text-neutral-600">
           <span className="font-semibold text-neutral-800">{t("filterOn")}</span>
-          <span>{ALLERGENS[allergenFilter][lang]}</span>
+          <span>{ALLERGEN_LABELS[allergenFilter][lang]}</span>
           <button
             type="button"
             onClick={() => setAllergenFilter(null)}
@@ -2920,7 +2920,7 @@ export default function MenuPage() {
                                     (ALLERGEN_SORT_ORDER[b] ?? 999)
                                 )
                                 .map((key) => {
-                                const allergen = ALLERGENS[key][lang];
+                                const allergen = ALLERGEN_LABELS[key][lang];
                                 const styles = ALLERGEN_STYLES[key];
                                 return (
                                   <span key={key} className="relative inline-flex">
