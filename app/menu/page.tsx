@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useLanguage, type Language } from "../locale-provider";
 
 /* =======================
@@ -38,6 +38,7 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     until1830: "Disponibile fino alle 18:30.",
     filterOn: "Filtro attivo:",
     clearFilter: "Rimuovi filtro",
+    resultsLabel: "risultati",
     noMatches: "Nessun prodotto con questo allergene.",
     descriptionLabel: "Descrizione",
     glassLabel: "Calice",
@@ -53,6 +54,7 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     until1830: "Available until 6:30 PM.",
     filterOn: "Filter active:",
     clearFilter: "Clear filter",
+    resultsLabel: "results",
     noMatches: "No products with this allergen.",
     descriptionLabel: "Description",
     glassLabel: "Glass",
@@ -68,6 +70,7 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     until1830: "Disponible jusqu’à 18h30.",
     filterOn: "Filtre actif :",
     clearFilter: "Retirer le filtre",
+    resultsLabel: "résultats",
     noMatches: "Aucun produit avec cet allergène.",
     descriptionLabel: "Description",
     glassLabel: "Verre",
@@ -83,6 +86,7 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     until1830: "Verfügbar bis 18:30 Uhr.",
     filterOn: "Aktiver Filter:",
     clearFilter: "Filter entfernen",
+    resultsLabel: "Ergebnisse",
     noMatches: "Keine Produkte mit diesem Allergen.",
     descriptionLabel: "Beschreibung",
     glassLabel: "Glas",
@@ -98,6 +102,7 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     until1830: "Disponible hasta las 18:30.",
     filterOn: "Filtro activo:",
     clearFilter: "Quitar filtro",
+    resultsLabel: "resultados",
     noMatches: "No hay productos con este alérgeno.",
     descriptionLabel: "Descripción",
     glassLabel: "Copa",
@@ -1335,11 +1340,11 @@ const MENU: MenuSection[] = [
       },
       {
         name: {
-          it: "Primi piatti e secondi freschi di gastronomia",
-          en: "Fresh pasta and main courses from the deli",
-          fr: "Premiers plats et seconds frais de la gastronomie",
+          it: "Primi e secondi piatti freschi di gastronomia",
+          en: "Fresh first and second courses from the deli",
+          fr: "Premiers et seconds plats frais de la gastronomie",
           de: "Frische erste und zweite Gänge aus der Feinkost",
-          es: "Primeros y segundos frescos de gastronomía",
+          es: "Primeros y segundos platos frescos de gastronomía",
         },
       },
     ],
@@ -2684,7 +2689,7 @@ export default function MenuPage() {
   const [showCentrifugheNotice, setShowCentrifugheNotice] = useState(false);
   const [showPesceNotice, setShowPesceNotice] = useState(false);
   const [openWineDescription, setOpenWineDescription] = useState<string | null>(null);
-  const [allergenFilter, setAllergenFilter] = useState<AllergenKey | null>(null);
+  const [allergenFilters, setAllergenFilters] = useState<AllergenKey[]>([]);
   const [allergenHint, setAllergenHint] = useState<AllergenKey | null>(null);
   const [allergenHintItem, setAllergenHintItem] = useState<string | null>(null);
   const allergenHintTimer = useRef<number | null>(null);
@@ -2693,6 +2698,29 @@ export default function MenuPage() {
   const pendingAnchorAdjust = useRef(false);
   const { lang } = useLanguage();
   const t = (key: string) => UI_COPY[lang][key] ?? key;
+  const allergenFilterSet = useMemo(() => new Set(allergenFilters), [allergenFilters]);
+  const hasActiveAllergenFilter = allergenFilters.length > 0;
+  const menuWithAllergens = useMemo(
+    () =>
+      MENU.map((section) => ({
+        ...section,
+        items: section.items.map((item) => {
+          const inferred = inferAllergens(section, item);
+          return inferred ? { ...item, allergens: inferred } : item;
+        }),
+      })),
+    []
+  );
+  const visibleResultCount = useMemo(
+    () =>
+      menuWithAllergens.reduce((acc, section) => {
+        const sectionCount = hasActiveAllergenFilter
+          ? section.items.filter((item) => item.allergens?.some((key) => allergenFilterSet.has(key))).length
+          : section.items.length;
+        return acc + sectionCount;
+      }, 0),
+    [allergenFilterSet, hasActiveAllergenFilter, menuWithAllergens]
+  );
   const isFriday = new Intl.DateTimeFormat("en-US", {
     weekday: "short",
     timeZone: "Europe/Rome",
@@ -2782,8 +2810,14 @@ export default function MenuPage() {
       </div>
 
       {showLegend && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 px-4">
-          <div className="w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-2xl border border-neutral-100 bg-white p-6 text-neutral-900 shadow-xl">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 px-4"
+          onClick={() => setShowLegend(false)}
+        >
+          <div
+            className="w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-2xl border border-neutral-100 bg-white p-6 text-neutral-900 shadow-xl"
+            onClick={(event) => event.stopPropagation()}
+          >
             <div className="flex items-center justify-between gap-4">
               <h2 className="text-xl font-semibold">{t("allergenLegend")}</h2>
               <button
@@ -2799,15 +2833,21 @@ export default function MenuPage() {
               {ALLERGEN_ORDER.map((key) => {
                 const allergen = ALLERGEN_LABELS[key][lang];
                 const styles = ALLERGEN_STYLES[key];
+                const isSelected = allergenFilterSet.has(key);
                 return (
                   <button
                     key={key}
                     type="button"
                     onClick={() => {
-                      setAllergenFilter(key);
-                      setShowLegend(false);
+                      setAllergenFilters((current) =>
+                        current.includes(key)
+                          ? current.filter((value) => value !== key)
+                          : [...current, key]
+                      );
                     }}
-                    className="flex items-center gap-3 rounded-xl border border-neutral-100 bg-white px-3 py-2 text-left hover:bg-neutral-50"
+                    className={`flex items-center gap-3 rounded-xl border px-3 py-2 text-left hover:bg-neutral-50 ${
+                      isSelected ? "border-neutral-300 bg-neutral-50" : "border-neutral-100 bg-white"
+                    }`}
                   >
                     <span
                       className={`inline-flex h-7 w-7 items-center justify-center rounded-full border bg-white ${styles.ring} ${styles.text}`}
@@ -2868,13 +2908,16 @@ export default function MenuPage() {
         </div>
       )}
 
-      {allergenFilter && (
+      {hasActiveAllergenFilter && (
         <div className="flex flex-wrap items-center gap-3 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm text-neutral-600">
           <span className="font-semibold text-neutral-800">{t("filterOn")}</span>
-          <span>{ALLERGEN_LABELS[allergenFilter][lang]}</span>
+          <span>{allergenFilters.map((key) => ALLERGEN_LABELS[key][lang]).join(", ")}</span>
+          <span className="inline-flex items-center rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs font-semibold text-neutral-700">
+            {visibleResultCount} {t("resultsLabel")}
+          </span>
           <button
             type="button"
-            onClick={() => setAllergenFilter(null)}
+            onClick={() => setAllergenFilters([])}
             className="ml-2 rounded-full border border-neutral-200 px-3 py-1 text-xs font-semibold text-neutral-700 hover:bg-neutral-50"
           >
             {t("clearFilter")}
@@ -2882,7 +2925,7 @@ export default function MenuPage() {
         </div>
       )}
 
-      {MENU.map((section) => {
+      {menuWithAllergens.map((section) => {
         const isOpen = openSection === section.title.it;
         const isPesce = section.id === "pesce";
         const isCentrifughe = section.id === "centrifughe";
@@ -2891,13 +2934,9 @@ export default function MenuPage() {
         const isHiddenToday =
           (isPesce && !isFriday && !showPesceAlways) ||
           (isCentrifughe && isOutsideCentrifugheHours);
-        const sectionItems = section.items.map((item) => {
-          const inferred = inferAllergens(section, item);
-          return inferred ? { ...item, allergens: inferred } : item;
-        });
-        const filteredItems = allergenFilter
-          ? sectionItems.filter((item) => item.allergens?.includes(allergenFilter))
-          : sectionItems;
+        const filteredItems = hasActiveAllergenFilter
+          ? section.items.filter((item) => item.allergens?.some((key) => allergenFilterSet.has(key)))
+          : section.items;
         const displayItems = filteredItems;
 
         return (
@@ -2952,7 +2991,7 @@ export default function MenuPage() {
                   </p>
                 ) : displayItems.length === 0 ? (
                   <p className="text-sm text-neutral-500">
-                    {allergenFilter ? t("noMatches") : t("comingSoon")}
+                    {hasActiveAllergenFilter ? t("noMatches") : t("comingSoon")}
                   </p>
                 ) : (
                   displayItems.map((item) => (
