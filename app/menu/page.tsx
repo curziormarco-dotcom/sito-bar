@@ -23,44 +23,7 @@ type MenuSection = {
   items: MenuItem[];
 };
 
-type AllergenKey =
-  | "latte"
-  | "uova"
-  | "soia"
-  | "pesce"
-  | "crostacei"
-  | "sedano"
-  | "molluschi"
-  | "solfiti"
-  | "lupini"
-  | "senape"
-  | "sesamo"
-  | "glutine"
-  | "grano"
-  | "orzo"
-  | "avena"
-  | "segale"
-  | "farro"
-  | "kamut"
-  | "frutta_guscio"
-  | "nocciole"
-  | "noci"
-  | "mandorle"
-  | "pistacchi"
-  | "arachidi"
-  | "noci_brasiliane"
-  | "anacardi"
-  | "macadamia"
-  | "noce_pecan"
-  | "alcol"
-  | "congelato"
-  | "vegano"
-  | "vegetariano"
-  | "halal"
-  | "kosher"
-  | "bio"
-  | "piccante"
-  | "abbattuto";
+type AllergenKey = keyof typeof ALLERGEN_SORT_ORDER;
 
 const UI_COPY: Record<Language, Record<string, string>> = {
   it: {
@@ -140,7 +103,7 @@ const UI_COPY: Record<Language, Record<string, string>> = {
   },
 };
 
-const ALLERGEN_ORDER: AllergenKey[] = [
+const ALLERGEN_ORDER = [
   "latte",
   "uova",
   "soia",
@@ -163,14 +126,14 @@ const ALLERGEN_ORDER: AllergenKey[] = [
   "bio",
   "piccante",
   "abbattuto",
-];
+] as const;
 
-const ALLERGEN_SORT_ORDER: Record<AllergenKey, number> = ALLERGEN_ORDER.reduce(
+const ALLERGEN_SORT_ORDER = ALLERGEN_ORDER.reduce(
   (acc, key, index) => {
     acc[key] = index;
     return acc;
   },
-  {} as Record<AllergenKey, number>
+  {} as Record<(typeof ALLERGEN_ORDER)[number], number>
 );
 
 const ALLERGENS: Record<AllergenKey, Record<Language, string>> = {
@@ -1349,7 +1312,35 @@ const MENU: MenuSection[] = [
       de: "Mittagessen",
       es: "Almuerzos",
     },
-    items: [],
+    items: [
+      {
+        name: {
+          it: "Insalatona",
+          en: "Big salad",
+          fr: "Grande salade",
+          de: "Großer Salat",
+          es: "Ensalada grande",
+        },
+        description: {
+          it: "Base insalatona: insalata gentile, radicchio, rucola, carote, pomodorini, finocchio. Aggiunte: uovo €2,00, mozzarella €2,50, gamberetti €3,00, tonno €3,00, olive €1,50, prosciutto cotto €3,00, sfilacci €3,00, mais €1,50, capperi €1,50.",
+          en: "Base salad: lettuce, radicchio, arugula, carrots, cherry tomatoes, fennel. Add‑ons: egg €2.00, mozzarella €2.50, shrimp €3.00, tuna €3.00, olives €1.50, cooked ham €3.00, shredded beef €3.00, corn €1.50, capers €1.50.",
+          fr: "Base salade: laitue, radicchio, roquette, carottes, tomates cerises, fenouil. Suppléments : œuf 2,00 €, mozzarella 2,50 €, crevettes 3,00 €, thon 3,00 €, olives 1,50 €, jambon cuit 3,00 €, effiloché de bœuf 3,00 €, maïs 1,50 €, câpres 1,50 €.",
+          de: "Salatbasis: Kopfsalat, Radicchio, Rucola, Karotten, Cherrytomaten, Fenchel. Extras: Ei 2,00 €, Mozzarella 2,50 €, Garnelen 3,00 €, Thunfisch 3,00 €, Oliven 1,50 €, Kochschinken 3,00 €, Rindfleischstreifen 3,00 €, Mais 1,50 €, Kapern 1,50 €.",
+          es: "Base de ensalada: lechuga, radicchio, rúcula, zanahorias, tomates cherry, hinojo. Extras: huevo 2,00 €, mozzarella 2,50 €, gambas 3,00 €, atún 3,00 €, aceitunas 1,50 €, jamón cocido 3,00 €, carne deshilachada 3,00 €, maíz 1,50 €, alcaparras 1,50 €.",
+        },
+        price: 7.0,
+      },
+      {
+        name: {
+          it: "Primi piatti e secondi freschi di gastronomia",
+          en: "Fresh pasta and main courses from the deli",
+          fr: "Premiers plats et seconds frais de la gastronomie",
+          de: "Frische erste und zweite Gänge aus der Feinkost",
+          es: "Primeros y segundos frescos de gastronomía",
+        },
+        price: 0.0,
+      },
+    ],
   },
   {
     id: "cicchetti-pesce",
@@ -2922,7 +2913,7 @@ export default function MenuPage() {
                           </h3>
                           {item.allergens && item.allergens.length > 0 && (
                             <div className="flex items-center gap-1">
-                              {[...item.allergens]
+                              {([...(item.allergens as AllergenKey[])] as AllergenKey[])
                                 .sort(
                                   (a, b) =>
                                     (ALLERGEN_SORT_ORDER[a] ?? 999) -
