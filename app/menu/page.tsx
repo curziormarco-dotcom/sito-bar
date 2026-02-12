@@ -15,6 +15,8 @@ type MenuItem = {
   bottlePrice?: number;
   tag?: string;
   allergens?: AllergenKey[];
+  allergenAdd?: AllergenKey[];
+  allergenRemove?: AllergenKey[];
 };
 
 type MenuSection = {
@@ -1323,11 +1325,11 @@ const MENU: MenuSection[] = [
           es: "Ensalada grande",
         },
         description: {
-          it: "Base insalatona: insalata gentile, radicchio, rucola, carote, pomodorini, finocchio. Aggiunte: uovo €2,00, mozzarella €2,50, gamberetti €3,00, tonno €3,00, olive €1,50, prosciutto cotto €3,00, sfilacci €3,00, mais €1,50, capperi €1,50.",
-          en: "Base salad: lettuce, radicchio, arugula, carrots, cherry tomatoes, fennel. Add‑ons: egg €2.00, mozzarella €2.50, shrimp €3.00, tuna €3.00, olives €1.50, cooked ham €3.00, shredded beef €3.00, corn €1.50, capers €1.50.",
-          fr: "Base salade: laitue, radicchio, roquette, carottes, tomates cerises, fenouil. Suppléments : œuf 2,00 €, mozzarella 2,50 €, crevettes 3,00 €, thon 3,00 €, olives 1,50 €, jambon cuit 3,00 €, effiloché de bœuf 3,00 €, maïs 1,50 €, câpres 1,50 €.",
-          de: "Salatbasis: Kopfsalat, Radicchio, Rucola, Karotten, Cherrytomaten, Fenchel. Extras: Ei 2,00 €, Mozzarella 2,50 €, Garnelen 3,00 €, Thunfisch 3,00 €, Oliven 1,50 €, Kochschinken 3,00 €, Rindfleischstreifen 3,00 €, Mais 1,50 €, Kapern 1,50 €.",
-          es: "Base de ensalada: lechuga, radicchio, rúcula, zanahorias, tomates cherry, hinojo. Extras: huevo 2,00 €, mozzarella 2,50 €, gambas 3,00 €, atún 3,00 €, aceitunas 1,50 €, jamón cocido 3,00 €, carne deshilachada 3,00 €, maíz 1,50 €, alcaparras 1,50 €.",
+          it: "Base insalatona: insalata gentile, radicchio, rucola, carote, pomodorini, finocchio. Aggiunte: uovo €2,00, mozzarella €2,50, gamberetti (crostacei) €3,00, tonno (pesce) €3,00, olive €1,50, prosciutto cotto €3,00, sfilacci €3,00, mais €1,50, capperi €1,50.",
+          en: "Base salad: lettuce, radicchio, arugula, carrots, cherry tomatoes, fennel. Add‑ons: egg €2.00, mozzarella €2.50, shrimp (crustaceans) €3.00, tuna (fish) €3.00, olives €1.50, cooked ham €3.00, shredded beef €3.00, corn €1.50, capers €1.50.",
+          fr: "Base salade: laitue, radicchio, roquette, carottes, tomates cerises, fenouil. Suppléments : œuf 2,00 €, mozzarella 2,50 €, crevettes (crustacés) 3,00 €, thon (poisson) 3,00 €, olives 1,50 €, jambon cuit 3,00 €, effiloché de bœuf 3,00 €, maïs 1,50 €, câpres 1,50 €.",
+          de: "Salatbasis: Kopfsalat, Radicchio, Rucola, Karotten, Cherrytomaten, Fenchel. Extras: Ei 2,00 €, Mozzarella 2,50 €, Garnelen (Krustentiere) 3,00 €, Thunfisch (Fisch) 3,00 €, Oliven 1,50 €, Kochschinken 3,00 €, Rindfleischstreifen 3,00 €, Mais 1,50 €, Kapern 1,50 €.",
+          es: "Base de ensalada: lechuga, radicchio, rúcula, zanahorias, tomates cherry, hinojo. Extras: huevo 2,00 €, mozzarella 2,50 €, gambas (crustáceos) 3,00 €, atún (pescado) 3,00 €, aceitunas 1,50 €, jamón cocido 3,00 €, carne deshilachada 3,00 €, maíz 1,50 €, alcaparras 1,50 €.",
         },
         price: 7.0,
       },
@@ -1361,6 +1363,7 @@ const MENU: MenuSection[] = [
           de: "Lachs & Philadelphia",
           es: "Salmón y Philadelphia",
         },
+        allergens: ["pesce", "latte"],
         price: 3.0,
       },
       {
@@ -1371,6 +1374,7 @@ const MENU: MenuSection[] = [
           de: "Burrata & Kantabrische Sardellen",
           es: "Burrata y anchoas cantábricas",
         },
+        allergens: ["pesce", "latte"],
         price: 3.0,
       },
       {
@@ -1381,6 +1385,7 @@ const MENU: MenuSection[] = [
           de: "Stockfischcreme & Lauch",
           es: "Bacalao mantecado y puerro",
         },
+        allergens: ["pesce"],
         price: 3.0,
       },
       {
@@ -1391,6 +1396,7 @@ const MENU: MenuSection[] = [
           de: "Garnele in saor",
           es: "Gamba en saor",
         },
+        allergens: ["crostacei"],
         price: 3.0,
       },
     ],
@@ -1435,6 +1441,7 @@ const MENU: MenuSection[] = [
           de: "Thunfischtatar",
           es: "Tartar de atún",
         },
+        allergens: ["pesce"],
         price: 8.0,
       },
       {
@@ -1456,6 +1463,8 @@ const MENU: MenuSection[] = [
           de: "Oktopus‑Carpaccio",
           es: "Carpaccio de pulpo",
         },
+        allergens: ["molluschi"],
+        allergenRemove: ["pesce"],
         price: 8.0,
       },
       {
@@ -2614,6 +2623,59 @@ function formatEURSuffix(value: number) {
   return `${value.toFixed(2).replace(".", ",")}€`;
 }
 
+function getItalianDescription(item: MenuItem): string {
+  if (!item.description) return "";
+  return typeof item.description === "string" ? item.description : item.description.it;
+}
+
+function inferAllergens(section: MenuSection, item: MenuItem): AllergenKey[] | undefined {
+  const allergens = new Set<AllergenKey>(item.allergens ?? []);
+  const text = `${item.name.it} ${getItalianDescription(item)}`.toLowerCase();
+  const isWineSection = section.title.it === "Vini Bianchi" || section.title.it === "Vini Rossi";
+  const isBeerSection = section.title.it === "Birre";
+  const isAmariSection = section.title.it === "Amari, Grappe, Whisky";
+  const isSnackSection = section.title.it === "Snack e Panini";
+
+  if (section.id === "aperitivi-alcolici" || isWineSection || isBeerSection || isAmariSection) {
+    allergens.add("alcol");
+  }
+
+  if (
+    isBeerSection ||
+    isSnackSection ||
+    /\b(tramezzin|panin|toast|tostone|piadin|focacc|pizzett|panzerott|rustico)\w*/.test(text)
+  ) {
+    allergens.add("glutine");
+  }
+
+  if (/\bsoia\b/.test(text)) allergens.add("soia");
+  if (/\borzo\b/.test(text)) allergens.add("orzo");
+  if (/\b(uovo|uova)\b/.test(text)) allergens.add("uova");
+  if (/\b(latte|mozzarella|burrata|philadelphia|panna|cappuccino|macchiato|cioccolata)\w*/.test(text)) {
+    allergens.add("latte");
+  }
+
+  if (/\b(gamber|scamp|mazzancoll)\w*/.test(text)) allergens.add("crostacei");
+  if (/\b(ostrich|capasant|cozz|vongol|piovra|polpo|seppia|calamar|totano)\w*/.test(text)) {
+    allergens.add("molluschi");
+  }
+  if (/\b(tonno|salmone|baccal|merluzzo|acciugh|alice|sgombro|branzino|orata|trota|pesce)\w*/.test(text)) {
+    allergens.add("pesce");
+  }
+
+  if (item.allergenRemove) {
+    for (const key of item.allergenRemove) allergens.delete(key);
+  }
+  if (item.allergenAdd) {
+    for (const key of item.allergenAdd) allergens.add(key);
+  }
+
+  if (allergens.size === 0) return undefined;
+  return [...allergens].sort(
+    (a, b) => (ALLERGEN_SORT_ORDER[a] ?? 999) - (ALLERGEN_SORT_ORDER[b] ?? 999)
+  );
+}
+
 /* =======================
    PAGINA MENU
 ======================= */
@@ -2827,24 +2889,17 @@ export default function MenuPage() {
         const isCentrifughe = section.id === "centrifughe";
         const isWineSection =
           section.title.it === "Vini Bianchi" || section.title.it === "Vini Rossi";
-        const isBeerSection = section.title.it === "Birre";
-        const isAmariSection = section.title.it === "Amari, Grappe, Whisky";
         const isHiddenToday =
           (isPesce && !isFriday && !showPesceAlways) ||
           (isCentrifughe && isOutsideCentrifugheHours);
+        const sectionItems = section.items.map((item) => {
+          const inferred = inferAllergens(section, item);
+          return inferred ? { ...item, allergens: inferred } : item;
+        });
         const filteredItems = allergenFilter
-          ? section.items.filter((item) => item.allergens?.includes(allergenFilter))
-          : section.items;
-        const shouldAddAlcoholIcon =
-          (isWineSection || isBeerSection || isAmariSection) && !allergenFilter;
-        const displayItems = shouldAddAlcoholIcon
-          ? filteredItems.map((item) => ({
-              ...item,
-              allergens: item.allergens
-                ? Array.from(new Set([...item.allergens, "alcol"]))
-                : ["alcol"],
-            }))
-          : filteredItems;
+          ? sectionItems.filter((item) => item.allergens?.includes(allergenFilter))
+          : sectionItems;
+        const displayItems = filteredItems;
 
         return (
           <section
