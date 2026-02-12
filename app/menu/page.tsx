@@ -1341,7 +1341,6 @@ const MENU: MenuSection[] = [
           de: "Frische erste und zweite Gänge aus der Feinkost",
           es: "Primeros y segundos frescos de gastronomía",
         },
-        price: 0.0,
       },
     ],
   },
