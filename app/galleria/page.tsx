@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage, type Language } from "../locale-provider";
 
 const COPY: Record<Language, { title: string; subtitle: string }> = {
@@ -34,9 +35,11 @@ export default function GalleryPage() {
             key={image.src}
             className="overflow-hidden rounded-2xl border border-neutral-200 bg-white"
           >
-            <img
+            <Image
               src={image.src}
               alt={image.alt}
+              width={1200}
+              height={800}
               className={
                 image.src === "/images/negroni.jpg"
                   ? "h-64 w-full object-cover object-[85%_85%] sm:object-center"

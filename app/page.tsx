@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage, type Language } from "./locale-provider";
 import { useEffect, useState } from "react";
 
@@ -223,7 +224,6 @@ export default function HomePage() {
   const fridayMessages = FRIDAY_ROTATION[lang];
 
   useEffect(() => {
-    setFridayIndex(0);
     const timer = setInterval(() => {
       setFridayIndex((prev) => (prev + 1) % fridayMessages.length);
     }, 1500);
@@ -357,9 +357,11 @@ export default function HomePage() {
               </Link>
             </div>
             <Link href="/menu#aperitivi-alcolici" className="block h-full w-full">
-              <img
+              <Image
                 src="/images/negroni.jpg"
                 alt={t("drinkAlt")}
+                width={1200}
+                height={800}
                 className="h-full w-full object-cover object-[85%_90%] sm:object-[80%_82%]"
               />
             </Link>
