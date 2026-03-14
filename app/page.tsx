@@ -231,57 +231,60 @@ export default function HomePage() {
   }, [fridayMessages.length]);
 
   return (
-    <main className="bg-[#fbfaf7] text-neutral-900">
-      <div className="mx-auto max-w-6xl px-6 pt-1 pb-14 sm:pt-6 sm:pb-20 space-y-6">
-        {/* HERO */}
-        <section
-          className="relative overflow-hidden rounded-[28px] min-h-[360px]"
-          style={{
-            backgroundImage: "url('/images/hero.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          {/* overlay */}
-          <div className="absolute inset-0 bg-black/20" />
+    <div className="bg-[#fbfaf7] text-neutral-900">
+      <section className="relative left-1/2 right-1/2 -mx-[50vw] -mt-10 h-[165svh] w-screen bg-neutral-950">
+        <div className="sticky top-[4.5rem] flex min-h-[calc(100svh-4.5rem)] items-end overflow-hidden sm:top-[5rem] sm:min-h-[calc(100svh-5rem)]">
+          <Image
+            src="/images/hero.jpg"
+            alt=""
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.12)_0%,rgba(0,0,0,0.2)_34%,rgba(0,0,0,0.6)_100%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(180deg,rgba(251,250,247,0)_0%,rgba(251,250,247,0.88)_100%)]" />
 
-          <div className="relative p-8 sm:p-10 text-white">
-            <p className="text-xs tracking-[0.28em] text-white/85">
-              {t("heroKicker")}
-            </p>
+          <div className="relative z-10 mx-auto flex w-full max-w-6xl px-6 pb-12 sm:pb-16">
+            <div className="max-w-3xl text-white">
+              <p className="text-xs tracking-[0.32em] text-white/80">
+                {t("heroKicker")}
+              </p>
 
-            <h1 className="mt-2 text-4xl sm:text-6xl font-semibold leading-tight tracking-tight">
-              {t("heroTitle").split("\n").map((line, index) => (
-                <span key={`${line}-${index}`}>
-                  {line}
-                  {index === 0 && <br />}
-                </span>
-              ))}
-            </h1>
+              <h1 className="mt-4 text-5xl font-semibold leading-[0.95] tracking-[-0.04em] sm:text-7xl md:text-[5.5rem]">
+                {t("heroTitle").split("\n").map((line, index) => (
+                  <span key={`${line}-${index}`}>
+                    {line}
+                    {index === 0 && <br />}
+                  </span>
+                ))}
+              </h1>
 
-            <p className="mt-6 max-w-2xl text-white/85 sm:text-lg">
-              {t("heroSubtitle")}
-            </p>
+              <p className="mt-6 max-w-xl text-base text-white/80 sm:text-lg">
+                {t("heroSubtitle")}
+              </p>
 
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link
-                href="/menu"
-                className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-neutral-900 hover:bg-neutral-100 transition"
-              >
-                {t("ctaMenu")}
-              </Link>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  href="/menu"
+                  className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-100"
+                >
+                  {t("ctaMenu")}
+                </Link>
 
-              <a
-                href="#prenota"
-                className="rounded-full border border-white/70 px-7 py-3 text-sm font-semibold text-white hover:bg-white/10 transition"
-              >
-                {t("ctaBook")}
-              </a>
+                <a
+                  href="#prenota"
+                  className="rounded-full border border-white/50 bg-white/8 px-7 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/14"
+                >
+                  {t("ctaBook")}
+                </a>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* HIGHLIGHTS + MAPPA */}
+      <div className="relative z-10 mx-auto -mt-[42svh] max-w-6xl rounded-t-[32px] bg-[#fbfaf7] px-6 pt-6 pb-14 shadow-[0_-24px_60px_rgba(17,17,17,0.08)] sm:-mt-[46svh] sm:pt-8 sm:pb-20">
         <section className="flex flex-col gap-6 md:grid md:grid-cols-4 md:items-stretch md:gap-6">
           {/* riga in alto: orari + info + venerdì */}
           <div className="md:col-span-4 grid gap-6 md:grid-cols-3">
@@ -466,6 +469,6 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   );
 }
