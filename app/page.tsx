@@ -221,6 +221,7 @@ export default function HomePage() {
   const { lang } = useLanguage();
   const t = (key: string) => HOME_COPY[lang][key] ?? key;
   const [fridayIndex, setFridayIndex] = useState(0);
+  const [heroProgress, setHeroProgress] = useState(0);
   const fridayMessages = FRIDAY_ROTATION[lang];
 
   useEffect(() => {
@@ -229,6 +230,28 @@ export default function HomePage() {
     }, 1500);
     return () => clearInterval(timer);
   }, [fridayMessages.length]);
+
+  useEffect(() => {
+    const updateHeroProgress = () => {
+      const viewportHeight = window.innerHeight || 1;
+      const progress = Math.min(window.scrollY / (viewportHeight * 0.9), 1);
+      setHeroProgress(progress);
+    };
+
+    updateHeroProgress();
+    window.addEventListener("scroll", updateHeroProgress, { passive: true });
+    window.addEventListener("resize", updateHeroProgress);
+
+    return () => {
+      window.removeEventListener("scroll", updateHeroProgress);
+      window.removeEventListener("resize", updateHeroProgress);
+    };
+  }, []);
+
+  const heroImageScale = 1.12 - heroProgress * 0.12;
+  const heroImageOpacity = 1 - heroProgress * 0.28;
+  const heroContentOpacity = 1 - heroProgress * 0.34;
+  const heroContentTranslate = heroProgress * 36;
 
   return (
     <div className="bg-[#fbfaf7] text-neutral-900">
@@ -239,19 +262,29 @@ export default function HomePage() {
             alt=""
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-center will-change-transform"
             sizes="100vw"
+            style={{
+              transform: `scale(${heroImageScale})`,
+              opacity: heroImageOpacity,
+            }}
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.12)_0%,rgba(0,0,0,0.2)_34%,rgba(0,0,0,0.6)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(180deg,rgba(251,250,247,0)_0%,rgba(251,250,247,0.88)_100%)]" />
 
-          <div className="relative z-10 mx-auto flex w-full max-w-6xl px-6 pb-12 sm:pb-16">
-            <div className="max-w-3xl text-white">
-              <p className="text-xs tracking-[0.32em] text-white/80">
+          <div
+            className="relative z-10 mx-auto flex w-full max-w-6xl px-6 pb-14 will-change-transform sm:pb-20"
+            style={{
+              opacity: heroContentOpacity,
+              transform: `translateY(${heroContentTranslate}px)`,
+            }}
+          >
+            <div className="max-w-[40rem] text-white sm:max-w-[44rem]">
+              <p className="pl-1 text-[0.68rem] font-medium tracking-[0.36em] text-white/72 sm:text-xs">
                 {t("heroKicker")}
               </p>
 
-              <h1 className="mt-4 text-5xl font-semibold leading-[0.95] tracking-[-0.04em] sm:text-7xl md:text-[5.5rem]">
+              <h1 className="mt-5 max-w-[12ch] text-[3.35rem] font-semibold leading-[0.92] tracking-[-0.05em] text-balance sm:mt-6 sm:text-[4.6rem] md:text-[5.35rem]">
                 {t("heroTitle").split("\n").map((line, index) => (
                   <span key={`${line}-${index}`}>
                     {line}
@@ -260,11 +293,11 @@ export default function HomePage() {
                 ))}
               </h1>
 
-              <p className="mt-6 max-w-xl text-base text-white/80 sm:text-lg">
+              <p className="mt-5 max-w-md pl-1 text-sm leading-6 text-white/76 sm:mt-6 sm:text-lg sm:leading-7">
                 {t("heroSubtitle")}
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap items-center gap-3 pl-1 sm:mt-10">
                 <Link
                   href="/menu"
                   className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-100"
