@@ -26,7 +26,7 @@ function GlobeIcon() {
   );
 }
 
-export function LanguageSwitcher() {
+export function LanguageSwitcher({ inverted = false }: { inverted?: boolean }) {
   const { lang, setLang } = useLanguage();
   const [open, setOpen] = useState(false);
 
@@ -35,7 +35,11 @@ export function LanguageSwitcher() {
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
-        className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-2 text-sm font-semibold text-neutral-800 hover:bg-neutral-50"
+        className={
+          inverted
+            ? "inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/10 px-3 py-2 text-sm font-semibold text-white backdrop-blur-md hover:bg-white/16"
+            : "inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-2 text-sm font-semibold text-neutral-800 hover:bg-neutral-50"
+        }
         aria-haspopup="listbox"
         aria-expanded={open}
       >

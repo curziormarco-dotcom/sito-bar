@@ -2,8 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { Cormorant_Garamond } from "next/font/google";
 import { useLanguage, type Language } from "./locale-provider";
 import { useEffect, useState } from "react";
+
+const heroSerif = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+});
 
 const HIGHLIGHTS = [
   {
@@ -109,7 +115,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
   it: {
     heroKicker: "BAR DA LUCIANO",
     heroTitle: "Bar a conduzione familiare,\nda oltre 40 anni.",
-    heroSubtitle: "Dal 1984.",
+    heroSubtitle: "Ogni giorno, dal caffè all’aperitivo. Dal 1984.",
     ctaMenu: "Scopri il menù",
     ctaBook: "Prenota",
     whereTitle: "Dove siamo",
@@ -129,7 +135,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
   en: {
     heroKicker: "BAR DA LUCIANO",
     heroTitle: "Family‑run bar,\nfor over 40 years.",
-    heroSubtitle: "Since 1984.",
+    heroSubtitle: "Every day, from morning coffee to aperitivo. Since 1984.",
     ctaMenu: "View the menu",
     ctaBook: "Book",
     whereTitle: "Find us",
@@ -149,7 +155,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
   fr: {
     heroKicker: "BAR DA LUCIANO",
     heroTitle: "Bar familial,\ndepuis plus de 40 ans.",
-    heroSubtitle: "Depuis 1984.",
+    heroSubtitle: "Chaque jour, du café du matin à l’apéritif. Depuis 1984.",
     ctaMenu: "Voir le menu",
     ctaBook: "Réserver",
     whereTitle: "Nous trouver",
@@ -169,7 +175,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
   de: {
     heroKicker: "BAR DA LUCIANO",
     heroTitle: "Familiengeführte Bar,\nseit über 40 Jahren.",
-    heroSubtitle: "Seit 1984.",
+    heroSubtitle: "Jeden Tag, vom Morgenkaffee bis zum Aperitif. Seit 1984.",
     ctaMenu: "Menü ansehen",
     ctaBook: "Reservieren",
     whereTitle: "Hier sind wir",
@@ -189,7 +195,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
   es: {
     heroKicker: "BAR DA LUCIANO",
     heroTitle: "Bar familiar,\ndesde hace más de 40 años.",
-    heroSubtitle: "Desde 1984.",
+    heroSubtitle: "Cada día, del café de la mañana al aperitivo. Desde 1984.",
     ctaMenu: "Ver el menú",
     ctaBook: "Reservar",
     whereTitle: "Dónde estamos",
@@ -280,13 +286,21 @@ export default function HomePage() {
             }}
           >
             <div className="max-w-[40rem] text-white sm:max-w-[44rem]">
-              <p className="pl-1 text-[0.68rem] font-medium tracking-[0.36em] text-white/72 sm:text-xs">
-                {t("heroKicker")}
-              </p>
+              <div className="flex items-center gap-3 pl-1">
+                <span className="h-px w-10 bg-white/35" />
+                <p className="text-[0.68rem] font-medium tracking-[0.36em] text-white/68 sm:text-xs">
+                  {t("heroKicker")}
+                </p>
+              </div>
 
-              <h1 className="mt-5 max-w-[12ch] text-[3.35rem] font-semibold leading-[0.92] tracking-[-0.05em] text-balance sm:mt-6 sm:text-[4.6rem] md:text-[5.35rem]">
+              <h1
+                className={`${heroSerif.className} mt-5 max-w-[11ch] text-[3.6rem] font-semibold leading-[0.88] tracking-[-0.04em] text-white [text-shadow:0_10px_28px_rgba(0,0,0,0.24)] text-balance sm:mt-6 sm:text-[5rem] md:text-[5.95rem]`}
+              >
                 {t("heroTitle").split("\n").map((line, index) => (
-                  <span key={`${line}-${index}`}>
+                  <span
+                    key={`${line}-${index}`}
+                    className={index === 1 ? "inline-block pl-[0.02em] text-white/96" : "inline-block"}
+                  >
                     {line}
                     {index === 0 && <br />}
                   </span>
@@ -300,14 +314,14 @@ export default function HomePage() {
               <div className="mt-8 flex flex-wrap items-center gap-3 pl-1 sm:mt-10">
                 <Link
                   href="/menu"
-                  className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-100"
+                  className="inline-flex min-h-12 items-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-neutral-900 shadow-[0_12px_30px_rgba(0,0,0,0.18)] transition hover:bg-neutral-100"
                 >
                   {t("ctaMenu")}
                 </Link>
 
                 <a
                   href="#prenota"
-                  className="rounded-full border border-white/50 bg-white/8 px-7 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/14"
+                  className="inline-flex min-h-12 items-center rounded-full border border-white/22 bg-white/10 px-7 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:border-white/30 hover:bg-white/16"
                 >
                   {t("ctaBook")}
                 </a>
@@ -321,69 +335,79 @@ export default function HomePage() {
         <section className="flex flex-col gap-6 md:grid md:grid-cols-4 md:items-stretch md:gap-6">
           {/* riga in alto: orari + info + venerdì */}
           <div className="md:col-span-4 grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-neutral-200 bg-white p-6 h-fit">
-              <h3 className="text-xs tracking-[0.28em] text-neutral-500">
+            <div className="h-fit rounded-[24px] border border-neutral-200/80 bg-white/90 p-7 shadow-[0_10px_30px_rgba(17,17,17,0.04)] backdrop-blur">
+              <h3 className="text-[0.7rem] font-medium tracking-[0.28em] text-neutral-500">
                 {HIGHLIGHTS[0].title[lang].toUpperCase()}
               </h3>
-              <p className="mt-3 text-sm text-neutral-700">{HIGHLIGHTS[0].text[lang]}</p>
+              <p className="mt-4 text-[1.05rem] leading-7 text-neutral-800">
+                {HIGHLIGHTS[0].text[lang]}
+              </p>
             </div>
 
-            <div className="rounded-2xl border border-neutral-200 bg-white p-6 h-fit">
-              <h3 className="text-xs tracking-[0.28em] text-neutral-500">
+            <div className="h-fit rounded-[24px] border border-neutral-200/80 bg-white/90 p-7 shadow-[0_10px_30px_rgba(17,17,17,0.04)] backdrop-blur">
+              <h3 className="text-[0.7rem] font-medium tracking-[0.28em] text-neutral-500">
                 {HIGHLIGHTS[1].title[lang].toUpperCase()}
               </h3>
-              <p className="mt-3 text-sm text-neutral-700">{HIGHLIGHTS[1].text[lang]}</p>
+              <p className="mt-4 text-[1.05rem] leading-7 text-neutral-800">
+                {HIGHLIGHTS[1].text[lang]}
+              </p>
             </div>
 
             <Link
               href="/menu#pesce"
-              className="rounded-2xl border border-neutral-200 bg-white p-6 h-fit transition hover:bg-neutral-50"
+              className="h-fit rounded-[24px] border border-neutral-200/80 bg-white/90 p-7 shadow-[0_10px_30px_rgba(17,17,17,0.04)] transition hover:-translate-y-0.5 hover:bg-white"
             >
-              <h3 className="text-xs tracking-[0.28em] text-neutral-500">
+              <h3 className="text-[0.7rem] font-medium tracking-[0.28em] text-neutral-500">
                 {HIGHLIGHTS[2].title[lang].toUpperCase()}
               </h3>
-              <p className="mt-3 text-sm text-neutral-700">
+              <p className="mt-4 text-[1.05rem] leading-7 text-neutral-800">
                 {fridayMessages[fridayIndex]}
               </p>
             </Link>
           </div>
 
           {/* card mappa: occupa 2 colonne su desktop */}
-          <div className="rounded-2xl border border-neutral-200 bg-white p-6 md:col-span-2 h-[280px] flex flex-col">
-            <h3 className="text-lg font-semibold">{t("whereTitle")}</h3>
+          <div className="flex h-[320px] flex-col rounded-[28px] border border-neutral-200/80 bg-white p-7 shadow-[0_14px_36px_rgba(17,17,17,0.05)] md:col-span-2">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-[0.7rem] font-medium tracking-[0.28em] text-neutral-500">
+                  MAP
+                </p>
+                <h3 className="mt-3 text-2xl font-semibold tracking-tight">{t("whereTitle")}</h3>
+              </div>
+              <a
+                href="https://www.google.com/maps?q=Via%20Esempio%2012%2C%20Milano"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex rounded-full border border-neutral-300 px-4 py-2 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-50"
+              >
+                {t("whereCta")}
+              </a>
+            </div>
 
-            <p className="mt-1 text-sm text-neutral-600">
+            <p className="mt-3 text-sm leading-6 text-neutral-600">
               Bar Da Luciano<br />
               Via Nazareth 20, Padova
             </p>
 
-            <a
-              href="https://www.google.com/maps?q=Via%20Esempio%2012%2C%20Milano"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-3 inline-block text-sm font-semibold text-neutral-900 underline"
-            >
-              {t("whereCta")}
-            </a>
-
             <div className="mt-4 flex-1 overflow-hidden rounded-xl border border-neutral-200">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.46097070022!2d11.89233677655568!3d45.40004323771666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477edafcc00abb53%3A0x837057fcf720ca6!2sBar%20Da%20Luciano!5e0!3m2!1sit!2sit!4v1769651829333!5m2!1sit!2sit"
-    width="100%"
-    height="100%"
-    loading="lazy"
-    referrerPolicy="no-referrer"
-    className="block h-full w-full"
-  />
-</div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.46097070022!2d11.89233677655568!3d45.40004323771666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477edafcc00abb53%3A0x837057fcf720ca6!2sBar%20Da%20Luciano!5e0!3m2!1sit!2sit!4v1769651829333!5m2!1sit!2sit"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+                className="block h-full w-full"
+              />
+            </div>
           </div>
 
           {/* riga in basso: immagine e mappa affiancate */}
-          <div className="relative md:col-span-2 h-[280px] overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+          <div className="relative h-[320px] overflow-hidden rounded-[28px] border border-neutral-200/70 bg-white shadow-[0_14px_36px_rgba(17,17,17,0.05)] md:col-span-2">
             <div className="absolute inset-0 z-10 flex items-center justify-center">
               <Link
                 href="/menu#aperitivi-alcolici"
-                className="inline-flex rounded-full border border-white/20 bg-white/5 px-6 py-2 text-sm font-semibold text-white shadow-sm backdrop-blur-sm hover:bg-white/15"
+                className="inline-flex rounded-full border border-white/20 bg-white/10 px-6 py-2 text-sm font-semibold text-white shadow-sm backdrop-blur-sm transition hover:bg-white/18"
                 style={{
                   backgroundImage:
                     "repeating-linear-gradient(135deg, rgba(255,255,255,0.08) 0, rgba(255,255,255,0.08) 6px, rgba(255,255,255,0.03) 6px, rgba(255,255,255,0.03) 12px)",
@@ -391,6 +415,14 @@ export default function HomePage() {
               >
                 Cocktail
               </Link>
+            </div>
+            <div className="absolute inset-x-0 top-0 z-10 p-7">
+              <p className="text-[0.7rem] font-medium tracking-[0.28em] text-white/70">
+                SIGNATURE
+              </p>
+              <p className="mt-3 max-w-xs text-2xl font-semibold tracking-tight text-white">
+                Aperitivi, cocktail e il momento migliore della giornata.
+              </p>
             </div>
             <Link href="/menu#aperitivi-alcolici" className="block h-full w-full">
               <Image
@@ -401,6 +433,7 @@ export default function HomePage() {
                 className="h-full w-full object-cover object-[85%_90%] sm:object-[80%_82%]"
               />
             </Link>
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.38)_0%,rgba(0,0,0,0.14)_40%,rgba(0,0,0,0.48)_100%)]" />
           </div>
         </section>
 
