@@ -128,7 +128,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     call: "Chiama",
     drinkAlt: "Aperitivo",
     cocktailCta: "Cocktail",
-    cocktailTitle: "Aperitivi e cocktail",
+    cocktailTitle: "I nostri aperitivi e cocktail",
     fridayOnlyAlert: "Disponibile solo il venerdì.",
     leaveReviewTitle: "Lascia una recensione",
     leaveReviewSubtitle: "Racconta la tua esperienza su Google.",
@@ -150,7 +150,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     call: "Call",
     drinkAlt: "Aperitif",
     cocktailCta: "Cocktails",
-    cocktailTitle: "Aperitifs and cocktails",
+    cocktailTitle: "Our aperitifs and cocktails",
     fridayOnlyAlert: "Available only on Fridays.",
     leaveReviewTitle: "Leave a review",
     leaveReviewSubtitle: "Share your experience on Google.",
@@ -172,7 +172,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     call: "Appeler",
     drinkAlt: "Apéritif",
     cocktailCta: "Cocktails",
-    cocktailTitle: "Apéritifs et cocktails",
+    cocktailTitle: "Nos apéritifs et cocktails",
     fridayOnlyAlert: "Disponible uniquement le vendredi.",
     leaveReviewTitle: "Laisser un avis",
     leaveReviewSubtitle: "Partage ton expérience sur Google.",
@@ -194,7 +194,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     call: "Anrufen",
     drinkAlt: "Aperitif",
     cocktailCta: "Cocktails",
-    cocktailTitle: "Aperitifs und Cocktails",
+    cocktailTitle: "Unsere Aperitifs und Cocktails",
     fridayOnlyAlert: "Nur freitags verfügbar.",
     leaveReviewTitle: "Bewertung hinterlassen",
     leaveReviewSubtitle: "Teile deine Erfahrung auf Google.",
@@ -216,7 +216,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     call: "Llamar",
     drinkAlt: "Aperitivo",
     cocktailCta: "Cocteles",
-    cocktailTitle: "Aperitivos y cocteles",
+    cocktailTitle: "Nuestros aperitivos y cocteles",
     fridayOnlyAlert: "Disponible solo los viernes.",
     leaveReviewTitle: "Deja una reseña",
     leaveReviewSubtitle: "Comparte tu experiencia en Google.",
@@ -417,6 +417,11 @@ export default function HomePage() {
           {/* riga in basso: immagine e mappa affiancate */}
           <div className="relative h-[320px] overflow-hidden rounded-[28px] border border-neutral-200/70 bg-white shadow-[0_14px_36px_rgba(17,17,17,0.05)] md:col-span-2">
             <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
+              <p className="max-w-md px-6 text-center text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                {t("cocktailTitle")}
+              </p>
+            </div>
+            <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center pt-24 sm:pt-28">
               <Link
                 href="/menu#aperitivi-alcolici"
                 aria-label={t("cocktailTitle")}
@@ -428,11 +433,6 @@ export default function HomePage() {
               >
                 {t("cocktailCta")}
               </Link>
-            </div>
-            <div className="pointer-events-none absolute inset-x-0 top-0 z-10 p-7">
-              <p className="max-w-xs text-2xl font-semibold tracking-tight text-white">
-                {t("cocktailTitle")}
-              </p>
             </div>
             <Link href="/menu#aperitivi-alcolici" className="block h-full w-full">
               <Image
