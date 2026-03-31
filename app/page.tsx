@@ -11,6 +11,8 @@ const heroSerif = Cormorant_Garamond({
   weight: ["500", "600"],
 });
 
+const WHATSAPP_URL = "https://wa.me/390000000000";
+
 const HIGHLIGHTS = [
   {
     title: {
@@ -117,13 +119,13 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     heroTitle: "Bar a conduzione familiare,\nda oltre 40 anni.",
     heroSubtitle: "Ogni giorno, dal caffè all’aperitivo. Dal 1984.",
     ctaMenu: "Scopri il menù",
-    ctaBook: "Prenota",
+    ctaBook: "Contattaci",
     whereTitle: "Dove siamo",
     whereCta: "Apri su Google Maps",
     signatureTitle: "Signature",
     signatureSubtitle: "Tre proposte iconiche per iniziare.",
     seeAll: "Vedi tutto →",
-    bookTitle: "Prenota",
+    bookTitle: "Contattaci",
     bookSubtitle: "Scrivici su WhatsApp o chiamaci per prenotare tavoli, feste di laurea e rinfreschi.",
     call: "Chiama",
     drinkAlt: "Aperitivo",
@@ -139,13 +141,13 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     heroTitle: "Family‑run bar,\nfor over 40 years.",
     heroSubtitle: "Every day, from morning coffee to aperitivo. Since 1984.",
     ctaMenu: "View the menu",
-    ctaBook: "Book",
+    ctaBook: "Contact us",
     whereTitle: "Find us",
     whereCta: "Open in Google Maps",
     signatureTitle: "Signature",
     signatureSubtitle: "Three iconic picks to start with.",
     seeAll: "See all →",
-    bookTitle: "Book",
+    bookTitle: "Contact us",
     bookSubtitle: "Message us on WhatsApp or call to book tables, graduation parties, and refreshments.",
     call: "Call",
     drinkAlt: "Aperitif",
@@ -161,13 +163,13 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     heroTitle: "Bar familial,\ndepuis plus de 40 ans.",
     heroSubtitle: "Chaque jour, du café du matin à l’apéritif. Depuis 1984.",
     ctaMenu: "Voir le menu",
-    ctaBook: "Réserver",
+    ctaBook: "Contactez-nous",
     whereTitle: "Nous trouver",
     whereCta: "Ouvrir sur Google Maps",
     signatureTitle: "Signature",
     signatureSubtitle: "Trois incontournables pour commencer.",
     seeAll: "Voir tout →",
-    bookTitle: "Réserver",
+    bookTitle: "Contactez-nous",
     bookSubtitle: "Écris‑nous sur WhatsApp ou appelle‑nous pour réserver des tables, des fêtes de remise de diplôme et des rafraîchissements.",
     call: "Appeler",
     drinkAlt: "Apéritif",
@@ -183,13 +185,13 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     heroTitle: "Familiengeführte Bar,\nseit über 40 Jahren.",
     heroSubtitle: "Jeden Tag, vom Morgenkaffee bis zum Aperitif. Seit 1984.",
     ctaMenu: "Menü ansehen",
-    ctaBook: "Reservieren",
+    ctaBook: "Kontaktiere uns",
     whereTitle: "Hier sind wir",
     whereCta: "In Google Maps öffnen",
     signatureTitle: "Signature",
     signatureSubtitle: "Drei ikonische Vorschläge zum Start.",
     seeAll: "Alle ansehen →",
-    bookTitle: "Reservieren",
+    bookTitle: "Kontaktiere uns",
     bookSubtitle: "Schreib uns auf WhatsApp oder ruf an, um Tische, Abschlussfeiern und Erfrischungen zu reservieren.",
     call: "Anrufen",
     drinkAlt: "Aperitif",
@@ -205,13 +207,13 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     heroTitle: "Bar familiar,\ndesde hace más de 40 años.",
     heroSubtitle: "Cada día, del café de la mañana al aperitivo. Desde 1984.",
     ctaMenu: "Ver el menú",
-    ctaBook: "Reservar",
+    ctaBook: "Contáctanos",
     whereTitle: "Dónde estamos",
     whereCta: "Abrir en Google Maps",
     signatureTitle: "Signature",
     signatureSubtitle: "Tres propuestas icónicas para empezar.",
     seeAll: "Ver todo →",
-    bookTitle: "Reservar",
+    bookTitle: "Contáctanos",
     bookSubtitle: "Escríbenos por WhatsApp o llámanos para reservar mesas, fiestas de graduación y refrigerios.",
     call: "Llamar",
     drinkAlt: "Aperitivo",
@@ -502,14 +504,6 @@ export default function HomePage() {
               className="inline-flex rounded-full bg-neutral-900 px-7 py-3 text-sm font-semibold text-white transition hover:bg-neutral-800"
             >
               {t("call")}
-            </a>
-            <a
-              href="https://wa.me/390000000000"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex rounded-full border border-neutral-300 px-7 py-3 text-sm font-semibold transition hover:bg-neutral-50"
-            >
-              WhatsApp
             </a>
           </div>
         </section>

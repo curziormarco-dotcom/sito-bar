@@ -14,6 +14,8 @@ const COPY: Record<Language, { title: string; subtitle: string }> = {
 const IMAGES = [
   { src: "/images/hero.jpg", alt: "Bar Da Luciano" },
   { src: "/images/negroni.jpg", alt: "Cocktail" },
+  { src: "/images/italian-75.jpeg", alt: "Italian 75" },
+  { src: "/images/laurea.jpeg", alt: "Laurea" },
 ];
 
 export default function GalleryPage() {
