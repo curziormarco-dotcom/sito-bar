@@ -486,13 +486,13 @@ export default function HomePage() {
           </section>
         )}
 
-        <section className="rounded-[28px] border border-neutral-200 bg-white p-10 sm:p-12">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div>
+        <section className="rounded-[28px] border border-neutral-200 bg-white px-6 py-8 sm:px-10 sm:py-10">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-2xl">
               <h2 className="text-2xl font-semibold tracking-tight">
                 {t("leaveReviewTitle")}
               </h2>
-              <p className="mt-2 text-neutral-600">
+              <p className="mt-3 text-neutral-600">
                 {t("leaveReviewSubtitle")}
               </p>
             </div>
@@ -500,7 +500,7 @@ export default function HomePage() {
               href="https://www.google.com/search?client=safari&hs=FPz9&sca_esv=074920bdea4960d4&rls=en&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_xztH0BMykLPYJ2yUKG24IswJDdqjMpbJsR6pZofdiNDCebTRuBkcKRCunEOQyf_gcLSItw9QjEmHthYUk5XMsr1zNmOf&q=Bar+Da+Luciano+Recensioni&sa=X&ved=2ahUKEwiAlZbHxM2SAxWXhP0HHUv-A6kQ0bkNegQIHxAH&biw=960&bih=933&dpr=1"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex rounded-full border border-neutral-300 px-6 py-3 text-sm font-semibold hover:bg-neutral-50 transition"
+              className="inline-flex w-fit shrink-0 rounded-full border border-neutral-300 px-6 py-3 text-sm font-semibold transition hover:bg-neutral-50"
             >
               {t("leaveReviewCta")}
             </a>
@@ -510,17 +510,19 @@ export default function HomePage() {
         {/* PRENOTA */}
         <section
           id="prenota"
-          className="rounded-[28px] border border-neutral-200 bg-white p-10 sm:p-12"
+          className="mt-8 rounded-[28px] border border-neutral-200 bg-white px-6 py-8 sm:px-10 sm:py-10"
         >
-          <h2 className="text-3xl font-semibold tracking-tight">{t("bookTitle")}</h2>
-          <p className="mt-2 text-neutral-600">
-            {t("bookSubtitle")}
-          </p>
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-semibold tracking-tight">{t("bookTitle")}</h2>
+            <p className="mt-3 text-neutral-600">
+              {t("bookSubtitle")}
+            </p>
+          </div>
 
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="tel:+390000000000"
-              className="rounded-full bg-neutral-900 px-7 py-3 text-sm font-semibold text-white hover:bg-neutral-800 transition"
+              className="inline-flex rounded-full bg-neutral-900 px-7 py-3 text-sm font-semibold text-white transition hover:bg-neutral-800"
             >
               {t("call")}
             </a>
@@ -528,7 +530,7 @@ export default function HomePage() {
               href="https://wa.me/390000000000"
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-neutral-300 px-7 py-3 text-sm font-semibold hover:bg-neutral-50 transition"
+              className="inline-flex rounded-full border border-neutral-300 px-7 py-3 text-sm font-semibold transition hover:bg-neutral-50"
             >
               WhatsApp
             </a>
