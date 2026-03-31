@@ -37,7 +37,7 @@ const HIGHLIGHTS = [
       es: "Nuestras propuestas",
     },
     text: {
-      it: "• colazioni • pranzi • aperitivi • feste di laurea • rinfreschi",
+      it: "• colazioni • pranzi • aperitivi\n• feste di laurea • rinfreschi",
       en: "• breakfasts • lunches • aperitifs • graduation parties • refreshments",
       fr: "• petits‑déjeuners • déjeuners • apéritifs • fêtes de remise de diplôme • rafraîchissements",
       de: "• frühstück • mittagessen • aperitifs • abschlussfeiern • erfrischungen",
@@ -348,7 +348,7 @@ export default function HomePage() {
               <h3 className="text-[0.7rem] font-medium tracking-[0.28em] text-neutral-500">
                 {HIGHLIGHTS[1].title[lang].toUpperCase()}
               </h3>
-              <p className="mt-4 text-[1.05rem] leading-7 text-neutral-800">
+              <p className="mt-4 whitespace-pre-line text-[1.05rem] leading-7 text-neutral-800">
                 {HIGHLIGHTS[1].text[lang]}
               </p>
             </div>
@@ -404,10 +404,11 @@ export default function HomePage() {
 
           {/* riga in basso: immagine e mappa affiancate */}
           <div className="relative h-[320px] overflow-hidden rounded-[28px] border border-neutral-200/70 bg-white shadow-[0_14px_36px_rgba(17,17,17,0.05)] md:col-span-2">
-            <div className="absolute inset-0 z-10 flex items-center justify-center">
+            <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
               <Link
                 href="/menu#aperitivi-alcolici"
-                className="inline-flex rounded-full border border-white/20 bg-white/10 px-6 py-2 text-sm font-semibold text-white shadow-sm backdrop-blur-sm transition hover:bg-white/18"
+                aria-label="Apri la sezione aperitivi e cocktail"
+                className="pointer-events-auto inline-flex rounded-full border border-white/20 bg-white/10 px-6 py-2 text-sm font-semibold text-white shadow-sm backdrop-blur-sm transition hover:bg-white/18"
                 style={{
                   backgroundImage:
                     "repeating-linear-gradient(135deg, rgba(255,255,255,0.08) 0, rgba(255,255,255,0.08) 6px, rgba(255,255,255,0.03) 6px, rgba(255,255,255,0.03) 12px)",
@@ -416,12 +417,9 @@ export default function HomePage() {
                 Cocktail
               </Link>
             </div>
-            <div className="absolute inset-x-0 top-0 z-10 p-7">
-              <p className="text-[0.7rem] font-medium tracking-[0.28em] text-white/70">
-                SIGNATURE
-              </p>
-              <p className="mt-3 max-w-xs text-2xl font-semibold tracking-tight text-white">
-                Aperitivi, cocktail e il momento migliore della giornata.
+            <div className="pointer-events-none absolute inset-x-0 top-0 z-10 p-7">
+              <p className="max-w-xs text-2xl font-semibold tracking-tight text-white">
+                Aperitivi e cocktail
               </p>
             </div>
             <Link href="/menu#aperitivi-alcolici" className="block h-full w-full">
@@ -486,7 +484,7 @@ export default function HomePage() {
           </section>
         )}
 
-        <section className="rounded-[28px] border border-neutral-200 bg-white px-6 py-8 sm:px-10 sm:py-10">
+        <section className="mt-8 rounded-[28px] border border-neutral-200 bg-white px-6 py-8 sm:px-10 sm:py-10">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-2xl">
               <h2 className="text-2xl font-semibold tracking-tight">
