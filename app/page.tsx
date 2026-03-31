@@ -237,7 +237,6 @@ export default function HomePage() {
   const { lang } = useLanguage();
   const t = (key: string) => HOME_COPY[lang][key] ?? key;
   const [fridayIndex, setFridayIndex] = useState(0);
-  const [heroProgress, setHeroProgress] = useState(0);
   const fridayMessages = FRIDAY_ROTATION[lang];
 
   useEffect(() => {
@@ -247,101 +246,69 @@ export default function HomePage() {
     return () => clearInterval(timer);
   }, [fridayMessages.length]);
 
-  useEffect(() => {
-    const updateHeroProgress = () => {
-      const viewportHeight = window.innerHeight || 1;
-      const progress = Math.min(window.scrollY / (viewportHeight * 0.9), 1);
-      setHeroProgress(progress);
-    };
-
-    updateHeroProgress();
-    window.addEventListener("scroll", updateHeroProgress, { passive: true });
-    window.addEventListener("resize", updateHeroProgress);
-
-    return () => {
-      window.removeEventListener("scroll", updateHeroProgress);
-      window.removeEventListener("resize", updateHeroProgress);
-    };
-  }, []);
-
-  const heroImageScale = 1.12 - heroProgress * 0.12;
-  const heroImageOpacity = 1 - heroProgress * 0.28;
-  const heroContentOpacity = 1 - heroProgress * 0.34;
-  const heroContentTranslate = heroProgress * 36;
-
   return (
     <div className="bg-[#fbfaf7] text-neutral-900">
-      <section className="relative left-1/2 right-1/2 -mx-[50vw] -mt-10 h-[165svh] w-screen bg-neutral-950">
-        <div className="sticky top-[4.5rem] flex min-h-[calc(100svh-4.5rem)] items-end overflow-hidden sm:top-[5rem] sm:min-h-[calc(100svh-5rem)]">
+      <section className="relative left-1/2 right-1/2 -mx-[50vw] -mt-10 flex min-h-[calc(100svh-4.5rem)] w-screen items-end overflow-hidden bg-neutral-950 sm:min-h-[calc(100svh-5rem)]">
+        <div className="absolute inset-0">
           <Image
             src="/images/hero.jpg"
             alt=""
             fill
             priority
-            className="object-cover object-center will-change-transform"
+            className="object-cover object-center"
             sizes="100vw"
-            style={{
-              transform: `scale(${heroImageScale})`,
-              opacity: heroImageOpacity,
-            }}
           />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.12)_0%,rgba(0,0,0,0.2)_34%,rgba(0,0,0,0.6)_100%)]" />
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(180deg,rgba(251,250,247,0)_0%,rgba(251,250,247,0.88)_100%)]" />
+        </div>
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.12)_0%,rgba(0,0,0,0.2)_34%,rgba(0,0,0,0.6)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(180deg,rgba(251,250,247,0)_0%,rgba(251,250,247,0.88)_100%)]" />
 
-          <div
-            className="relative z-10 mx-auto flex w-full max-w-6xl px-6 pb-14 will-change-transform sm:pb-20"
-            style={{
-              opacity: heroContentOpacity,
-              transform: `translateY(${heroContentTranslate}px)`,
-            }}
-          >
-            <div className="max-w-[40rem] text-white sm:max-w-[44rem]">
-              <div className="flex items-center gap-3 pl-1">
-                <span className="h-px w-10 bg-white/35" />
-                <p className="text-[0.68rem] font-medium tracking-[0.36em] text-white/68 sm:text-xs">
-                  {t("heroKicker")}
-                </p>
-              </div>
-
-              <h1
-                className={`${heroSerif.className} mt-5 max-w-[11ch] text-[3.6rem] font-semibold leading-[0.88] tracking-[-0.04em] text-white [text-shadow:0_10px_28px_rgba(0,0,0,0.24)] text-balance sm:mt-6 sm:text-[5rem] md:text-[5.95rem]`}
-              >
-                {t("heroTitle").split("\n").map((line, index) => (
-                  <span
-                    key={`${line}-${index}`}
-                    className={index === 1 ? "inline-block pl-[0.02em] text-white/96" : "inline-block"}
-                  >
-                    {line}
-                    {index === 0 && <br />}
-                  </span>
-                ))}
-              </h1>
-
-              <p className="mt-5 max-w-md pl-1 text-sm leading-6 text-white/76 sm:mt-6 sm:text-lg sm:leading-7">
-                {t("heroSubtitle")}
+        <div className="relative z-10 mx-auto flex w-full max-w-6xl px-6 pb-14 sm:pb-20">
+          <div className="max-w-[40rem] text-white sm:max-w-[44rem]">
+            <div className="flex items-center gap-3 pl-1">
+              <span className="h-px w-10 bg-white/35" />
+              <p className="text-[0.68rem] font-medium tracking-[0.36em] text-white/68 sm:text-xs">
+                {t("heroKicker")}
               </p>
+            </div>
 
-              <div className="mt-8 flex flex-wrap items-center gap-3 pl-1 sm:mt-10">
-                <Link
-                  href="/menu"
-                  className="inline-flex min-h-12 items-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-neutral-900 shadow-[0_12px_30px_rgba(0,0,0,0.18)] transition hover:bg-neutral-100"
+            <h1
+              className={`${heroSerif.className} mt-5 max-w-[11ch] text-[3.6rem] font-semibold leading-[0.88] tracking-[-0.04em] text-white [text-shadow:0_10px_28px_rgba(0,0,0,0.24)] text-balance sm:mt-6 sm:text-[5rem] md:text-[5.95rem]`}
+            >
+              {t("heroTitle").split("\n").map((line, index) => (
+                <span
+                  key={`${line}-${index}`}
+                  className={index === 1 ? "inline-block pl-[0.02em] text-white/96" : "inline-block"}
                 >
-                  {t("ctaMenu")}
-                </Link>
+                  {line}
+                  {index === 0 && <br />}
+                </span>
+              ))}
+            </h1>
 
-                <a
-                  href="#prenota"
-                  className="inline-flex min-h-12 items-center rounded-full border border-white/22 bg-white/10 px-7 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:border-white/30 hover:bg-white/16"
-                >
-                  {t("ctaBook")}
-                </a>
-              </div>
+            <p className="mt-5 max-w-md pl-1 text-sm leading-6 text-white/76 sm:mt-6 sm:text-lg sm:leading-7">
+              {t("heroSubtitle")}
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-3 pl-1 sm:mt-10">
+              <Link
+                href="/menu"
+                className="inline-flex min-h-12 items-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-neutral-900 shadow-[0_12px_30px_rgba(0,0,0,0.18)] transition hover:bg-neutral-100"
+              >
+                {t("ctaMenu")}
+              </Link>
+
+              <a
+                href="#prenota"
+                className="inline-flex min-h-12 items-center rounded-full border border-white/22 bg-white/10 px-7 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:border-white/30 hover:bg-white/16"
+              >
+                {t("ctaBook")}
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <div className="relative z-10 mx-auto -mt-[42svh] max-w-6xl rounded-t-[32px] bg-[#fbfaf7] px-6 pt-6 pb-14 shadow-[0_-24px_60px_rgba(17,17,17,0.08)] sm:-mt-[46svh] sm:pt-8 sm:pb-20">
+      <div className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
         <section className="flex flex-col gap-6 md:grid md:grid-cols-4 md:items-stretch md:gap-6">
           {/* riga in alto: orari + info + venerdì */}
           <div className="md:col-span-4 grid gap-6 md:grid-cols-3">
