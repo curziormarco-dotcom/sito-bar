@@ -127,6 +127,8 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     bookSubtitle: "Scrivici su WhatsApp o chiamaci per prenotare tavoli, feste di laurea e rinfreschi.",
     call: "Chiama",
     drinkAlt: "Aperitivo",
+    cocktailCta: "Cocktail",
+    cocktailTitle: "Aperitivi e cocktail",
     fridayOnlyAlert: "Disponibile solo il venerdì.",
     leaveReviewTitle: "Lascia una recensione",
     leaveReviewSubtitle: "Racconta la tua esperienza su Google.",
@@ -147,6 +149,8 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     bookSubtitle: "Message us on WhatsApp or call to book tables, graduation parties, and refreshments.",
     call: "Call",
     drinkAlt: "Aperitif",
+    cocktailCta: "Cocktails",
+    cocktailTitle: "Aperitifs and cocktails",
     fridayOnlyAlert: "Available only on Fridays.",
     leaveReviewTitle: "Leave a review",
     leaveReviewSubtitle: "Share your experience on Google.",
@@ -167,6 +171,8 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     bookSubtitle: "Écris‑nous sur WhatsApp ou appelle‑nous pour réserver des tables, des fêtes de remise de diplôme et des rafraîchissements.",
     call: "Appeler",
     drinkAlt: "Apéritif",
+    cocktailCta: "Cocktails",
+    cocktailTitle: "Apéritifs et cocktails",
     fridayOnlyAlert: "Disponible uniquement le vendredi.",
     leaveReviewTitle: "Laisser un avis",
     leaveReviewSubtitle: "Partage ton expérience sur Google.",
@@ -187,6 +193,8 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     bookSubtitle: "Schreib uns auf WhatsApp oder ruf an, um Tische, Abschlussfeiern und Erfrischungen zu reservieren.",
     call: "Anrufen",
     drinkAlt: "Aperitif",
+    cocktailCta: "Cocktails",
+    cocktailTitle: "Aperitifs und Cocktails",
     fridayOnlyAlert: "Nur freitags verfügbar.",
     leaveReviewTitle: "Bewertung hinterlassen",
     leaveReviewSubtitle: "Teile deine Erfahrung auf Google.",
@@ -207,6 +215,8 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     bookSubtitle: "Escríbenos por WhatsApp o llámanos para reservar mesas, fiestas de graduación y refrigerios.",
     call: "Llamar",
     drinkAlt: "Aperitivo",
+    cocktailCta: "Cocteles",
+    cocktailTitle: "Aperitivos y cocteles",
     fridayOnlyAlert: "Disponible solo los viernes.",
     leaveReviewTitle: "Deja una reseña",
     leaveReviewSubtitle: "Comparte tu experiencia en Google.",
@@ -407,19 +417,19 @@ export default function HomePage() {
             <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
               <Link
                 href="/menu#aperitivi-alcolici"
-                aria-label="Apri la sezione aperitivi e cocktail"
+                aria-label={t("cocktailTitle")}
                 className="pointer-events-auto inline-flex rounded-full border border-white/20 bg-white/10 px-6 py-2 text-sm font-semibold text-white shadow-sm backdrop-blur-sm transition hover:bg-white/18"
                 style={{
                   backgroundImage:
                     "repeating-linear-gradient(135deg, rgba(255,255,255,0.08) 0, rgba(255,255,255,0.08) 6px, rgba(255,255,255,0.03) 6px, rgba(255,255,255,0.03) 12px)",
                 }}
               >
-                Cocktail
+                {t("cocktailCta")}
               </Link>
             </div>
             <div className="pointer-events-none absolute inset-x-0 top-0 z-10 p-7">
               <p className="max-w-xs text-2xl font-semibold tracking-tight text-white">
-                Aperitivi e cocktail
+                {t("cocktailTitle")}
               </p>
             </div>
             <Link href="/menu#aperitivi-alcolici" className="block h-full w-full">
@@ -522,7 +532,7 @@ export default function HomePage() {
               href="tel:+390499813795"
               className="inline-flex rounded-full bg-neutral-900 px-7 py-3 text-sm font-semibold text-white transition hover:bg-neutral-800"
             >
-              {t("call")} 0499813795
+              {t("call")}
             </a>
             <a
               href="https://wa.me/390000000000"
