@@ -519,10 +519,10 @@ export default function HomePage() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="tel:+390000000000"
+              href="tel:+390499813795"
               className="inline-flex rounded-full bg-neutral-900 px-7 py-3 text-sm font-semibold text-white transition hover:bg-neutral-800"
             >
-              {t("call")}
+              {t("call")} 0499813795
             </a>
             <a
               href="https://wa.me/390000000000"
