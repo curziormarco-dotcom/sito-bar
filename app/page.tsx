@@ -383,7 +383,9 @@ export default function HomePage() {
                 <p className="text-[0.7rem] font-medium tracking-[0.28em] text-neutral-500">
                   MAP
                 </p>
-                <h3 className="mt-3 text-2xl font-semibold tracking-tight">{t("whereTitle")}</h3>
+                <h3 className="mt-3 whitespace-nowrap text-2xl font-semibold tracking-tight">
+                  {t("whereTitle")}
+                </h3>
               </div>
               <a
                 href="https://www.google.com/maps?q=Via%20Esempio%2012%2C%20Milano"
