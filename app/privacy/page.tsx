@@ -26,7 +26,9 @@ const SECTIONS = [
     body: [
       "Il sito non usa al momento strumenti di profilazione pubblicitaria, Google Analytics o Meta Pixel.",
       "Possono essere usati cookie o strumenti tecnici necessari al funzionamento del sito e dell'hosting. Per questi strumenti non e richiesto il consenso preventivo.",
-      "La pagina puo includere una mappa Google incorporata. La visualizzazione della mappa comporta il collegamento ai servizi di Google, che possono trattare dati secondo le proprie informative.",
+      "Il sito mostra un banner per la gestione delle preferenze relative a cookie e servizi di terze parti. La scelta dell'utente, accettazione o rifiuto, viene salvata nel browser tramite localStorage con la chiave bar-da-luciano-cookie-consent.",
+      "La mappa Google incorporata viene caricata solo se l'utente accetta i cookie e i servizi Google Maps. In caso di rifiuto, la mappa resta bloccata e non viene caricato l'iframe Google Maps.",
+      "L'utente puo modificare la scelta in qualsiasi momento usando il pulsante Cookie presente nel footer del sito.",
     ],
   },
   {
