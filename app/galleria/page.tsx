@@ -31,7 +31,7 @@ export default function GalleryPage() {
         <p className="mt-2 text-neutral-600">{t("subtitle")}</p>
       </header>
 
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="grid gap-4 sm:grid-cols-2">
         {IMAGES.map((image) => (
           <figure
             key={image.src}
