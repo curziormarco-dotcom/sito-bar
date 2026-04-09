@@ -833,7 +833,7 @@ export const MENU: MenuSection[] = [
           de: "Gemischte Tramezzini",
           es: "Tramezzini surtidos",
         },
-        price: 2.2,
+        price: 2.4,
       },
       {
         name: {
@@ -883,7 +883,7 @@ export const MENU: MenuSection[] = [
           de: "Piadine",
           es: "Piadine",
         },
-        price: 5.0,
+        price: 5.5,
       },
       {
         name: {
