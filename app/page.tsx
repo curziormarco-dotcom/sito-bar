@@ -265,7 +265,7 @@ export default function HomePage() {
 
   return (
     <div className="bg-[#fbfaf7] text-neutral-900">
-      <section className="relative left-1/2 right-1/2 -mx-[50vw] -mt-10 flex min-h-[calc(86svh-4.5rem)] w-screen items-end overflow-hidden bg-neutral-950 sm:min-h-[calc(88svh-5rem)]">
+      <section className="relative left-1/2 right-1/2 -mx-[50vw] -mt-10 flex min-h-[calc(92svh-4.5rem)] w-screen items-end overflow-hidden bg-neutral-950 sm:min-h-[calc(94svh-5rem)]">
         <div className="absolute inset-0">
           <Image
             src="/images/hero.jpg"
