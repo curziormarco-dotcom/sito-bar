@@ -115,7 +115,7 @@ const SIGNATURES: {
 const HOME_COPY: Record<Language, Record<string, string>> = {
   it: {
     heroKicker: "BAR DA LUCIANO",
-    heroTitle: "Bar a conduzione familiare,\nda oltre 40 anni.",
+    heroTitle: "Bar a conduzione familiare,\nda oltre 40 anni a Padova.",
     heroSubtitle: "Ogni giorno, dal caffè all’aperitivo. Dal 1984.",
     ctaMenu: "Scopri il menù",
     ctaBook: "Contattaci",
@@ -129,7 +129,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     call: "Chiama",
     drinkAlt: "Aperitivo",
     cocktailCta: "Cocktail",
-    cocktailTitle: "I nostri aperitivi e cocktail",
+    cocktailTitle: "I nostri cocktail e aperitivi",
     fridayOnlyAlert: "Disponibile solo il venerdì.",
     leaveReviewTitle: "Lascia una recensione",
     leaveReviewSubtitle: "Racconta la tua esperienza su Google.",
@@ -140,7 +140,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
   },
   en: {
     heroKicker: "BAR DA LUCIANO",
-    heroTitle: "Family‑run bar,\nfor over 40 years.",
+    heroTitle: "Family‑run bar,\nfor over 40 years in Padua.",
     heroSubtitle: "Every day, from morning coffee to aperitivo. Since 1984.",
     ctaMenu: "View the menu",
     ctaBook: "Contact us",
@@ -154,7 +154,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     call: "Call",
     drinkAlt: "Aperitif",
     cocktailCta: "Cocktails",
-    cocktailTitle: "Our aperitifs and cocktails",
+    cocktailTitle: "Our cocktails and aperitifs",
     fridayOnlyAlert: "Available only on Fridays.",
     leaveReviewTitle: "Leave a review",
     leaveReviewSubtitle: "Share your experience on Google.",
@@ -165,7 +165,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
   },
   fr: {
     heroKicker: "BAR DA LUCIANO",
-    heroTitle: "Bar familial,\ndepuis plus de 40 ans.",
+    heroTitle: "Bar familial,\ndepuis plus de 40 ans à Padoue.",
     heroSubtitle: "Chaque jour, du café du matin à l’apéritif. Depuis 1984.",
     ctaMenu: "Voir le menu",
     ctaBook: "Contactez-nous",
@@ -179,7 +179,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     call: "Appeler",
     drinkAlt: "Apéritif",
     cocktailCta: "Cocktails",
-    cocktailTitle: "Nos apéritifs et cocktails",
+    cocktailTitle: "Nos cocktails et apéritifs",
     fridayOnlyAlert: "Disponible uniquement le vendredi.",
     leaveReviewTitle: "Laisser un avis",
     leaveReviewSubtitle: "Partage ton expérience sur Google.",
@@ -190,7 +190,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
   },
   de: {
     heroKicker: "BAR DA LUCIANO",
-    heroTitle: "Familiengeführte Bar,\nseit über 40 Jahren.",
+    heroTitle: "Familiengeführte Bar,\nseit über 40 Jahren in Padua.",
     heroSubtitle: "Jeden Tag, vom Morgenkaffee bis zum Aperitif. Seit 1984.",
     ctaMenu: "Menü ansehen",
     ctaBook: "Kontaktiere uns",
@@ -204,7 +204,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     call: "Anrufen",
     drinkAlt: "Aperitif",
     cocktailCta: "Cocktails",
-    cocktailTitle: "Unsere Aperitifs und Cocktails",
+    cocktailTitle: "Unsere Cocktails und Aperitifs",
     fridayOnlyAlert: "Nur freitags verfügbar.",
     leaveReviewTitle: "Bewertung hinterlassen",
     leaveReviewSubtitle: "Teile deine Erfahrung auf Google.",
@@ -215,7 +215,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
   },
   es: {
     heroKicker: "BAR DA LUCIANO",
-    heroTitle: "Bar familiar,\ndesde hace más de 40 años.",
+    heroTitle: "Bar familiar,\ndesde hace más de 40 años en Padua.",
     heroSubtitle: "Cada día, del café de la mañana al aperitivo. Desde 1984.",
     ctaMenu: "Ver el menú",
     ctaBook: "Contáctanos",
@@ -229,7 +229,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     call: "Llamar",
     drinkAlt: "Aperitivo",
     cocktailCta: "Cocteles",
-    cocktailTitle: "Nuestros aperitivos y cocteles",
+    cocktailTitle: "Nuestros cocteles y aperitivos",
     fridayOnlyAlert: "Disponible solo los viernes.",
     leaveReviewTitle: "Deja una reseña",
     leaveReviewSubtitle: "Comparte tu experiencia en Google.",
@@ -427,12 +427,10 @@ export default function HomePage() {
 
           {/* riga in basso: immagine e mappa affiancate */}
           <div className="relative h-[320px] overflow-hidden rounded-[28px] border border-neutral-200/70 bg-white shadow-[0_14px_36px_rgba(17,17,17,0.05)] md:col-span-2">
-            <div className="pointer-events-none absolute inset-0 z-10 flex items-start justify-start p-6 sm:p-8">
-              <p className="max-w-xs text-left text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+            <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex flex-col items-center gap-4 px-6 pt-5 text-center sm:gap-5 sm:px-8 sm:pt-7">
+              <p className="max-w-sm text-center text-[1.7rem] font-semibold tracking-tight text-white sm:text-3xl">
                 {t("cocktailTitle")}
               </p>
-            </div>
-            <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center pt-2 sm:pt-4">
               <Link
                 href="/menu#aperitivi-alcolici"
                 aria-label={t("cocktailTitle")}
