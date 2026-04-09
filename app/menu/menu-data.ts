@@ -295,7 +295,7 @@ export const MENU: MenuSection[] = [
   },
   {
     title: {
-      it: "Brioches e...",
+      it: "Brioches e pasticceria",
       en: "Croissants & Pastries",
       fr: "Viennoiseries &...",
       de: "Croissants & Gebäck",

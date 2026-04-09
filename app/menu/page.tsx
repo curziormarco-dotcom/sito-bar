@@ -88,6 +88,11 @@ const UI_COPY: Record<Language, Record<string, string>> = {
   },
 };
 
+function formatCategoryTitle(title: string) {
+  if (!title) return title;
+  return title.charAt(0) + title.slice(1).toLocaleLowerCase();
+}
+
 type AllergenKey = keyof typeof ALLERGEN_LABELS;
 
 const ALLERGEN_ORDER = [
@@ -652,7 +657,7 @@ export default function MenuPage() {
             >
               <span className="absolute left-0 top-0 h-full w-0.5 bg-transparent transition-colors group-hover:bg-neutral-300" />
               <h2 className="text-lg font-semibold tracking-tight font-serif">
-                {section.title[lang]}
+                {formatCategoryTitle(section.title[lang])}
               </h2>
               <span
                 className={`text-base font-light text-neutral-400 transition-transform ${
