@@ -418,12 +418,12 @@ export default function HomePage() {
 
           {/* riga in basso: immagine e mappa affiancate */}
           <div className="relative h-[320px] overflow-hidden rounded-[28px] border border-neutral-200/70 bg-white shadow-[0_14px_36px_rgba(17,17,17,0.05)] md:col-span-2">
-            <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
-              <p className="max-w-md px-6 text-center text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+            <div className="pointer-events-none absolute inset-0 z-10 flex items-start justify-start p-6 sm:p-8">
+              <p className="max-w-xs text-left text-2xl font-semibold tracking-tight text-white sm:text-3xl">
                 {t("cocktailTitle")}
               </p>
             </div>
-            <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center pt-24 sm:pt-28">
+            <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center pt-10 sm:pt-12">
               <Link
                 href="/menu#aperitivi-alcolici"
                 aria-label={t("cocktailTitle")}
