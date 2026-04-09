@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Cormorant_Garamond } from "next/font/google";
+import { useCookieConsent } from "./cookie-consent";
 import { useLanguage, type Language } from "./locale-provider";
 import { useEffect, useState } from "react";
 
@@ -10,8 +11,6 @@ const heroSerif = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["500", "600"],
 });
-
-const WHATSAPP_URL = "https://wa.me/390000000000";
 
 const HIGHLIGHTS = [
   {
@@ -135,6 +134,9 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     leaveReviewTitle: "Lascia una recensione",
     leaveReviewSubtitle: "Racconta la tua esperienza su Google.",
     leaveReviewCta: "Apri recensioni",
+    mapConsentTitle: "Mappa Google Maps",
+    mapConsentText: "Per vedere la mappa accetta i cookie e i servizi Google Maps.",
+    mapConsentCta: "Accetta e mostra mappa",
   },
   en: {
     heroKicker: "BAR DA LUCIANO",
@@ -157,6 +159,9 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     leaveReviewTitle: "Leave a review",
     leaveReviewSubtitle: "Share your experience on Google.",
     leaveReviewCta: "Open reviews",
+    mapConsentTitle: "Google Maps map",
+    mapConsentText: "Accept cookies and Google Maps services to view the map.",
+    mapConsentCta: "Accept and show map",
   },
   fr: {
     heroKicker: "BAR DA LUCIANO",
@@ -179,6 +184,9 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     leaveReviewTitle: "Laisser un avis",
     leaveReviewSubtitle: "Partage ton expérience sur Google.",
     leaveReviewCta: "Ouvrir les avis",
+    mapConsentTitle: "Carte Google Maps",
+    mapConsentText: "Acceptez les cookies et les services Google Maps pour voir la carte.",
+    mapConsentCta: "Accepter et afficher la carte",
   },
   de: {
     heroKicker: "BAR DA LUCIANO",
@@ -201,6 +209,9 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     leaveReviewTitle: "Bewertung hinterlassen",
     leaveReviewSubtitle: "Teile deine Erfahrung auf Google.",
     leaveReviewCta: "Bewertungen öffnen",
+    mapConsentTitle: "Google Maps Karte",
+    mapConsentText: "Akzeptiere Cookies und Google Maps Dienste, um die Karte zu sehen.",
+    mapConsentCta: "Akzeptieren und Karte anzeigen",
   },
   es: {
     heroKicker: "BAR DA LUCIANO",
@@ -223,6 +234,9 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     leaveReviewTitle: "Deja una reseña",
     leaveReviewSubtitle: "Comparte tu experiencia en Google.",
     leaveReviewCta: "Abrir reseñas",
+    mapConsentTitle: "Mapa de Google Maps",
+    mapConsentText: "Acepta las cookies y los servicios de Google Maps para ver el mapa.",
+    mapConsentCta: "Aceptar y mostrar mapa",
   },
 };
 
@@ -237,6 +251,7 @@ function formatEUR(value: number) {
 
 export default function HomePage() {
   const { lang } = useLanguage();
+  const { consent, accept } = useCookieConsent();
   const t = (key: string) => HOME_COPY[lang][key] ?? key;
   const [fridayIndex, setFridayIndex] = useState(0);
   const fridayMessages = FRIDAY_ROTATION[lang];
@@ -372,14 +387,32 @@ export default function HomePage() {
             </p>
 
             <div className="mt-4 flex-1 overflow-hidden rounded-xl border border-neutral-200">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.46097070022!2d11.89233677655568!3d45.40004323771666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477edafcc00abb53%3A0x837057fcf720ca6!2sBar%20Da%20Luciano!5e0!3m2!1sit!2sit!4v1769651829333!5m2!1sit!2sit"
-                width="100%"
-                height="100%"
-                loading="lazy"
-                referrerPolicy="no-referrer"
-                className="block h-full w-full"
-              />
+              {consent === "accepted" ? (
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.46097070022!2d11.89233677655568!3d45.40004323771666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477edafcc00abb53%3A0x837057fcf720ca6!2sBar%20Da%20Luciano!5e0!3m2!1sit!2sit!4v1769651829333!5m2!1sit!2sit"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                  className="block h-full w-full"
+                />
+              ) : (
+                <div className="flex h-full flex-col items-center justify-center bg-neutral-100 px-5 text-center">
+                  <p className="text-sm font-semibold text-neutral-900">
+                    {t("mapConsentTitle")}
+                  </p>
+                  <p className="mt-2 max-w-sm text-sm leading-6 text-neutral-600">
+                    {t("mapConsentText")}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={accept}
+                    className="mt-4 rounded-lg bg-neutral-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-neutral-800"
+                  >
+                    {t("mapConsentCta")}
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 
