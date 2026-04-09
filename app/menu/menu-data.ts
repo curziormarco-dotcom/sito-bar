@@ -2040,7 +2040,7 @@ export const MENU: MenuSection[] = [
           es: "Color rojo rubí, intenso bouquet floral con notas de frutos del bosque y mermelada; rico y suave en boca.",
         },
         glassPrice: 5.0,
-        bottlePrice: 18.0,
+        bottlePrice: 20.0,
       },
       {
         name: {

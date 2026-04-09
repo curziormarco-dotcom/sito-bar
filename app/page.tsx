@@ -22,11 +22,11 @@ const HIGHLIGHTS = [
       es: "Horario",
     },
     text: {
-      it: "Lun–Sab: 6:00–21:30",
-      en: "Mon–Sat: 6:00–21:30",
-      fr: "Lun–Sam: 6:00–21:30",
-      de: "Mo–Sa: 6:00–21:30",
-      es: "Lun–Sáb: 6:00–21:30",
+      it: "Lunedì–Sabato: 6:00–21:30",
+      en: "Monday–Saturday: 6:00–21:30",
+      fr: "Lundi–samedi : 6:00–21:30",
+      de: "Montag–Samstag: 6:00–21:30",
+      es: "Lunes–sábado: 6:00–21:30",
     },
   },
   {
@@ -436,10 +436,10 @@ export default function HomePage() {
               <Link
                 href="/menu#aperitivi-alcolici"
                 aria-label={t("cocktailTitle")}
-                className="pointer-events-auto inline-flex rounded-full border border-white/20 bg-white/10 px-6 py-2 text-sm font-semibold text-white shadow-sm backdrop-blur-sm transition hover:bg-white/18"
+                className="pointer-events-auto inline-flex rounded-full border border-white/12 bg-white/5 px-6 py-2 text-sm font-semibold text-white shadow-sm backdrop-blur-sm transition hover:border-white/18 hover:bg-white/10"
                 style={{
                   backgroundImage:
-                    "repeating-linear-gradient(135deg, rgba(255,255,255,0.08) 0, rgba(255,255,255,0.08) 6px, rgba(255,255,255,0.03) 6px, rgba(255,255,255,0.03) 12px)",
+                    "repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0, rgba(255,255,255,0.04) 6px, rgba(255,255,255,0.015) 6px, rgba(255,255,255,0.015) 12px)",
                 }}
               >
                 {t("cocktailCta")}
