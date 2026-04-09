@@ -306,17 +306,17 @@ export default function HomePage() {
               {t("heroSubtitle")}
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3 pl-1 sm:mt-10">
+            <div className="mt-8 flex flex-nowrap items-center gap-2 pl-1 sm:mt-10 sm:gap-3">
               <Link
                 href="/menu"
-                className="inline-flex min-h-12 items-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-neutral-900 shadow-[0_12px_30px_rgba(0,0,0,0.18)] transition hover:bg-neutral-100"
+                className="inline-flex min-h-10 items-center whitespace-nowrap rounded-full bg-white px-4 py-2 text-xs font-semibold text-neutral-900 shadow-[0_12px_30px_rgba(0,0,0,0.18)] transition hover:bg-neutral-100 sm:min-h-12 sm:px-7 sm:py-3 sm:text-sm"
               >
                 {t("ctaMenu")}
               </Link>
 
               <a
                 href="#prenota"
-                className="inline-flex min-h-10 items-center whitespace-nowrap rounded-full border border-white/22 bg-white/10 px-5 py-2 text-xs font-semibold text-white backdrop-blur-md transition hover:border-white/30 hover:bg-white/16 sm:min-h-11 sm:px-6 sm:text-sm"
+                className="inline-flex min-h-10 items-center whitespace-nowrap rounded-full border border-white/22 bg-white/10 px-3 py-2 text-xs font-semibold text-white backdrop-blur-md transition hover:border-white/30 hover:bg-white/16 sm:min-h-11 sm:px-6 sm:text-sm"
               >
                 {t("ctaBook")}
               </a>
@@ -325,7 +325,7 @@ export default function HomePage() {
                 href="https://www.instagram.com/bar_da_luciano/"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex min-h-10 items-center whitespace-nowrap rounded-full border border-white/22 bg-white/10 px-5 py-2 text-xs font-semibold text-white backdrop-blur-md transition hover:border-white/30 hover:bg-white/16 sm:min-h-11 sm:px-6 sm:text-sm"
+                className="inline-flex min-h-10 items-center whitespace-nowrap rounded-full border border-white/22 bg-white/10 px-3 py-2 text-xs font-semibold text-white backdrop-blur-md transition hover:border-white/30 hover:bg-white/16 sm:min-h-11 sm:px-6 sm:text-sm"
               >
                 Instagram
               </a>
