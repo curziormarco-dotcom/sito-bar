@@ -320,6 +320,15 @@ export default function HomePage() {
               >
                 {t("ctaBook")}
               </a>
+
+              <a
+                href="https://www.instagram.com/bar_da_luciano/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-12 items-center rounded-full border border-white/22 bg-white/10 px-7 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:border-white/30 hover:bg-white/16"
+              >
+                Instagram
+              </a>
             </div>
           </div>
         </div>
