@@ -92,6 +92,8 @@ export default function GalleryPage() {
               className={
                 image.src === "/images/negroni.jpg"
                   ? "h-64 w-full object-cover object-[85%_85%] sm:object-center"
+                  : image.src === "/images/italian-75.jpeg"
+                    ? "h-64 w-full object-cover object-[50%_78%] sm:object-center"
                   : "h-64 w-full object-cover"
               }
             />
