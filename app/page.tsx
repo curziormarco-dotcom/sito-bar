@@ -265,7 +265,7 @@ export default function HomePage() {
 
   return (
     <div className="bg-[#fbfaf7] text-neutral-900">
-      <section className="relative left-1/2 right-1/2 -mx-[50vw] -mt-10 flex min-h-[calc(100svh-4.5rem)] w-screen items-end overflow-hidden bg-neutral-950 sm:min-h-[calc(100svh-5rem)]">
+      <section className="relative left-1/2 right-1/2 -mx-[50vw] -mt-10 flex min-h-[calc(86svh-4.5rem)] w-screen items-end overflow-hidden bg-neutral-950 sm:min-h-[calc(88svh-5rem)]">
         <div className="absolute inset-0">
           <Image
             src="/images/hero.jpg"
@@ -334,7 +334,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
+      <div className="mx-auto max-w-6xl px-6 py-10 sm:py-16">
         <section className="flex flex-col gap-6 md:grid md:grid-cols-4 md:items-stretch md:gap-6">
           {/* riga in alto: orari + info + venerdì */}
           <div className="md:col-span-4 grid gap-6 md:grid-cols-3">
