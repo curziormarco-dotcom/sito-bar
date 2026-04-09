@@ -23,7 +23,7 @@ export default function GalleryPage() {
   const t = (key: keyof (typeof COPY)["it"]) => COPY[lang][key];
 
   return (
-    <main className="mx-auto max-w-6xl px-8 py-12 space-y-8 sm:px-6">
+    <main className="mx-auto max-w-6xl px-6 py-12 space-y-8">
       <header>
         <h1 className="text-4xl font-semibold tracking-tight font-serif">
           {t("title")}
@@ -31,11 +31,11 @@ export default function GalleryPage() {
         <p className="mt-2 text-neutral-600">{t("subtitle")}</p>
       </header>
 
-      <section className="grid gap-4 sm:grid-cols-2">
+      <section className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2">
         {IMAGES.map((image) => (
           <figure
             key={image.src}
-            className="overflow-hidden rounded-2xl border border-neutral-200 bg-white p-2 sm:p-0"
+            className="overflow-hidden rounded-2xl border border-neutral-200 bg-white"
           >
             <Image
               src={image.src}
@@ -44,8 +44,8 @@ export default function GalleryPage() {
               height={800}
               className={
                 image.src === "/images/negroni.jpg"
-                  ? "h-40 w-full object-contain sm:h-64 sm:object-cover sm:object-center"
-                  : "h-40 w-full object-contain sm:h-64 sm:object-cover"
+                  ? "h-64 w-full object-cover object-[85%_85%] sm:object-center"
+                  : "h-64 w-full object-cover"
               }
             />
           </figure>
