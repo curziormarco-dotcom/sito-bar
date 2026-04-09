@@ -372,7 +372,7 @@ export default function HomePage() {
                 </h3>
               </div>
               <a
-                href="https://www.google.com/maps?q=Via%20Esempio%2012%2C%20Milano"
+                href="https://www.google.com/maps?q=via%20Nazareth%2020%2C%2035128%20Padova"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex rounded-full border border-neutral-300 px-4 py-2 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-50"
@@ -383,7 +383,7 @@ export default function HomePage() {
 
             <p className="mt-3 text-sm leading-6 text-neutral-600">
               Bar Da Luciano<br />
-              Via Nazareth 20, Padova
+              via Nazareth 20, 35128 Padova
             </p>
 
             <div className="mt-4 flex-1 overflow-hidden rounded-xl border border-neutral-200">

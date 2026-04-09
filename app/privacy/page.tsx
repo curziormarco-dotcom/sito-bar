@@ -2,8 +2,8 @@ const SECTIONS = [
   {
     title: "Titolare del trattamento",
     body: [
-      "Il titolare del trattamento e Bar Da Luciano, con sede in Via Nazareth 20, Padova.",
-      "Per richieste relative alla privacy e possibile contattare il locale al numero 049 981 3795.",
+      "Il titolare del trattamento e Bar da Luciano di Curzio Davide, con sede in via Nazareth 20, 35128 Padova.",
+      "Per richieste relative alla privacy e possibile contattare il locale all'indirizzo email davide_patrizia@alice.it o al numero 049 981 3795.",
     ],
   },
   {
@@ -69,7 +69,7 @@ export default function PrivacyPage() {
         </p>
         <p className="mt-6 leading-7 text-neutral-700">
           Questa informativa descrive in modo sintetico come vengono trattati i dati
-          personali degli utenti che visitano il sito di Bar Da Luciano.
+          personali degli utenti che visitano il sito di Bar da Luciano di Curzio Davide.
         </p>
 
         <div className="mt-10 space-y-8">
