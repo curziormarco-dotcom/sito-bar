@@ -316,7 +316,7 @@ export default function HomePage() {
 
               <a
                 href="#prenota"
-                className="inline-flex min-h-12 items-center rounded-full border border-white/22 bg-white/10 px-7 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:border-white/30 hover:bg-white/16"
+                className="inline-flex min-h-10 items-center whitespace-nowrap rounded-full border border-white/22 bg-white/10 px-5 py-2 text-xs font-semibold text-white backdrop-blur-md transition hover:border-white/30 hover:bg-white/16 sm:min-h-11 sm:px-6 sm:text-sm"
               >
                 {t("ctaBook")}
               </a>
@@ -325,7 +325,7 @@ export default function HomePage() {
                 href="https://www.instagram.com/bar_da_luciano/"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex min-h-12 items-center rounded-full border border-white/22 bg-white/10 px-7 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:border-white/30 hover:bg-white/16"
+                className="inline-flex min-h-10 items-center whitespace-nowrap rounded-full border border-white/22 bg-white/10 px-5 py-2 text-xs font-semibold text-white backdrop-blur-md transition hover:border-white/30 hover:bg-white/16 sm:min-h-11 sm:px-6 sm:text-sm"
               >
                 Instagram
               </a>
