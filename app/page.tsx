@@ -432,7 +432,7 @@ export default function HomePage() {
                 {t("cocktailTitle")}
               </p>
             </div>
-            <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center pt-10 sm:pt-12">
+            <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center pt-2 sm:pt-4">
               <Link
                 href="/menu#aperitivi-alcolici"
                 aria-label={t("cocktailTitle")}
