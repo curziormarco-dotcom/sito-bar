@@ -29,7 +29,23 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-neutral-200">
       <div className="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-6 text-sm text-neutral-500">
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+        <div className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-3">
+          <Link
+            href="/allergeni"
+            className="text-neutral-600 transition hover:text-neutral-900"
+          >
+            {links.allergens}
+          </Link>
+          <Link
+            href="/privacy"
+            className="text-neutral-600 transition hover:text-neutral-900"
+          >
+            {links.privacy}
+          </Link>
+          <CookieSettingsButton />
+        </div>
+
+        <div className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-3">
           <a
             href="mailto:davide_patrizia@alice.it"
             className="inline-flex items-center gap-2 text-neutral-600 transition hover:text-neutral-900"
@@ -143,20 +159,6 @@ export function SiteFooter() {
             </svg>
             Instagram
           </a>
-
-          <Link
-            href="/allergeni"
-            className="text-neutral-600 transition hover:text-neutral-900"
-          >
-            {links.allergens}
-          </Link>
-          <Link
-            href="/privacy"
-            className="text-neutral-600 transition hover:text-neutral-900"
-          >
-            {links.privacy}
-          </Link>
-          <CookieSettingsButton />
         </div>
 
         <span>{text}</span>
