@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getItalianDescription = getItalianDescription;
 exports.inferAllergens = inferAllergens;
-exports.itemMatchesAnyAllergen = itemMatchesAnyAllergen;
+exports.itemIsAllowedForSelectedAllergens = itemIsAllowedForSelectedAllergens;
 exports.toggleAllergenFilter = toggleAllergenFilter;
 function getItalianDescription(item) {
     if (!item.description)
@@ -53,10 +53,10 @@ function inferAllergens(section, item, options) {
         return undefined;
     return [...allergens].sort((a, b) => (options.sortOrder[a] ?? 999) - (options.sortOrder[b] ?? 999));
 }
-function itemMatchesAnyAllergen(item, selected) {
+function itemIsAllowedForSelectedAllergens(item, selected) {
     if (selected.size === 0)
         return true;
-    return item.allergens?.some((key) => selected.has(key)) ?? false;
+    return !(item.allergens?.some((key) => selected.has(key)) ?? false);
 }
 function toggleAllergenFilter(current, key) {
     return current.includes(key)

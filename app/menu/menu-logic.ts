@@ -60,9 +60,9 @@ export function inferAllergens(
   );
 }
 
-export function itemMatchesAnyAllergen(item: MenuItem, selected: Set<string>): boolean {
+export function itemIsAllowedForSelectedAllergens(item: MenuItem, selected: Set<string>): boolean {
   if (selected.size === 0) return true;
-  return item.allergens?.some((key) => selected.has(key)) ?? false;
+  return !(item.allergens?.some((key) => selected.has(key)) ?? false);
 }
 
 export function toggleAllergenFilter<T extends string>(current: T[], key: T): T[] {

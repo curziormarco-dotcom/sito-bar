@@ -3,21 +3,22 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useLanguage, type Language } from "../locale-provider";
 import { MENU } from "./menu-data";
-import { inferAllergens, itemMatchesAnyAllergen, toggleAllergenFilter } from "./menu-logic";
+import { inferAllergens, itemIsAllowedForSelectedAllergens, toggleAllergenFilter } from "./menu-logic";
 
 const UI_COPY: Record<Language, Record<string, string>> = {
   it: {
     menu: "Menù",
     allergens: "Allergeni",
     allergenLegend: "Legenda allergeni",
+    allergenHint: "Seleziona un allergene per nascondere i prodotti che lo contengono.",
     close: "Chiudi",
     comingSoon: "Disponibile presto.",
     fridayOnly: "Disponibile solo il venerdì.",
     until1830: "Disponibile fino alle 18:30.",
-    filterOn: "Filtro attivo:",
+    filterOn: "Allergeni esclusi:",
     clearFilter: "Rimuovi filtro",
     resultsLabel: "risultati",
-    noMatches: "Nessun prodotto con questo allergene.",
+    noMatches: "Nessun prodotto disponibile con questi allergeni esclusi.",
     descriptionLabel: "Descrizione",
     glassLabel: "Calice",
     bottleLabel: "Bottiglia",
@@ -26,14 +27,15 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     menu: "Menu",
     allergens: "Allergens",
     allergenLegend: "Allergen legend",
+    allergenHint: "Select an allergen to hide products that contain it.",
     close: "Close",
     comingSoon: "Coming soon.",
     fridayOnly: "Available only on Fridays.",
     until1830: "Available until 6:30 PM.",
-    filterOn: "Filter active:",
+    filterOn: "Excluded allergens:",
     clearFilter: "Clear filter",
     resultsLabel: "results",
-    noMatches: "No products with this allergen.",
+    noMatches: "No products available with these allergens excluded.",
     descriptionLabel: "Description",
     glassLabel: "Glass",
     bottleLabel: "Bottle",
@@ -42,14 +44,15 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     menu: "Menu",
     allergens: "Allergènes",
     allergenLegend: "Légende des allergènes",
+    allergenHint: "Sélectionnez un allergène pour masquer les produits qui le contiennent.",
     close: "Fermer",
     comingSoon: "Bientôt disponible.",
     fridayOnly: "Disponible uniquement le vendredi.",
     until1830: "Disponible jusqu’à 18h30.",
-    filterOn: "Filtre actif :",
+    filterOn: "Allergènes exclus :",
     clearFilter: "Retirer le filtre",
     resultsLabel: "résultats",
-    noMatches: "Aucun produit avec cet allergène.",
+    noMatches: "Aucun produit disponible avec ces allergènes exclus.",
     descriptionLabel: "Description",
     glassLabel: "Verre",
     bottleLabel: "Bouteille",
@@ -58,14 +61,15 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     menu: "Menü",
     allergens: "Allergene",
     allergenLegend: "Allergen-Legende",
+    allergenHint: "Wähle ein Allergen aus, um Produkte auszublenden, die es enthalten.",
     close: "Schließen",
     comingSoon: "Demnächst verfügbar.",
     fridayOnly: "Nur freitags verfügbar.",
     until1830: "Verfügbar bis 18:30 Uhr.",
-    filterOn: "Aktiver Filter:",
+    filterOn: "Ausgeschlossene Allergene:",
     clearFilter: "Filter entfernen",
     resultsLabel: "Ergebnisse",
-    noMatches: "Keine Produkte mit diesem Allergen.",
+    noMatches: "Keine Produkte verfügbar, wenn diese Allergene ausgeschlossen werden.",
     descriptionLabel: "Beschreibung",
     glassLabel: "Glas",
     bottleLabel: "Flasche",
@@ -74,14 +78,15 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     menu: "Menú",
     allergens: "Alérgenos",
     allergenLegend: "Leyenda de alérgenos",
+    allergenHint: "Selecciona un alérgeno para ocultar los productos que lo contienen.",
     close: "Cerrar",
     comingSoon: "Disponible pronto.",
     fridayOnly: "Disponible solo los viernes.",
     until1830: "Disponible hasta las 18:30.",
-    filterOn: "Filtro activo:",
+    filterOn: "Alérgenos excluidos:",
     clearFilter: "Quitar filtro",
     resultsLabel: "resultados",
-    noMatches: "No hay productos con este alérgeno.",
+    noMatches: "No hay productos disponibles con estos alérgenos excluidos.",
     descriptionLabel: "Descripción",
     glassLabel: "Copa",
     bottleLabel: "Botella",
@@ -108,6 +113,7 @@ const ALLERGEN_ORDER = [
   "senape",
   "sesamo",
   "glutine",
+  "arachidi",
   "frutta_guscio",
   "alcol",
   "congelato",
@@ -403,7 +409,7 @@ export default function MenuPage() {
     () =>
       menuWithAllergens.reduce((acc, section) => {
         const sectionCount = hasActiveAllergenFilter
-          ? section.items.filter((item) => itemMatchesAnyAllergen(item, allergenFilterSet)).length
+          ? section.items.filter((item) => itemIsAllowedForSelectedAllergens(item, allergenFilterSet)).length
           : section.items.length;
         return acc + sectionCount;
       }, 0),
@@ -529,6 +535,9 @@ export default function MenuPage() {
             </div>
 
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              <p className="sm:col-span-2 lg:col-span-3 text-sm text-neutral-500">
+                {t("allergenHint")}
+              </p>
               {ALLERGEN_ORDER.map((key) => {
                 const allergen = ALLERGEN_LABELS[key][lang];
                 const styles = ALLERGEN_STYLES[key];
@@ -630,7 +639,7 @@ export default function MenuPage() {
           (isPesce && !isFriday && !showPesceAlways) ||
           (isCentrifughe && isOutsideCentrifugheHours);
         const filteredItems = hasActiveAllergenFilter
-          ? section.items.filter((item) => itemMatchesAnyAllergen(item, allergenFilterSet))
+          ? section.items.filter((item) => itemIsAllowedForSelectedAllergens(item, allergenFilterSet))
           : section.items;
         const displayItems = filteredItems;
 

@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { inferAllergens, itemMatchesAnyAllergen, toggleAllergenFilter } from "../.test-dist/menu-logic.js";
+import { inferAllergens, itemIsAllowedForSelectedAllergens, toggleAllergenFilter } from "../.test-dist/menu-logic.js";
 
 const known = new Set([
   "latte",
@@ -66,8 +66,8 @@ test("toggleAllergenFilter toggles selected key", () => {
   assert.deepEqual(toggleAllergenFilter(["pesce", "latte"], "pesce"), ["latte"]);
 });
 
-test("itemMatchesAnyAllergen matches OR logic across selected allergens", () => {
+test("itemIsAllowedForSelectedAllergens excludes products containing selected allergens", () => {
   const item = { name: makeText("Salmone e Philadelphia"), allergens: ["pesce", "latte"] };
-  assert.equal(itemMatchesAnyAllergen(item, new Set(["molluschi", "latte"])), true);
-  assert.equal(itemMatchesAnyAllergen(item, new Set(["molluschi"])), false);
+  assert.equal(itemIsAllowedForSelectedAllergens(item, new Set(["molluschi", "latte"])), false);
+  assert.equal(itemIsAllowedForSelectedAllergens(item, new Set(["molluschi"])), true);
 });
