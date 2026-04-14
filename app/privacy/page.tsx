@@ -1,4 +1,6 @@
-const SECTIONS = [
+import type { ReactNode } from "react";
+
+const SECTIONS: { title: string; body: ReactNode[] }[] = [
   {
     title: "Titolare del trattamento",
     body: [
@@ -29,12 +31,34 @@ const SECTIONS = [
       "Il sito mostra un banner per la gestione delle preferenze relative a cookie e servizi di terze parti. La scelta dell'utente, accettazione o rifiuto, viene salvata nel browser tramite localStorage con la chiave bar-da-luciano-cookie-consent.",
       "La mappa Google incorporata viene caricata solo se l'utente accetta i cookie e i servizi Google Maps. In caso di rifiuto, la mappa resta bloccata e non viene caricato l'iframe Google Maps.",
       "L'utente puo modificare la scelta in qualsiasi momento usando il pulsante Cookie presente nel footer del sito.",
+      <>
+        Per maggiori informazioni sul trattamento dati da parte di Google, l’utente
+        puo consultare la{" "}
+        <a
+          href="https://policies.google.com/privacy"
+          target="_blank"
+          rel="noreferrer"
+          className="underline underline-offset-4"
+        >
+          Privacy Policy di Google
+        </a>{" "}
+        e i{" "}
+        <a
+          href="https://www.google.com/help/terms_maps/"
+          target="_blank"
+          rel="noreferrer"
+          className="underline underline-offset-4"
+        >
+          Termini aggiuntivi di Google Maps
+        </a>
+        .
+      </>,
     ],
   },
   {
     title: "Servizi esterni",
     body: [
-      "Il sito contiene link verso servizi esterni, come Google Maps, Google Recensioni, Instagram e WhatsApp.",
+      "Il sito contiene link verso servizi esterni, come Google Maps, Google Recensioni e Instagram.",
       "Quando l'utente apre questi link, lascia il sito e il trattamento dei dati avviene secondo le informative dei rispettivi fornitori.",
     ],
   },
@@ -79,8 +103,8 @@ export default function PrivacyPage() {
                 {section.title}
               </h2>
               <div className="mt-3 space-y-3 text-neutral-700">
-                {section.body.map((paragraph) => (
-                  <p key={paragraph} className="leading-7">
+                {section.body.map((paragraph, index) => (
+                  <p key={`${section.title}-${index}`} className="leading-7">
                     {paragraph}
                   </p>
                 ))}

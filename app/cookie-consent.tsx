@@ -41,7 +41,7 @@ const COOKIE_COPY: Record<
     body: "Usiamo solo strumenti tecnici e, se accetti, carichiamo Google Maps per mostrarti la mappa del locale.",
     accept: "Accetta",
     reject: "Rifiuta",
-    settings: "Cookie",
+    settings: "Preferenze cookie",
     privacy: "Privacy",
   },
   en: {
@@ -53,28 +53,28 @@ const COOKIE_COPY: Record<
     privacy: "Privacy",
   },
   fr: {
-    title: "Preferences cookies",
+    title: "Préférences de cookies",
     body: "Nous utilisons des outils techniques et, si vous acceptez, Google Maps pour afficher la carte du lieu.",
     accept: "Accepter",
     reject: "Refuser",
     settings: "Cookies",
-    privacy: "Privacy",
+    privacy: "Confidentialité",
   },
   de: {
     title: "Cookie-Einstellungen",
     body: "Wir nutzen technische Tools und laden Google Maps nur mit Zustimmung, um die Karte anzuzeigen.",
     accept: "Akzeptieren",
     reject: "Ablehnen",
-    settings: "Cookies",
-    privacy: "Privacy",
+    settings: "Cookie-Einstellungen",
+    privacy: "Datenschutz",
   },
   es: {
     title: "Preferencias de cookies",
-    body: "Usamos herramientas tecnicas y, si aceptas, cargamos Google Maps para mostrar el mapa del local.",
+    body: "Usamos herramientas técnicas y, si aceptas, cargamos Google Maps para mostrar el mapa del local.",
     accept: "Aceptar",
     reject: "Rechazar",
     settings: "Cookies",
-    privacy: "Privacy",
+    privacy: "Privacidad",
   },
 };
 

@@ -41,7 +41,7 @@ const HIGHLIGHTS = [
       it: "• colazioni • pranzi • aperitivi\n• feste di laurea • rinfreschi",
       en: "• breakfasts • lunches • aperitifs • graduation parties • refreshments",
       fr: "• petits‑déjeuners • déjeuners • apéritifs • fêtes de remise de diplôme • rafraîchissements",
-      de: "• frühstück • mittagessen • aperitifs • abschlussfeiern • erfrischungen",
+      de: "• Frühstück • Mittagessen • Aperitifs • Abschlussfeiern • Erfrischungen",
       es: "• desayunos • almuerzos • aperitivos • fiestas de graduación • refrigerios",
     },
   },

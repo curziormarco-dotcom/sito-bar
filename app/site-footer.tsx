@@ -5,30 +5,102 @@ import { CookieSettingsButton } from "./cookie-consent";
 import { useLanguage, type Language } from "./locale-provider";
 
 const FOOTER_COPY: Record<Language, string> = {
-  it: "© {year} Bar Da Luciano",
-  en: "© {year} Bar Da Luciano",
-  fr: "© {year} Bar Da Luciano",
-  de: "© {year} Bar Da Luciano",
-  es: "© {year} Bar Da Luciano",
+  it: "© {year} Bar Da Luciano - P.IVA 03476210285",
+  en: "© {year} Bar Da Luciano - VAT 03476210285",
+  fr: "© {year} Bar Da Luciano - TVA 03476210285",
+  de: "© {year} Bar Da Luciano - USt-IdNr. 03476210285",
+  es: "© {year} Bar Da Luciano - IVA 03476210285",
+};
+
+const FOOTER_LINKS: Record<Language, { privacy: string; allergens: string }> = {
+  it: { privacy: "Privacy", allergens: "Allergeni" },
+  en: { privacy: "Privacy", allergens: "Allergens" },
+  fr: { privacy: "Confidentialité", allergens: "Allergènes" },
+  de: { privacy: "Datenschutz", allergens: "Allergene" },
+  es: { privacy: "Privacidad", allergens: "Alérgenos" },
 };
 
 export function SiteFooter() {
   const { lang } = useLanguage();
   const year = new Date().getFullYear();
   const text = FOOTER_COPY[lang].replace("{year}", String(year));
+  const links = FOOTER_LINKS[lang];
 
   return (
     <footer className="border-t border-neutral-200">
-      <div className="mx-auto max-w-5xl px-6 py-6 text-sm text-neutral-500 flex flex-wrap items-center justify-between gap-4">
-        <span>{text}</span>
-        <div className="flex flex-wrap items-center gap-4">
-          <Link
-            href="/privacy"
-            className="text-neutral-600 transition hover:text-neutral-900"
+      <div className="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-6 text-sm text-neutral-500">
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+          <a
+            href="mailto:davide_patrizia@alice.it"
+            className="inline-flex items-center gap-2 text-neutral-600 transition hover:text-neutral-900"
           >
-            Privacy
-          </Link>
-          <CookieSettingsButton />
+            <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
+              <rect
+                x="3.5"
+                y="6"
+                width="17"
+                height="12"
+                rx="2"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+              />
+              <path
+                d="M4.5 7l7.5 6 7.5-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            davide_patrizia@alice.it
+          </a>
+
+          <a
+            href="tel:+390499813795"
+            className="inline-flex items-center gap-2 text-neutral-600 transition hover:text-neutral-900"
+          >
+            <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
+              <path
+                d="M7.2 4.5h3l1.2 3.6-1.8 1.8a14.3 14.3 0 0 0 4.5 4.5l1.8-1.8 3.6 1.2v3c0 .8-.7 1.5-1.5 1.5C10.7 19.3 4.7 13.3 4.7 6c0-.8.7-1.5 1.5-1.5z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            049 981 3795
+          </a>
+
+          <a
+            href="https://www.google.com/maps?q=via%20Nazareth%2020%2C%2035128%20Padova"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 text-neutral-600 transition hover:text-neutral-900"
+          >
+            <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
+              <path
+                d="M12 20s6-5.7 6-10a6 6 0 1 0-12 0c0 4.3 6 10 6 10z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <circle
+                cx="12"
+                cy="10"
+                r="2.3"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+              />
+            </svg>
+            via Nazareth 20, 35128 Padova
+          </a>
+
           <a
             href="https://www.instagram.com/bar_da_luciano/"
             target="_blank"
@@ -71,7 +143,23 @@ export function SiteFooter() {
             </svg>
             Instagram
           </a>
+
+          <Link
+            href="/allergeni"
+            className="text-neutral-600 transition hover:text-neutral-900"
+          >
+            {links.allergens}
+          </Link>
+          <Link
+            href="/privacy"
+            className="text-neutral-600 transition hover:text-neutral-900"
+          >
+            {links.privacy}
+          </Link>
+          <CookieSettingsButton />
         </div>
+
+        <span>{text}</span>
       </div>
     </footer>
   );
