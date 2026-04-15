@@ -22,9 +22,16 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <Link
           href="/"
-          className="text-[1.85rem] italic tracking-tight text-neutral-900 transition hover:text-amber-600 [font-family:'Bickham_Script_Pro','Snell_Roundhand','Apple_Chancery','URW_Chancery_L',cursive]"
+          className="flex flex-col items-start text-neutral-900 transition hover:text-amber-600"
         >
-          Bar da Luciano
+          <span className="text-[1.85rem] italic tracking-tight [font-family:'Bickham_Script_Pro','Snell_Roundhand','Apple_Chancery','URW_Chancery_L',cursive]">
+            Bar da Luciano
+          </span>
+          <span className="mt-1 flex w-full items-center gap-2 text-[0.58rem] font-medium uppercase tracking-[0.22em] text-neutral-500">
+            <span className="h-px flex-1 bg-neutral-300" />
+            <span>since 1984</span>
+            <span className="h-px flex-1 bg-neutral-300" />
+          </span>
         </Link>
 
         <nav className="flex items-center gap-3">

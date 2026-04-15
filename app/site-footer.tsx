@@ -30,9 +30,16 @@ export function SiteFooter() {
     <footer className="border-t border-neutral-200">
       <div className="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-6 text-sm text-neutral-500">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-          <p className="text-[2.1rem] italic tracking-tight text-neutral-800 [font-family:'Bickham_Script_Pro','Snell_Roundhand','Apple_Chancery','URW_Chancery_L',cursive]">
-            Bar da Luciano
-          </p>
+          <div className="inline-flex flex-col items-center self-start">
+            <p className="text-[2.1rem] italic tracking-tight text-neutral-800 [font-family:'Bickham_Script_Pro','Snell_Roundhand','Apple_Chancery','URW_Chancery_L',cursive]">
+              Bar da Luciano
+            </p>
+            <span className="mt-1 inline-flex items-center gap-2 text-[0.58rem] font-medium uppercase tracking-[0.22em] text-neutral-500">
+              <span className="h-px w-12 bg-neutral-300" />
+              <span>since 1984</span>
+              <span className="h-px w-12 bg-neutral-300" />
+            </span>
+          </div>
 
           <div className="flex flex-col items-start gap-4 lg:items-end">
             <div className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-3 lg:justify-end">
