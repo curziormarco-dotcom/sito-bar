@@ -22,19 +22,19 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <Link
           href="/"
-          className="flex flex-col items-start text-neutral-900 transition hover:text-amber-600"
+          className="inline-flex shrink-0 flex-col items-center text-neutral-900 transition hover:text-amber-600"
         >
-          <span className="text-[1.85rem] italic tracking-tight [font-family:'Bickham_Script_Pro','Snell_Roundhand','Apple_Chancery','URW_Chancery_L',cursive]">
+          <span className="whitespace-nowrap text-[1.65rem] italic leading-none tracking-tight sm:text-[1.85rem] [font-family:'Bickham_Script_Pro','Snell_Roundhand','Apple_Chancery','URW_Chancery_L',cursive]">
             Bar da Luciano
           </span>
-          <span className="mt-1 flex w-full items-center gap-2 text-[0.58rem] font-medium uppercase tracking-[0.22em] text-neutral-500">
-            <span className="h-px flex-1 bg-neutral-300" />
-            <span>since 1984</span>
-            <span className="h-px flex-1 bg-neutral-300" />
+          <span className="mt-1 inline-flex items-center gap-1.5 text-[0.52rem] font-medium uppercase tracking-[0.18em] text-neutral-500 sm:gap-2 sm:text-[0.58rem] sm:tracking-[0.22em]">
+            <span className="h-px w-7 bg-neutral-300 sm:w-8" />
+            <span className="whitespace-nowrap">since 1984</span>
+            <span className="h-px w-7 bg-neutral-300 sm:w-8" />
           </span>
         </Link>
 
-        <nav className="flex items-center gap-3">
+        <nav className="flex items-center gap-2 sm:gap-3">
           <NavLink href="/" inverted={false}>
             {labels.home}
           </NavLink>
