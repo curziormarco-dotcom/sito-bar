@@ -41,7 +41,7 @@ export function SiteFooter() {
             </span>
           </div>
 
-          <div className="flex flex-col items-start gap-4 lg:items-end">
+          <div className="grid w-full grid-cols-2 gap-6 sm:flex sm:flex-col sm:items-start sm:gap-4 lg:w-auto lg:items-end">
             <div className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-3 lg:justify-end">
               <Link
                 href="/allergeni"

@@ -27,7 +27,7 @@ export function SiteHeader() {
           <span className="whitespace-nowrap text-[1.65rem] italic leading-none tracking-tight sm:text-[1.85rem] [font-family:'Bickham_Script_Pro','Snell_Roundhand','Apple_Chancery','URW_Chancery_L',cursive]">
             Bar da Luciano
           </span>
-          <span className="mt-1 inline-flex items-center gap-1.5 text-[0.52rem] font-medium uppercase tracking-[0.18em] text-neutral-500 sm:gap-2 sm:text-[0.58rem] sm:tracking-[0.22em]">
+          <span className="mt-1 inline-flex self-center items-center gap-1.5 text-[0.52rem] font-medium uppercase tracking-[0.18em] text-neutral-500 sm:gap-2 sm:text-[0.58rem] sm:tracking-[0.22em]">
             <span className="h-px w-7 bg-neutral-300 sm:w-8" />
             <span className="whitespace-nowrap">since 1984</span>
             <span className="h-px w-7 bg-neutral-300 sm:w-8" />
