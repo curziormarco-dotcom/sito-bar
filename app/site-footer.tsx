@@ -30,7 +30,7 @@ export function SiteFooter() {
     <footer className="border-t border-neutral-200">
       <div className="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-6 text-sm text-neutral-500">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-          <div className="inline-flex flex-col items-center self-start">
+          <div className="inline-flex flex-col items-center self-center lg:self-start">
             <p className="text-[2.1rem] italic tracking-tight text-neutral-800 [font-family:'Bickham_Script_Pro','Snell_Roundhand','Apple_Chancery','URW_Chancery_L',cursive]">
               Bar da Luciano
             </p>
