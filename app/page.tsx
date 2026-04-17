@@ -22,11 +22,11 @@ const HIGHLIGHTS = [
       es: "Horario",
     },
     text: {
-      it: "Lunedì–Giovedì: 6:00–21:30\nVenerdì: 6:00–22:00\nSabato: 6:30–21:30",
-      en: "Monday–Thursday: 6:00–21:30\nFriday: 6:00–22:00\nSaturday: 6:30–21:30",
-      fr: "Lundi–Jeudi : 6:00–21:30\nVendredi : 6:00–22:00\nSamedi : 6:30–21:30",
-      de: "Montag–Donnerstag: 6:00–21:30\nFreitag: 6:00–22:00\nSamstag: 6:30–21:30",
-      es: "Lunes–Jueves: 6:00–21:30\nViernes: 6:00–22:00\nSábado: 6:30–21:30",
+      it: "Lun: 6:00–21:30\nMar: 6:00–21:30\nMer: 6:00–21:30\nGio: 6:00–21:30\nVen: 6:00–22:00\nSab: 6:30–21:30",
+      en: "Mon: 6:00–21:30\nTue: 6:00–21:30\nWed: 6:00–21:30\nThu: 6:00–21:30\nFri: 6:00–22:00\nSat: 6:30–21:30",
+      fr: "Lun: 6:00–21:30\nMar: 6:00–21:30\nMer: 6:00–21:30\nJeu: 6:00–21:30\nVen: 6:00–22:00\nSam: 6:30–21:30",
+      de: "Mo: 6:00–21:30\nDi: 6:00–21:30\nMi: 6:00–21:30\nDo: 6:00–21:30\nFr: 6:00–22:00\nSa: 6:30–21:30",
+      es: "Lun: 6:00–21:30\nMar: 6:00–21:30\nMié: 6:00–21:30\nJue: 6:00–21:30\nVie: 6:00–22:00\nSáb: 6:30–21:30",
     },
   },
   {
