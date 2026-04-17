@@ -22,11 +22,11 @@ const HIGHLIGHTS = [
       es: "Horario",
     },
     text: {
-      it: "Lunedì–Sabato: 6:00–21:30",
-      en: "Monday–Saturday: 6:00–21:30",
-      fr: "Lundi–samedi : 6:00–21:30",
-      de: "Montag–Samstag: 6:00–21:30",
-      es: "Lunes–sábado: 6:00–21:30",
+      it: "Lunedì–Giovedì: 6:00–21:30\nVenerdì: 6:00–22:00\nSabato: 6:30–21:30",
+      en: "Monday–Thursday: 6:00–21:30\nFriday: 6:00–22:00\nSaturday: 6:30–21:30",
+      fr: "Lundi–Jeudi : 6:00–21:30\nVendredi : 6:00–22:00\nSamedi : 6:30–21:30",
+      de: "Montag–Donnerstag: 6:00–21:30\nFreitag: 6:00–22:00\nSamstag: 6:30–21:30",
+      es: "Lunes–Jueves: 6:00–21:30\nViernes: 6:00–22:00\nSábado: 6:30–21:30",
     },
   },
   {
