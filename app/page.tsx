@@ -63,6 +63,10 @@ const HIGHLIGHTS = [
   },
 ];
 
+function splitLines(text: string) {
+  return text.split("\n").filter(Boolean);
+}
+
 const FRIDAY_ROTATION: Record<Language, string[]> = {
   it: [
     "Scampi crudi",
@@ -342,9 +346,13 @@ export default function HomePage() {
               <h3 className="text-[0.7rem] font-medium tracking-[0.28em] text-neutral-500">
                 {HIGHLIGHTS[0].title[lang].toUpperCase()}
               </h3>
-              <p className="mt-4 whitespace-pre-line text-[1.05rem] leading-7 text-neutral-800">
-                {HIGHLIGHTS[0].text[lang]}
-              </p>
+              <div className="mt-4 grid grid-cols-2 gap-x-5 gap-y-1.5 text-[0.9rem] leading-6 text-neutral-800 sm:text-[0.98rem] sm:leading-7">
+                {splitLines(HIGHLIGHTS[0].text[lang]).map((line) => (
+                  <p key={line} className="whitespace-nowrap">
+                    {line}
+                  </p>
+                ))}
+              </div>
             </div>
 
             <div className="h-fit rounded-[24px] border border-neutral-200/80 bg-white/90 p-7 shadow-[0_10px_30px_rgba(17,17,17,0.04)] backdrop-blur">
