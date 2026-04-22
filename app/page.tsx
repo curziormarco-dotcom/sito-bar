@@ -378,32 +378,32 @@ export default function HomePage() {
           </div>
 
           {/* card mappa: occupa 2 colonne su desktop */}
-          <div className="flex h-[320px] flex-col rounded-[28px] border border-neutral-200/80 bg-white p-7 text-center shadow-[0_14px_36px_rgba(17,17,17,0.05)] md:col-span-2 md:text-left">
-            <div className="flex flex-col items-center justify-between gap-4 sm:flex-row sm:items-start">
-              <div>
-                <p className="text-[0.7rem] font-medium tracking-[0.28em] text-neutral-500">
-                  MAP
+          <div className="flex h-[380px] flex-col rounded-[28px] border border-neutral-200/80 bg-white p-5 text-center shadow-[0_14px_36px_rgba(17,17,17,0.05)] sm:h-[340px] sm:p-6 md:col-span-2 md:text-left">
+            <div className="flex flex-col items-center justify-between gap-3 sm:flex-row sm:items-center">
+              <div className="min-w-0">
+                <div className="flex flex-wrap items-baseline justify-center gap-x-3 gap-y-1 sm:justify-start">
+                  <p className="text-[0.65rem] font-medium tracking-[0.24em] text-neutral-500">
+                    MAP
+                  </p>
+                  <h3 className="text-xl font-semibold tracking-tight sm:text-2xl">
+                    {t("whereTitle")}
+                  </h3>
+                </div>
+                <p className="mt-1 text-xs leading-5 text-neutral-600 sm:text-sm">
+                  Bar Da Luciano, via Nazareth 20
                 </p>
-                <h3 className="mt-3 whitespace-nowrap text-2xl font-semibold tracking-tight">
-                  {t("whereTitle")}
-                </h3>
               </div>
               <a
                 href="https://www.google.com/maps?q=via%20Nazareth%2020%2C%2035128%20Padova"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex rounded-full border border-neutral-300 px-4 py-2 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-50"
+                className="inline-flex shrink-0 rounded-full border border-neutral-300 px-4 py-2 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-50"
               >
                 {t("whereCta")}
               </a>
             </div>
 
-            <p className="mt-3 text-sm leading-6 text-neutral-600">
-              Bar Da Luciano<br />
-              via Nazareth 20, 35128 Padova
-            </p>
-
-            <div className="mt-4 flex-1 overflow-hidden rounded-xl border border-neutral-200">
+            <div className="mt-3 flex-1 overflow-hidden rounded-xl border border-neutral-200">
               {consent === "accepted" ? (
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.46097070022!2d11.89233677655568!3d45.40004323771666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477edafcc00abb53%3A0x837057fcf720ca6!2sBar%20Da%20Luciano!5e0!3m2!1sit!2sit!4v1769651829333!5m2!1sit!2sit"

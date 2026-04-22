@@ -867,13 +867,23 @@ export const MENU: MenuSection[] = [
       },
       {
         name: {
+          it: "Tostone classico",
+          en: "Classic tostone",
+          fr: "Tostone classique",
+          de: "Klassischer Tostone",
+          es: "Tostone clásico",
+        },
+        price: 6.0,
+      },
+      {
+        name: {
           it: "Tostone verdure",
           en: "Veggie tostone",
           fr: "Tostone aux légumes",
           de: "Gemüse‑Tostone",
           es: "Tostone de verduras",
         },
-        price: 6.5,
+        price: 6.0,
       },
       {
         name: {
