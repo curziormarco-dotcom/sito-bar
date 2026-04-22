@@ -51,6 +51,7 @@ const IMAGES = [
   { src: "/images/negroni.jpg", alt: "Cocktail" },
   { src: "/images/italian-75.jpeg", alt: "Italian 75" },
   { src: "/images/laurea.jpeg", alt: "Laurea" },
+  { src: "/images/laurea-3.jpg", alt: "Laurea 3" },
   { src: "/images/laurea-2.jpg", alt: "Laurea 2" },
 ];
 
@@ -114,6 +115,8 @@ export default function GalleryPage() {
                   : image.src === "/images/italian-75.jpeg"
                     ? "h-64 w-full object-cover object-[50%_78%] sm:object-center"
                   : image.src === "/images/laurea-2.jpg"
+                    ? "h-64 w-full object-cover object-center"
+                  : image.src === "/images/laurea-3.jpg"
                     ? "h-64 w-full object-cover object-center"
                   : "h-64 w-full object-cover"
               }
