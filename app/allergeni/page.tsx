@@ -162,6 +162,15 @@ export default function AllergeniPage() {
         <p className="mt-4 text-neutral-600">{copy.subtitle}</p>
         <p className="mt-6 leading-7 text-neutral-700">{copy.intro}</p>
 
+        <a
+          href="/docs/libro-allergeni.pdf"
+          target="_blank"
+          rel="noreferrer"
+          className="mt-8 inline-flex rounded-full border border-neutral-300 px-6 py-3 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-50"
+        >
+          Libro allergeni
+        </a>
+
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
           {copy.items.map((item) => (
             <section
