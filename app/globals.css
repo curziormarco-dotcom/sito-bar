@@ -24,9 +24,19 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   overflow-anchor: none;
-  overflow-x: clip;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
 }
 
 body {
   min-width: 0;
+  position: relative;
+  touch-action: pan-y;
+}
+
+main,
+header,
+footer {
+  max-width: 100%;
+  overflow-x: hidden;
 }

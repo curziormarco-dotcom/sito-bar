@@ -24,7 +24,7 @@ export default function RootLayout({
             <ScrollToTop />
             <SiteHeader />
 
-            <main className="mx-auto max-w-5xl px-6 py-10">{children}</main>
+            <main className="w-full overflow-x-hidden">{children}</main>
             <SiteFooter />
           </CookieConsentProvider>
         </LocaleProvider>

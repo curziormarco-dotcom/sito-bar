@@ -151,7 +151,7 @@ export default function AllergeniPage() {
   const copy = COPY[lang];
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
       <div className="rounded-[28px] border border-neutral-200 bg-white px-6 py-8 shadow-[0_14px_36px_rgba(17,17,17,0.05)] sm:px-10 sm:py-10">
         <p className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-500">
           {copy.title}
