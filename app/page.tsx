@@ -22,11 +22,11 @@ const HIGHLIGHTS = [
       es: "Horario",
     },
     text: {
-      it: "Lun 6:00–21:30\nMar 6:00–21:30\nMer 6:00–21:30\nGio 6:00–21:30\nVen 6:00–22:00\nSab 6:30–21:30\nDom chiuso",
-      en: "Mon 6:00–21:30\nTue 6:00–21:30\nWed 6:00–21:30\nThu 6:00–21:30\nFri 6:00–22:00\nSat 6:30–21:30\nSun closed",
-      fr: "Lun 6:00–21:30\nMar 6:00–21:30\nMer 6:00–21:30\nJeu 6:00–21:30\nVen 6:00–22:00\nSam 6:30–21:30\nDim fermé",
-      de: "Mo 6:00–21:30\nDi 6:00–21:30\nMi 6:00–21:30\nDo 6:00–21:30\nFr 6:00–22:00\nSa 6:30–21:30\nSo geschlossen",
-      es: "Lun 6:00–21:30\nMar 6:00–21:30\nMié 6:00–21:30\nJue 6:00–21:30\nVie 6:00–22:00\nSáb 6:30–21:30\nDom cerrado",
+      it: "Lun. 6:00–21:30\nMar. 6:00–21:30\nMer. 6:00–21:30\nGio. 6:00–21:30\nVen. 6:00–22:00\nSab. 6:30–21:30\nDom. chiuso",
+      en: "Mon. 6:00–21:30\nTue. 6:00–21:30\nWed. 6:00–21:30\nThu. 6:00–21:30\nFri. 6:00–22:00\nSat. 6:30–21:30\nSun. closed",
+      fr: "Lun. 6:00–21:30\nMar. 6:00–21:30\nMer. 6:00–21:30\nJeu. 6:00–21:30\nVen. 6:00–22:00\nSam. 6:30–21:30\nDim. fermé",
+      de: "Mo. 6:00–21:30\nDi. 6:00–21:30\nMi. 6:00–21:30\nDo. 6:00–21:30\nFr. 6:00–22:00\nSa. 6:30–21:30\nSo. geschlossen",
+      es: "Lun. 6:00–21:30\nMar. 6:00–21:30\nMié. 6:00–21:30\nJue. 6:00–21:30\nVie. 6:00–22:00\nSáb. 6:30–21:30\nDom. cerrado",
     },
   },
   {
@@ -269,7 +269,7 @@ export default function HomePage() {
 
   return (
     <div className="bg-[#fbfaf7] text-neutral-900">
-      <section className="relative left-1/2 right-1/2 -mx-[50vw] -mt-10 flex min-h-[calc(92svh-4.5rem)] w-screen items-end overflow-hidden bg-neutral-950 sm:min-h-[calc(94svh-5rem)]">
+      <section className="relative left-1/2 right-1/2 -mx-[50dvw] -mt-10 flex min-h-[calc(92svh-4.5rem)] w-dvw max-w-none items-end overflow-hidden bg-neutral-950 sm:min-h-[calc(94svh-5rem)]">
         <div className="absolute inset-0">
           <Image
             src="/images/hero.jpg"
@@ -283,7 +283,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.12)_0%,rgba(0,0,0,0.2)_34%,rgba(0,0,0,0.6)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(180deg,rgba(251,250,247,0)_0%,rgba(251,250,247,0.88)_100%)]" />
 
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl px-6 pb-14 sm:pb-20">
+        <div className="relative z-10 mx-auto flex w-full max-w-6xl px-4 pb-14 sm:px-6 sm:pb-20">
           <div className="max-w-[40rem] text-white sm:max-w-[44rem]">
             <div className="flex items-center gap-3 pl-1">
               <span className="h-px w-10 bg-white/35" />
@@ -310,7 +310,7 @@ export default function HomePage() {
               {t("heroSubtitle")}
             </p>
 
-            <div className="mt-8 flex flex-nowrap items-center gap-2 pl-1 sm:mt-10 sm:gap-3">
+            <div className="mt-8 flex flex-wrap items-center gap-2 pl-1 sm:mt-10 sm:gap-3">
               <Link
                 href="/menu"
                 className="inline-flex min-h-10 items-center whitespace-nowrap rounded-full bg-white px-4 py-2 text-xs font-semibold text-neutral-900 shadow-[0_12px_30px_rgba(0,0,0,0.18)] transition hover:bg-neutral-100 sm:min-h-12 sm:px-7 sm:py-3 sm:text-sm"
@@ -338,7 +338,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl px-6 py-10 sm:py-16">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
         <section className="flex flex-col gap-6 md:grid md:grid-cols-4 md:items-stretch md:gap-6">
           {/* riga in alto: orari + info + venerdì */}
           <div className="md:col-span-4 grid gap-6 md:grid-cols-3">
