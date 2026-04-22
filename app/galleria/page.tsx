@@ -42,9 +42,16 @@ const COPY: Record<
 
 const IMAGES = [
   { src: "/images/hero.jpg", alt: "Bar Da Luciano" },
+  { src: "/images/vetrina-pesce.jpg", alt: "Vetrina pesce" },
+  { src: "/images/vetrina-pranzi-estate.jpg", alt: "Vetrina pranzi estate" },
+  { src: "/images/vetrina-pranzi-estate-n2.jpg", alt: "Vetrina pranzi estate n2" },
+  { src: "/images/champagne-1.jpg", alt: "Champagne 1" },
+  { src: "/images/champagne-2.jpg", alt: "Champagne 2" },
+  { src: "/images/brioche.jpg", alt: "Brioche" },
   { src: "/images/negroni.jpg", alt: "Cocktail" },
   { src: "/images/italian-75.jpeg", alt: "Italian 75" },
   { src: "/images/laurea.jpeg", alt: "Laurea" },
+  { src: "/images/laurea-2.jpg", alt: "Laurea 2" },
 ];
 
 export default function GalleryPage() {
@@ -92,8 +99,22 @@ export default function GalleryPage() {
               className={
                 image.src === "/images/negroni.jpg"
                   ? "h-64 w-full object-cover object-[85%_85%] sm:object-center"
+                  : image.src === "/images/vetrina-pesce.jpg"
+                    ? "h-64 w-full object-cover object-center"
+                  : image.src === "/images/vetrina-pranzi-estate.jpg"
+                    ? "h-64 w-full object-cover object-center"
+                  : image.src === "/images/vetrina-pranzi-estate-n2.jpg"
+                    ? "h-64 w-full object-cover object-center"
+                  : image.src === "/images/champagne-1.jpg"
+                    ? "h-64 w-full object-cover object-center"
+                  : image.src === "/images/champagne-2.jpg"
+                    ? "h-64 w-full object-cover object-center"
+                  : image.src === "/images/brioche.jpg"
+                    ? "h-64 w-full object-cover object-center"
                   : image.src === "/images/italian-75.jpeg"
                     ? "h-64 w-full object-cover object-[50%_78%] sm:object-center"
+                  : image.src === "/images/laurea-2.jpg"
+                    ? "h-64 w-full object-cover object-center"
                   : "h-64 w-full object-cover"
               }
             />
