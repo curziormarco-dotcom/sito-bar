@@ -48,7 +48,7 @@ export function LanguageSwitcher({ inverted = false }: { inverted?: boolean }) {
       </button>
 
       {open && (
-        <div className="absolute right-0 mt-2 w-44 rounded-xl border border-neutral-200 bg-white p-2 shadow-xl">
+        <div className="absolute right-0 z-[100] mt-2 w-44 rounded-xl border border-neutral-200 bg-white p-2 shadow-xl">
           <ul role="listbox" className="space-y-1">
             {LANGUAGES.map((opt) => (
               <li key={opt.code}>

@@ -35,8 +35,11 @@ body {
 }
 
 main,
-header,
 footer {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+header {
+  max-width: 100%;
 }

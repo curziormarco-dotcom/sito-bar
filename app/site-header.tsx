@@ -18,7 +18,7 @@ export function SiteHeader() {
   const labels = NAV_COPY[lang];
 
   return (
-    <header className="sticky top-0 z-50 w-full overflow-x-clip border-b border-neutral-200 bg-white/90 backdrop-blur transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full border-b border-neutral-200 bg-white/90 backdrop-blur transition-all duration-300">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-2 px-3 py-4 sm:px-6">
         <Link
           href="/"
