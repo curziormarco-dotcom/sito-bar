@@ -45,8 +45,6 @@ const IMAGES = [
   { src: "/images/vetrina-pesce.jpg", alt: "Vetrina pesce" },
   { src: "/images/vetrina-pranzi-estate.jpg", alt: "Vetrina pranzi estate" },
   { src: "/images/vetrina-pranzi-estate-n2.jpg", alt: "Vetrina pranzi estate n2" },
-  { src: "/images/champagne-1.jpg", alt: "Champagne 1" },
-  { src: "/images/champagne-2.jpg", alt: "Champagne 2" },
   { src: "/images/brioche.jpg", alt: "Brioche" },
   { src: "/images/negroni.jpg", alt: "Cocktail" },
   { src: "/images/italian-75.jpeg", alt: "Italian 75" },
@@ -106,10 +104,6 @@ export default function GalleryPage() {
                     ? "h-64 w-full object-cover object-center"
                   : image.src === "/images/vetrina-pranzi-estate-n2.jpg"
                     ? "h-64 w-full object-cover object-center"
-                  : image.src === "/images/champagne-1.jpg"
-                    ? "h-56 w-full bg-neutral-100 object-contain sm:h-64 sm:object-cover sm:object-center"
-                  : image.src === "/images/champagne-2.jpg"
-                    ? "h-56 w-full bg-neutral-100 object-contain sm:h-64 sm:object-cover sm:object-center"
                   : image.src === "/images/brioche.jpg"
                     ? "h-64 w-full object-cover object-center"
                   : image.src === "/images/italian-75.jpeg"
