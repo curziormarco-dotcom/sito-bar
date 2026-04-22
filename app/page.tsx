@@ -342,11 +342,11 @@ export default function HomePage() {
         <section className="flex flex-col gap-6 md:grid md:grid-cols-4 md:items-stretch md:gap-6">
           {/* riga in alto: orari + info + venerdì */}
           <div className="md:col-span-4 grid gap-6 md:grid-cols-3">
-            <div className="h-fit rounded-[24px] border border-neutral-200/80 bg-white/90 p-7 shadow-[0_10px_30px_rgba(17,17,17,0.04)] backdrop-blur">
+            <div className="h-fit rounded-[24px] border border-neutral-200/80 bg-white/90 p-7 text-center shadow-[0_10px_30px_rgba(17,17,17,0.04)] backdrop-blur md:text-left">
               <h3 className="text-[0.7rem] font-medium tracking-[0.28em] text-neutral-500">
                 {HIGHLIGHTS[0].title[lang].toUpperCase()}
               </h3>
-              <div className="mt-4 grid grid-cols-2 gap-x-5 gap-y-1.5 text-[0.9rem] leading-6 text-neutral-800 sm:text-[0.98rem] sm:leading-7">
+              <div className="mx-auto mt-4 grid max-w-[18rem] grid-cols-2 gap-x-5 gap-y-1.5 text-center text-[0.9rem] leading-6 text-neutral-800 sm:text-[0.98rem] sm:leading-7 md:mx-0 md:text-left">
                 {splitLines(HIGHLIGHTS[0].text[lang]).map((line) => (
                   <p key={line} className="whitespace-nowrap">
                     {line}
@@ -355,7 +355,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="h-fit rounded-[24px] border border-neutral-200/80 bg-white/90 p-7 shadow-[0_10px_30px_rgba(17,17,17,0.04)] backdrop-blur">
+            <div className="h-fit rounded-[24px] border border-neutral-200/80 bg-white/90 p-7 text-center shadow-[0_10px_30px_rgba(17,17,17,0.04)] backdrop-blur md:text-left">
               <h3 className="text-[0.7rem] font-medium tracking-[0.28em] text-neutral-500">
                 {HIGHLIGHTS[1].title[lang].toUpperCase()}
               </h3>
@@ -366,7 +366,7 @@ export default function HomePage() {
 
             <Link
               href="/menu#pesce"
-              className="h-fit rounded-[24px] border border-neutral-200/80 bg-white/90 p-7 shadow-[0_10px_30px_rgba(17,17,17,0.04)] transition hover:-translate-y-0.5 hover:bg-white"
+              className="h-fit rounded-[24px] border border-neutral-200/80 bg-white/90 p-7 text-center shadow-[0_10px_30px_rgba(17,17,17,0.04)] transition hover:-translate-y-0.5 hover:bg-white md:text-left"
             >
               <h3 className="text-[0.7rem] font-medium tracking-[0.28em] text-neutral-500">
                 {HIGHLIGHTS[2].title[lang].toUpperCase()}
@@ -378,8 +378,8 @@ export default function HomePage() {
           </div>
 
           {/* card mappa: occupa 2 colonne su desktop */}
-          <div className="flex h-[320px] flex-col rounded-[28px] border border-neutral-200/80 bg-white p-7 shadow-[0_14px_36px_rgba(17,17,17,0.05)] md:col-span-2">
-            <div className="flex items-start justify-between gap-4">
+          <div className="flex h-[320px] flex-col rounded-[28px] border border-neutral-200/80 bg-white p-7 text-center shadow-[0_14px_36px_rgba(17,17,17,0.05)] md:col-span-2 md:text-left">
+            <div className="flex flex-col items-center justify-between gap-4 sm:flex-row sm:items-start">
               <div>
                 <p className="text-[0.7rem] font-medium tracking-[0.28em] text-neutral-500">
                   MAP
@@ -513,8 +513,8 @@ export default function HomePage() {
           </section>
         )}
 
-        <section className="mt-8 rounded-[28px] border border-neutral-200 bg-white px-6 py-8 sm:px-10 sm:py-10">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <section className="mt-8 rounded-[28px] border border-neutral-200 bg-white px-6 py-8 text-center sm:px-10 sm:py-10 sm:text-left">
+          <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-2xl">
               <h2 className="text-2xl font-semibold tracking-tight">
                 {t("leaveReviewTitle")}
@@ -537,16 +537,16 @@ export default function HomePage() {
         {/* PRENOTA */}
         <section
           id="prenota"
-          className="mt-8 rounded-[28px] border border-neutral-200 bg-white px-6 py-8 sm:px-10 sm:py-10"
+          className="mt-8 rounded-[28px] border border-neutral-200 bg-white px-6 py-8 text-center sm:px-10 sm:py-10 sm:text-left"
         >
-          <div className="max-w-2xl">
+          <div className="mx-auto max-w-2xl sm:mx-0">
             <h2 className="text-3xl font-semibold tracking-tight">{t("bookTitle")}</h2>
             <p className="mt-3 text-neutral-600">
               {t("bookSubtitle")}
             </p>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap justify-center gap-3 sm:justify-start">
             <a
               href="tel:+390499813795"
               className="inline-flex rounded-full bg-neutral-900 px-7 py-3 text-sm font-semibold text-white transition hover:bg-neutral-800"
