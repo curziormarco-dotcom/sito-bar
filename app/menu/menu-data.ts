@@ -1713,16 +1713,6 @@ export const MENU: MenuSection[] = [
       },
       {
         name: {
-          it: "Trento DOC riserva Piancastello zero - Endrizzi",
-          en: "Trento DOC Riserva Piancastello Zero - Endrizzi",
-          fr: "Trento DOC Riserva Piancastello Zero - Endrizzi",
-          de: "Trento DOC Riserva Piancastello Zero - Endrizzi",
-          es: "Trento DOC Riserva Piancastello Zero - Endrizzi",
-        },
-        bottlePrice: 35.0,
-      },
-      {
-        name: {
           it: "Chardonnay MASETTO D'ORÈ - Endrizzi",
           en: "Chardonnay MASETTO D'ORÈ - Endrizzi",
           fr: "Chardonnay MASETTO D'ORÈ - Endrizzi",

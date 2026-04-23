@@ -98,6 +98,58 @@ function formatCategoryTitle(title: string) {
   return title.charAt(0) + title.slice(1).toLocaleLowerCase();
 }
 
+function getRomeDateParts(date: Date) {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/Rome",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(date);
+  const get = (type: "year" | "month" | "day") => Number(parts.find((part) => part.type === type)?.value);
+  return { year: get("year"), month: get("month"), day: get("day") };
+}
+
+function getEasterSunday(year: number) {
+  const a = year % 19;
+  const b = Math.floor(year / 100);
+  const c = year % 100;
+  const d = Math.floor(b / 4);
+  const e = b % 4;
+  const f = Math.floor((b + 8) / 25);
+  const g = Math.floor((b - f + 1) / 3);
+  const h = (19 * a + b - d - g + 15) % 30;
+  const i = Math.floor(c / 4);
+  const k = c % 4;
+  const l = (32 + 2 * e + 2 * i - h - k) % 7;
+  const m = Math.floor((a + 11 * h + 22 * l) / 451);
+  const month = Math.floor((h + l - 7 * m + 114) / 31);
+  const day = ((h + l - 7 * m + 114) % 31) + 1;
+  return new Date(Date.UTC(year, month - 1, day));
+}
+
+function addDays(date: Date, days: number) {
+  const next = new Date(date);
+  next.setUTCDate(next.getUTCDate() + days);
+  return next;
+}
+
+function isDuringCarnevale(date: Date) {
+  const { year, month, day } = getRomeDateParts(date);
+  const romeDate = new Date(Date.UTC(year, month - 1, day));
+  const easterSunday = getEasterSunday(year);
+  const ashWednesday = addDays(easterSunday, -46);
+  const carnevaleStart = addDays(ashWednesday, -20);
+  const carnevaleEnd = addDays(ashWednesday, -1);
+  return romeDate >= carnevaleStart && romeDate <= carnevaleEnd;
+}
+
+function shouldHideMenuItem(itemName: string, isCarnevalePeriod: boolean) {
+  if (!isCarnevalePeriod && itemName.toLocaleLowerCase().includes("frittella")) {
+    return true;
+  }
+  return false;
+}
+
 type AllergenKey = keyof typeof ALLERGEN_LABELS;
 
 const ALLERGEN_ORDER = [
@@ -391,19 +443,22 @@ export default function MenuPage() {
   const t = (key: string) => UI_COPY[lang][key] ?? key;
   const allergenFilterSet = useMemo(() => new Set(allergenFilters), [allergenFilters]);
   const hasActiveAllergenFilter = allergenFilters.length > 0;
+  const isCarnevalePeriod = isDuringCarnevale(new Date());
   const menuWithAllergens = useMemo(
     () =>
       MENU.map((section) => ({
         ...section,
-        items: section.items.map((item) => {
-          const inferred = inferAllergens(section, item, {
-            knownAllergens: KNOWN_ALLERGENS,
-            sortOrder: ALLERGEN_SORT_ORDER,
-          });
-          return inferred ? { ...item, allergens: inferred as AllergenKey[] } : item;
-        }),
+        items: section.items
+          .filter((item) => !shouldHideMenuItem(item.name.it, isCarnevalePeriod))
+          .map((item) => {
+            const inferred = inferAllergens(section, item, {
+              knownAllergens: KNOWN_ALLERGENS,
+              sortOrder: ALLERGEN_SORT_ORDER,
+            });
+            return inferred ? { ...item, allergens: inferred as AllergenKey[] } : item;
+          }),
       })),
-    []
+    [isCarnevalePeriod]
   );
   const visibleResultCount = useMemo(
     () =>
