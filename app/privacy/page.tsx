@@ -14,23 +14,47 @@ const SECTIONS: { title: string; body: ReactNode[] }[] = [
       "Il sito non prevede registrazione, account utente, form di contatto o acquisti online.",
       "Quando l'utente contatta il locale telefonicamente o tramite servizi esterni, vengono trattati solo i dati necessari a rispondere alla richiesta, ad esempio nome, recapito e contenuto del messaggio.",
       "Durante la navigazione possono essere trattati dati tecnici necessari al funzionamento del sito, come indirizzo IP, dati del dispositivo, browser utilizzato e log tecnici generati dal servizio di hosting.",
+      "Se attive, le statistiche aggregate del sito possono includere informazioni tecniche come pagina visitata, referrer, paese, dispositivo, sistema operativo e browser, senza identificare direttamente l'utente.",
     ],
   },
   {
     title: "Finalita e base giuridica",
     body: [
       "I dati sono trattati per rispondere alle richieste dell'utente, fornire informazioni sul locale, gestire eventuali prenotazioni e garantire sicurezza e corretto funzionamento del sito.",
-      "La base giuridica e l'esecuzione di misure richieste dall'utente, l'adempimento di obblighi di legge e il legittimo interesse al funzionamento e alla sicurezza del sito.",
+      "I dati possono inoltre essere trattati per produrre statistiche aggregate sull'utilizzo del sito e comprendere in forma anonima quante visite ricevono le pagine.",
+      "La base giuridica e l'esecuzione di misure richieste dall'utente, l'adempimento di obblighi di legge e il legittimo interesse al funzionamento, alla sicurezza e al monitoraggio statistico aggregato del sito.",
     ],
   },
   {
     title: "Cookie e strumenti simili",
     body: [
-      "Il sito non usa al momento strumenti di profilazione pubblicitaria, Google Analytics o Meta Pixel.",
+      "Il sito non usa strumenti di profilazione pubblicitaria, Google Analytics o Meta Pixel.",
       "Possono essere usati cookie o strumenti tecnici necessari al funzionamento del sito e dell'hosting. Per questi strumenti non e richiesto il consenso preventivo.",
+      "Il sito puo usare Vercel Web Analytics per misurare visite e pagine visualizzate con dati aggregati e anonimizzati. Secondo la documentazione del fornitore, questo strumento non usa cookie e non consente di ricostruire il comportamento del singolo utente tra siti diversi.",
       "Il sito mostra un banner per la gestione delle preferenze relative a cookie e servizi di terze parti. La scelta dell'utente, accettazione o rifiuto, viene salvata nel browser tramite localStorage con la chiave bar-da-luciano-cookie-consent.",
-      "La mappa Google incorporata viene caricata solo se l'utente accetta i cookie e i servizi Google Maps. In caso di rifiuto, la mappa resta bloccata e non viene caricato l'iframe Google Maps.",
+      "Il banner serve in particolare a gestire il caricamento di Google Maps. In caso di rifiuto, la mappa resta bloccata e non viene caricato l'iframe Google Maps.",
       "L'utente puo modificare la scelta in qualsiasi momento usando il pulsante Cookie presente nel footer del sito.",
+      <>
+        Per maggiori informazioni su Vercel Web Analytics, l&apos;utente puo consultare la{" "}
+        <a
+          href="https://vercel.com/docs/analytics/privacy-policy"
+          target="_blank"
+          rel="noreferrer"
+          className="underline underline-offset-4"
+        >
+          documentazione privacy di Vercel Analytics
+        </a>{" "}
+        e la{" "}
+        <a
+          href="https://vercel.com/privacy"
+          target="_blank"
+          rel="noreferrer"
+          className="underline underline-offset-4"
+        >
+          Privacy Policy di Vercel
+        </a>
+        .
+      </>,
       <>
         Per maggiori informazioni sul trattamento dati da parte di Google, l’utente
         puo consultare la{" "}
@@ -58,7 +82,7 @@ const SECTIONS: { title: string; body: ReactNode[] }[] = [
   {
     title: "Servizi esterni",
     body: [
-      "Il sito contiene link verso servizi esterni, come Google Maps, Google Recensioni e Instagram.",
+      "Il sito contiene link verso servizi esterni, come Google Maps, Google Recensioni e Instagram, e puo usare servizi infrastrutturali o statistici collegati all'hosting del sito.",
       "Quando l'utente apre questi link, lascia il sito e il trattamento dei dati avviene secondo le informative dei rispettivi fornitori.",
     ],
   },
@@ -67,6 +91,7 @@ const SECTIONS: { title: string; body: ReactNode[] }[] = [
     body: [
       "I dati raccolti tramite contatto diretto sono conservati per il tempo necessario a gestire la richiesta e, se necessario, per adempiere a obblighi di legge.",
       "I log tecnici del sito sono conservati dai fornitori tecnici secondo le rispettive policy e per il tempo necessario a sicurezza, diagnostica e funzionamento del servizio.",
+      "Eventuali dati statistici aggregati sono conservati secondo le policy del fornitore tecnico utilizzato per le analytics e per il tempo necessario alla consultazione dei report.",
     ],
   },
   {
@@ -89,7 +114,7 @@ export default function PrivacyPage() {
           Privacy e Cookie Policy
         </h1>
         <p className="mt-4 text-sm text-neutral-500">
-          Ultimo aggiornamento: 9 aprile 2026
+          Ultimo aggiornamento: 29 aprile 2026
         </p>
         <p className="mt-6 leading-7 text-neutral-700">
           Questa informativa descrive in modo sintetico come vengono trattati i dati

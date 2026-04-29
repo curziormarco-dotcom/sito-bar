@@ -38,7 +38,7 @@ const COOKIE_COPY: Record<
 > = {
   it: {
     title: "Preferenze cookie",
-    body: "Usiamo solo strumenti tecnici e, se accetti, carichiamo Google Maps per mostrarti la mappa del locale.",
+    body: "Usiamo strumenti tecnici e statistiche aggregate privacy-friendly. Se accetti, carichiamo anche Google Maps per mostrarti la mappa del locale.",
     accept: "Accetta",
     reject: "Rifiuta",
     settings: "Preferenze cookie",
@@ -46,7 +46,7 @@ const COOKIE_COPY: Record<
   },
   en: {
     title: "Cookie preferences",
-    body: "We use technical tools and, if you accept, load Google Maps to show the venue map.",
+    body: "We use technical tools and privacy-friendly aggregated statistics. If you accept, we also load Google Maps to show the venue map.",
     accept: "Accept",
     reject: "Reject",
     settings: "Cookies",
@@ -54,7 +54,7 @@ const COOKIE_COPY: Record<
   },
   fr: {
     title: "Préférences de cookies",
-    body: "Nous utilisons des outils techniques et, si vous acceptez, Google Maps pour afficher la carte du lieu.",
+    body: "Nous utilisons des outils techniques et des statistiques agrégées respectueuses de la vie privée. Si vous acceptez, nous chargeons aussi Google Maps pour afficher la carte du lieu.",
     accept: "Accepter",
     reject: "Refuser",
     settings: "Cookies",
@@ -62,7 +62,7 @@ const COOKIE_COPY: Record<
   },
   de: {
     title: "Cookie-Einstellungen",
-    body: "Wir nutzen technische Tools und laden Google Maps nur mit Zustimmung, um die Karte anzuzeigen.",
+    body: "Wir nutzen technische Tools und datenschutzfreundliche aggregierte Statistiken. Mit Zustimmung laden wir außerdem Google Maps, um die Karte anzuzeigen.",
     accept: "Akzeptieren",
     reject: "Ablehnen",
     settings: "Cookie-Einstellungen",
@@ -70,7 +70,7 @@ const COOKIE_COPY: Record<
   },
   es: {
     title: "Preferencias de cookies",
-    body: "Usamos herramientas técnicas y, si aceptas, cargamos Google Maps para mostrar el mapa del local.",
+    body: "Usamos herramientas técnicas y estadísticas agregadas respetuosas con la privacidad. Si aceptas, también cargamos Google Maps para mostrar el mapa del local.",
     accept: "Aceptar",
     reject: "Rechazar",
     settings: "Cookies",
