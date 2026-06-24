@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useLanguage, type Language } from "../locale-provider";
 import { MENU } from "./menu-data";
@@ -433,12 +434,13 @@ function formatEURSuffix(value: number) {
    PAGINA MENU
 ======================= */
 export default function MenuPage() {
+  const pathname = usePathname();
   const [openSection, setOpenSection] = useState<string | null>(null);
   const [showLegend, setShowLegend] = useState(false);
   const [showCentrifugheNotice, setShowCentrifugheNotice] = useState(false);
   const [showPesceNotice, setShowPesceNotice] = useState(false);
   const [showCicchettiPesceNotice, setShowCicchettiPesceNotice] = useState(false);
-  const [showCappuccinoFreddoNotice, setShowCappuccinoFreddoNotice] = useState(true);
+  const [dismissedCappuccinoFreddoPath, setDismissedCappuccinoFreddoPath] = useState<string | null>(null);
   const [openWineDescription, setOpenWineDescription] = useState<string | null>(null);
   const [allergenFilters, setAllergenFilters] = useState<AllergenKey[]>([]);
   const [allergenHint, setAllergenHint] = useState<AllergenKey | null>(null);
@@ -495,6 +497,7 @@ export default function MenuPage() {
   const isBefore0600 = romeTime < "06:00";
   const isOutsideCentrifugheHours = isAfter1830 || isBefore0600;
   const hashScrollOffset = 70;
+  const showCappuccinoFreddoNotice = pathname === "/menu" && dismissedCappuccinoFreddoPath !== pathname;
 
   const toggleSection = (sectionKey: string, isOpen: boolean, anchor?: HTMLElement) => {
     if (anchor) {
@@ -574,7 +577,7 @@ export default function MenuPage() {
       {showCappuccinoFreddoNotice && (
         <div
           className="fixed inset-0 z-[70] flex items-center justify-center bg-black/45 p-8 sm:p-12"
-          onClick={() => setShowCappuccinoFreddoNotice(false)}
+          onClick={() => setDismissedCappuccinoFreddoPath(pathname)}
         >
           <div
             className="relative w-full max-w-[520px]"
@@ -583,7 +586,7 @@ export default function MenuPage() {
             <button
               type="button"
               aria-label="Chiudi avviso"
-              onClick={() => setShowCappuccinoFreddoNotice(false)}
+              onClick={() => setDismissedCappuccinoFreddoPath(pathname)}
               className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/95 text-2xl leading-none text-neutral-900 shadow-md hover:bg-white"
             >
               ×
