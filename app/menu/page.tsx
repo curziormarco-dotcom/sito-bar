@@ -14,6 +14,7 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     close: "Chiudi",
     comingSoon: "Disponibile presto.",
     fridayOnly: "Disponibile solo il venerdì.",
+    thursdayFridayOnly: "Disponibile solo il giovedì e il venerdì.",
     until1830: "Disponibile fino alle 18:30.",
     filterOn: "Allergeni esclusi:",
     clearFilter: "Rimuovi filtro",
@@ -31,6 +32,7 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     close: "Close",
     comingSoon: "Coming soon.",
     fridayOnly: "Available only on Fridays.",
+    thursdayFridayOnly: "Available only on Thursdays and Fridays.",
     until1830: "Available until 6:30 PM.",
     filterOn: "Excluded allergens:",
     clearFilter: "Clear filter",
@@ -48,6 +50,7 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     close: "Fermer",
     comingSoon: "Bientôt disponible.",
     fridayOnly: "Disponible uniquement le vendredi.",
+    thursdayFridayOnly: "Disponible uniquement le jeudi et le vendredi.",
     until1830: "Disponible jusqu’à 18h30.",
     filterOn: "Allergènes exclus :",
     clearFilter: "Retirer le filtre",
@@ -65,6 +68,7 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     close: "Schließen",
     comingSoon: "Demnächst verfügbar.",
     fridayOnly: "Nur freitags verfügbar.",
+    thursdayFridayOnly: "Nur donnerstags und freitags verfügbar.",
     until1830: "Verfügbar bis 18:30 Uhr.",
     filterOn: "Ausgeschlossene Allergene:",
     clearFilter: "Filter entfernen",
@@ -82,6 +86,7 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     close: "Cerrar",
     comingSoon: "Disponible pronto.",
     fridayOnly: "Disponible solo los viernes.",
+    thursdayFridayOnly: "Disponible solo los jueves y viernes.",
     until1830: "Disponible hasta las 18:30.",
     filterOn: "Alérgenos excluidos:",
     clearFilter: "Quitar filtro",
@@ -431,6 +436,7 @@ export default function MenuPage() {
   const [showLegend, setShowLegend] = useState(false);
   const [showCentrifugheNotice, setShowCentrifugheNotice] = useState(false);
   const [showPesceNotice, setShowPesceNotice] = useState(false);
+  const [showCicchettiPesceNotice, setShowCicchettiPesceNotice] = useState(false);
   const [openWineDescription, setOpenWineDescription] = useState<string | null>(null);
   const [allergenFilters, setAllergenFilters] = useState<AllergenKey[]>([]);
   const [allergenHint, setAllergenHint] = useState<AllergenKey | null>(null);
@@ -470,10 +476,12 @@ export default function MenuPage() {
       }, 0),
     [allergenFilterSet, hasActiveAllergenFilter, menuWithAllergens]
   );
-  const isFriday = new Intl.DateTimeFormat("en-US", {
+  const romeWeekday = new Intl.DateTimeFormat("en-US", {
     weekday: "short",
     timeZone: "Europe/Rome",
-  }).format(new Date()) === "Fri";
+  }).format(new Date());
+  const isFriday = romeWeekday === "Fri";
+  const isThursdayOrFriday = romeWeekday === "Thu" || isFriday;
   const showPesceAlways = true;
   const romeTime = new Intl.DateTimeFormat("en-GB", {
     hour: "2-digit",
@@ -524,6 +532,9 @@ export default function MenuPage() {
       if (hash === "pesce" && !isFriday) {
         setShowPesceNotice(true);
       }
+      if (hash === "cicchetti-pesce" && !isThursdayOrFriday) {
+        setShowCicchettiPesceNotice(true);
+      }
       setTimeout(() => {
         const el = document.getElementById(hash);
         if (el) {
@@ -540,7 +551,7 @@ export default function MenuPage() {
     openFromHash();
     window.addEventListener("hashchange", openFromHash);
     return () => window.removeEventListener("hashchange", openFromHash);
-  }, [isFriday]);
+  }, [isFriday, isThursdayOrFriday]);
 
   return (
     <main
@@ -666,6 +677,28 @@ export default function MenuPage() {
           </div>
         </div>
       )}
+      {showCicchettiPesceNotice && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 px-4"
+          onClick={() => setShowCicchettiPesceNotice(false)}
+        >
+          <div className="w-full max-w-sm rounded-2xl border border-neutral-200 bg-white p-5 text-neutral-900 shadow-xl">
+            <h3 className="text-base font-semibold">Info</h3>
+            <p className="mt-2 text-sm text-neutral-600">
+              {t("thursdayFridayOnly")}
+            </p>
+            <div className="mt-4 flex justify-end">
+              <button
+                type="button"
+                onClick={() => setShowCicchettiPesceNotice(false)}
+                className="rounded-full border border-neutral-200 px-4 py-2 text-sm font-semibold text-neutral-700 hover:bg-neutral-50"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {hasActiveAllergenFilter && (
         <div className="flex flex-wrap items-center gap-3 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm text-neutral-600">
@@ -687,6 +720,7 @@ export default function MenuPage() {
       {menuWithAllergens.map((section) => {
         const isOpen = openSection === section.title.it;
         const isPesce = section.id === "pesce";
+        const isCicchettiPesce = section.id === "cicchetti-pesce";
         const isCentrifughe = section.id === "centrifughe";
         const isWineSection =
           section.title.it === "Vini Bianchi" || section.title.it === "Vini Rossi";
@@ -713,6 +747,9 @@ export default function MenuPage() {
                 }
                 if (isPesce && !isFriday && !isOpen) {
                   setShowPesceNotice(true);
+                }
+                if (isCicchettiPesce && !isThursdayOrFriday && !isOpen) {
+                  setShowCicchettiPesceNotice(true);
                 }
                 toggleSection(section.title.it, isOpen, event.currentTarget);
               }}

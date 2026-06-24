@@ -2133,6 +2133,16 @@ export const MENU: MenuSection[] = [
       },
       {
         name: {
+          it: "Birra artigianale FRED - Ca'Barley — 33 cl",
+          en: "Craft beer FRED - Ca'Barley — 33 cl",
+          fr: "Bière artisanale FRED - Ca'Barley — 33 cl",
+          de: "Craft-Bier FRED - Ca'Barley — 33 cl",
+          es: "Cerveza artesanal FRED - Ca'Barley — 33 cl",
+        },
+        price: 6.0,
+      },
+      {
+        name: {
           it: "Corona — 33 cl",
           en: "Corona — 33 cl",
           fr: "Corona — 33 cl",

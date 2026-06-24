@@ -5,6 +5,7 @@ import { LocaleProvider } from "./locale-provider";
 import { CookieConsentProvider } from "./cookie-consent";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
+import { SiteOpeningNotice } from "./site-opening-notice";
 
 const bodyFont = Manrope({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ export default function RootLayout({
         <LocaleProvider>
           <CookieConsentProvider>
             <ScrollToTop />
+            <SiteOpeningNotice />
             <SiteHeader />
 
             <main className="w-full overflow-x-hidden">{children}</main>
