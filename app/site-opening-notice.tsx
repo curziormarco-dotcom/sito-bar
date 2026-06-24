@@ -1,28 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
-
-const OPENING_NOTICE_STORAGE_KEY = "bar-da-luciano-opening-notice-seen";
+import { useState } from "react";
 
 export function SiteOpeningNotice() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    let shouldShow = false;
-    try {
-      if (!window.localStorage.getItem(OPENING_NOTICE_STORAGE_KEY)) {
-        window.localStorage.setItem(OPENING_NOTICE_STORAGE_KEY, "true");
-        shouldShow = true;
-      }
-    } catch {
-      shouldShow = true;
-    }
-
-    if (!shouldShow) return;
-    const timer = window.setTimeout(() => setIsOpen(true), 0);
-    return () => window.clearTimeout(timer);
-  }, []);
+  const [isOpen, setIsOpen] = useState(true);
 
   if (!isOpen) return null;
 

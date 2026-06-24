@@ -99,8 +99,6 @@ const UI_COPY: Record<Language, Record<string, string>> = {
   },
 };
 
-const CAPPUCCINO_FREDDO_NOTICE_STORAGE_KEY = "bar-da-luciano-cappuccino-freddo-notice-seen";
-
 function formatCategoryTitle(title: string) {
   if (!title) return title;
   return title.charAt(0) + title.slice(1).toLocaleLowerCase();
@@ -440,7 +438,7 @@ export default function MenuPage() {
   const [showCentrifugheNotice, setShowCentrifugheNotice] = useState(false);
   const [showPesceNotice, setShowPesceNotice] = useState(false);
   const [showCicchettiPesceNotice, setShowCicchettiPesceNotice] = useState(false);
-  const [showCappuccinoFreddoNotice, setShowCappuccinoFreddoNotice] = useState(false);
+  const [showCappuccinoFreddoNotice, setShowCappuccinoFreddoNotice] = useState(true);
   const [openWineDescription, setOpenWineDescription] = useState<string | null>(null);
   const [allergenFilters, setAllergenFilters] = useState<AllergenKey[]>([]);
   const [allergenHint, setAllergenHint] = useState<AllergenKey | null>(null);
@@ -506,22 +504,6 @@ export default function MenuPage() {
     }
     setOpenSection(isOpen ? null : sectionKey);
   };
-
-  useEffect(() => {
-    let shouldShow = false;
-    try {
-      if (!window.localStorage.getItem(CAPPUCCINO_FREDDO_NOTICE_STORAGE_KEY)) {
-        window.localStorage.setItem(CAPPUCCINO_FREDDO_NOTICE_STORAGE_KEY, "true");
-        shouldShow = true;
-      }
-    } catch {
-      shouldShow = true;
-    }
-
-    if (!shouldShow) return;
-    const timer = window.setTimeout(() => setShowCappuccinoFreddoNotice(true), 0);
-    return () => window.clearTimeout(timer);
-  }, []);
 
   useLayoutEffect(() => {
     if (!pendingAnchorAdjust.current || !anchorRef.current || anchorTopRef.current === null) {
