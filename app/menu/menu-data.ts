@@ -563,7 +563,7 @@ export const MENU: MenuSection[] = [
           de: "Blaubeersaft",
           es: "Zumo de arándanos",
         },
-        price: 3.5,
+        price: 4.0,
       },
       {
         name: {
@@ -732,7 +732,7 @@ export const MENU: MenuSection[] = [
           de: "Coca‑Cola (Glasflasche)",
           es: "Coca‑Cola (botella de vidrio)",
         },
-        price: 3.5,
+        price: 4.0,
       },
       {
         name: {
