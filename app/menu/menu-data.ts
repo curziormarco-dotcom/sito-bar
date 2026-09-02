@@ -742,7 +742,7 @@ export const MENU: MenuSection[] = [
           de: "Fanta",
           es: "Fanta",
         },
-        price: 3.5,
+        price: 4.0,
       },
       {
         name: {
