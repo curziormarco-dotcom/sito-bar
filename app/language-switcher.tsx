@@ -37,8 +37,8 @@ export function LanguageSwitcher({ inverted = false }: { inverted?: boolean }) {
         onClick={() => setOpen((prev) => !prev)}
         className={
           inverted
-            ? "inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/10 px-3 py-2 text-sm font-semibold text-white backdrop-blur-md hover:bg-white/16"
-            : "inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-2 text-sm font-semibold text-neutral-800 hover:bg-neutral-50"
+            ? "inline-flex items-center gap-1 rounded-full border border-white/18 bg-white/10 px-2 py-1.5 text-xs font-semibold text-white backdrop-blur-md hover:bg-white/16 sm:gap-2 sm:px-3 sm:py-2 sm:text-sm"
+            : "inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-white px-2 py-1.5 text-xs font-semibold text-neutral-800 hover:bg-neutral-50 sm:gap-2 sm:px-3 sm:py-2 sm:text-sm"
         }
         aria-haspopup="listbox"
         aria-expanded={open}
