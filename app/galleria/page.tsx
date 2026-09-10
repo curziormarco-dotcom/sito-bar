@@ -43,8 +43,11 @@ const COPY: Record<
 const IMAGES = [
   { src: "/images/hero.jpg", alt: "Bar Da Luciano" },
   { src: "/images/vetrina-pesce.jpg", alt: "Vetrina pesce" },
+  { src: "/images/vetrina-pesce-aperitivo.png", alt: "Vetrina aperitivo di pesce" },
+  { src: "/images/tartare-pesce.png", alt: "Tartare di pesce" },
   { src: "/images/vetrina-pranzi-estate.jpg", alt: "Vetrina pranzi estate" },
   { src: "/images/vetrina-pranzi-estate-n2.jpg", alt: "Vetrina pranzi estate n2" },
+  { src: "/images/tartare.png", alt: "Tartare" },
   { src: "/images/insalatona.png", alt: "Insalatona" },
   { src: "/images/brioche.jpg", alt: "Brioche" },
   { src: "/images/negroni.jpg", alt: "Cocktail" },
@@ -101,9 +104,15 @@ export default function GalleryPage() {
                   ? "h-64 w-full object-cover object-[85%_85%] sm:object-center"
                   : image.src === "/images/vetrina-pesce.jpg"
                     ? "h-64 w-full object-cover object-center"
+                  : image.src === "/images/vetrina-pesce-aperitivo.png"
+                    ? "h-64 w-full object-cover object-center"
+                  : image.src === "/images/tartare-pesce.png"
+                    ? "h-64 w-full object-cover object-center"
                   : image.src === "/images/vetrina-pranzi-estate.jpg"
                     ? "h-64 w-full object-cover object-center"
                   : image.src === "/images/vetrina-pranzi-estate-n2.jpg"
+                    ? "h-64 w-full object-cover object-center"
+                  : image.src === "/images/tartare.png"
                     ? "h-64 w-full object-cover object-center"
                   : image.src === "/images/insalatona.png"
                     ? "h-64 w-full object-cover object-center"
