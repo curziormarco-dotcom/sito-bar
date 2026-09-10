@@ -7,7 +7,7 @@ import { LanguageSwitcher } from "./language-switcher";
 import { useLanguage, type Language } from "./locale-provider";
 
 const NAV_COPY: Record<Language, { home: string; menu: string; graduations: string; gallery: string }> = {
-  it: { home: "Home", menu: "Menu", graduations: "Lauree", gallery: "Galleria" },
+  it: { home: "Home", menu: "Menù", graduations: "Lauree", gallery: "Galleria" },
   en: { home: "Home", menu: "Menu", graduations: "Graduations", gallery: "Gallery" },
   fr: { home: "Accueil", menu: "Menu", graduations: "Diplômes", gallery: "Galerie" },
   de: { home: "Start", menu: "Menü", graduations: "Abschlüsse", gallery: "Galerie" },
