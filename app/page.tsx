@@ -138,6 +138,10 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     leaveReviewTitle: "Lascia una recensione",
     leaveReviewSubtitle: "Racconta la tua esperienza su Google.",
     leaveReviewCta: "Apri recensioni",
+    graduationTitle: "FESTEGGIA LA TUA LAUREA DA LUCIANO 🎓",
+    graduationText:
+      "Organizziamo feste di laurea e rinfreschi personalizzati a Padova.\nScegli la formula più adatta alla tua festa, dal semplice aperitivo al rinfresco completo.",
+    graduationCta: "Scopri le nostre proposte →",
     mapConsentTitle: "Mappa Google Maps",
     mapConsentText: "Per vedere la mappa accetta i cookie e i servizi Google Maps.",
     mapConsentCta: "Accetta e mostra mappa",
@@ -163,6 +167,10 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     leaveReviewTitle: "Leave a review",
     leaveReviewSubtitle: "Share your experience on Google.",
     leaveReviewCta: "Open reviews",
+    graduationTitle: "CELEBRATE YOUR GRADUATION AT LUCIANO 🎓",
+    graduationText:
+      "We organize graduation parties and personalized refreshments in Padua.\nChoose the best option for your celebration, from a simple aperitivo to a full buffet.",
+    graduationCta: "Discover our options →",
     mapConsentTitle: "Google Maps map",
     mapConsentText: "Accept cookies and Google Maps services to view the map.",
     mapConsentCta: "Accept and show map",
@@ -188,6 +196,10 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     leaveReviewTitle: "Laisser un avis",
     leaveReviewSubtitle: "Partage ton expérience sur Google.",
     leaveReviewCta: "Ouvrir les avis",
+    graduationTitle: "FÊTEZ VOTRE DIPLÔME CHEZ LUCIANO 🎓",
+    graduationText:
+      "Nous organisons des fêtes de diplôme et des rafraîchissements personnalisés à Padoue.\nChoisissez la formule la plus adaptée à votre fête, du simple apéritif au buffet complet.",
+    graduationCta: "Découvrez nos propositions →",
     mapConsentTitle: "Carte Google Maps",
     mapConsentText: "Acceptez les cookies et les services Google Maps pour voir la carte.",
     mapConsentCta: "Accepter et afficher la carte",
@@ -213,6 +225,10 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     leaveReviewTitle: "Bewertung hinterlassen",
     leaveReviewSubtitle: "Teile deine Erfahrung auf Google.",
     leaveReviewCta: "Bewertungen öffnen",
+    graduationTitle: "FEIERE DEINEN ABSCHLUSS BEI LUCIANO 🎓",
+    graduationText:
+      "Wir organisieren Abschlussfeiern und individuelle Erfrischungen in Padua.\nWähle die passende Lösung für deine Feier, vom einfachen Aperitif bis zum kompletten Buffet.",
+    graduationCta: "Unsere Vorschläge entdecken →",
     mapConsentTitle: "Google Maps Karte",
     mapConsentText: "Akzeptiere Cookies und Google Maps Dienste, um die Karte zu sehen.",
     mapConsentCta: "Akzeptieren und Karte anzeigen",
@@ -238,6 +254,10 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     leaveReviewTitle: "Deja una reseña",
     leaveReviewSubtitle: "Comparte tu experiencia en Google.",
     leaveReviewCta: "Abrir reseñas",
+    graduationTitle: "CELEBRA TU GRADUACIÓN EN LUCIANO 🎓",
+    graduationText:
+      "Organizamos fiestas de graduación y refrigerios personalizados en Padua.\nElige la fórmula más adecuada para tu fiesta, desde un aperitivo sencillo hasta un buffet completo.",
+    graduationCta: "Descubre nuestras propuestas →",
     mapConsentTitle: "Mapa de Google Maps",
     mapConsentText: "Acepta las cookies y los servicios de Google Maps para ver el mapa.",
     mapConsentCta: "Aceptar y mostrar mapa",
@@ -373,6 +393,21 @@ export default function HomePage() {
               </h3>
               <p className="mt-4 text-[1.05rem] leading-7 text-neutral-800">
                 {fridayMessages[fridayIndex]}
+              </p>
+            </Link>
+
+            <Link
+              href="/lauree"
+              className="rounded-[24px] border border-amber-200/80 bg-[#fff8ea] p-7 text-center shadow-[0_10px_30px_rgba(120,72,16,0.07)] transition hover:-translate-y-0.5 hover:bg-[#fff4dc] md:col-span-3 md:text-left"
+            >
+              <h3 className="text-[0.82rem] font-bold tracking-[0.18em] text-amber-800">
+                {t("graduationTitle")}
+              </h3>
+              <p className="mt-4 whitespace-pre-line text-[1.02rem] leading-7 text-neutral-800">
+                {t("graduationText")}
+              </p>
+              <p className="mt-5 text-sm font-semibold text-amber-800">
+                {t("graduationCta")}
               </p>
             </Link>
           </div>

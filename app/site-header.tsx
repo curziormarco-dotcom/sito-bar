@@ -5,12 +5,12 @@ import { NavLink } from "./nav-link";
 import { LanguageSwitcher } from "./language-switcher";
 import { useLanguage, type Language } from "./locale-provider";
 
-const NAV_COPY: Record<Language, { home: string; menu: string; gallery: string }> = {
-  it: { home: "Home", menu: "Menu", gallery: "Galleria" },
-  en: { home: "Home", menu: "Menu", gallery: "Gallery" },
-  fr: { home: "Accueil", menu: "Menu", gallery: "Galerie" },
-  de: { home: "Start", menu: "Menü", gallery: "Galerie" },
-  es: { home: "Inicio", menu: "Menú", gallery: "Galería" },
+const NAV_COPY: Record<Language, { home: string; menu: string; graduations: string; gallery: string }> = {
+  it: { home: "Home", menu: "Menu", graduations: "Lauree", gallery: "Galleria" },
+  en: { home: "Home", menu: "Menu", graduations: "Graduations", gallery: "Gallery" },
+  fr: { home: "Accueil", menu: "Menu", graduations: "Diplômes", gallery: "Galerie" },
+  de: { home: "Start", menu: "Menü", graduations: "Abschlüsse", gallery: "Galerie" },
+  es: { home: "Inicio", menu: "Menú", graduations: "Graduaciones", gallery: "Galería" },
 };
 
 export function SiteHeader() {
@@ -40,6 +40,9 @@ export function SiteHeader() {
           </NavLink>
           <NavLink href="/menu" inverted={false}>
             {labels.menu}
+          </NavLink>
+          <NavLink href="/lauree" inverted={false}>
+            {labels.graduations}
           </NavLink>
           <NavLink href="/galleria" inverted={false}>
             {labels.gallery}
