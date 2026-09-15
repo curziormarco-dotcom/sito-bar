@@ -22,11 +22,11 @@ const HIGHLIGHTS = [
       es: "Horario",
     },
     text: {
-      it: "Lun. 6:00–21:30\nMar. 6:00–21:30\nMer. 6:00–21:30\nGio. 6:00–21:30\nVen. 6:00–22:00\nSab. 6:30–21:30\nDom. chiuso",
-      en: "Mon. 6:00–21:30\nTue. 6:00–21:30\nWed. 6:00–21:30\nThu. 6:00–21:30\nFri. 6:00–22:00\nSat. 6:30–21:30\nSun. closed",
-      fr: "Lun. 6:00–21:30\nMar. 6:00–21:30\nMer. 6:00–21:30\nJeu. 6:00–21:30\nVen. 6:00–22:00\nSam. 6:30–21:30\nDim. fermé",
-      de: "Mo. 6:00–21:30\nDi. 6:00–21:30\nMi. 6:00–21:30\nDo. 6:00–21:30\nFr. 6:00–22:00\nSa. 6:30–21:30\nSo. geschlossen",
-      es: "Lun. 6:00–21:30\nMar. 6:00–21:30\nMié. 6:00–21:30\nJue. 6:00–21:30\nVie. 6:00–22:00\nSáb. 6:30–21:30\nDom. cerrado",
+      it: "Lun.–Gio. 6:00–21:30\nVen. 6:00–22:00\nSab. 6:30–21:30\nDom. chiuso",
+      en: "Mon.–Thu. 6:00–21:30\nFri. 6:00–22:00\nSat. 6:30–21:30\nSun. closed",
+      fr: "Lun.–Jeu. 6:00–21:30\nVen. 6:00–22:00\nSam. 6:30–21:30\nDim. fermé",
+      de: "Mo.–Do. 6:00–21:30\nFr. 6:00–22:00\nSa. 6:30–21:30\nSo. geschlossen",
+      es: "Lun.–Jue. 6:00–21:30\nVie. 6:00–22:00\nSáb. 6:30–21:30\nDom. cerrado",
     },
   },
   {
@@ -381,7 +381,7 @@ export default function HomePage() {
               <h3 className="text-[0.7rem] font-medium tracking-[0.28em] text-neutral-500">
                 {HIGHLIGHTS[0].title[lang].toUpperCase()}
               </h3>
-              <div className="mx-auto mt-4 grid max-w-[18rem] grid-cols-2 gap-x-5 gap-y-1.5 text-center text-[0.9rem] leading-6 text-neutral-800 sm:text-[0.98rem] sm:leading-7 md:mx-0 md:text-left">
+              <div className="mx-auto mt-4 grid max-w-[18rem] grid-cols-1 gap-y-1.5 text-center text-[0.9rem] leading-6 text-neutral-800 sm:text-[0.98rem] sm:leading-7 md:mx-0 md:text-left">
                 {splitLines(HIGHLIGHTS[0].text[lang]).map((line) => (
                   <p key={line} className="whitespace-nowrap">
                     {line}
