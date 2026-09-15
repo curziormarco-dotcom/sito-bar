@@ -28,6 +28,9 @@ const COPY: Record<
     proposal12Title: string;
     proposal12Text: string;
     proposal12Caption: string;
+    cakeTitle: string;
+    cakeText: string;
+    cakeService: string;
     drinksTitle: string;
     drinksText: string;
     drinksItems: { name: string; price: string }[];
@@ -60,6 +63,9 @@ const COPY: Record<
     proposal12Text:
       "3 porzioni di tramezzino, mezza focaccia, 1 paninetto e 1 cicchetto di carne o pesce.",
     proposal12Caption: "Foto esempio della porzione a persona.",
+    cakeTitle: "Dolci e torta",
+    cakeText: "È possibile portare dolci e torte dall’esterno solo se prodotti da una pasticceria e accompagnati da documentazione rilasciata dalla stessa che ne attesti la provenienza e riporti ingredienti, allergeni e indicazioni di conservazione. I prodotti devono essere trasportati e conservati nel rispetto di tali indicazioni.",
+    cakeService: "Servizio e taglio torta: 2 € a persona.",
     drinksTitle: "Bevande",
     drinksText: "Proposte pensate per accompagnare il rinfresco e il brindisi.",
     drinksItems: [
@@ -96,6 +102,9 @@ const COPY: Record<
     proposal12Text:
       "3 portions of sandwich, half a focaccia, 1 small roll, and 1 meat or fish cicchetto.",
     proposal12Caption: "Example photo of the individual portion.",
+    cakeTitle: "Desserts and cake",
+    cakeText: "You may bring desserts and cakes from outside only if made by a pastry shop and accompanied by documentation issued by the shop identifying their origin, ingredients, allergens and storage instructions. Products must be transported and stored according to these instructions.",
+    cakeService: "Cake cutting and serving: €2 per person.",
     drinksTitle: "Drinks",
     drinksText: "Options designed to accompany the refreshments and the toast.",
     drinksItems: [
@@ -132,6 +141,9 @@ const COPY: Record<
     proposal12Text:
       "3 portions de tramezzino, une demi-focaccia, 1 petit pain et 1 cicchetto de viande ou de poisson.",
     proposal12Caption: "Photo d'exemple de la portion par personne.",
+    cakeTitle: "Desserts et gâteau",
+    cakeText: "Les desserts et gâteaux apportés de l’extérieur sont acceptés uniquement s’ils proviennent d’une pâtisserie et sont accompagnés de documents délivrés par celle-ci précisant leur provenance, les ingrédients, les allergènes et les consignes de conservation. Les produits doivent être transportés et conservés conformément à ces consignes.",
+    cakeService: "Service et découpe du gâteau : 2 € par personne.",
     drinksTitle: "Boissons",
     drinksText: "Des propositions pensées pour accompagner le buffet et le toast.",
     drinksItems: [
@@ -168,6 +180,9 @@ const COPY: Record<
     proposal12Text:
       "3 Portionen Tramezzino, eine halbe Focaccia, 1 kleines Brotchen und 1 Cicchetto mit Fleisch oder Fisch.",
     proposal12Caption: "Beispielfoto der Portion pro Person.",
+    cakeTitle: "Desserts und Torte",
+    cakeText: "Mitgebrachte Desserts und Torten sind nur erlaubt, wenn sie von einer Konditorei hergestellt wurden und von Unterlagen der Konditorei mit Angaben zu Herkunft, Zutaten, Allergenen und Lagerung begleitet werden. Die Produkte müssen gemäß diesen Vorgaben transportiert und gelagert werden.",
+    cakeService: "Anschneiden und Servieren der Torte: 2 € pro Person.",
     drinksTitle: "Getränke",
     drinksText: "Auswahl passend zum Buffet und zum Anstoßen.",
     drinksItems: [
@@ -204,6 +219,9 @@ const COPY: Record<
     proposal12Text:
       "3 porciones de tramezzino, media focaccia, 1 panecillo y 1 cicchetto de carne o pescado.",
     proposal12Caption: "Foto de ejemplo de la porción por persona.",
+    cakeTitle: "Dulces y tarta",
+    cakeText: "Se pueden traer dulces y tartas del exterior solo si están elaborados por una pastelería y acompañados de documentación emitida por esta que acredite su procedencia e indique los ingredientes, los alérgenos y las instrucciones de conservación. Los productos deben transportarse y conservarse siguiendo estas indicaciones.",
+    cakeService: "Servicio y corte de la tarta: 2 € por persona.",
     drinksTitle: "Bebidas",
     drinksText: "Propuestas pensadas para acompañar el refrigerio y el brindis.",
     drinksItems: [
@@ -338,6 +356,14 @@ export default function GraduationsPage() {
             </div>
             <p className="mt-4 text-sm leading-6 text-neutral-600">
               {copy.drinksNote}
+            </p>
+          </section>
+
+          <section className="rounded-lg border border-neutral-200 bg-white p-5 shadow-sm">
+            <h2 className="text-xl font-semibold font-serif">{copy.cakeTitle}</h2>
+            <p className="mt-3 text-sm leading-6 text-neutral-700">{copy.cakeText}</p>
+            <p className="mt-3 text-sm font-semibold text-amber-800">
+              {copy.cakeService}
             </p>
           </section>
 
