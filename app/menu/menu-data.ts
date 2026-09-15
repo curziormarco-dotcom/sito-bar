@@ -985,11 +985,18 @@ export const MENU: MenuSection[] = [
       },
       {
         name: {
-          it: "Primi e secondi piatti freschi di gastronomia",
-          en: "Fresh first and second courses from the deli",
-          fr: "Premiers et seconds plats frais de la gastronomie",
-          de: "Frische erste und zweite Gänge aus der Feinkost",
-          es: "Primeros y segundos platos frescos de gastronomía",
+          it: "Primi e secondi di gastronomia",
+          en: "Deli first courses and main dishes",
+          fr: "Entrées et plats du traiteur",
+          de: "Vorspeisen und Hauptgerichte aus der Feinkost",
+          es: "Primeros y segundos platos de gastronomía",
+        },
+        description: {
+          it: "Le proposte variano in base alla disponibilità del giorno. Scopri la selezione di oggi nella nostra vetrina.",
+          en: "Options vary depending on daily availability. Discover today’s selection in our display counter.",
+          fr: "Les propositions varient selon les disponibilités du jour. Découvrez notre sélection du jour en vitrine.",
+          de: "Das Angebot richtet sich nach der Tagesverfügbarkeit. Entdecken Sie die heutige Auswahl in unserer Vitrine.",
+          es: "Las propuestas varían según la disponibilidad del día. Descubre la selección de hoy en nuestra vitrina.",
         },
       },
     ],
