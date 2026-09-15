@@ -360,8 +360,23 @@ export default function HomePage() {
 
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
         <section className="flex flex-col gap-6 md:grid md:grid-cols-4 md:items-stretch md:gap-6">
-          {/* riga in alto: orari + info + venerdì */}
+          {/* lauree, poi orari + info + venerdì */}
           <div className="md:col-span-4 grid gap-6 md:grid-cols-3">
+            <Link
+              href="/lauree"
+              className="rounded-[24px] border border-amber-200/80 bg-[#fff8ea] p-7 text-center shadow-[0_10px_30px_rgba(120,72,16,0.07)] transition hover:-translate-y-0.5 hover:bg-[#fff4dc] md:col-span-3 md:text-left"
+            >
+              <h3 className="text-[0.82rem] font-bold tracking-[0.18em] text-amber-800">
+                {t("graduationTitle")}
+              </h3>
+              <p className="mt-4 whitespace-pre-line text-[1.02rem] leading-7 text-neutral-800">
+                {t("graduationText")}
+              </p>
+              <p className="mt-5 text-sm font-semibold text-amber-800">
+                {t("graduationCta")}
+              </p>
+            </Link>
+
             <div className="h-fit rounded-[24px] border border-neutral-200/80 bg-white/90 p-7 text-center shadow-[0_10px_30px_rgba(17,17,17,0.04)] backdrop-blur md:text-left">
               <h3 className="text-[0.7rem] font-medium tracking-[0.28em] text-neutral-500">
                 {HIGHLIGHTS[0].title[lang].toUpperCase()}
@@ -393,21 +408,6 @@ export default function HomePage() {
               </h3>
               <p className="mt-4 text-[1.05rem] leading-7 text-neutral-800">
                 {fridayMessages[fridayIndex]}
-              </p>
-            </Link>
-
-            <Link
-              href="/lauree"
-              className="rounded-[24px] border border-amber-200/80 bg-[#fff8ea] p-7 text-center shadow-[0_10px_30px_rgba(120,72,16,0.07)] transition hover:-translate-y-0.5 hover:bg-[#fff4dc] md:col-span-3 md:text-left"
-            >
-              <h3 className="text-[0.82rem] font-bold tracking-[0.18em] text-amber-800">
-                {t("graduationTitle")}
-              </h3>
-              <p className="mt-4 whitespace-pre-line text-[1.02rem] leading-7 text-neutral-800">
-                {t("graduationText")}
-              </p>
-              <p className="mt-5 text-sm font-semibold text-amber-800">
-                {t("graduationCta")}
               </p>
             </Link>
           </div>
