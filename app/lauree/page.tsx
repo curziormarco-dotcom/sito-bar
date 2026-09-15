@@ -53,10 +53,10 @@ const COPY: Record<
     foodIntro: "Due proposte pensate per adattarsi al tipo di festa e al numero di invitati.",
     foodCustomText:
       "Su richiesta è possibile concordare soluzioni alternative e personalizzate, in base alle esigenze della festa e alla disponibilità del momento. Oltre alle combinazioni indicate, il rinfresco può essere composto, ad esempio, da focacce, tramezzini, cicchetti, paninetti, pizzette sfoglia, polpette di carne o verdura e brioches salate.",
-    proposal9Title: "Proposta da 9€",
+    proposal9Title: "Proposta da 9€ a persona",
     proposal9Text: "3 porzioni di tramezzino, mezza focaccia e 1 paninetto.",
     proposal9Caption: "Foto esempio della porzione a persona.",
-    proposal12Title: "Proposta da 12€",
+    proposal12Title: "Proposta da 12€ a persona",
     proposal12Text:
       "3 porzioni di tramezzino, mezza focaccia, 1 paninetto e 1 cicchetto di carne o pesce.",
     proposal12Caption: "Foto esempio della porzione a persona.",
@@ -89,10 +89,10 @@ const COPY: Record<
     foodIntro: "Two proposals designed around the style of party and number of guests.",
     foodCustomText:
       "Alternative and personalized solutions can be arranged on request, according to the needs of the celebration and current availability. Beyond the options shown, refreshments can include, for example, focaccia, sandwiches, cicchetti, small rolls, puff pastry pizzette, meat or vegetable bites, and savory brioches.",
-    proposal9Title: "9€ proposal",
+    proposal9Title: "9€ proposal per person",
     proposal9Text: "3 portions of sandwich, half a focaccia, and 1 small roll.",
     proposal9Caption: "Example photo of the individual portion.",
-    proposal12Title: "12€ proposal",
+    proposal12Title: "12€ proposal per person",
     proposal12Text:
       "3 portions of sandwich, half a focaccia, 1 small roll, and 1 meat or fish cicchetto.",
     proposal12Caption: "Example photo of the individual portion.",
@@ -125,10 +125,10 @@ const COPY: Record<
     foodIntro: "Deux formules pensées selon le type de fête et le nombre d'invités.",
     foodCustomText:
       "Sur demande, il est possible de convenir de solutions alternatives et personnalisées, selon les besoins de la fête et les disponibilités du moment. Au-delà des formules indiquées, le buffet peut être composé, par exemple, de focaccias, tramezzini, cicchetti, petits pains, pizzette feuilletées, boulettes de viande ou de légumes et brioches salées.",
-    proposal9Title: "Proposition 9€",
+    proposal9Title: "Proposition 9€ par personne",
     proposal9Text: "3 portions de tramezzino, une demi-focaccia et 1 petit pain.",
     proposal9Caption: "Photo d'exemple de la portion par personne.",
-    proposal12Title: "Proposition 12€",
+    proposal12Title: "Proposition 12€ par personne",
     proposal12Text:
       "3 portions de tramezzino, une demi-focaccia, 1 petit pain et 1 cicchetto de viande ou de poisson.",
     proposal12Caption: "Photo d'exemple de la portion par personne.",
@@ -161,10 +161,10 @@ const COPY: Record<
     foodIntro: "Zwei Angebote, passend zur Art der Feier und zur Anzahl der Gäste.",
     foodCustomText:
       "Auf Anfrage können alternative und individuelle Lösungen vereinbart werden, je nach den Anforderungen der Feier und der aktuellen Verfügbarkeit. Neben den angegebenen Kombinationen kann das Buffet zum Beispiel Focaccia, Tramezzini, Cicchetti, kleine Brötchen, Blätterteig-Pizzette, Fleisch- oder Gemüsebällchen und herzhafte Brioches umfassen.",
-    proposal9Title: "Angebot 9€",
+    proposal9Title: "Angebot 9€ pro Person",
     proposal9Text: "3 Portionen Tramezzino, eine halbe Focaccia und 1 kleines Brotchen.",
     proposal9Caption: "Beispielfoto der Portion pro Person.",
-    proposal12Title: "Angebot 12€",
+    proposal12Title: "Angebot 12€ pro Person",
     proposal12Text:
       "3 Portionen Tramezzino, eine halbe Focaccia, 1 kleines Brotchen und 1 Cicchetto mit Fleisch oder Fisch.",
     proposal12Caption: "Beispielfoto der Portion pro Person.",
@@ -197,10 +197,10 @@ const COPY: Record<
     foodIntro: "Dos propuestas pensadas según el tipo de fiesta y el número de invitados.",
     foodCustomText:
       "Bajo petición, es posible acordar soluciones alternativas y personalizadas, según las necesidades de la fiesta y la disponibilidad del momento. Además de las combinaciones indicadas, el refrigerio puede incluir, por ejemplo, focaccias, tramezzini, cicchetti, panecillos, pizzette de hojaldre, albóndigas de carne o verdura y brioches saladas.",
-    proposal9Title: "Propuesta de 9€",
+    proposal9Title: "Propuesta de 9€ por persona",
     proposal9Text: "3 porciones de tramezzino, media focaccia y 1 panecillo.",
     proposal9Caption: "Foto de ejemplo de la porción por persona.",
-    proposal12Title: "Propuesta de 12€",
+    proposal12Title: "Propuesta de 12€ por persona",
     proposal12Text:
       "3 porciones de tramezzino, media focaccia, 1 panecillo y 1 cicchetto de carne o pescado.",
     proposal12Caption: "Foto de ejemplo de la porción por persona.",
