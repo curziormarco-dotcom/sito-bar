@@ -1397,7 +1397,7 @@ export const MENU: MenuSection[] = [
           de: "Roter Wermut, Campari, Gin",
           es: "Vermut rojo, Campari, ginebra",
         },
-        price: 7.0,
+        price: 8.0,
       },
       {
         name: {
@@ -1414,7 +1414,7 @@ export const MENU: MenuSection[] = [
           de: "Roter Wermut, Campari, Prosecco",
           es: "Vermut rojo, Campari, prosecco",
         },
-        price: 7.0,
+        price: 8.0,
       },
       {
         name: {
