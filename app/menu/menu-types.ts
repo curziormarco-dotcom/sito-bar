@@ -14,6 +14,8 @@ export type MenuItem = {
 };
 
 export type MenuSection = {
+  introTitle?: Record<Language, string>;
+  description?: Record<Language, string>;
   id?: string;
   title: Record<Language, string>;
   items: MenuItem[];

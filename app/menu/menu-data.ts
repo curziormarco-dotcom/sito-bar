@@ -976,6 +976,20 @@ export const MENU: MenuSection[] = [
       de: "Mittagessen",
       es: "Almuerzos",
     },
+    introTitle: {
+      it: "Primi e secondi di gastronomia",
+      en: "Deli first courses and main dishes",
+      fr: "Entrées et plats du traiteur",
+      de: "Vorspeisen und Hauptgerichte aus der Feinkost",
+      es: "Primeros y segundos platos de gastronomía",
+    },
+    description: {
+      it: "Primi e secondi di gastronomia e proposte per un pranzo veloce. La selezione varia ogni giorno: scopri i piatti disponibili in vetrina.",
+      en: "Deli first courses and main dishes, with options for a quick lunch. Our selection changes daily: discover the dishes in our display counter.",
+      fr: "Entrées et plats du traiteur pour un déjeuner rapide. La sélection varie chaque jour : découvrez les plats disponibles en vitrine.",
+      de: "Vor- und Hauptspeisen aus der Feinkost für ein schnelles Mittagessen. Die Auswahl wechselt täglich: Entdecke die Gerichte in unserer Vitrine.",
+      es: "Primeros y segundos platos preparados y propuestas para un almuerzo rápido. La selección cambia cada día: descubre los platos disponibles en la vitrina.",
+    },
     items: [
       {
         name: {
@@ -993,22 +1007,6 @@ export const MENU: MenuSection[] = [
           es: "Base de ensalada: lechuga, radicchio, rúcula, zanahorias, tomates cherry, hinojo. Extras: huevo 2,00 €, mozzarella 2,50 €, gambas (crustáceos) 3,00 €, atún (pescado) 3,00 €, aceitunas 1,50 €, jamón cocido 3,00 €, carne deshilachada 3,00 €, maíz 1,50 €, alcaparras 1,50 €.",
         },
         price: 7.0,
-      },
-      {
-        name: {
-          it: "Primi e secondi di gastronomia",
-          en: "Deli first courses and main dishes",
-          fr: "Entrées et plats du traiteur",
-          de: "Vorspeisen und Hauptgerichte aus der Feinkost",
-          es: "Primeros y segundos platos de gastronomía",
-        },
-        description: {
-          it: "Le proposte variano in base alla disponibilità del giorno. Scopri la selezione di oggi nella nostra vetrina.",
-          en: "Options vary depending on daily availability. Discover today’s selection in our display counter.",
-          fr: "Les propositions varient selon les disponibilités du jour. Découvrez notre sélection du jour en vitrine.",
-          de: "Das Angebot richtet sich nach der Tagesverfügbarkeit. Entdecken Sie die heutige Auswahl in unserer Vitrine.",
-          es: "Las propuestas varían según la disponibilidad del día. Descubre la selección de hoy en nuestra vitrina.",
-        },
       },
     ],
   },

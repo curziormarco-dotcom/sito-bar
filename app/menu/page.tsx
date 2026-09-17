@@ -775,6 +775,12 @@ export default function MenuPage() {
             {/* CONTENUTO */}
             {isOpen && (
               <div id={`menu-content-${sectionIndex}`} className="space-y-4 pb-6">
+                {section.description && (
+                  <div className="max-w-2xl pb-2">
+                    {section.introTitle && <h3 className="font-serif text-xl font-normal text-neutral-900">{section.introTitle[lang]}</h3>}
+                    <p className="mt-2 text-sm leading-6 text-neutral-600">{section.description[lang]}</p>
+                  </div>
+                )}
                 {isWineSection && !isHiddenToday && filteredItems.length > 0 && (
                   <div className="flex justify-end text-[11px] uppercase tracking-[0.18em] text-neutral-400">
                     <div className="grid w-[120px] shrink-0 grid-cols-2 gap-2 sm:w-[140px] sm:gap-3">
