@@ -65,7 +65,7 @@ const COPY: Record<
     proposal12Caption: "Foto esempio della porzione a persona.",
     cakeTitle: "Dolci e torta",
     cakeText: "È possibile portare dolci e torte dall’esterno solo se prodotti da una pasticceria e accompagnati da documentazione rilasciata dalla stessa che ne attesti la provenienza e riporti ingredienti, allergeni e indicazioni di conservazione. I prodotti devono essere trasportati e conservati nel rispetto di tali indicazioni.",
-    cakeService: "Servizio e taglio torta: 2 € a persona.",
+    cakeService: "Servizio e taglio torta: 1,50 € a persona.",
     drinksTitle: "Bevande",
     drinksText: "Proposte pensate per accompagnare il rinfresco e il brindisi.",
     drinksItems: [
@@ -104,7 +104,7 @@ const COPY: Record<
     proposal12Caption: "Example photo of the individual portion.",
     cakeTitle: "Desserts and cake",
     cakeText: "You may bring desserts and cakes from outside only if made by a pastry shop and accompanied by documentation issued by the shop identifying their origin, ingredients, allergens and storage instructions. Products must be transported and stored according to these instructions.",
-    cakeService: "Cake cutting and serving: €2 per person.",
+    cakeService: "Cake cutting and serving: €1.50 per person.",
     drinksTitle: "Drinks",
     drinksText: "Options designed to accompany the refreshments and the toast.",
     drinksItems: [
@@ -143,7 +143,7 @@ const COPY: Record<
     proposal12Caption: "Photo d'exemple de la portion par personne.",
     cakeTitle: "Desserts et gâteau",
     cakeText: "Les desserts et gâteaux apportés de l’extérieur sont acceptés uniquement s’ils proviennent d’une pâtisserie et sont accompagnés de documents délivrés par celle-ci précisant leur provenance, les ingrédients, les allergènes et les consignes de conservation. Les produits doivent être transportés et conservés conformément à ces consignes.",
-    cakeService: "Service et découpe du gâteau : 2 € par personne.",
+    cakeService: "Service et découpe du gâteau : 1,50 € par personne.",
     drinksTitle: "Boissons",
     drinksText: "Des propositions pensées pour accompagner le buffet et le toast.",
     drinksItems: [
@@ -182,7 +182,7 @@ const COPY: Record<
     proposal12Caption: "Beispielfoto der Portion pro Person.",
     cakeTitle: "Desserts und Torte",
     cakeText: "Mitgebrachte Desserts und Torten sind nur erlaubt, wenn sie von einer Konditorei hergestellt wurden und von Unterlagen der Konditorei mit Angaben zu Herkunft, Zutaten, Allergenen und Lagerung begleitet werden. Die Produkte müssen gemäß diesen Vorgaben transportiert und gelagert werden.",
-    cakeService: "Anschneiden und Servieren der Torte: 2 € pro Person.",
+    cakeService: "Anschneiden und Servieren der Torte: 1,50 € pro Person.",
     drinksTitle: "Getränke",
     drinksText: "Auswahl passend zum Buffet und zum Anstoßen.",
     drinksItems: [
@@ -221,7 +221,7 @@ const COPY: Record<
     proposal12Caption: "Foto de ejemplo de la porción por persona.",
     cakeTitle: "Dulces y tarta",
     cakeText: "Se pueden traer dulces y tartas del exterior solo si están elaborados por una pastelería y acompañados de documentación emitida por esta que acredite su procedencia e indique los ingredientes, los alérgenos y las instrucciones de conservación. Los productos deben transportarse y conservarse siguiendo estas indicaciones.",
-    cakeService: "Servicio y corte de la tarta: 2 € por persona.",
+    cakeService: "Servicio y corte de la tarta: 1,50 € por persona.",
     drinksTitle: "Bebidas",
     drinksText: "Propuestas pensadas para acompañar el refrigerio y el brindis.",
     drinksItems: [
