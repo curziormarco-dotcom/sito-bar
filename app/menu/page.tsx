@@ -425,7 +425,7 @@ function formatEUR(value: number) {
 }
 
 function formatEURSuffix(value: number) {
-  return `${value.toFixed(2).replace(".", ",")}€`;
+  return formatEUR(value);
 }
 
 /* =======================
@@ -492,7 +492,7 @@ export default function MenuPage() {
   const isAfter1830 = romeTime >= "18:30";
   const isBefore0600 = romeTime < "06:00";
   const isOutsideCentrifugheHours = isAfter1830 || isBefore0600;
-  const hashScrollOffset = 70;
+  const hashScrollOffset = 110;
 
   const toggleSection = (sectionKey: string, isOpen: boolean, anchor?: HTMLElement) => {
     if (anchor) {
@@ -555,10 +555,10 @@ export default function MenuPage() {
 
   return (
     <main
-      className="mx-auto max-w-5xl px-6 py-14 space-y-10 text-neutral-900 bg-[#fbfaf7]"
+      className="mx-auto max-w-5xl bg-[#fbfaf7] px-5 py-8 text-neutral-900 sm:px-6 sm:py-10"
       style={{ overflowAnchor: "none" }}
     >
-      <div className="flex flex-wrap items-center gap-4">
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
         <h1 className="text-4xl font-semibold tracking-tight font-serif">{t("menu")}</h1>
         <button
           type="button"
@@ -571,7 +571,7 @@ export default function MenuPage() {
 
       {showLegend && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 px-4"
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/20 px-4"
           onPointerDown={(event) => {
             if (event.target !== event.currentTarget) return;
             event.preventDefault();
@@ -635,7 +635,7 @@ export default function MenuPage() {
       )}
       {showCentrifugheNotice && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 px-4"
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/30 px-4"
           onClick={() => setShowCentrifugheNotice(false)}
         >
           <div className="w-full max-w-sm rounded-2xl border border-neutral-200 bg-white p-5 text-neutral-900 shadow-xl">
@@ -657,7 +657,7 @@ export default function MenuPage() {
       )}
       {showPesceNotice && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 px-4"
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/30 px-4"
           onClick={() => setShowPesceNotice(false)}
         >
           <div className="w-full max-w-sm rounded-2xl border border-neutral-200 bg-white p-5 text-neutral-900 shadow-xl">
@@ -679,7 +679,7 @@ export default function MenuPage() {
       )}
       {showCicchettiPesceNotice && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 px-4"
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/30 px-4"
           onClick={() => setShowCicchettiPesceNotice(false)}
         >
           <div className="w-full max-w-sm rounded-2xl border border-neutral-200 bg-white p-5 text-neutral-900 shadow-xl">
@@ -701,8 +701,8 @@ export default function MenuPage() {
       )}
 
       {hasActiveAllergenFilter && (
-        <div className="flex flex-wrap items-center gap-3 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm text-neutral-600">
-          <span className="font-semibold text-neutral-800">{t("filterOn")}</span>
+        <div className="mb-6 flex flex-wrap items-center gap-3 rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-600">
+          <span className="shrink-0 whitespace-nowrap text-right font-semibold tabular-nums text-amber-900">{t("filterOn")}</span>
           <span>{allergenFilters.map((key) => ALLERGEN_LABELS[key][lang]).join(", ")}</span>
           <span className="inline-flex items-center rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs font-semibold text-neutral-700">
             {visibleResultCount} {t("resultsLabel")}
@@ -717,7 +717,7 @@ export default function MenuPage() {
         </div>
       )}
 
-      {menuWithAllergens.map((section) => {
+      {menuWithAllergens.map((section, sectionIndex) => {
         const isOpen = openSection === section.title.it;
         const isPesce = section.id === "pesce";
         const isCicchettiPesce = section.id === "cicchetti-pesce";
@@ -735,11 +735,14 @@ export default function MenuPage() {
         return (
           <section
             key={section.title.it}
-            id={section.id}
-            className="border-b border-neutral-100 bg-white"
+            id={section.id ?? `menu-section-${sectionIndex}`}
+            className="scroll-mt-28 border-b border-neutral-200"
           >
             {/* HEADER */}
             <button
+              type="button"
+              aria-expanded={isOpen}
+              aria-controls={`menu-content-${sectionIndex}`}
               onClick={(event) => {
                 if (isCentrifughe && isOutsideCentrifugheHours) {
                   setShowCentrifugheNotice(true);
@@ -754,10 +757,9 @@ export default function MenuPage() {
                 toggleSection(section.title.it, isOpen, event.currentTarget);
               }}
               onMouseDown={(event) => event.preventDefault()}
-              className="group relative flex w-full items-center justify-between px-1 py-6 text-left hover:bg-neutral-50"
+              className="group relative flex min-h-16 w-full items-center justify-between gap-4 py-4 text-left transition-colors hover:text-amber-900 focus-visible:outline-2 focus-visible:outline-offset-2"
             >
-              <span className="absolute left-0 top-0 h-full w-0.5 bg-transparent transition-colors group-hover:bg-neutral-300" />
-              <h2 className="text-lg font-semibold tracking-tight font-serif">
+              <h2 className="text-2xl font-semibold tracking-tight font-serif">
                 {formatCategoryTitle(section.title[lang])}
               </h2>
               <span
@@ -772,10 +774,10 @@ export default function MenuPage() {
 
             {/* CONTENUTO */}
             {isOpen && (
-              <div className="px-1 pb-6 space-y-4">
+              <div id={`menu-content-${sectionIndex}`} className="space-y-4 pb-6">
                 {isWineSection && !isHiddenToday && filteredItems.length > 0 && (
                   <div className="flex justify-end text-[11px] uppercase tracking-[0.18em] text-neutral-400">
-                    <div className="grid min-w-[86px] grid-cols-2 gap-1 sm:min-w-[100px] sm:gap-2">
+                    <div className="grid w-[120px] shrink-0 grid-cols-2 gap-2 sm:w-[140px] sm:gap-3">
                       <span className="text-left">{t("glassLabel")}</span>
                       <span className="text-right">{t("bottleLabel")}</span>
                     </div>
@@ -793,16 +795,16 @@ export default function MenuPage() {
                   displayItems.map((item) => (
                     <article
                       key={`${item.name.it}-${item.price}`}
-                      className="border-t border-neutral-100 pt-4"
+                      className="border-t border-neutral-200/70 pt-4"
                     >
-                      <div className="flex justify-between gap-4">
-                      <div>
-                        <div className="flex items-center gap-2">
+                      <div className="flex items-start justify-between gap-3 sm:gap-6">
+                      <div className="min-w-0">
+                        <div className="flex flex-wrap items-center gap-x-2 gap-y-2">
                           <h3 className="font-semibold">
                             {item.name[lang]}
                           </h3>
                           {item.allergens && item.allergens.length > 0 && (
-                            <div className="flex items-center gap-1">
+                            <div className="flex flex-wrap items-center gap-1">
                               {([...(item.allergens as AllergenKey[])] as AllergenKey[])
                                 .sort(
                                   (a, b) =>
@@ -866,7 +868,7 @@ export default function MenuPage() {
                                   {t("descriptionLabel")}
                                 </button>
                                 {openWineDescription === item.name.it && (
-                                  <p className="mt-2 text-sm text-neutral-500">
+                                  <p className="mt-2 max-w-2xl text-sm leading-6 text-neutral-600">
                                     {typeof item.description === "string"
                                       ? item.description
                                       : item.description[lang]}
@@ -874,7 +876,7 @@ export default function MenuPage() {
                                 )}
                               </div>
                             ) : (
-                              <p className="mt-1 text-sm text-neutral-500">
+                              <p className="mt-2 max-w-2xl text-sm leading-6 text-neutral-600">
                                 {typeof item.description === "string"
                                   ? item.description
                                   : item.description[lang]}
@@ -884,7 +886,7 @@ export default function MenuPage() {
                         </div>
 
                         {isWineSection ? (
-                          <div className="grid min-w-[86px] grid-cols-2 gap-1 text-sm font-semibold text-neutral-800 sm:min-w-[100px] sm:gap-2">
+                          <div className="grid w-[120px] shrink-0 grid-cols-2 gap-2 text-sm font-semibold tabular-nums text-amber-900 sm:w-[140px] sm:gap-3">
                             <span className="text-left">
                               {typeof item.glassPrice === "number"
                                 ? formatEURSuffix(item.glassPrice)
@@ -897,7 +899,7 @@ export default function MenuPage() {
                             </span>
                           </div>
                         ) : (
-                          <div className="font-semibold text-neutral-800">
+                          <div className="shrink-0 whitespace-nowrap text-right font-semibold tabular-nums text-amber-900">
                             {typeof item.price === "number" ? formatEUR(item.price) : null}
                             {item.priceNote && (
                               <span
