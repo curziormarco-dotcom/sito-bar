@@ -279,6 +279,24 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
   },
 };
 
+function LinkArrow({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.7}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={`h-5 w-5 shrink-0 ${className}`}
+    >
+      <path d="M6 18 18 6M6 6h12v12" />
+    </svg>
+  );
+}
+
 export default function HomePage() {
   const { lang } = useLanguage();
   const { consent, accept } = useCookieConsent();
@@ -325,7 +343,7 @@ export default function HomePage() {
         <section aria-labelledby="day-heading" className="border-t border-neutral-200 py-16 lg:py-24">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <h2 id="day-heading" className={`${heading} max-w-xl`}>{t("dayTitle")}</h2>
-            <Link href="/menu" className={textLink}>{t("ctaMenu")} <span aria-hidden="true">↗</span></Link>
+            <Link href="/menu" className={textLink}>{t("ctaMenu")} <LinkArrow /></Link>
           </div>
           <div className="mt-10 grid gap-10 md:grid-cols-3 md:gap-7">
             {moments.map((moment) => (
@@ -335,7 +353,7 @@ export default function HomePage() {
                 </div>
                 <div className="mt-5 flex items-baseline justify-between gap-4">
                   <h3 className={`${heroSerif.className} text-3xl font-semibold`}>{t(moment.title)}</h3>
-                  <span aria-hidden="true" className="text-xl text-amber-900">↗</span>
+                  <LinkArrow className="text-amber-900" />
                 </div>
                 <p className="mt-2 text-base leading-7 text-neutral-600">{t(moment.text)}</p>
               </Link>
@@ -350,7 +368,7 @@ export default function HomePage() {
             <p className="mb-5 text-sm font-medium uppercase tracking-[0.16em] text-amber-200">{HIGHLIGHTS[2].title[lang]}</p>
             <h2 id="friday-heading" className={heading}>{t("fridayTitle")}</h2>
             <p className="mt-6 text-base leading-8 text-neutral-300">{t("fridayText")}</p>
-            <Link href="/menu#pesce" className="mt-7 inline-flex min-h-11 items-center gap-3 border-b border-amber-200/50 py-2 text-base font-semibold text-amber-100 transition hover:border-amber-100">{t("fridayCta")} <span aria-hidden="true">↗</span></Link>
+            <Link href="/menu#pesce" className="mt-7 inline-flex min-h-11 items-center gap-3 border-b border-amber-200/50 py-2 text-base font-semibold text-amber-100 transition hover:border-amber-100">{t("fridayCta")} <LinkArrow /></Link>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl md:aspect-square">
             <Image src="/images/vetrina-pesce.jpg" alt={t("fishAlt")} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover object-center" />
@@ -365,7 +383,7 @@ export default function HomePage() {
             <div>
               <p className="text-lg font-semibold">Bar Da Luciano</p>
               <p className="mt-2 text-base leading-7 text-neutral-600">Via Nazareth 20, Padova</p>
-              <a href="https://www.google.com/maps?q=via%20Nazareth%2020%2C%2035128%20Padova" target="_blank" rel="noreferrer" className={`${textLink} mt-3`}>{t("whereCta")} <span aria-hidden="true">↗</span></a>
+              <a href="https://www.google.com/maps?q=via%20Nazareth%2020%2C%2035128%20Padova" target="_blank" rel="noreferrer" className={`${textLink} mt-3`}>{t("whereCta")} <LinkArrow /></a>
               <div className="mt-8 border-y border-neutral-200 py-6">
                 <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-neutral-600">{HIGHLIGHTS[0].title[lang]}</h3>
                 <dl className="mt-4 space-y-3 text-base">
@@ -398,8 +416,8 @@ export default function HomePage() {
             <p className="mt-2 text-base text-neutral-600">{t("leaveReviewSubtitle")}</p>
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-3">
-            <a href="https://www.google.com/search?client=safari&hs=FPz9&sca_esv=074920bdea4960d4&rls=en&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_xztH0BMykLPYJ2yUKG24IswJDdqjMpbJsR6pZofdiNDCebTRuBkcKRCunEOQyf_gcLSItw9QjEmHthYUk5XMsr1zNmOf&q=Bar+Da+Luciano+Recensioni&sa=X&ved=2ahUKEwiAlZbHxM2SAxWXhP0HHUv-A6kQ0bkNegQIHxAH&biw=960&bih=933&dpr=1" target="_blank" rel="noreferrer" className={textLink}>{t("leaveReviewCta")} <span aria-hidden="true">↗</span></a>
-            <a href="https://www.instagram.com/bar_da_luciano/" target="_blank" rel="noreferrer" className={textLink}>Instagram <span aria-hidden="true">↗</span></a>
+            <a href="https://www.google.com/search?client=safari&hs=FPz9&sca_esv=074920bdea4960d4&rls=en&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_xztH0BMykLPYJ2yUKG24IswJDdqjMpbJsR6pZofdiNDCebTRuBkcKRCunEOQyf_gcLSItw9QjEmHthYUk5XMsr1zNmOf&q=Bar+Da+Luciano+Recensioni&sa=X&ved=2ahUKEwiAlZbHxM2SAxWXhP0HHUv-A6kQ0bkNegQIHxAH&biw=960&bih=933&dpr=1" target="_blank" rel="noreferrer" className={textLink}>{t("leaveReviewCta")} <LinkArrow /></a>
+            <a href="https://www.instagram.com/bar_da_luciano/" target="_blank" rel="noreferrer" className={textLink}>Instagram <LinkArrow /></a>
           </div>
         </section>
       </div>
