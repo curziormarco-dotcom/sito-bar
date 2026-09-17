@@ -8,6 +8,8 @@
         "de": "Kaffeegetränke",
         "es": "Cafés"
       },
+      "introTitle": {},
+      "description": {},
       "items": [
         {
           "name": {
@@ -17,7 +19,11 @@
             "de": "Kaffee",
             "es": "Café"
           },
-          "price": 1.4
+          "description": {},
+          "price": 1.4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -27,7 +33,11 @@
             "de": "Entkoffeinierter Kaffee",
             "es": "Café descafeinado"
           },
-          "price": 1.5
+          "description": {},
+          "price": 1.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -37,7 +47,11 @@
             "de": "Doppelter Kaffee",
             "es": "Café doble"
           },
-          "price": 2.8
+          "description": {},
+          "price": 2.8,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -47,10 +61,13 @@
             "de": "Ginsengkaffee",
             "es": "Café de ginseng"
           },
+          "description": {},
+          "price": 1.8,
           "allergens": [
             "latte"
           ],
-          "price": 1.8
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -60,10 +77,13 @@
             "de": "Gerstenkaffee",
             "es": "Café de cebada"
           },
+          "description": {},
+          "price": 1.8,
           "allergens": [
             "orzo"
           ],
-          "price": 1.8
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -73,10 +93,13 @@
             "de": "Kaffee mit Likör",
             "es": "Café con licor"
           },
+          "description": {},
+          "price": 2,
           "allergens": [
             "alcol"
           ],
-          "price": 2
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -86,7 +109,11 @@
             "de": "Shakerato",
             "es": "Café agitado"
           },
-          "price": 3
+          "description": {},
+          "price": 3,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -96,10 +123,13 @@
             "de": "Kaffee mit Sahne",
             "es": "Café con nata"
           },
+          "description": {},
+          "price": 2.2,
           "allergens": [
             "latte"
           ],
-          "price": 2.2
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -109,11 +139,14 @@
             "de": "Marocchino",
             "es": "Marocchino"
           },
+          "description": {},
+          "price": 2.2,
           "allergens": [
             "frutta_guscio",
             "latte"
           ],
-          "price": 2.2
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -123,10 +156,13 @@
             "de": "Großer Macchiato",
             "es": "Macchiato grande"
           },
+          "description": {},
           "price": 1.7,
           "allergens": [
             "latte"
-          ]
+          ],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -136,10 +172,13 @@
             "de": "Großer entkoffeinierter Macchiato",
             "es": "Macchiato grande descafeinado"
           },
+          "description": {},
+          "price": 1.8,
           "allergens": [
             "latte"
           ],
-          "price": 1.8
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -149,11 +188,14 @@
             "de": "Großer Soja-Macchiato",
             "es": "Macchiato grande de soja"
           },
+          "description": {},
+          "price": 2,
           "allergens": [
             "soia",
             "latte"
           ],
-          "price": 2
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -163,11 +205,14 @@
             "de": "Großer Gerste/Ginseng-Macchiato",
             "es": "Macchiato grande cebada/ginseng"
           },
+          "description": {},
+          "price": 2,
           "allergens": [
             "latte",
             "orzo"
           ],
-          "price": 2
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -177,10 +222,13 @@
             "de": "Cappuccino",
             "es": "Capuchino"
           },
+          "description": {},
+          "price": 1.9,
           "allergens": [
             "latte"
           ],
-          "price": 1.9
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -190,10 +238,13 @@
             "de": "Entkoffeinierter Cappuccino",
             "es": "Capuchino descafeinado"
           },
+          "description": {},
+          "price": 2,
           "allergens": [
             "latte"
           ],
-          "price": 2
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -203,10 +254,13 @@
             "de": "Cappuccino mit kalter Milchcreme",
             "es": "Capuchino con crema de leche fría"
           },
+          "description": {},
+          "price": 2.3,
           "allergens": [
             "latte"
           ],
-          "price": 2.3
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -216,11 +270,14 @@
             "de": "Soja-Cappuccino",
             "es": "Capuchino de soja"
           },
+          "description": {},
+          "price": 2.2,
           "allergens": [
             "latte",
             "soia"
           ],
-          "price": 2.2
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -230,11 +287,14 @@
             "de": "Gerste/Ginseng-Cappuccino",
             "es": "Capuchino cebada/ginseng"
           },
+          "description": {},
+          "price": 2.2,
           "allergens": [
             "latte",
             "orzo"
           ],
-          "price": 2.2
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -244,10 +304,13 @@
             "de": "Heiße Milch",
             "es": "Leche caliente"
           },
+          "description": {},
+          "price": 1.5,
           "allergens": [
             "latte"
           ],
-          "price": 1.5
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -257,10 +320,13 @@
             "de": "Latte macchiato",
             "es": "Latte macchiato"
           },
+          "description": {},
+          "price": 2.9,
           "allergens": [
             "latte"
           ],
-          "price": 2.9
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -270,10 +336,13 @@
             "de": "Entkoffeinierter Latte macchiato",
             "es": "Latte macchiato descafeinado"
           },
+          "description": {},
+          "price": 3,
           "allergens": [
             "latte"
           ],
-          "price": 3
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -283,10 +352,13 @@
             "de": "Sojamilch",
             "es": "Leche de soja"
           },
+          "description": {},
+          "price": 2,
           "allergens": [
             "soia"
           ],
-          "price": 2
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -296,11 +368,14 @@
             "de": "Soja-Latte macchiato",
             "es": "Latte macchiato de soja"
           },
+          "description": {},
+          "price": 3.2,
           "allergens": [
             "latte",
             "soia"
           ],
-          "price": 3.2
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -310,11 +385,14 @@
             "de": "Heiße Schokolade",
             "es": "Chocolate caliente"
           },
+          "description": {},
+          "price": 4.5,
           "allergens": [
             "frutta_guscio",
             "latte"
           ],
-          "price": 4.5
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -324,11 +402,14 @@
             "de": "Heiße Schokolade mit Sahne",
             "es": "Chocolate caliente con nata"
           },
+          "description": {},
+          "price": 5,
           "allergens": [
             "latte",
             "frutta_guscio"
           ],
-          "price": 5
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -338,7 +419,11 @@
             "de": "Gemischte Tees",
             "es": "Tés variados"
           },
-          "price": 3
+          "description": {},
+          "price": 3,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         }
       ]
     },
@@ -350,6 +435,8 @@
         "de": "Croissants & Gebäck",
         "es": "Bollería y..."
       },
+      "introTitle": {},
+      "description": {},
       "items": [
         {
           "name": {
@@ -359,12 +446,15 @@
             "de": "Croissants",
             "es": "Cruasanes"
           },
+          "description": {},
+          "priceNote": "€1,80–€2,50",
           "allergens": [
             "latte",
             "glutine",
             "uova"
           ],
-          "priceNote": "€1,80–€2,50"
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -374,12 +464,15 @@
             "de": "Veganer Croissant",
             "es": "Cruasán vegano"
           },
+          "description": {},
+          "price": 2,
           "allergens": [
             "vegano",
             "glutine",
             "soia"
           ],
-          "price": 2
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -389,12 +482,15 @@
             "de": "Mini‑Croissant",
             "es": "Mini cruasán"
           },
+          "description": {},
+          "price": 1.3,
           "allergens": [
             "uova",
             "latte",
             "glutine"
           ],
-          "price": 1.3
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -404,11 +500,6 @@
             "de": "Mini‑Gebäck",
             "es": "Pastelería pequeña"
           },
-          "allergens": [
-            "glutine",
-            "uova",
-            "latte"
-          ],
           "description": {
             "it": "Riso, ricotta o ricotta e cioccolato",
             "en": "Rice, ricotta or ricotta and chocolate",
@@ -416,7 +507,14 @@
             "de": "Reis, Ricotta oder Ricotta und Schokolade",
             "es": "Arroz, ricotta o ricotta y chocolate"
           },
-          "price": 2.2
+          "price": 2.2,
+          "allergens": [
+            "glutine",
+            "uova",
+            "latte"
+          ],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -426,11 +524,6 @@
             "de": "Pasticciotto",
             "es": "Pasticciotto"
           },
-          "allergens": [
-            "glutine",
-            "uova",
-            "latte"
-          ],
           "description": {
             "it": "Crema amarena o crema cioccolato",
             "en": "Sour cherry cream or chocolate cream",
@@ -438,7 +531,14 @@
             "de": "Sauerkirschcreme oder Schokocreme",
             "es": "Crema de guinda o crema de chocolate"
           },
-          "price": 2.8
+          "price": 2.8,
+          "allergens": [
+            "glutine",
+            "uova",
+            "latte"
+          ],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -448,12 +548,15 @@
             "de": "Ricotta‑Sfogliatella",
             "es": "Sfogliatella de ricotta"
           },
+          "description": {},
+          "price": 2.8,
           "allergens": [
             "latte",
             "uova",
             "glutine"
           ],
-          "price": 2.8
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -463,11 +566,6 @@
             "de": "Kaffeekekse",
             "es": "Galletas para café"
           },
-          "allergens": [
-            "latte",
-            "uova",
-            "glutine"
-          ],
           "description": {
             "it": "Mais, cioccolato o caffè",
             "en": "Corn, chocolate or coffee",
@@ -475,7 +573,14 @@
             "de": "Mais, Schokolade oder Kaffee",
             "es": "Maíz, chocolate o café"
           },
-          "priceNote": "€1,00–€1,20"
+          "priceNote": "€1,00–€1,20",
+          "allergens": [
+            "latte",
+            "uova",
+            "glutine"
+          ],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -485,12 +590,6 @@
             "de": "Kleiner Muffin",
             "es": "Muffin pequeño"
           },
-          "allergens": [
-            "congelato",
-            "latte",
-            "uova",
-            "glutine"
-          ],
           "description": {
             "it": "Marmellata",
             "en": "Jam",
@@ -498,7 +597,15 @@
             "de": "Marmelade",
             "es": "Mermelada"
           },
-          "price": 1.5
+          "price": 1.5,
+          "allergens": [
+            "congelato",
+            "latte",
+            "uova",
+            "glutine"
+          ],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -508,12 +615,6 @@
             "de": "Großer Muffin",
             "es": "Muffin grande"
           },
-          "allergens": [
-            "congelato",
-            "latte",
-            "uova",
-            "glutine"
-          ],
           "description": {
             "it": "Marmellata o cioccolato",
             "en": "Jam or chocolate",
@@ -521,7 +622,15 @@
             "de": "Marmelade oder Schokolade",
             "es": "Mermelada o chocolate"
           },
-          "price": 2.8
+          "price": 2.8,
+          "allergens": [
+            "congelato",
+            "latte",
+            "uova",
+            "glutine"
+          ],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -531,13 +640,16 @@
             "de": "Donuts",
             "es": "Donuts"
           },
+          "description": {},
+          "price": 2.8,
           "allergens": [
             "congelato",
             "latte",
             "uova",
             "glutine"
           ],
-          "price": 2.8
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -547,12 +659,15 @@
             "de": "Mignon‑Gebäck",
             "es": "Pastelería mignon"
           },
+          "description": {},
+          "price": 1.6,
           "allergens": [
             "latte",
             "glutine",
             "uova"
           ],
-          "price": 1.6
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -562,12 +677,15 @@
             "de": "Obsttörtchen",
             "es": "Tartaleta de fruta"
           },
+          "description": {},
+          "price": 3,
           "allergens": [
             "latte",
             "glutine",
             "uova"
           ],
-          "price": 3
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -577,11 +695,6 @@
             "de": "Krapfen",
             "es": "Buñuelo"
           },
-          "allergens": [
-            "latte",
-            "uova",
-            "glutine"
-          ],
           "description": {
             "it": "Crema o zabaione",
             "en": "Custard or zabaione",
@@ -589,7 +702,14 @@
             "de": "Vanillecreme oder Zabaione",
             "es": "Crema pastelera o zabaione"
           },
-          "price": 2.6
+          "price": 2.6,
+          "allergens": [
+            "latte",
+            "uova",
+            "glutine"
+          ],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -599,11 +719,6 @@
             "de": "Mini‑Krapfen",
             "es": "Mini buñuelo"
           },
-          "allergens": [
-            "latte",
-            "uova",
-            "glutine"
-          ],
           "description": {
             "it": "Crema, zabaione o vuota con uvetta e pinoli",
             "en": "Custard, zabaione or plain with raisins and pine nuts",
@@ -611,7 +726,14 @@
             "de": "Vanillecreme, Zabaione oder pur mit Rosinen und Pinienkernen",
             "es": "Crema, zabaione o sola con pasas y piñones"
           },
-          "price": 1.3
+          "price": 1.3,
+          "allergens": [
+            "latte",
+            "uova",
+            "glutine"
+          ],
+          "allergenAdd": [],
+          "allergenRemove": []
         }
       ]
     },
@@ -623,6 +745,8 @@
         "de": "Fruchtsäfte",
         "es": "Zumos de fruta"
       },
+      "introTitle": {},
+      "description": {},
       "items": [
         {
           "name": {
@@ -632,7 +756,11 @@
             "de": "Pfirsichsaft",
             "es": "Zumo de melocotón"
           },
-          "price": 3
+          "description": {},
+          "price": 3,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -642,7 +770,11 @@
             "de": "ACE-Saft",
             "es": "Zumo ACE"
           },
-          "price": 3
+          "description": {},
+          "price": 3,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -652,7 +784,11 @@
             "de": "Birnensaft",
             "es": "Zumo de pera"
           },
-          "price": 3
+          "description": {},
+          "price": 3,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -662,7 +798,11 @@
             "de": "Ananassaft",
             "es": "Zumo de piña"
           },
-          "price": 3
+          "description": {},
+          "price": 3,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -672,7 +812,11 @@
             "de": "Grapefruitsaft",
             "es": "Zumo de pomelo"
           },
-          "price": 3
+          "description": {},
+          "price": 3,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -682,7 +826,11 @@
             "de": "Blaubeersaft",
             "es": "Zumo de arándanos"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -692,12 +840,15 @@
             "de": "Tomatensaft",
             "es": "Zumo de tomate"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         }
       ]
     },
     {
-      "id": "centrifughe",
       "title": {
         "it": "Centrifughe",
         "en": "Fresh Juices",
@@ -705,6 +856,9 @@
         "de": "Frischsäfte",
         "es": "Zumos naturales"
       },
+      "id": "centrifughe",
+      "introTitle": {},
+      "description": {},
       "items": [
         {
           "name": {
@@ -721,7 +875,10 @@
             "de": "Orange, Karotte, Zitrone",
             "es": "Naranja, zanahoria, limón"
           },
-          "price": 5.5
+          "price": 5.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -738,7 +895,10 @@
             "de": "Apfel, Orange, Karotte, Ingwer",
             "es": "Manzana, naranja, zanahoria, jengibre"
           },
-          "price": 5.5
+          "price": 5.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -755,10 +915,12 @@
             "de": "Sellerie, Apfel, Kiwi",
             "es": "Apio, manzana, kiwi"
           },
+          "price": 5.5,
           "allergens": [
             "sedano"
           ],
-          "price": 5.5
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -775,7 +937,10 @@
             "de": "Birne, Ananas, Zitrone, Zimt",
             "es": "Pera, piña, limón, canela"
           },
-          "price": 5.5
+          "price": 5.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -792,7 +957,10 @@
             "de": "Apfel, Fenchel, Ananas, Karotte",
             "es": "Manzana, hinojo, piña, zanahoria"
           },
-          "price": 5.5
+          "price": 5.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         }
       ]
     },
@@ -804,6 +972,8 @@
         "de": "Getränke",
         "es": "Bebidas"
       },
+      "introTitle": {},
+      "description": {},
       "items": [
         {
           "name": {
@@ -813,7 +983,11 @@
             "de": "Frisch gepresster Orangensaft",
             "es": "Zumo de naranja natural"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -823,7 +997,11 @@
             "de": "Frisch gepresster Grapefruitsaft",
             "es": "Zumo de pomelo natural"
           },
-          "price": 4.5
+          "description": {},
+          "price": 4.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -833,7 +1011,11 @@
             "de": "Frisch gepresster Granatapfelsaft",
             "es": "Zumo de granada natural"
           },
-          "price": 5
+          "description": {},
+          "price": 5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -843,7 +1025,11 @@
             "de": "Coca‑Cola (zum Mitnehmen)",
             "es": "Coca‑Cola para llevar"
           },
-          "price": 3.5
+          "description": {},
+          "price": 3.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -853,7 +1039,11 @@
             "de": "Coca‑Cola (Glasflasche)",
             "es": "Coca‑Cola (botella de vidrio)"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -863,7 +1053,11 @@
             "de": "Fanta",
             "es": "Fanta"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -873,7 +1067,11 @@
             "de": "Eistee Pfirsich/Zitrone",
             "es": "Té frío melocotón/limón"
           },
-          "price": 3.5
+          "description": {},
+          "price": 3.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -883,7 +1081,11 @@
             "de": "Wasser mit Minze/Holunder/Himbeere",
             "es": "Agua con menta/sauco/frambuesa"
           },
-          "price": 2.5
+          "description": {},
+          "price": 2.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -893,7 +1095,11 @@
             "de": "Tonic Water",
             "es": "Agua tónica"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -903,7 +1109,11 @@
             "de": "Chinotto",
             "es": "Chinotto"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -913,7 +1123,11 @@
             "de": "Limonade",
             "es": "Limonada"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -923,7 +1137,11 @@
             "de": "Tassoni",
             "es": "Tassoni"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -933,7 +1151,11 @@
             "de": "Wasser still/sprudel 0,5 l",
             "es": "Botella de agua natural/con gas 0,5 l"
           },
-          "price": 1.5
+          "description": {},
+          "price": 1.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         }
       ]
     },
@@ -945,6 +1167,8 @@
         "de": "Snacks & Sandwiches",
         "es": "Snacks y bocadillos"
       },
+      "introTitle": {},
+      "description": {},
       "items": [
         {
           "name": {
@@ -954,7 +1178,11 @@
             "de": "Gemischte Tramezzini",
             "es": "Tramezzini surtidos"
           },
-          "price": 2.4
+          "description": {},
+          "price": 2.4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -964,7 +1192,11 @@
             "de": "Herzhafte Brioches",
             "es": "Brioches salados"
           },
-          "price": 3
+          "description": {},
+          "price": 3,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -974,7 +1206,11 @@
             "de": "Kleine Sandwiches",
             "es": "Bocadillos pequeños"
           },
-          "price": 2.5
+          "description": {},
+          "price": 2.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -984,7 +1220,11 @@
             "de": "Toast",
             "es": "Tostada"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -994,7 +1234,11 @@
             "de": "Klassischer Tostone",
             "es": "Tostone clásico"
           },
-          "price": 6
+          "description": {},
+          "price": 6,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1004,7 +1248,11 @@
             "de": "Gemüse‑Tostone",
             "es": "Tostone de verduras"
           },
-          "price": 6
+          "description": {},
+          "price": 6,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1014,7 +1262,11 @@
             "de": "Piadine",
             "es": "Piadine"
           },
-          "price": 5.5
+          "description": {},
+          "price": 5.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1024,7 +1276,11 @@
             "de": "Focaccia",
             "es": "Focaccia"
           },
-          "price": 6
+          "description": {},
+          "price": 6,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1034,7 +1290,11 @@
             "de": "Pizzetta",
             "es": "Pizzetta"
           },
-          "price": 3
+          "description": {},
+          "price": 3,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1044,7 +1304,11 @@
             "de": "Kurkuma‑Focaccia",
             "es": "Focaccia de cúrcuma"
           },
-          "price": 6
+          "description": {},
+          "price": 6,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1054,7 +1318,11 @@
             "de": "Panzerotto",
             "es": "Panzerotto"
           },
-          "price": 4.5
+          "description": {},
+          "price": 4.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1064,7 +1332,11 @@
             "de": "Rustico leccese",
             "es": "Rustico leccese"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1074,7 +1346,11 @@
             "de": "Gemüse- oder Fleischbällchen",
             "es": "Albóndigas de verdura o carne"
           },
-          "price": 2.5
+          "description": {},
+          "price": 2.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         }
       ]
     },
@@ -1116,12 +1392,14 @@
             "de": "Salatbasis: Kopfsalat, Radicchio, Rucola, Karotten, Cherrytomaten, Fenchel. Extras: Ei 2,00 €, Mozzarella 2,50 €, Garnelen (Krustentiere) 3,00 €, Thunfisch (Fisch) 3,00 €, Oliven 1,50 €, Kochschinken 3,00 €, Rindfleischstreifen 3,00 €, Mais 1,50 €, Kapern 1,50 €.",
             "es": "Base de ensalada: lechuga, radicchio, rúcula, zanahorias, tomates cherry, hinojo. Extras: huevo 2,00 €, mozzarella 2,50 €, gambas (crustáceos) 3,00 €, atún (pescado) 3,00 €, aceitunas 1,50 €, jamón cocido 3,00 €, carne deshilachada 3,00 €, maíz 1,50 €, alcaparras 1,50 €."
           },
-          "price": 7
+          "price": 7,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         }
       ]
     },
     {
-      "id": "cicchetti-pesce",
       "title": {
         "it": "Cicchetti di Pesce",
         "en": "Seafood Cicchetti",
@@ -1129,6 +1407,9 @@
         "de": "Fisch-Cicchetti",
         "es": "Cicchetti de pescado"
       },
+      "id": "cicchetti-pesce",
+      "introTitle": {},
+      "description": {},
       "items": [
         {
           "name": {
@@ -1138,11 +1419,14 @@
             "de": "Lachs & Philadelphia",
             "es": "Salmón y Philadelphia"
           },
+          "description": {},
+          "price": 3,
           "allergens": [
             "pesce",
             "latte"
           ],
-          "price": 3
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1152,11 +1436,14 @@
             "de": "Burrata & Kantabrische Sardellen",
             "es": "Burrata y anchoas cantábricas"
           },
+          "description": {},
+          "price": 3,
           "allergens": [
             "pesce",
             "latte"
           ],
-          "price": 3
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1166,10 +1453,13 @@
             "de": "Stockfischcreme & Lauch",
             "es": "Bacalao mantecado y puerro"
           },
+          "description": {},
+          "price": 3,
           "allergens": [
             "pesce"
           ],
-          "price": 3
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1179,15 +1469,17 @@
             "de": "Garnele in saor",
             "es": "Gamba en saor"
           },
+          "description": {},
+          "price": 3,
           "allergens": [
             "crostacei"
           ],
-          "price": 3
+          "allergenAdd": [],
+          "allergenRemove": []
         }
       ]
     },
     {
-      "id": "pesce",
       "title": {
         "it": "Pesce",
         "en": "Fish",
@@ -1195,6 +1487,9 @@
         "de": "Fisch",
         "es": "Pescado"
       },
+      "id": "pesce",
+      "introTitle": {},
+      "description": {},
       "items": [
         {
           "name": {
@@ -1204,10 +1499,13 @@
             "de": "Austern",
             "es": "Ostras"
           },
+          "description": {},
+          "price": 4,
           "allergens": [
             "molluschi"
           ],
-          "price": 4
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1217,10 +1515,13 @@
             "de": "Rohe Scampi",
             "es": "Cigalas crudas"
           },
+          "description": {},
+          "price": 3,
           "allergens": [
             "crostacei"
           ],
-          "price": 3
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1230,10 +1531,13 @@
             "de": "Thunfischtatar",
             "es": "Tartar de atún"
           },
+          "description": {},
+          "price": 8,
           "allergens": [
             "pesce"
           ],
-          "price": 8
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1243,10 +1547,13 @@
             "de": "Garnelencocktail",
             "es": "Cóctel de gambas"
           },
+          "description": {},
+          "price": 8,
           "allergens": [
             "crostacei"
           ],
-          "price": 8
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1256,13 +1563,15 @@
             "de": "Oktopus‑Carpaccio",
             "es": "Carpaccio de pulpo"
           },
+          "description": {},
+          "price": 8,
           "allergens": [
             "molluschi"
           ],
+          "allergenAdd": [],
           "allergenRemove": [
             "pesce"
-          ],
-          "price": 8
+          ]
         },
         {
           "name": {
@@ -1272,10 +1581,13 @@
             "de": "Überbackene Jakobsmuschel",
             "es": "Vieira gratinada"
           },
+          "description": {},
+          "price": 4.5,
           "allergens": [
             "molluschi"
           ],
-          "price": 4.5
+          "allergenAdd": [],
+          "allergenRemove": []
         }
       ]
     },
@@ -1287,6 +1599,8 @@
         "de": "Alkoholfreie Aperitifs",
         "es": "Aperitivos sin alcohol"
       },
+      "introTitle": {},
+      "description": {},
       "items": [
         {
           "name": {
@@ -1303,7 +1617,10 @@
             "de": "Maracuja, Grenadine, Zitrone, Ginger Beer",
             "es": "Maracuyá, granadina, limón, ginger beer"
           },
-          "price": 6
+          "price": 6,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1320,7 +1637,10 @@
             "de": "Limettensaft, Zucker, Zitronenlimonade, Minze",
             "es": "Zumo de lima, azúcar, limonada, menta"
           },
-          "price": 6
+          "price": 6,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1337,7 +1657,10 @@
             "de": "Ananassaft, Zitrone, Ginger Beer",
             "es": "Zumo de piña, limón, ginger beer"
           },
-          "price": 6
+          "price": 6,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1354,7 +1677,10 @@
             "de": "Alkoholfreier Gin Tanqueray 0, Tonic Water",
             "es": "Ginebra sin alcohol Tanqueray 0, agua tónica"
           },
-          "price": 7
+          "price": 7,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1364,7 +1690,11 @@
             "de": "Sanbitter passion fruit",
             "es": "Sanbitter passion fruit"
           },
-          "price": 4.5
+          "description": {},
+          "price": 4.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1374,7 +1704,11 @@
             "de": "Grapes Grapefruit",
             "es": "Grapes pomelo"
           },
-          "price": 4.5
+          "description": {},
+          "price": 4.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1384,7 +1718,11 @@
             "de": "Ginger beer",
             "es": "Ginger beer"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1394,7 +1732,11 @@
             "de": "Gingerino",
             "es": "Gingerino"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1404,7 +1746,11 @@
             "de": "Crodino",
             "es": "Crodino"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1414,12 +1760,15 @@
             "de": "Sanbitter",
             "es": "Sanbitter"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         }
       ]
     },
     {
-      "id": "aperitivi-alcolici",
       "title": {
         "it": "Aperitivi Alcolici",
         "en": "Alcoholic Aperitifs",
@@ -1427,6 +1776,9 @@
         "de": "Alkoholische Aperitifs",
         "es": "Aperitivos con alcohol"
       },
+      "id": "aperitivi-alcolici",
+      "introTitle": {},
+      "description": {},
       "items": [
         {
           "name": {
@@ -1436,7 +1788,11 @@
             "de": "Spritz Aperol",
             "es": "Spritz Aperol"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1446,7 +1802,11 @@
             "de": "Spritz Campari",
             "es": "Spritz Campari"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1456,7 +1816,11 @@
             "de": "Spritz Cynar",
             "es": "Spritz Cynar"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1466,7 +1830,11 @@
             "de": "Spritz Select",
             "es": "Spritz Select"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1476,7 +1844,11 @@
             "de": "Spritz Luxardo",
             "es": "Spritz Luxardo"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1486,7 +1858,11 @@
             "de": "Weißer Spritz",
             "es": "Spritz blanco"
           },
-          "price": 3.5
+          "description": {},
+          "price": 3.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1496,7 +1872,11 @@
             "de": "Hugo",
             "es": "Hugo"
           },
-          "price": 4.5
+          "description": {},
+          "price": 4.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1506,7 +1886,11 @@
             "de": "Campari soda",
             "es": "Campari soda"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1523,7 +1907,10 @@
             "de": "Roter Wermut, Campari, Sodawasser",
             "es": "Vermut rojo, Campari, soda"
           },
-          "price": 7
+          "price": 7,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1540,7 +1927,10 @@
             "de": "Roter Wermut, Campari, Gin",
             "es": "Vermut rojo, Campari, ginebra"
           },
-          "price": 8
+          "price": 8,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1557,7 +1947,10 @@
             "de": "Roter Wermut, Campari, Prosecco",
             "es": "Vermut rojo, Campari, prosecco"
           },
-          "price": 8
+          "price": 8,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1567,7 +1960,11 @@
             "de": "Martini weiß/rot",
             "es": "Martini blanco/rojo"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1577,7 +1974,11 @@
             "de": "Tassoni Aperol",
             "es": "Tassoni Aperol"
           },
-          "price": 5
+          "description": {},
+          "price": 5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1594,7 +1995,10 @@
             "de": "Greenall's London Dry Gin, Tonic Water",
             "es": "Ginebra Greenall's London dry, agua tónica"
           },
-          "price": 8
+          "price": 8,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1611,7 +2015,10 @@
             "de": "Bombay Sapphire Dry Gin, Tonic Water",
             "es": "Ginebra Bombay Sapphire dry, agua tónica"
           },
-          "price": 8
+          "price": 8.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1628,7 +2035,10 @@
             "de": "Tanqueray London Dry Gin, Tonic Water",
             "es": "Ginebra Tanqueray London dry, agua tónica"
           },
-          "price": 8
+          "price": 8,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1645,7 +2055,10 @@
             "de": "Malfi Pink Grapefruit Gin, Tonic Water",
             "es": "Ginebra Malfi rosa al pomelo, agua tónica"
           },
-          "price": 9
+          "price": 9,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1662,7 +2075,10 @@
             "de": "Gin Mare Mediterranean, Tonic Water",
             "es": "Gin Mare Mediterranean, agua tónica"
           },
-          "price": 10
+          "price": 10,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1679,7 +2095,10 @@
             "de": "Brockmans Gin (Waldbeeren), Tonic Water",
             "es": "Ginebra Brockmans con frutos del bosque, agua tónica"
           },
-          "price": 10
+          "price": 10,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1689,7 +2108,11 @@
             "de": "Gin lemon",
             "es": "Gin lemon"
           },
-          "price": 7
+          "description": {},
+          "price": 7,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1699,7 +2122,11 @@
             "de": "Wodka Red Bull",
             "es": "Vodka Red Bull"
           },
-          "price": 7
+          "description": {},
+          "price": 7,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1709,7 +2136,11 @@
             "de": "Mojito",
             "es": "Mojito"
           },
-          "price": 7
+          "description": {},
+          "price": 7,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1726,7 +2157,10 @@
             "de": "Wodka, Limette, Zucker, Minze oder Basilikum",
             "es": "Vodka, lima, azúcar, menta o albahaca"
           },
-          "price": 8
+          "price": 8,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1743,7 +2177,10 @@
             "de": "Wodka, Ginger Beer, Limettensaft",
             "es": "Vodka, ginger beer, zumo de lima"
           },
-          "price": 8
+          "price": 8,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1760,7 +2197,10 @@
             "de": "Fernet Branca, Ginger Beer, Limettensaft",
             "es": "Fernet Branca, ginger beer, zumo de lima"
           },
-          "price": 7
+          "price": 7,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1777,7 +2217,10 @@
             "de": "Gin, Zitronensaft, Zucker, Trento DOC",
             "es": "Ginebra, zumo de limón, azúcar, Trento DOC"
           },
-          "price": 9
+          "price": 9,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1794,7 +2237,10 @@
             "de": "Grapefruitsaft, Gin, Campari, Selters",
             "es": "Zumo de pomelo, ginebra, Campari, seltz"
           },
-          "price": 9
+          "price": 9,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1811,7 +2257,10 @@
             "de": "Ananassaft, Gin, Zitrone, Grenadine",
             "es": "Zumo de piña, ginebra, limón, granadina"
           },
-          "price": 9
+          "price": 9,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         }
       ]
     },
@@ -1823,6 +2272,8 @@
         "de": "Weißweine",
         "es": "Vinos blancos"
       },
+      "introTitle": {},
+      "description": {},
       "items": [
         {
           "name": {
@@ -1839,7 +2290,10 @@
             "de": "Ein Trentodoc, der lange gelagert und ausschließlich für die Familie reserviert wurde und à la volée geöffnet wurde. Zum 130‑jährigen Jubiläum teilt Endrizzi diese besondere Cuvée ohne Dosage mit allen, die ihre Einzigartigkeit schätzen. Nach einer langen Reifezeit von mindestens 84 Monaten auf der Hefe zeigt er elegante, reife Aromen von weißem Tabak, kandierten Früchten und Lakritz, begleitet von würzigen Noten und einer lebhaften Mineralität.",
             "es": "Un Trentodoc conservado durante mucho tiempo y reservado exclusivamente para la familia, abierto à la volée. Con motivo de sus 130 años, Endrizzi comparte esta cuvée especial sin dosificación con quienes sepan apreciar su unicidad. Tras una larga crianza de al menos 84 meses sobre lías, muestra aromas elegantes y maduros de tabaco blanco, fruta confitada y regaliz, junto con notas especiadas y una mineralidad viva."
           },
-          "bottlePrice": 100
+          "bottlePrice": 100,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1849,7 +2303,11 @@
             "de": "Champagne \"Launois Lebrun\" Millesime by Blanc de Blancs Brut Grand' Cru 100% Chardonnay - Launois Lebrun",
             "es": "Champagne \"Launois Lebrun\" Millesime by Blanc de Blancs Brut Grand' Cru 100% Chardonnay - Launois Lebrun"
           },
-          "bottlePrice": 70
+          "description": {},
+          "bottlePrice": 70,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1859,7 +2317,11 @@
             "de": "Champagne \"Launois Lebrun\" Tradition Brut 70% Chardonnay 30% Pinot Nero - Launois Lebrun",
             "es": "Champagne \"Launois Lebrun\" Tradition Brut 70% Chardonnay 30% Pinot Nero - Launois Lebrun"
           },
-          "bottlePrice": 60
+          "description": {},
+          "bottlePrice": 60,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1869,7 +2331,11 @@
             "de": "Chardonnay MASETTO D'ORÈ - Endrizzi",
             "es": "Chardonnay MASETTO D'ORÈ - Endrizzi"
           },
-          "bottlePrice": 35
+          "description": {},
+          "bottlePrice": 35,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1887,7 +2353,10 @@
             "es": "El Crémant se elabora con el método tradicional champenoise a partir de una sola añada. Manzanas maduras y aromas cítricos perfuman la nariz. En boca es elegante y las burbujas finas llevan a un final fresco."
           },
           "glassPrice": 6,
-          "bottlePrice": 30
+          "bottlePrice": 30,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1905,7 +2374,10 @@
             "es": "Chardonnay. Crianza sobre lías en botella durante más de 24 meses. Sabroso en boca, pero a la vez vivo y fresco."
           },
           "glassPrice": 5,
-          "bottlePrice": 25
+          "bottlePrice": 25,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1923,7 +2395,10 @@
             "es": "Bouquet frutal con delicadas notas de violeta. Fresco de carácter, el sabor es suavemente frutal con notas de cereza, fresa y frutos del bosque, con un final ligeramente almendrado."
           },
           "glassPrice": 5,
-          "bottlePrice": 25
+          "bottlePrice": 25,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1941,7 +2416,10 @@
             "es": "Aroma fragante con tonos florales de glicina a acacia, y en boca es suavemente amable, alegre y típicamente frutal con notas de manzana, melocotón nectarina y pera Williams."
           },
           "glassPrice": 4.5,
-          "bottlePrice": 18
+          "bottlePrice": 18,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1959,7 +2437,10 @@
             "es": "Color amarillo pajizo con reflejos verdosos que anticipa un bouquet aromático intenso y complejo, con notas de flores blancas, fruta exótica y cítricos. En boca es fresco y equilibrado, con una agradable acidez y persistencia aromática."
           },
           "glassPrice": 4.5,
-          "bottlePrice": 17
+          "bottlePrice": 17,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1969,8 +2450,12 @@
             "de": "Chardonnay - Endrizzi",
             "es": "Chardonnay - Endrizzi"
           },
+          "description": {},
           "glassPrice": 4.5,
-          "bottlePrice": 20
+          "bottlePrice": 20,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -1988,7 +2473,10 @@
             "es": "El color es un amarillo pajizo vivo con reflejos almizclados. El bouquet es floral con notas de rosa, menta y melisa. El sabor es armoniosamente fresco, con suavidad y aroma bien equilibrado, con final persistente."
           },
           "glassPrice": 5,
-          "bottlePrice": 27
+          "bottlePrice": 27,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2006,7 +2494,10 @@
             "es": "Chardonnay, Sauvignon Blanc, Nosiola. Una cuvée de tres uvas. Color amarillo pajizo pálido con reflejos verdosos. Aroma intenso floral y vegetal, con notas de flor de saúco, grosella blanca, manzana verde, piel de cidra y miel. En boca es fresco, inmediato y limpio, en perfecta sintonía con lo percibido en nariz. Vino de buena estructura y con un final agradablemente largo."
           },
           "glassPrice": 4.5,
-          "bottlePrice": 22
+          "bottlePrice": 22,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2024,7 +2515,10 @@
             "es": "Cruce exitoso entre Schiava y Riesling. Amarillo pajizo con reflejos verdes. Bouquet delicado con notas de melocotón y moscatel. En boca es rico e intenso, con un final persistente."
           },
           "glassPrice": 4.5,
-          "bottlePrice": 25
+          "bottlePrice": 25,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2042,7 +2536,10 @@
             "es": "Color amarillo pajizo con reflejos cobrizos, agradables notas de pera y melocotón con toques florales."
           },
           "glassPrice": 4.5,
-          "bottlePrice": 17
+          "bottlePrice": 17,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2060,7 +2557,10 @@
             "es": "Notas de flores de acacia y un sabor seco y aterciopelado, pero al mismo tiempo ácido y persistente."
           },
           "glassPrice": 4.5,
-          "bottlePrice": 17
+          "bottlePrice": 17,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2078,7 +2578,10 @@
             "es": "Su color es amarillo pajizo con reflejos verdosos. En nariz se identifican notas de melocotón, pomelo y cítricos, junto con matices florales, especiados y minerales. En boca es fresco y decidido, agradablemente ácido, y refleja fielmente las características de los climas del norte."
           },
           "glassPrice": 4.5,
-          "bottlePrice": 25
+          "bottlePrice": 25,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2088,8 +2591,12 @@
             "de": "Soave - Fattori",
             "es": "Soave - Fattori"
           },
+          "description": {},
           "glassPrice": 3.5,
-          "bottlePrice": 15
+          "bottlePrice": 15,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         }
       ]
     },
@@ -2101,6 +2608,8 @@
         "de": "Rotweine",
         "es": "Vinos tintos"
       },
+      "introTitle": {},
+      "description": {},
       "items": [
         {
           "name": {
@@ -2118,7 +2627,10 @@
             "es": "Típicamente herbáceo, con notas de pimienta y pimiento verde."
           },
           "glassPrice": 4.5,
-          "bottlePrice": 18
+          "bottlePrice": 18,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2136,7 +2648,10 @@
             "es": "Color rubí oscuro intenso, notas típicas de frutos del bosque, vainilla y café, taninos aterciopelados, buena persistencia."
           },
           "glassPrice": 5,
-          "bottlePrice": 27
+          "bottlePrice": 27,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2154,7 +2669,10 @@
             "es": "Un prensado parcial de uva entera y la crianza en barricas de roble de pequeños racimos cuidadosamente seleccionados dan el toque final al rey de los vinos tintos. Un vino reserva con gran potencial de envejecimiento, con una acidez bien integrada y un final persistente."
           },
           "glassPrice": 6,
-          "bottlePrice": 35
+          "bottlePrice": 35,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2172,7 +2690,10 @@
             "es": "El color es rojo granate oscuro. En nariz presenta aromas de violeta, cereza y chocolate amargo. En boca es armonioso y delicado, con taninos bien estructurados y un final persistente."
           },
           "glassPrice": 5,
-          "bottlePrice": 27
+          "bottlePrice": 27,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2190,7 +2711,10 @@
             "es": "Color rojo rubí, intenso bouquet floral con notas de frutos del bosque y mermelada; rico y suave en boca."
           },
           "glassPrice": 5,
-          "bottlePrice": 20
+          "bottlePrice": 20,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2208,7 +2732,10 @@
             "es": "Una cuvée de tres vinos tintos: Merlot, Cabernet Sauvignon y Teroldego. Un vino especiado y complejo, de sabor pleno y especialmente armonioso, con notas de arándano, frambuesa, cacao y vainilla."
           },
           "glassPrice": 5,
-          "bottlePrice": 25
+          "bottlePrice": 25,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         }
       ]
     },
@@ -2220,6 +2747,8 @@
         "de": "Biere",
         "es": "Cervezas"
       },
+      "introTitle": {},
+      "description": {},
       "items": [
         {
           "name": {
@@ -2229,7 +2758,11 @@
             "de": "Stella Artois klein (0,20 L) — vom Fass",
             "es": "Stella Artois pequeña (0,20 L) — de barril"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2239,7 +2772,11 @@
             "de": "Stella Artois mittel (0,40 L) — vom Fass",
             "es": "Stella Artois mediana (0,40 L) — de barril"
           },
-          "price": 5.5
+          "description": {},
+          "price": 5.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2249,7 +2786,11 @@
             "de": "Leffe Rot — 33 cl",
             "es": "Leffe roja — 33 cl"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2259,7 +2800,11 @@
             "de": "Craft-Bier IPA - Ca'Barley — 33 cl",
             "es": "Cerveza artesanal IPA - Ca'Barley — 33 cl"
           },
-          "price": 6
+          "description": {},
+          "price": 6,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2269,7 +2814,11 @@
             "de": "Craft-Bier HELLES - Ca'Barley — 33 cl",
             "es": "Cerveza artesanal HELLES - Ca'Barley — 33 cl"
           },
-          "price": 6
+          "description": {},
+          "price": 6,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2279,7 +2828,11 @@
             "de": "Craft-Bier WEISS - Ca'Barley — 33 cl",
             "es": "Cerveza artesanal BLANCA - Ca'Barley — 33 cl"
           },
-          "price": 6
+          "description": {},
+          "price": 6,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2289,7 +2842,11 @@
             "de": "Craft-Bier FRED - Ca'Barley — 33 cl",
             "es": "Cerveza artesanal FRED - Ca'Barley — 33 cl"
           },
-          "price": 6
+          "description": {},
+          "price": 6,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2299,7 +2856,11 @@
             "de": "Corona — 33 cl",
             "es": "Corona — 33 cl"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2309,7 +2870,11 @@
             "de": "Messina — 33 cl",
             "es": "Messina — 33 cl"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2319,7 +2884,11 @@
             "de": "Ichnusa — 33 cl",
             "es": "Ichnusa — 33 cl"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2329,7 +2898,11 @@
             "de": "Heineken — 33 cl",
             "es": "Heineken — 33 cl"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         }
       ]
     },
@@ -2341,6 +2914,8 @@
         "de": "Amari, Grappa, Whisky",
         "es": "Amari, grappa, whisky"
       },
+      "introTitle": {},
+      "description": {},
       "items": [
         {
           "name": {
@@ -2350,7 +2925,11 @@
             "de": "Amari",
             "es": "Amari"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2360,7 +2939,11 @@
             "de": "Grappa barrique 903",
             "es": "Grappa barrique 903"
           },
-          "price": 5
+          "description": {},
+          "price": 5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2370,7 +2953,11 @@
             "de": "Jack Daniel’s",
             "es": "Jack Daniel’s"
           },
-          "price": 6
+          "description": {},
+          "price": 6,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2380,7 +2967,11 @@
             "de": "Ballantine’s",
             "es": "Ballantine’s"
           },
-          "price": 6
+          "description": {},
+          "price": 6,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2390,7 +2981,11 @@
             "de": "Rum-Punsch",
             "es": "Ponche al ron"
           },
-          "price": 4
+          "description": {},
+          "price": 4,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         },
         {
           "name": {
@@ -2400,7 +2995,11 @@
             "de": "Grappa prime uve",
             "es": "Grappa prime uve"
           },
-          "price": 4.5
+          "description": {},
+          "price": 4.5,
+          "allergens": [],
+          "allergenAdd": [],
+          "allergenRemove": []
         }
       ]
     }
