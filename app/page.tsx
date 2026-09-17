@@ -349,7 +349,7 @@ export default function HomePage() {
             {moments.map((moment) => (
               <div key={moment.title} className="min-w-0">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-xl md:aspect-[4/5]">
-                  <Image src={moment.src} alt={t(moment.title)} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
+                  <Image src={moment.src} alt={t(moment.title)} fill sizes="(min-width: 768px) 33vw, 100vw" className={`object-cover ${moment.title === "aperitivoTitle" ? "object-bottom" : "object-center"}`} />
                 </div>
                 <div className="mt-5 flex items-center gap-2">
                   <h3 className={`${heroSerif.className} text-3xl font-semibold text-amber-900`}>
