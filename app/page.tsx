@@ -351,8 +351,8 @@ export default function HomePage() {
                 <div className="relative aspect-[4/3] overflow-hidden rounded-xl md:aspect-[4/5]">
                   <Image src={moment.src} alt={t(moment.title)} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.03]" />
                 </div>
-                <div className="mt-5 flex items-baseline justify-between gap-4">
-                  <h3 className={`${heroSerif.className} text-3xl font-semibold`}>{t(moment.title)}</h3>
+                <div className="mt-5 flex items-center gap-2">
+                  <h3 className={`${heroSerif.className} text-3xl font-semibold text-amber-900 underline decoration-1 underline-offset-4`}>{t(moment.title)}</h3>
                   <LinkArrow className="text-amber-900" />
                 </div>
                 <p className="mt-2 text-base leading-7 text-neutral-600">{t(moment.text)}</p>
