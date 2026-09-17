@@ -311,10 +311,10 @@ export default function HomePage() {
 
   return (
     <div className="bg-background text-foreground">
-      <section className="relative isolate flex min-h-[calc(88svh-4.5rem)] items-end bg-neutral-950 sm:min-h-[calc(92svh-5rem)]">
+      <section className="relative isolate flex min-h-[68svh] items-end bg-neutral-950 sm:min-h-[min(72svh,46rem)]">
         <Image src="/images/hero.jpg" alt="" fill priority sizes="100vw" className="-z-20 object-cover object-center" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/85 via-black/35 to-black/15" />
-        <div className="mx-auto w-full max-w-6xl px-6 py-16 sm:py-20">
+        <div className="mx-auto w-full max-w-6xl px-6 py-10 sm:py-12">
           <p className="text-sm font-medium tracking-[0.24em] text-white/85">{t("heroKicker")}</p>
           <h1 className={`${heroSerif.className} mt-6 max-w-[15ch] text-[clamp(2.75rem,6vw,5.5rem)] font-semibold leading-[0.98] tracking-tight text-white text-balance`}>
             {t("heroTitle").replace("\n", " ")}
@@ -328,7 +328,7 @@ export default function HomePage() {
       </section>
 
       <div className="mx-auto max-w-6xl px-6">
-        <section aria-labelledby="graduation-heading" className="grid items-center gap-8 py-16 md:grid-cols-2 md:gap-14 lg:py-24">
+        <section aria-labelledby="graduation-heading" className="grid items-center gap-6 py-10 md:grid-cols-2 md:gap-10 sm:py-12 lg:py-16">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
             <Image src="/images/laurea.jpeg" alt={t("graduationAlt")} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
           </div>
@@ -340,12 +340,12 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section aria-labelledby="day-heading" className="border-t border-neutral-200 py-16 lg:py-24">
+        <section aria-labelledby="day-heading" className="border-t border-neutral-200 py-10 sm:py-12 lg:py-16">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <h2 id="day-heading" className={`${heading} max-w-xl`}>{t("dayTitle")}</h2>
             <Link href="/menu" className={textLink}>{t("ctaMenu")} <LinkArrow /></Link>
           </div>
-          <div className="mt-10 grid gap-10 md:grid-cols-3 md:gap-7">
+          <div className="mt-7 grid gap-8 md:grid-cols-3 md:gap-7">
             {moments.map((moment) => (
               <div key={moment.title} className="min-w-0">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-xl md:aspect-[4/5]">
@@ -365,7 +365,7 @@ export default function HomePage() {
       </div>
 
       <section aria-labelledby="friday-heading" className="bg-neutral-900 text-white">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-14 md:grid-cols-2 md:gap-16 md:py-20">
+        <div className="mx-auto grid max-w-6xl items-center gap-7 px-6 py-10 md:grid-cols-2 md:gap-10 md:py-14">
           <div>
             <p className="mb-5 text-sm font-medium uppercase tracking-[0.16em] text-amber-200">{HIGHLIGHTS[2].title[lang]}</p>
             <h2 id="friday-heading" className={heading}>{t("fridayTitle")}</h2>
@@ -379,14 +379,14 @@ export default function HomePage() {
       </section>
 
       <div className="mx-auto max-w-6xl px-6">
-        <section id="prenota" aria-labelledby="visit-heading" className="scroll-mt-28 py-16 lg:py-24">
+        <section id="prenota" aria-labelledby="visit-heading" className="scroll-mt-28 py-10 sm:py-12 lg:py-16">
           <h2 id="visit-heading" className={heading}>{t("whereTitle")}</h2>
-          <div className="mt-10 grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+          <div className="mt-7 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-10">
             <div>
               <p className="text-lg font-semibold">Bar Da Luciano</p>
               <p className="mt-2 text-base leading-7 text-neutral-600">Via Nazareth 20, Padova</p>
               <a href="https://www.google.com/maps?q=via%20Nazareth%2020%2C%2035128%20Padova" target="_blank" rel="noreferrer" className={`${textLink} mt-3`}>{t("whereCta")} <LinkArrow /></a>
-              <div className="mt-8 border-y border-neutral-200 py-6">
+              <div className="mt-6 border-y border-neutral-200 py-5">
                 <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-neutral-600">{HIGHLIGHTS[0].title[lang]}</h3>
                 <dl className="mt-4 space-y-3 text-base">
                   {splitLines(HIGHLIGHTS[0].text[lang]).map((line) => {
@@ -412,7 +412,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        <section className="flex flex-col gap-6 border-t border-neutral-200 py-10 sm:flex-row sm:items-center sm:justify-between">
+        <section className="flex flex-col gap-5 border-t border-neutral-200 py-8 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h2 className={`${heroSerif.className} text-3xl font-semibold`}>{t("leaveReviewTitle")}</h2>
             <p className="mt-2 text-base text-neutral-600">{t("leaveReviewSubtitle")}</p>
