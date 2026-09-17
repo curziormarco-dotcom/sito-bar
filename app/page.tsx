@@ -322,7 +322,16 @@ export default function HomePage() {
           <p className="mt-6 max-w-md text-base leading-7 text-white/90 sm:text-lg">{t("heroSubtitle")}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/menu" className="inline-flex min-h-12 items-center rounded-full bg-white px-6 py-3 text-base font-semibold text-neutral-900 transition hover:bg-amber-50">{t("ctaMenu")}</Link>
-            <a href="#prenota" className="inline-flex min-h-12 items-center rounded-full border border-white/60 px-6 py-3 text-base font-semibold text-white transition hover:bg-white/15">{t("ctaBook")}</a>
+            <a href="#prenota" onClick={(event) => {
+              const contacts = document.getElementById("prenota");
+              if (!contacts) return;
+              event.preventDefault();
+              window.history.replaceState(null, "", "#prenota");
+              contacts.scrollIntoView({
+                behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+                block: "center",
+              });
+            }} className="inline-flex min-h-12 items-center rounded-full border border-white/60 px-6 py-3 text-base font-semibold text-white transition hover:bg-white/15">{t("ctaBook")}</a>
           </div>
         </div>
       </section>
@@ -379,7 +388,7 @@ export default function HomePage() {
       </section>
 
       <div className="mx-auto max-w-6xl px-6">
-        <section id="prenota" aria-labelledby="visit-heading" className="scroll-mt-28 py-10 sm:py-12 lg:py-16">
+        <section aria-labelledby="visit-heading" className="py-10 sm:py-12 lg:py-16">
           <h2 id="visit-heading" className={heading}>{t("whereTitle")}</h2>
           <div className="mt-7 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-10">
             <div>
@@ -395,9 +404,14 @@ export default function HomePage() {
                   })}
                 </dl>
               </div>
-              <h3 className={`${heroSerif.className} mt-8 text-3xl font-semibold`}>{t("bookTitle")}</h3>
+              <section id="prenota" aria-labelledby="contact-heading" className="mt-8 scroll-mt-24">
+              <h3 id="contact-heading" className={`${heroSerif.className} text-3xl font-semibold`}>{t("bookTitle")}</h3>
               <p className="mt-3 text-base leading-7 text-neutral-600">{t("bookSubtitle")}</p>
-              <a href="tel:+390499813795" className="mt-5 inline-flex min-h-12 items-center rounded-full bg-neutral-900 px-6 py-3 text-base font-semibold text-white transition hover:bg-neutral-700">{t("call")} · 049 981 3795</a>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <a href="tel:+390499813795" className="inline-flex min-h-12 items-center rounded-full bg-neutral-900 px-6 py-3 text-base font-semibold text-white transition hover:bg-neutral-700">{t("call")} · 049 981 3795</a>
+                <a href="https://wa.me/393498183485" target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center rounded-full border border-emerald-200 bg-emerald-50 px-6 py-3 text-base font-semibold text-emerald-800 transition hover:bg-emerald-100">WhatsApp · 349 818 3485</a>
+              </div>
+              </section>
             </div>
             <div className="min-h-[340px] overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100 lg:min-h-[480px]">
               {consent === "accepted" ? (
