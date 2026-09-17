@@ -398,7 +398,7 @@ export const MENU: MenuSection[] = [
           de: "Mais, Schokolade oder Kaffee",
           es: "Maíz, chocolate o café",
         },
-        price: 1.0,
+        priceNote: "€1,00–€1,20",
       },
       {
         name: {
@@ -445,7 +445,7 @@ export const MENU: MenuSection[] = [
           es: "Donuts",
         },
         allergens: ["congelato", "latte", "uova", "glutine"],
-        price: 2.5,
+        price: 2.8,
       },
       {
         name: {
@@ -457,6 +457,17 @@ export const MENU: MenuSection[] = [
         },
         allergens: ["latte", "glutine", "uova"],
         price: 1.6,
+      },
+      {
+        name: {
+          it: "Tartelletta alla frutta",
+          en: "Fruit tartlet",
+          fr: "Tartelette aux fruits",
+          de: "Obsttörtchen",
+          es: "Tartaleta de fruta",
+        },
+        allergens: ["latte", "glutine", "uova"],
+        price: 3.0,
       },
       {
         name: {
