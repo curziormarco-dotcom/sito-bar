@@ -42,10 +42,9 @@ const COPY: Record<
   }
 > = {
   it: {
-    title: "Lauree",
-    subtitle: "Brindisi, rinfreschi e feste di laurea al Bar da Luciano.",
-    intro:
-      "Prepariamo tavoli, aperitivi, cicchetti e proposte dolci o salate per festeggiare dopo la proclamazione.",
+    title: "Feste e rinfreschi di laurea a Padova",
+    subtitle: "Festeggia dopo la proclamazione al Bar da Luciano, in via Nazareth.",
+    intro: "Organizziamo aperitivi e buffet personalizzati da condividere con amici e famiglia.",
     detailsTitle: "Organizziamo insieme",
     details: [
       "Rinfreschi su prenotazione",
@@ -81,10 +80,9 @@ const COPY: Record<
     imageAlt: "Festa di laurea al Bar da Luciano",
   },
   en: {
-    title: "Graduations",
-    subtitle: "Toasts, refreshments, and graduation parties at Bar da Luciano.",
-    intro:
-      "We prepare tables, aperitifs, cicchetti, and sweet or savory options to celebrate after graduation.",
+    title: "Graduation parties and buffets in Padua",
+    subtitle: "Celebrate after your graduation ceremony at Bar da Luciano, on Via Nazareth.",
+    intro: "We organize tailored aperitifs and buffets to share with friends and family.",
     detailsTitle: "Plan it with us",
     details: [
       "Refreshments by reservation",
@@ -120,10 +118,9 @@ const COPY: Record<
     imageAlt: "Graduation party at Bar da Luciano",
   },
   fr: {
-    title: "Diplômes",
-    subtitle: "Toasts, rafraîchissements et fêtes de diplôme au Bar da Luciano.",
-    intro:
-      "Nous préparons tables, apéritifs, cicchetti et propositions sucrées ou salées pour célébrer après la proclamation.",
+    title: "Fêtes et buffets de remise de diplôme à Padoue",
+    subtitle: "Fêtez votre diplôme après la cérémonie au Bar da Luciano, via Nazareth.",
+    intro: "Nous organisons des apéritifs et des buffets personnalisés à partager avec vos amis et votre famille.",
     detailsTitle: "Organisons ensemble",
     details: [
       "Rafraîchissements sur réservation",
@@ -159,10 +156,9 @@ const COPY: Record<
     imageAlt: "Fête de diplôme au Bar da Luciano",
   },
   de: {
-    title: "Abschlüsse",
-    subtitle: "Anstoßen, Erfrischungen und Abschlussfeiern in der Bar da Luciano.",
-    intro:
-      "Wir bereiten Tische, Aperitifs, Cicchetti sowie süße oder herzhafte Angebote für die Feier nach der Verleihung vor.",
+    title: "Abschlussfeiern und Buffets in Padua",
+    subtitle: "Feiere nach der Abschlusszeremonie in der Bar da Luciano in der Via Nazareth.",
+    intro: "Wir organisieren individuelle Aperitifs und Buffets für gemeinsame Stunden mit Freunden und Familie.",
     detailsTitle: "Gemeinsam planen",
     details: [
       "Erfrischungen auf Reservierung",
@@ -198,10 +194,9 @@ const COPY: Record<
     imageAlt: "Abschlussfeier in der Bar da Luciano",
   },
   es: {
-    title: "Graduaciones",
-    subtitle: "Brindis, refrigerios y fiestas de graduación en Bar da Luciano.",
-    intro:
-      "Preparamos mesas, aperitivos, cicchetti y propuestas dulces o saladas para celebrar después de la proclamación.",
+    title: "Fiestas y bufés de graduación en Padua",
+    subtitle: "Celebra después de la ceremonia de graduación en Bar da Luciano, en via Nazareth.",
+    intro: "Organizamos aperitivos y bufés personalizados para compartir con amigos y familiares.",
     detailsTitle: "Lo organizamos juntos",
     details: [
       "Refrigerios con reserva",
