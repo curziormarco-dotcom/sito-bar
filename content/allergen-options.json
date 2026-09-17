@@ -1,0 +1,150 @@
+[
+  {
+    "value": "latte",
+    "label": "Latte"
+  },
+  {
+    "value": "uova",
+    "label": "Uova"
+  },
+  {
+    "value": "soia",
+    "label": "Soia"
+  },
+  {
+    "value": "pesce",
+    "label": "Pesce"
+  },
+  {
+    "value": "crostacei",
+    "label": "Crostacei"
+  },
+  {
+    "value": "sedano",
+    "label": "Sedano"
+  },
+  {
+    "value": "molluschi",
+    "label": "Molluschi"
+  },
+  {
+    "value": "solfiti",
+    "label": "Solfiti"
+  },
+  {
+    "value": "lupini",
+    "label": "Lupini"
+  },
+  {
+    "value": "senape",
+    "label": "Senape"
+  },
+  {
+    "value": "sesamo",
+    "label": "Sesamo"
+  },
+  {
+    "value": "glutine",
+    "label": "Glutine"
+  },
+  {
+    "value": "grano",
+    "label": "Grano"
+  },
+  {
+    "value": "orzo",
+    "label": "Orzo"
+  },
+  {
+    "value": "avena",
+    "label": "Avena"
+  },
+  {
+    "value": "segale",
+    "label": "Segale"
+  },
+  {
+    "value": "farro",
+    "label": "Farro"
+  },
+  {
+    "value": "kamut",
+    "label": "Kamut"
+  },
+  {
+    "value": "frutta_guscio",
+    "label": "Fr. guscio"
+  },
+  {
+    "value": "nocciole",
+    "label": "Nocciole"
+  },
+  {
+    "value": "noci",
+    "label": "Noci"
+  },
+  {
+    "value": "mandorle",
+    "label": "Mandorle"
+  },
+  {
+    "value": "pistacchi",
+    "label": "Pistacchi"
+  },
+  {
+    "value": "arachidi",
+    "label": "Arachidi"
+  },
+  {
+    "value": "noci_brasiliane",
+    "label": "Noci brasiliane"
+  },
+  {
+    "value": "anacardi",
+    "label": "Anacardi"
+  },
+  {
+    "value": "macadamia",
+    "label": "Macadamia"
+  },
+  {
+    "value": "noce_pecan",
+    "label": "Noce pecan"
+  },
+  {
+    "value": "alcol",
+    "label": "Alcol"
+  },
+  {
+    "value": "congelato",
+    "label": "Congelato"
+  },
+  {
+    "value": "vegano",
+    "label": "Vegano"
+  },
+  {
+    "value": "vegetariano",
+    "label": "Vegetariano"
+  },
+  {
+    "value": "halal",
+    "label": "Halal"
+  },
+  {
+    "value": "kosher",
+    "label": "Kosher"
+  },
+  {
+    "value": "bio",
+    "label": "Bio"
+  },
+  {
+    "value": "piccante",
+    "label": "Piccante"
+  },
+  {
+    "value": "abbattuto",
+    "label": "Abbattuto"
+  }
+]

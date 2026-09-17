@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import openingHours from "../content/hours.json";
+import { formatOpeningHours } from "./content/opening-hours";
 import Image from "next/image";
 import { Cormorant_Garamond } from "next/font/google";
 import { useCookieConsent } from "./cookie-consent";
@@ -20,13 +22,7 @@ const HIGHLIGHTS = [
       de: "Öffnungszeiten",
       es: "Horario",
     },
-    text: {
-      it: "Lun.–Gio. 6:00–21:30\nVen. 6:00–22:00\nSab. 6:30–21:30\nDom. chiuso",
-      en: "Mon.–Thu. 6:00–21:30\nFri. 6:00–22:00\nSat. 6:30–21:30\nSun. closed",
-      fr: "Lun.–Jeu. 6:00–21:30\nVen. 6:00–22:00\nSam. 6:30–21:30\nDim. fermé",
-      de: "Mo.–Do. 6:00–21:30\nFr. 6:00–22:00\nSa. 6:30–21:30\nSo. geschlossen",
-      es: "Lun.–Jue. 6:00–21:30\nVie. 6:00–22:00\nSáb. 6:30–21:30\nDom. cerrado",
-    },
+
   },
   {
     title: {
@@ -398,7 +394,7 @@ export default function HomePage() {
               <div className="mt-6 border-y border-neutral-200 py-5">
                 <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-neutral-600">{HIGHLIGHTS[0].title[lang]}</h3>
                 <dl className="mt-4 space-y-3 text-base">
-                  {splitLines(HIGHLIGHTS[0].text[lang]).map((line) => {
+                  {splitLines(formatOpeningHours(openingHours, lang)).map((line) => {
                     const [day, ...hours] = line.split(" ");
                     return <div key={day} className="flex flex-wrap justify-between gap-x-6 gap-y-1"><dt>{day}</dt><dd className="font-medium tabular-nums">{hours.join(" ")}</dd></div>;
                   })}
