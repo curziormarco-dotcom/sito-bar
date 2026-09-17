@@ -246,15 +246,16 @@ export default function GraduationsPage() {
   useEffect(() => {
     const timer = window.setInterval(() => {
       setActiveImageIndex((current) => (current + 1) % GRADUATION_IMAGES.length);
-    }, 2500);
+    }, 6000);
 
     return () => window.clearInterval(timer);
   }, []);
 
   return (
-    <main className="bg-[#fbfaf7] text-neutral-900">
-      <section className="mx-auto grid max-w-6xl gap-8 px-6 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-16">
-        <div className="space-y-6">
+    <div className="bg-[#fbfaf7] text-neutral-900">
+      <div className="mx-auto max-w-6xl px-6 py-10 sm:py-12">
+        <section className="grid items-center gap-7 md:grid-cols-2 md:gap-10">
+        <div className="space-y-5">
           <div>
             <h1 className="flex items-center gap-3 text-4xl font-semibold tracking-tight font-serif sm:text-5xl">
               <span>{copy.title}</span>
@@ -271,7 +272,7 @@ export default function GraduationsPage() {
             {copy.intro}
           </p>
 
-          <div className="rounded-lg border border-neutral-200 bg-white p-5 shadow-sm">
+          <div className="border-t border-neutral-200 pt-5">
             <h2 className="text-xl font-semibold font-serif">{copy.detailsTitle}</h2>
             <ul className="mt-4 space-y-3 text-neutral-700">
               {copy.details.map((detail) => (
@@ -283,7 +284,36 @@ export default function GraduationsPage() {
             </ul>
           </div>
 
-          <section className="space-y-4">
+        </div>
+        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-neutral-100">
+          {GRADUATION_IMAGES.map((image, index) => (
+            <Image
+              key={image.src}
+              src={image.src}
+              alt={copy.imageAlt}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              priority={index === 0}
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+                index === activeImageIndex ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
+          <div className="absolute inset-x-0 bottom-0 flex justify-center gap-2 bg-gradient-to-t from-black/35 to-transparent px-4 pb-4 pt-12">
+            {GRADUATION_IMAGES.map((image, index) => (
+              <span
+                key={image.src}
+                className={`h-2 w-2 rounded-full transition ${
+                  index === activeImageIndex ? "bg-white" : "bg-white/45"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+        </section>
+
+        <div className="mt-10 space-y-8 sm:mt-12">
+          <section className="space-y-5 border-t border-neutral-200 pt-8">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight font-serif">
                 {copy.foodTitle}
@@ -291,59 +321,59 @@ export default function GraduationsPage() {
               <p className="mt-2 text-neutral-600">{copy.foodIntro}</p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-lg border border-amber-200 bg-[#fff8ea] p-5 shadow-sm">
+            <div className="grid gap-6 sm:grid-cols-2">
+              <div className="rounded-2xl border border-neutral-200 bg-white p-5 sm:p-6">
                 <Image
                   src="/images/proposta-laurea-9.png"
                   alt={copy.proposal9Title}
                   width={1448}
                   height={1086}
-                  className="h-44 w-full rounded-md object-cover"
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                  className="aspect-[4/3] w-full rounded-xl object-cover"
                 />
-                <p className="mt-2 mb-5 text-xs italic leading-5 text-neutral-600">
+                <p className="mt-2 mb-4 text-sm italic leading-5 text-neutral-600">
                   {copy.proposal9Caption}
                 </p>
                 <div className="flex items-baseline justify-between gap-4">
-                  <h3 className="text-xl font-semibold text-neutral-900">
+                  <h3 className="text-xl font-semibold text-amber-900">
                     {copy.proposal9Title}
                   </h3>
-                  <span className="text-2xl font-semibold text-amber-800">9€</span>
                 </div>
-                <p className="mt-4 text-neutral-700">{copy.proposal9Text}</p>
+                <p className="mt-3 text-base leading-7 text-neutral-700">{copy.proposal9Text}</p>
               </div>
 
-              <div className="rounded-lg border border-amber-200 bg-[#fff8ea] p-5 shadow-sm">
+              <div className="rounded-2xl border border-neutral-200 bg-white p-5 sm:p-6">
                 <Image
                   src="/images/proposta-laurea-12.png"
                   alt={copy.proposal12Title}
                   width={1448}
                   height={1086}
-                  className="h-44 w-full rounded-md object-cover"
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                  className="aspect-[4/3] w-full rounded-xl object-cover"
                 />
-                <p className="mt-2 mb-5 text-xs italic leading-5 text-neutral-600">
+                <p className="mt-2 mb-4 text-sm italic leading-5 text-neutral-600">
                   {copy.proposal12Caption}
                 </p>
                 <div className="flex items-baseline justify-between gap-4">
-                  <h3 className="text-xl font-semibold text-neutral-900">
+                  <h3 className="text-xl font-semibold text-amber-900">
                     {copy.proposal12Title}
                   </h3>
-                  <span className="text-2xl font-semibold text-amber-800">12€</span>
                 </div>
-                <p className="mt-4 text-neutral-700">{copy.proposal12Text}</p>
+                <p className="mt-3 text-base leading-7 text-neutral-700">{copy.proposal12Text}</p>
               </div>
             </div>
 
-            <p className="rounded-lg border border-neutral-200 bg-white px-5 py-4 text-sm leading-6 text-neutral-700 shadow-sm">
+            <p className="max-w-4xl text-base leading-7 text-neutral-600">
               {copy.foodCustomText}
             </p>
           </section>
 
-          <section className="rounded-lg border border-neutral-200 bg-white p-5 shadow-sm">
+          <section className="border-t border-neutral-200 pt-8">
             <h2 className="text-2xl font-semibold tracking-tight font-serif">
               {copy.drinksTitle}
             </h2>
             <p className="mt-3 text-neutral-700">{copy.drinksText}</p>
-            <div className="mt-5 divide-y divide-neutral-200 border-y border-neutral-200">
+            <div className="mt-5 max-w-3xl divide-y divide-neutral-200 border-y border-neutral-200">
               {copy.drinksItems.map((item) => (
                 <div
                   key={item.name}
@@ -359,15 +389,15 @@ export default function GraduationsPage() {
             </p>
           </section>
 
-          <section className="rounded-lg border border-neutral-200 bg-white p-5 shadow-sm">
+          <section className="border-t border-neutral-200 pt-8">
             <h2 className="text-xl font-semibold font-serif">{copy.cakeTitle}</h2>
-            <p className="mt-3 text-sm leading-6 text-neutral-700">{copy.cakeText}</p>
-            <p className="mt-3 text-sm font-semibold text-amber-800">
+            <p className="mt-3 max-w-4xl text-base leading-7 text-neutral-600">{copy.cakeText}</p>
+            <p className="mt-3 text-base font-semibold text-amber-800">
               {copy.cakeService}
             </p>
           </section>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 border-t border-neutral-200 pt-6">
             <a
               href="tel:+390499813795"
               className="inline-flex items-center justify-center rounded-full bg-neutral-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-neutral-700"
@@ -391,32 +421,8 @@ export default function GraduationsPage() {
           </div>
         </div>
 
-        <div className="relative h-[28rem] overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-sm sm:h-[34rem] lg:h-[42rem]">
-          {GRADUATION_IMAGES.map((image, index) => (
-            <Image
-              key={image.src}
-              src={image.src}
-              alt={copy.imageAlt}
-              width={image.width}
-              height={image.height}
-              priority={index === 0}
-              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
-                index === activeImageIndex ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          ))}
-          <div className="absolute inset-x-0 bottom-0 flex justify-center gap-2 bg-gradient-to-t from-black/35 to-transparent px-4 pb-4 pt-12">
-            {GRADUATION_IMAGES.map((image, index) => (
-              <span
-                key={image.src}
-                className={`h-2 w-2 rounded-full transition ${
-                  index === activeImageIndex ? "bg-white" : "bg-white/45"
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-    </main>
+
+      </div>
+    </div>
   );
 }
