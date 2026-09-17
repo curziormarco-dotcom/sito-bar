@@ -347,16 +347,18 @@ export default function HomePage() {
           </div>
           <div className="mt-10 grid gap-10 md:grid-cols-3 md:gap-7">
             {moments.map((moment) => (
-              <Link key={moment.title} href={moment.href} className="group block min-w-0 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-8">
+              <div key={moment.title} className="min-w-0">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-xl md:aspect-[4/5]">
-                  <Image src={moment.src} alt={t(moment.title)} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.03]" />
+                  <Image src={moment.src} alt={t(moment.title)} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
                 </div>
                 <div className="mt-5 flex items-center gap-2">
-                  <h3 className={`${heroSerif.className} text-3xl font-semibold text-amber-900 underline decoration-1 underline-offset-4`}>{t(moment.title)}</h3>
+                  <h3 className={`${heroSerif.className} text-3xl font-semibold text-amber-900`}>
+                    <Link href={moment.href} className="underline decoration-1 underline-offset-4 hover:text-amber-700 focus-visible:outline-2 focus-visible:outline-offset-4">{t(moment.title)}</Link>
+                  </h3>
                   <LinkArrow className="text-amber-900" />
                 </div>
                 <p className="mt-2 text-base leading-7 text-neutral-600">{t(moment.text)}</p>
-              </Link>
+              </div>
             ))}
           </div>
         </section>
