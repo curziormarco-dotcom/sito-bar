@@ -311,11 +311,7 @@ export default function HomePage() {
         <Image src="/images/hero.jpg" alt="" fill priority sizes="100vw" className="-z-20 object-cover object-center" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/85 via-black/35 to-black/15" />
         <div className="mx-auto w-full max-w-6xl px-6 py-10 sm:py-12">
-          <div className="flex items-center gap-3">
-            <span aria-hidden="true" className="h-px w-10 shrink-0 bg-white/35" />
-            <p className="text-sm font-medium tracking-[0.24em] text-white/85">{t("heroKicker")}</p>
-            <span aria-hidden="true" className="h-px w-10 shrink-0 bg-white/35" />
-          </div>
+          <p className="hero-brand-intro text-base font-medium tracking-[0.24em] text-white sm:text-lg">{t("heroKicker")}</p>
           <h1 className={`${heroSerif.className} mt-6 max-w-[15ch] text-[clamp(2.75rem,6vw,5.5rem)] font-semibold leading-[0.98] tracking-tight text-white text-balance`}>
             {t("heroTitle").replace("\n", " ")}
           </h1>

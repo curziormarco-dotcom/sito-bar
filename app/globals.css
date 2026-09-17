@@ -43,3 +43,20 @@ footer {
 header {
   max-width: 100%;
 }
+
+@keyframes hero-brand-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-brand-intro {
+    animation: hero-brand-reveal 700ms ease-out both;
+  }
+}
