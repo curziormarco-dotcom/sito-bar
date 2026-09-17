@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useLayoutEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { NavLink } from "./nav-link";
 import { LanguageSwitcher } from "./language-switcher";
@@ -19,9 +20,26 @@ export function SiteHeader() {
   const pathname = usePathname();
   const labels = NAV_COPY[lang];
   const isHome = pathname === "/";
+  const headerRef = useRef<HTMLElement>(null);
+  const spacerRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const header = headerRef.current;
+    const spacer = spacerRef.current;
+    if (!header || !spacer) return;
+    const updateHeight = () => {
+      spacer.style.height = `${header.getBoundingClientRect().height}px`;
+    };
+    updateHeight();
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(header);
+    return () => observer.disconnect();
+  }, [pathname, lang]);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-neutral-200 bg-white/90 backdrop-blur transition-all duration-300">
+    <>
+    <div ref={spacerRef} aria-hidden="true" className="h-16 sm:h-28" />
+    <header ref={headerRef} className="fixed inset-x-0 top-0 z-50 w-full border-b border-neutral-200 bg-white/90 backdrop-blur transition-all duration-300">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-2 px-2 py-3 sm:gap-2 sm:px-6 sm:py-5">
         <div className="inline-flex min-w-0 shrink-0 flex-col items-center">
           <Link
@@ -61,5 +79,6 @@ export function SiteHeader() {
         </nav>
       </div>
     </header>
+    </>
   );
 }
