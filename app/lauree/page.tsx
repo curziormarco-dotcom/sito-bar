@@ -241,7 +241,7 @@ export default function GraduationsPage() {
   useEffect(() => {
     const timer = window.setInterval(() => {
       setActiveImageIndex((current) => (current + 1) % GRADUATION_IMAGES.length);
-    }, 6000);
+    }, 2200);
 
     return () => window.clearInterval(timer);
   }, []);
