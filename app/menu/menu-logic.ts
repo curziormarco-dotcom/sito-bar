@@ -15,7 +15,7 @@ export function inferAllergens(
 ): string[] | undefined {
   const allergens = new Set<string>((item.allergens ?? []).filter((key) => options.knownAllergens.has(key)));
   const text = `${item.name.it} ${getItalianDescription(item)}`.toLowerCase();
-  const isWineSection = section.title.it === "Vini Bianchi" || section.title.it === "Vini Rossi";
+  const isWineSection = ["Vini Bianchi", "Bianchi e bollicine", "Vini bianchi e bollicine"].includes(section.title.it) || section.title.it === "Vini Rossi";
   const isBeerSection = section.title.it === "Birre";
   const isAmariSection = section.title.it === "Amari, Grappe, Whisky";
   const isSnackSection = section.title.it === "Snack e Panini";

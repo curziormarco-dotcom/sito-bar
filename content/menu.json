@@ -2266,11 +2266,11 @@
     },
     {
       "title": {
-        "it": "Vini Bianchi",
-        "en": "White Wines",
-        "fr": "Vins blancs",
-        "de": "Weißweine",
-        "es": "Vinos blancos"
+        "it": "Vini bianchi e bollicine",
+        "en": "White and sparkling wines",
+        "fr": "Vins blancs et effervescents",
+        "de": "Weiß- und Schaumweine",
+        "es": "Vinos blancos y espumosos"
       },
       "introTitle": {},
       "description": {},
@@ -2293,7 +2293,8 @@
           "bottlePrice": 100,
           "allergens": [],
           "allergenAdd": [],
-          "allergenRemove": []
+          "allergenRemove": [],
+          "tag": "bollicine"
         },
         {
           "name": {
@@ -2307,7 +2308,8 @@
           "bottlePrice": 70,
           "allergens": [],
           "allergenAdd": [],
-          "allergenRemove": []
+          "allergenRemove": [],
+          "tag": "bollicine"
         },
         {
           "name": {
@@ -2321,7 +2323,8 @@
           "bottlePrice": 60,
           "allergens": [],
           "allergenAdd": [],
-          "allergenRemove": []
+          "allergenRemove": [],
+          "tag": "bollicine"
         },
         {
           "name": {
@@ -2335,7 +2338,8 @@
           "bottlePrice": 35,
           "allergens": [],
           "allergenAdd": [],
-          "allergenRemove": []
+          "allergenRemove": [],
+          "tag": "fermi"
         },
         {
           "name": {
@@ -2356,7 +2360,8 @@
           "bottlePrice": 30,
           "allergens": [],
           "allergenAdd": [],
-          "allergenRemove": []
+          "allergenRemove": [],
+          "tag": "bollicine"
         },
         {
           "name": {
@@ -2377,7 +2382,8 @@
           "bottlePrice": 25,
           "allergens": [],
           "allergenAdd": [],
-          "allergenRemove": []
+          "allergenRemove": [],
+          "tag": "bollicine"
         },
         {
           "name": {
@@ -2398,7 +2404,8 @@
           "bottlePrice": 25,
           "allergens": [],
           "allergenAdd": [],
-          "allergenRemove": []
+          "allergenRemove": [],
+          "tag": "bollicine"
         },
         {
           "name": {
@@ -2419,7 +2426,8 @@
           "bottlePrice": 18,
           "allergens": [],
           "allergenAdd": [],
-          "allergenRemove": []
+          "allergenRemove": [],
+          "tag": "bollicine"
         },
         {
           "name": {
@@ -2440,7 +2448,8 @@
           "bottlePrice": 17,
           "allergens": [],
           "allergenAdd": [],
-          "allergenRemove": []
+          "allergenRemove": [],
+          "tag": "fermi"
         },
         {
           "name": {
@@ -2455,7 +2464,8 @@
           "bottlePrice": 20,
           "allergens": [],
           "allergenAdd": [],
-          "allergenRemove": []
+          "allergenRemove": [],
+          "tag": "fermi"
         },
         {
           "name": {
@@ -2476,7 +2486,8 @@
           "bottlePrice": 27,
           "allergens": [],
           "allergenAdd": [],
-          "allergenRemove": []
+          "allergenRemove": [],
+          "tag": "fermi"
         },
         {
           "name": {
@@ -2497,7 +2508,8 @@
           "bottlePrice": 22,
           "allergens": [],
           "allergenAdd": [],
-          "allergenRemove": []
+          "allergenRemove": [],
+          "tag": "fermi"
         },
         {
           "name": {
@@ -2518,7 +2530,8 @@
           "bottlePrice": 25,
           "allergens": [],
           "allergenAdd": [],
-          "allergenRemove": []
+          "allergenRemove": [],
+          "tag": "fermi"
         },
         {
           "name": {
@@ -2539,7 +2552,8 @@
           "bottlePrice": 17,
           "allergens": [],
           "allergenAdd": [],
-          "allergenRemove": []
+          "allergenRemove": [],
+          "tag": "fermi"
         },
         {
           "name": {
@@ -2560,7 +2574,8 @@
           "bottlePrice": 17,
           "allergens": [],
           "allergenAdd": [],
-          "allergenRemove": []
+          "allergenRemove": [],
+          "tag": "fermi"
         },
         {
           "name": {
@@ -2581,7 +2596,8 @@
           "bottlePrice": 25,
           "allergens": [],
           "allergenAdd": [],
-          "allergenRemove": []
+          "allergenRemove": [],
+          "tag": "fermi"
         },
         {
           "name": {
@@ -2596,7 +2612,8 @@
           "bottlePrice": 15,
           "allergens": [],
           "allergenAdd": [],
-          "allergenRemove": []
+          "allergenRemove": [],
+          "tag": "fermi"
         }
       ]
     },

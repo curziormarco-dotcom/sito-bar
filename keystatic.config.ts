@@ -44,7 +44,7 @@ export default config({
             allergens: allergens('Allergeni e indicazioni del prodotto'),
             allergenAdd: allergens('Indicazioni da aggiungere a quelle automatiche'),
             allergenRemove: allergens('Indicazioni automatiche da escludere'),
-            tag: fields.ignored(),
+            tag: fields.select({ label: 'Gruppo vini bianchi', options: [{ label: 'Non applicabile', value: '' }, { label: 'Bollicine', value: 'bollicine' }, { label: 'Fermi', value: 'fermi' }], defaultValue: '' }),
           }), { label: 'Prodotti', itemLabel: (props) => props.fields.name.fields.it.value || 'Nuovo prodotto' }),
         }), {
           label: 'Categorie',

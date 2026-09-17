@@ -1,12 +1,14 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useLanguage, type Language } from "../locale-provider";
 import { MENU } from "./menu-data";
 import { inferAllergens, itemIsAllowedForSelectedAllergens, toggleAllergenFilter } from "./menu-logic";
 
 const UI_COPY: Record<Language, Record<string, string>> = {
   it: {
+    sparkling: "Bollicine",
+    still: "Bianchi fermi",
     menu: "Menù",
     allergens: "Allergeni",
     allergenLegend: "Legenda allergeni",
@@ -25,6 +27,8 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     bottleLabel: "Bottiglia",
   },
   en: {
+    sparkling: "Sparkling",
+    still: "Still white wines",
     menu: "Menu",
     allergens: "Allergens",
     allergenLegend: "Allergen legend",
@@ -43,6 +47,8 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     bottleLabel: "Bottle",
   },
   fr: {
+    sparkling: "Effervescents",
+    still: "Blancs tranquilles",
     menu: "Menu",
     allergens: "Allergènes",
     allergenLegend: "Légende des allergènes",
@@ -61,6 +67,8 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     bottleLabel: "Bouteille",
   },
   de: {
+    sparkling: "Schaumweine",
+    still: "Stille Weißweine",
     menu: "Menü",
     allergens: "Allergene",
     allergenLegend: "Allergen-Legende",
@@ -79,6 +87,8 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     bottleLabel: "Flasche",
   },
   es: {
+    sparkling: "Espumosos",
+    still: "Blancos tranquilos",
     menu: "Menú",
     allergens: "Alérgenos",
     allergenLegend: "Leyenda de alérgenos",
@@ -723,14 +733,17 @@ export default function MenuPage() {
         const isCicchettiPesce = section.id === "cicchetti-pesce";
         const isCentrifughe = section.id === "centrifughe";
         const isWineSection =
-          section.title.it === "Vini Bianchi" || section.title.it === "Vini Rossi";
+          ["Vini Bianchi", "Bianchi e bollicine", "Vini bianchi e bollicine"].includes(section.title.it) || section.title.it === "Vini Rossi";
         const isHiddenToday =
           (isPesce && !isFriday && !showPesceAlways) ||
           (isCentrifughe && isOutsideCentrifugheHours);
         const filteredItems = hasActiveAllergenFilter
           ? section.items.filter((item) => itemIsAllowedForSelectedAllergens(item, allergenFilterSet))
           : section.items;
-        const displayItems = filteredItems;
+        const isWhiteWine = ["Vini Bianchi", "Bianchi e bollicine", "Vini bianchi e bollicine"].includes(section.title.it);
+        const displayItems = isWhiteWine
+          ? [...filteredItems.filter(item => item.tag === "bollicine"), ...filteredItems.filter(item => item.tag !== "bollicine")]
+          : filteredItems;
 
         return (
           <section
@@ -798,9 +811,15 @@ export default function MenuPage() {
                     {hasActiveAllergenFilter ? t("noMatches") : t("comingSoon")}
                   </p>
                 ) : (
-                  displayItems.map((item) => (
+                  displayItems.map((item, itemIndex) => (
+                    <Fragment key={`${item.name.it}-${item.price}`}>
+                    {isWhiteWine && (itemIndex === 0 || (item.tag === "bollicine") !== (displayItems[itemIndex - 1].tag === "bollicine")) && (
+                      <h3 className="flex items-center gap-4 pt-4 text-sm font-normal uppercase tracking-[0.14em] text-neutral-900">
+                        <span>{t(item.tag === "bollicine" ? "sparkling" : "still")}</span>
+                        <span aria-hidden="true" className="h-px flex-1 bg-neutral-200" />
+                      </h3>
+                    )}
                     <article
-                      key={`${item.name.it}-${item.price}`}
                       className="border-t border-neutral-200/70 pt-4"
                     >
                       <div className="flex items-start justify-between gap-3 sm:gap-6">
@@ -922,6 +941,7 @@ export default function MenuPage() {
                         )}
                       </div>
                     </article>
+                    </Fragment>
                   ))
                 )}
               </div>
