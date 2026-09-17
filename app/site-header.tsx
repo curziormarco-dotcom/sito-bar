@@ -22,7 +22,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-neutral-200 bg-white/90 backdrop-blur transition-all duration-300">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-2 px-2 py-2 sm:gap-2 sm:px-6 sm:py-4">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-2 px-2 py-3 sm:gap-2 sm:px-6 sm:py-5">
         <div className="inline-flex min-w-0 shrink-0 flex-col items-center">
           <Link
             href="/"
@@ -47,7 +47,7 @@ export function SiteHeader() {
           )}
         </div>
 
-        <nav className="flex min-w-0 flex-1 flex-nowrap items-center justify-end gap-2 text-[0.72rem] min-[380px]:text-xs sm:flex-none sm:gap-3 sm:text-base">
+        <nav className="flex min-w-0 flex-1 flex-nowrap items-center justify-end gap-2 text-xs min-[380px]:text-[0.8125rem] sm:flex-none sm:gap-4 sm:text-[1.0625rem]">
           <NavLink href="/menu" inverted={false}>
             {labels.menu}
           </NavLink>
