@@ -558,12 +558,12 @@ export default function MenuPage() {
       className="mx-auto max-w-5xl bg-[#fbfaf7] px-5 py-8 text-neutral-900 sm:px-6 sm:py-10"
       style={{ overflowAnchor: "none" }}
     >
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
-        <h1 className="text-4xl font-semibold tracking-tight font-serif">{t("menu")}</h1>
+      <div className="mb-6 flex flex-wrap items-center gap-4">
+        <h1 className="text-4xl font-normal tracking-tight font-serif">{t("menu")}</h1>
         <button
           type="button"
           onClick={() => setShowLegend(true)}
-          className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-800 shadow-sm hover:bg-neutral-50"
+          className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-50"
         >
           {t("allergens")}
         </button>
@@ -590,11 +590,11 @@ export default function MenuPage() {
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-center justify-between gap-4">
-              <h2 className="text-xl font-semibold">{t("allergenLegend")}</h2>
+              <h2 className="text-xl font-medium">{t("allergenLegend")}</h2>
               <button
                 type="button"
                 onClick={() => setShowLegend(false)}
-                className="rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm font-semibold text-neutral-700 hover:bg-neutral-50"
+                className="rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm font-medium text-neutral-700 hover:bg-neutral-50"
               >
                 {t("close")}
               </button>
@@ -639,7 +639,7 @@ export default function MenuPage() {
           onClick={() => setShowCentrifugheNotice(false)}
         >
           <div className="w-full max-w-sm rounded-2xl border border-neutral-200 bg-white p-5 text-neutral-900 shadow-xl">
-            <h3 className="text-base font-semibold">Info</h3>
+            <h3 className="text-base font-medium">Info</h3>
             <p className="mt-2 text-sm text-neutral-600">
               {t("until1830")}
             </p>
@@ -647,7 +647,7 @@ export default function MenuPage() {
               <button
                 type="button"
                 onClick={() => setShowCentrifugheNotice(false)}
-                className="rounded-full border border-neutral-200 px-4 py-2 text-sm font-semibold text-neutral-700 hover:bg-neutral-50"
+                className="rounded-full border border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-50"
               >
                 OK
               </button>
@@ -661,7 +661,7 @@ export default function MenuPage() {
           onClick={() => setShowPesceNotice(false)}
         >
           <div className="w-full max-w-sm rounded-2xl border border-neutral-200 bg-white p-5 text-neutral-900 shadow-xl">
-            <h3 className="text-base font-semibold">Info</h3>
+            <h3 className="text-base font-medium">Info</h3>
             <p className="mt-2 text-sm text-neutral-600">
               {t("fridayOnly")}
             </p>
@@ -669,7 +669,7 @@ export default function MenuPage() {
               <button
                 type="button"
                 onClick={() => setShowPesceNotice(false)}
-                className="rounded-full border border-neutral-200 px-4 py-2 text-sm font-semibold text-neutral-700 hover:bg-neutral-50"
+                className="rounded-full border border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-50"
               >
                 OK
               </button>
@@ -683,7 +683,7 @@ export default function MenuPage() {
           onClick={() => setShowCicchettiPesceNotice(false)}
         >
           <div className="w-full max-w-sm rounded-2xl border border-neutral-200 bg-white p-5 text-neutral-900 shadow-xl">
-            <h3 className="text-base font-semibold">Info</h3>
+            <h3 className="text-base font-medium">Info</h3>
             <p className="mt-2 text-sm text-neutral-600">
               {t("thursdayFridayOnly")}
             </p>
@@ -691,7 +691,7 @@ export default function MenuPage() {
               <button
                 type="button"
                 onClick={() => setShowCicchettiPesceNotice(false)}
-                className="rounded-full border border-neutral-200 px-4 py-2 text-sm font-semibold text-neutral-700 hover:bg-neutral-50"
+                className="rounded-full border border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-50"
               >
                 OK
               </button>
@@ -702,15 +702,15 @@ export default function MenuPage() {
 
       {hasActiveAllergenFilter && (
         <div className="mb-6 flex flex-wrap items-center gap-3 rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-600">
-          <span className="shrink-0 whitespace-nowrap text-right font-semibold tabular-nums text-amber-900">{t("filterOn")}</span>
+          <span className="shrink-0 whitespace-nowrap text-right font-medium tabular-nums text-amber-900">{t("filterOn")}</span>
           <span>{allergenFilters.map((key) => ALLERGEN_LABELS[key][lang]).join(", ")}</span>
-          <span className="inline-flex items-center rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs font-semibold text-neutral-700">
+          <span className="inline-flex items-center rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs font-medium text-neutral-700">
             {visibleResultCount} {t("resultsLabel")}
           </span>
           <button
             type="button"
             onClick={() => setAllergenFilters([])}
-            className="ml-2 rounded-full border border-neutral-200 px-3 py-1 text-xs font-semibold text-neutral-700 hover:bg-neutral-50"
+            className="ml-2 rounded-full border border-neutral-200 px-3 py-1 text-xs font-medium text-neutral-700 hover:bg-neutral-50"
           >
             {t("clearFilter")}
           </button>
@@ -759,7 +759,7 @@ export default function MenuPage() {
               onMouseDown={(event) => event.preventDefault()}
               className="group relative flex min-h-16 w-full items-center justify-between gap-4 py-4 text-left transition-colors hover:text-amber-900 focus-visible:outline-2 focus-visible:outline-offset-2"
             >
-              <h2 className="text-2xl font-semibold tracking-tight font-serif">
+              <h2 className="text-2xl font-normal tracking-tight font-serif">
                 {formatCategoryTitle(section.title[lang])}
               </h2>
               <span
@@ -800,7 +800,7 @@ export default function MenuPage() {
                       <div className="flex items-start justify-between gap-3 sm:gap-6">
                       <div className="min-w-0">
                         <div className="flex flex-wrap items-center gap-x-2 gap-y-2">
-                          <h3 className="font-semibold">
+                          <h3 className="font-normal leading-6">
                             {item.name[lang]}
                           </h3>
                           {item.allergens && item.allergens.length > 0 && (
@@ -863,7 +863,7 @@ export default function MenuPage() {
                                       current === item.name.it ? null : item.name.it
                                     )
                                   }
-                                  className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-400 hover:text-neutral-600"
+                                  className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-400 hover:text-neutral-600"
                                 >
                                   {t("descriptionLabel")}
                                 </button>
@@ -886,7 +886,7 @@ export default function MenuPage() {
                         </div>
 
                         {isWineSection ? (
-                          <div className="grid w-[120px] shrink-0 grid-cols-2 gap-2 text-sm font-semibold tabular-nums text-amber-900 sm:w-[140px] sm:gap-3">
+                          <div className="grid w-[120px] shrink-0 grid-cols-2 gap-2 text-sm font-medium tabular-nums text-amber-900 sm:w-[140px] sm:gap-3">
                             <span className="text-left">
                               {typeof item.glassPrice === "number"
                                 ? formatEURSuffix(item.glassPrice)
@@ -899,7 +899,7 @@ export default function MenuPage() {
                             </span>
                           </div>
                         ) : (
-                          <div className="shrink-0 whitespace-nowrap text-right font-semibold tabular-nums text-amber-900">
+                          <div className="shrink-0 whitespace-nowrap text-right font-medium tabular-nums text-amber-900">
                             {typeof item.price === "number" ? formatEUR(item.price) : null}
                             {item.priceNote && (
                               <span
