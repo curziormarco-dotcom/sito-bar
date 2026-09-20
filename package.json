@@ -7,14 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "npm run test:menu-logic && npm run test:cms",
+    "test": "npm run test:menu-logic && npm run test:cms && npm run test:analytics",
     "test:menu-logic": "rm -rf .test-dist && tsc --noEmit false --module commonjs --moduleResolution node --target es2020 --rootDir app/menu --outDir .test-dist app/menu/menu-logic.ts app/menu/menu-types.ts && node --test tests/menu-logic.test.mjs",
-    "test:cms": "node --test tests/cms-content.test.mjs"
+    "test:cms": "node --test tests/cms-content.test.mjs",
+    "test:analytics": "node --test tests/analytics-consent.test.mjs"
   },
   "dependencies": {
     "@keystatic/core": "^0.6.9",
     "@keystatic/next": "^5.0.5",
     "@markdoc/markdoc": "^0.5.10",
+    "@vercel/analytics": "^2.0.1",
     "next": "^16.3.5",
     "react": "19.2.3",
     "react-dom": "19.2.3"

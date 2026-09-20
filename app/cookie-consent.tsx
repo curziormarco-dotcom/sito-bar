@@ -15,13 +15,23 @@ type ConsentValue = "accepted" | "rejected" | null;
 
 type CookieConsentContextValue = {
   consent: ConsentValue;
+  analytics: boolean;
+  save: (maps: boolean, analytics: boolean) => void;
   isReady: boolean;
   accept: () => void;
   reject: () => void;
   reset: () => void;
 };
 
-const COOKIE_CONSENT_KEY = "bar-da-luciano-cookie-consent";
+export const COOKIE_CONSENT_KEY = "bar-da-luciano-cookie-consent-v2";
+
+export function readPreferences(): { maps: boolean; analytics: boolean } | null {
+  try {
+    const saved = JSON.parse(window.localStorage.getItem(COOKIE_CONSENT_KEY) || "null");
+    return saved && typeof saved.maps === "boolean" && typeof saved.analytics === "boolean"
+      ? saved : null;
+  } catch { return null; }
+}
 
 const CookieConsentContext = createContext<CookieConsentContextValue | null>(null);
 
@@ -34,100 +44,103 @@ const COOKIE_COPY: Record<
     reject: string;
     settings: string;
     privacy: string;
+    analytics: string;
+    maps: string;
+    save: string;
   }
 > = {
   it: {
     title: "Preferenze cookie",
-    body: "Usiamo strumenti tecnici e statistiche aggregate privacy-friendly. Se accetti, carichiamo anche Google Maps per mostrarti la mappa del locale.",
-    accept: "Accetta",
-    reject: "Rifiuta",
+    body: "Usiamo strumenti tecnici necessari. Con il tuo consenso attiviamo Vercel Web Analytics per contare le visite e Google Maps per mostrare la mappa. Puoi scegliere separatamente o rifiutare entrambi.",
+    accept: "Accetta tutto",
+    reject: "Rifiuta tutto",
     settings: "Preferenze cookie",
     privacy: "Privacy",
+    analytics: "Statistiche (Vercel)",
+    maps: "Mappa (Google Maps)",
+    save: "Salva scelte",
   },
   en: {
     title: "Cookie preferences",
-    body: "We use technical tools and privacy-friendly aggregated statistics. If you accept, we also load Google Maps to show the venue map.",
-    accept: "Accept",
-    reject: "Reject",
+    body: "We use necessary technical tools. With your consent, we enable Vercel Web Analytics to measure visits and Google Maps to show the map. Choose separately or reject both.",
+    accept: "Accept all",
+    reject: "Reject all",
     settings: "Cookies",
     privacy: "Privacy",
+    analytics: "Statistics (Vercel)",
+    maps: "Map (Google Maps)",
+    save: "Save choices",
   },
   fr: {
     title: "Préférences de cookies",
-    body: "Nous utilisons des outils techniques et des statistiques agrégées respectueuses de la vie privée. Si vous acceptez, nous chargeons aussi Google Maps pour afficher la carte du lieu.",
-    accept: "Accepter",
-    reject: "Refuser",
+    body: "Nous utilisons des outils techniques nécessaires. Avec votre accord, Vercel Web Analytics mesure les visites et Google Maps affiche la carte. Choisissez séparément ou refusez les deux.",
+    accept: "Tout accepter",
+    reject: "Tout refuser",
     settings: "Cookies",
     privacy: "Confidentialité",
+    analytics: "Statistiques (Vercel)",
+    maps: "Carte (Google Maps)",
+    save: "Enregistrer",
   },
   de: {
     title: "Cookie-Einstellungen",
-    body: "Wir nutzen technische Tools und datenschutzfreundliche aggregierte Statistiken. Mit Zustimmung laden wir außerdem Google Maps, um die Karte anzuzeigen.",
-    accept: "Akzeptieren",
-    reject: "Ablehnen",
+    body: "Wir verwenden notwendige technische Dienste. Mit Ihrer Zustimmung misst Vercel Web Analytics Besuche und Google Maps zeigt die Karte. Wählen Sie einzeln oder lehnen Sie beide ab.",
+    accept: "Alle akzeptieren",
+    reject: "Alle ablehnen",
     settings: "Cookie-Einstellungen",
     privacy: "Datenschutz",
+    analytics: "Statistik (Vercel)",
+    maps: "Karte (Google Maps)",
+    save: "Auswahl speichern",
   },
   es: {
     title: "Preferencias de cookies",
-    body: "Usamos herramientas técnicas y estadísticas agregadas respetuosas con la privacidad. Si aceptas, también cargamos Google Maps para mostrar el mapa del local.",
-    accept: "Aceptar",
-    reject: "Rechazar",
+    body: "Usamos herramientas técnicas necesarias. Con tu consentimiento, Vercel Web Analytics mide las visitas y Google Maps muestra el mapa. Puedes elegir por separado o rechazar ambos.",
+    accept: "Aceptar todo",
+    reject: "Rechazar todo",
     settings: "Cookies",
     privacy: "Privacidad",
+    analytics: "Estadísticas (Vercel)",
+    maps: "Mapa (Google Maps)",
+    save: "Guardar selección",
   },
 };
 
-function saveConsent(value: ConsentValue) {
-  if (value) {
-    window.localStorage.setItem(COOKIE_CONSENT_KEY, value);
-  } else {
-    window.localStorage.removeItem(COOKIE_CONSENT_KEY);
-  }
-}
-
 export function CookieConsentProvider({ children }: { children: ReactNode }) {
-  const [consent, setConsent] = useState<ConsentValue>(null);
+  const [preferences, setPreferences] = useState<{ maps: boolean; analytics: boolean } | null>(null);
   const [isReady, setIsReady] = useState(false);
-
   useEffect(() => {
-    const timeoutId = window.setTimeout(() => {
-      const saved = window.localStorage.getItem(COOKIE_CONSENT_KEY);
-      if (saved === "accepted" || saved === "rejected") {
-        setConsent(saved);
-      }
+    const id = window.setTimeout(() => {
+      setPreferences(readPreferences());
       setIsReady(true);
     }, 0);
-
-    return () => window.clearTimeout(timeoutId);
+    const sync = () => setPreferences(readPreferences());
+    window.addEventListener("storage", sync);
+    return () => { window.clearTimeout(id); window.removeEventListener("storage", sync); };
   }, []);
-
-  const value = useMemo<CookieConsentContextValue>(
-    () => ({
-      consent,
+  const value = useMemo<CookieConsentContextValue>(() => {
+    const save = (maps: boolean, analytics: boolean) => {
+      const next = { maps, analytics };
+      try { window.localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(next)); } catch { /* Storage may be blocked. */ }
+      setPreferences(next);
+    };
+    return {
+      consent: preferences === null ? null : preferences.maps ? "accepted" : "rejected",
+      analytics: preferences?.analytics === true,
       isReady,
-      accept: () => {
-        setConsent("accepted");
-        saveConsent("accepted");
-      },
-      reject: () => {
-        setConsent("rejected");
-        saveConsent("rejected");
-      },
+      save,
+      // The button on the map authorizes only Google Maps.
+      accept: () => save(true, preferences?.analytics === true),
+      reject: () => save(false, false),
       reset: () => {
-        setConsent(null);
-        saveConsent(null);
+        try { window.localStorage.removeItem(COOKIE_CONSENT_KEY); } catch { /* No persisted consent. */ }
+        setPreferences(null);
+        // Remove an already loaded analytics script and its listeners.
+        if (preferences?.analytics) window.location.reload();
       },
-    }),
-    [consent, isReady],
-  );
-
-  return (
-    <CookieConsentContext.Provider value={value}>
-      {children}
-      <CookieBanner />
-    </CookieConsentContext.Provider>
-  );
+    };
+  }, [preferences, isReady]);
+  return <CookieConsentContext.Provider value={value}>{children}<CookieBanner key={preferences === null ? "pending" : "saved"} /></CookieConsentContext.Provider>;
 }
 
 export function useCookieConsent() {
@@ -155,7 +168,9 @@ export function CookieSettingsButton() {
 }
 
 function CookieBanner() {
-  const { consent, isReady, accept, reject } = useCookieConsent();
+  const { consent, isReady, save, reject } = useCookieConsent();
+  const [maps, setMaps] = useState(false);
+  const [analytics, setAnalytics] = useState(false);
   const { lang } = useLanguage();
   const copy = COOKIE_COPY[lang];
 
@@ -164,7 +179,7 @@ function CookieBanner() {
   }
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[80] border-t border-neutral-200 bg-white shadow-[0_-16px_40px_rgba(17,17,17,0.12)]">
+    <div className="fixed inset-x-0 bottom-0 z-[80] max-h-[85svh] overflow-y-auto border-t border-neutral-200 bg-white shadow-[0_-16px_40px_rgba(17,17,17,0.12)]">
       <div className="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
         <div className="max-w-2xl">
           <h2 className="text-base font-semibold text-neutral-900">
@@ -177,7 +192,10 @@ function CookieBanner() {
             </Link>
           </p>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex min-w-56 flex-col gap-3">
+          <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={analytics} onChange={e => setAnalytics(e.target.checked)} />{copy.analytics}</label>
+          <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={maps} onChange={e => setMaps(e.target.checked)} />{copy.maps}</label>
+          <button type="button" onClick={() => save(maps, analytics)} className="rounded-lg border border-neutral-300 px-4 py-2 text-sm font-semibold">{copy.save}</button>
           <button
             type="button"
             onClick={reject}
@@ -187,7 +205,7 @@ function CookieBanner() {
           </button>
           <button
             type="button"
-            onClick={accept}
+            onClick={() => save(true, true)}
             className="rounded-lg bg-neutral-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-neutral-800"
           >
             {copy.accept}
