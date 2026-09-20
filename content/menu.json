@@ -1392,7 +1392,7 @@
             "de": "Salatbasis: Kopfsalat, Radicchio, Rucola, Karotten, Cherrytomaten, Fenchel. Extras: Ei 2,00 €, Mozzarella 2,50 €, Garnelen (Krustentiere) 3,00 €, Thunfisch (Fisch) 3,00 €, Oliven 1,50 €, Kochschinken 3,00 €, Rindfleischstreifen 3,00 €, Mais 1,50 €, Kapern 1,50 €.",
             "es": "Base de ensalada: lechuga, radicchio, rúcula, zanahorias, tomates cherry, hinojo. Extras: huevo 2,00 €, mozzarella 2,50 €, gambas (crustáceos) 3,00 €, atún (pescado) 3,00 €, aceitunas 1,50 €, jamón cocido 3,00 €, carne deshilachada 3,00 €, maíz 1,50 €, alcaparras 1,50 €."
           },
-          "price": 7,
+          "priceNote": "a partire da 7 €",
           "allergens": [],
           "allergenAdd": [],
           "allergenRemove": []

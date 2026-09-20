@@ -14,7 +14,7 @@ function load(file, mocks, extras = {}) {
 
 test('old, absent, invalid or inaccessible stored consent never authorizes analytics', () => {
   let stored = null;
-  const { readPreferences } = load('../app/cookie-consent.tsx', { react: { createContext: () => ({}) } }, {
+  const { readPreferences, createPreferences, PRIVACY_VERSION } = load('../app/cookie-consent.tsx', { react: { createContext: () => ({}) } }, {
     window: { localStorage: { getItem: () => stored } }
   });
   for (const value of [null, 'accepted', 'rejected', '{}', '{"maps":true}', 'false']) {
@@ -22,9 +22,18 @@ test('old, absent, invalid or inaccessible stored consent never authorizes analy
     assert.equal(readPreferences(), null);
   }
   stored = '{"maps":true,"analytics":false}';
+  assert.equal(readPreferences(), null);
+  stored = '{"maps":false,"analytics":false}';
   assert.equal(readPreferences().analytics, false);
-  stored = '{"maps":false,"analytics":true}';
+  const choice = createPreferences(false, true);
+  assert.equal(choice.policyVersion, PRIVACY_VERSION);
+  assert.ok(Number.isFinite(Date.parse(choice.recordedAt)));
+  stored = JSON.stringify(choice);
   assert.equal(readPreferences().analytics, true);
+  stored = JSON.stringify({ ...choice, policyVersion: 'old' });
+  assert.equal(readPreferences(), null);
+  stored = JSON.stringify({ ...choice, recordedAt: 'invalid' });
+  assert.equal(readPreferences(), null);
 });
 
 test('analytics waits for explicit consent, excludes admin and strips URL parameters', () => {

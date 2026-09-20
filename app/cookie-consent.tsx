@@ -25,11 +25,21 @@ type CookieConsentContextValue = {
 
 export const COOKIE_CONSENT_KEY = "bar-da-luciano-cookie-consent-v2";
 
-export function readPreferences(): { maps: boolean; analytics: boolean } | null {
+export const PRIVACY_VERSION = "2026-09-20.2";
+type Preferences = { maps: boolean; analytics: boolean; recordedAt: string; policyVersion: string };
+
+export function createPreferences(maps: boolean, analytics: boolean): Preferences {
+  return { maps, analytics, recordedAt: new Date().toISOString(), policyVersion: PRIVACY_VERSION };
+}
+
+export function readPreferences(): Preferences | null {
   try {
     const saved = JSON.parse(window.localStorage.getItem(COOKIE_CONSENT_KEY) || "null");
-    return saved && typeof saved.maps === "boolean" && typeof saved.analytics === "boolean"
-      ? saved : null;
+    if (!saved || typeof saved.maps !== "boolean" || typeof saved.analytics !== "boolean") return null;
+    // Preserve a previous refusal, without inventing its date or collecting a new consent.
+    if (!saved.maps && !saved.analytics) return saved;
+    if (saved.policyVersion !== PRIVACY_VERSION || typeof saved.recordedAt !== "string" || !Number.isFinite(Date.parse(saved.recordedAt))) return null;
+    return saved;
   } catch { return null; }
 }
 
@@ -120,7 +130,7 @@ export function CookieConsentProvider({ children }: { children: ReactNode }) {
   }, []);
   const value = useMemo<CookieConsentContextValue>(() => {
     const save = (maps: boolean, analytics: boolean) => {
-      const next = { maps, analytics };
+      const next = createPreferences(maps, analytics);
       try { window.localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(next)); } catch { /* Storage may be blocked. */ }
       setPreferences(next);
     };
