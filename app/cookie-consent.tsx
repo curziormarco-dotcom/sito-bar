@@ -51,9 +51,9 @@ const COOKIE_COPY: Record<
 > = {
   it: {
     title: "Preferenze cookie",
-    body: "Usiamo strumenti tecnici necessari. Con il tuo consenso attiviamo Vercel Web Analytics per contare le visite e Google Maps per mostrare la mappa. Puoi scegliere separatamente o rifiutare entrambi.",
-    accept: "Accetta tutto",
-    reject: "Rifiuta tutto",
+    body: "Usiamo strumenti tecnici necessari. Con il tuo consenso attiviamo Vercel Web Analytics per contare le visite e Google Maps per mostrare la mappa. Puoi rifiutare oppure accettare entrambi. Le preferenze dettagliate sono nella pagina Privacy.",
+    accept: "Accetto",
+    reject: "Rifiuta",
     settings: "Preferenze cookie",
     privacy: "Privacy",
     analytics: "Statistiche (Vercel)",
@@ -62,9 +62,9 @@ const COOKIE_COPY: Record<
   },
   en: {
     title: "Cookie preferences",
-    body: "We use necessary technical tools. With your consent, we enable Vercel Web Analytics to measure visits and Google Maps to show the map. Choose separately or reject both.",
-    accept: "Accept all",
-    reject: "Reject all",
+    body: "We use necessary technical tools. With your consent, we enable Vercel Web Analytics to measure visits and Google Maps to show the map. You can reject or accept both. Detailed preferences are on the Privacy page.",
+    accept: "Accept",
+    reject: "Reject",
     settings: "Cookies",
     privacy: "Privacy",
     analytics: "Statistics (Vercel)",
@@ -73,9 +73,9 @@ const COOKIE_COPY: Record<
   },
   fr: {
     title: "Préférences de cookies",
-    body: "Nous utilisons des outils techniques nécessaires. Avec votre accord, Vercel Web Analytics mesure les visites et Google Maps affiche la carte. Choisissez séparément ou refusez les deux.",
-    accept: "Tout accepter",
-    reject: "Tout refuser",
+    body: "Nous utilisons des outils techniques nécessaires. Avec votre accord, Vercel Web Analytics mesure les visites et Google Maps affiche la carte. Vous pouvez accepter ou refuser les deux. Les préférences détaillées sont sur la page Confidentialité.",
+    accept: "Accepter",
+    reject: "Refuser",
     settings: "Cookies",
     privacy: "Confidentialité",
     analytics: "Statistiques (Vercel)",
@@ -84,9 +84,9 @@ const COOKIE_COPY: Record<
   },
   de: {
     title: "Cookie-Einstellungen",
-    body: "Wir verwenden notwendige technische Dienste. Mit Ihrer Zustimmung misst Vercel Web Analytics Besuche und Google Maps zeigt die Karte. Wählen Sie einzeln oder lehnen Sie beide ab.",
-    accept: "Alle akzeptieren",
-    reject: "Alle ablehnen",
+    body: "Wir verwenden notwendige technische Dienste. Mit Ihrer Zustimmung misst Vercel Web Analytics Besuche und Google Maps zeigt die Karte. Sie können beide akzeptieren oder ablehnen. Detaillierte Einstellungen finden Sie unter Datenschutz.",
+    accept: "Akzeptieren",
+    reject: "Ablehnen",
     settings: "Cookie-Einstellungen",
     privacy: "Datenschutz",
     analytics: "Statistik (Vercel)",
@@ -95,9 +95,9 @@ const COOKIE_COPY: Record<
   },
   es: {
     title: "Preferencias de cookies",
-    body: "Usamos herramientas técnicas necesarias. Con tu consentimiento, Vercel Web Analytics mide las visitas y Google Maps muestra el mapa. Puedes elegir por separado o rechazar ambos.",
-    accept: "Aceptar todo",
-    reject: "Rechazar todo",
+    body: "Usamos herramientas técnicas necesarias. Con tu consentimiento, Vercel Web Analytics mide las visitas y Google Maps muestra el mapa. Puedes aceptar o rechazar ambos. Las preferencias detalladas están en Privacidad.",
+    accept: "Aceptar",
+    reject: "Rechazar",
     settings: "Cookies",
     privacy: "Privacidad",
     analytics: "Estadísticas (Vercel)",
@@ -169,8 +169,6 @@ export function CookieSettingsButton() {
 
 function CookieBanner() {
   const { consent, isReady, save, reject } = useCookieConsent();
-  const [maps, setMaps] = useState(false);
-  const [analytics, setAnalytics] = useState(false);
   const { lang } = useLanguage();
   const copy = COOKIE_COPY[lang];
 
@@ -187,15 +185,12 @@ function CookieBanner() {
           </h2>
           <p className="mt-1 text-sm leading-6 text-neutral-600">
             {copy.body}{" "}
-            <Link href="/privacy" className="font-semibold text-neutral-900 underline underline-offset-4">
+            <Link href="/privacy#preferenze" className="font-semibold text-neutral-900 underline underline-offset-4">
               {copy.privacy}
             </Link>
           </p>
         </div>
-        <div className="flex min-w-56 flex-col gap-3">
-          <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={analytics} onChange={e => setAnalytics(e.target.checked)} />{copy.analytics}</label>
-          <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={maps} onChange={e => setMaps(e.target.checked)} />{copy.maps}</label>
-          <button type="button" onClick={() => save(maps, analytics)} className="rounded-lg border border-neutral-300 px-4 py-2 text-sm font-semibold">{copy.save}</button>
+        <div className="flex shrink-0 flex-wrap gap-2">
           <button
             type="button"
             onClick={reject}
@@ -206,12 +201,34 @@ function CookieBanner() {
           <button
             type="button"
             onClick={() => save(true, true)}
-            className="rounded-lg bg-neutral-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-neutral-800"
+            className="rounded-lg border border-neutral-300 px-4 py-2 text-sm font-semibold text-neutral-800 transition hover:bg-neutral-50"
           >
             {copy.accept}
           </button>
         </div>
       </div>
+    </div>
+  );
+}
+
+export function DetailedCookiePreferences() {
+  const { consent, analytics, isReady, save } = useCookieConsent();
+  const { lang } = useLanguage();
+  const copy = COOKIE_COPY[lang];
+  if (!isReady) return null;
+  return (
+    <div className="mt-4 flex flex-col gap-4">
+      <label className="flex items-center gap-3">
+        <input type="checkbox" checked={analytics} onChange={event => {
+          save(consent === "accepted", event.target.checked);
+          if (!event.target.checked) window.location.reload();
+        }} />
+        {copy.analytics}
+      </label>
+      <label className="flex items-center gap-3">
+        <input type="checkbox" checked={consent === "accepted"} onChange={event => save(event.target.checked, analytics)} />
+        {copy.maps}
+      </label>
     </div>
   );
 }

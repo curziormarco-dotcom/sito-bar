@@ -7,7 +7,7 @@
 
 Le statistiche non sono retroattive. Contano soltanto chi autorizza la raccolta e può caricare lo script; non equivalgono al totale delle persone che visitano il sito. In sviluppo locale la raccolta è disattivata.
 
-Le preferenze per statistiche e Google Maps sono separate. Il pulsante sulla mappa abilita soltanto Maps. I vecchi consensi alla mappa non autorizzano le nuove statistiche. Preferenze cookie nel footer revoca le scelte e riapre il banner; se lo script statistico era caricato, la pagina viene ricaricata per rimuoverlo. Ogni evento ricontrolla comunque il consenso salvato.
+Il banner contiene soltanto Rifiuta e Accetto. Le preferenze separate per statistiche e Google Maps sono nella pagina Privacy, collegata dal banner. Il pulsante sulla mappa abilita soltanto Maps. I vecchi consensi alla mappa non autorizzano le nuove statistiche. Preferenze cookie nel footer revoca le scelte e riapre il banner; se lo script statistico era caricato, la pagina viene ricaricata per rimuoverlo. Ogni evento ricontrolla comunque il consenso salvato.
 
 Gli indirizzi delle pagine vengono privati di query e frammenti; amministrazione e API sono escluse. Non sono configurati eventi personalizzati.
 

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { DetailedCookiePreferences } from "../cookie-consent";
 
 const SECTIONS: { title: string; body: ReactNode[] }[] = [
   {
@@ -31,7 +32,7 @@ const SECTIONS: { title: string; body: ReactNode[] }[] = [
       "Il sito non usa strumenti di profilazione pubblicitaria, Google Analytics o Meta Pixel.",
       "Possono essere usati cookie o strumenti tecnici necessari al funzionamento del sito e dell'hosting. Per questi strumenti non e richiesto il consenso preventivo.",
       "Il sito integra Vercel Web Analytics, fornito da Vercel Inc., per misurare visite e pagine visualizzate. Il servizio viene caricato solo dopo il consenso alle statistiche. Secondo Vercel, non usa cookie per identificare i visitatori e impiega un identificativo derivato dalla richiesta, senza tracciamento tra siti diversi; la sessione del visitatore viene eliminata dopo 24 ore. Questo termine non coincide con la conservazione dei report aggregati.",
-      "Il banner permette di accettare tutto, rifiutare tutto oppure scegliere separatamente statistiche e Google Maps. Le preferenze sono salvate sul dispositivo tramite localStorage con la chiave bar-da-luciano-cookie-consent-v2, fino alla modifica delle scelte o alla cancellazione dei dati del browser. I precedenti consensi alla sola mappa non attivano le statistiche.",
+      "Il banner presenta i pulsanti Rifiuta e Accetto, riferiti a statistiche e Google Maps. È possibile autorizzare separatamente le due finalità nella sezione Preferenze di questa pagina, raggiungibile dal link Privacy del banner. Le preferenze sono salvate sul dispositivo tramite localStorage con la chiave bar-da-luciano-cookie-consent-v2, fino alla modifica delle scelte o alla cancellazione dei dati del browser. I precedenti consensi alla sola mappa non attivano le statistiche.",
       "In assenza di consenso o in caso di rifiuto, i rispettivi servizi restano bloccati: le statistiche non vengono caricate e la mappa non viene incorporata. Il pulsante di attivazione presente sulla mappa autorizza soltanto Google Maps.",
       "L’utente può revocare il consenso e scegliere nuovamente in qualsiasi momento tramite il pulsante Preferenze cookie in fondo al sito. La revoca interrompe le nuove rilevazioni, senza eliminare automaticamente i report aggregati già prodotti.",
       <>
@@ -121,6 +122,11 @@ export default function PrivacyPage() {
           personali degli utenti che visitano il sito di Bar da Luciano di Curzio Davide.
         </p>
 
+        <section id="preferenze" className="mt-8 scroll-mt-32 border-y border-neutral-200 py-6">
+          <h2 className="text-xl font-semibold">Preferenze</h2>
+          <p className="mt-2 text-neutral-700">Puoi autorizzare o disattivare ciascun servizio. Le scelte vengono salvate subito.</p>
+          <DetailedCookiePreferences />
+        </section>
         <div className="mt-10 space-y-8">
           {SECTIONS.map((section) => (
             <section key={section.title}>
