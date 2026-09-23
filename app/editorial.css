@@ -87,7 +87,7 @@
 .home-header-location { font-size: .75rem; line-height: 1.7; text-transform: uppercase; letter-spacing: .12em; color: #656761; }
 .home-header-location > span { display: block; }
 .home-header-actions { display: flex; gap: 32px; align-items: center; }
-.home-header-menu-link { font-size: .85rem; padding: 10px 18px; border: 1px solid #777; }
+.home-header-menu-link { font-size: .85rem; padding-block: 10px; }
 .home-navigation { position: absolute; inset-inline: 0; top: 100%; background: #fbfaf7; box-shadow: 0 30px 50px #0002; border-top: 1px solid #d7d8d1; padding: 42px max(28px, calc((100vw - 1320px)/2)); max-height: calc(100svh - 96px); overflow-y: auto; }
 .home-navigation-inner { display: flex; gap: 24px; flex-direction: column; align-items: start; }
 .home-navigation-inner > a { display: flex; width: 100%; justify-content: space-between; gap: 32px; padding-bottom: 18px; border-bottom: 1px solid #d7d8d1; font-family: var(--font-heading), Georgia, serif; font-size: clamp(1.8rem, 4vw, 3rem); color: #20211f; }
@@ -571,7 +571,5 @@
   .graduation-opening-actions .home-text-link { gap: 16px; }
 }
 
-/* Clearly outlined links across the editorial pages and contact navigation. */
+/* Outlined links on the editorial pages. */
 .home-text-link:hover { background: var(--home-ink); color: var(--home-paper); }
-.home-navigation-inner { gap: 10px; }
-.home-navigation-inner > a { border: 1px solid var(--home-line, #d7d8d1); padding: 12px 16px; }

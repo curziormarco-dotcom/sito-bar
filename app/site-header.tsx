@@ -74,7 +74,7 @@ export function SiteHeader() {
           <NavLink href="/lauree" className="font-serif text-2xl">{labels.graduations}<MenuArrow /></NavLink>
           <NavLink href="/galleria" className="font-serif text-2xl">{labels.gallery}<MenuArrow /></NavLink>
           <NavLink href="/#prenota" className="font-serif">{labels.contacts}<MenuArrow /></NavLink>
-          <LanguageSwitcher />
+          <LanguageSwitcher inline />
         </div>
       </nav>
     </header>}

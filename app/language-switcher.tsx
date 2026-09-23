@@ -26,12 +26,12 @@ function GlobeIcon() {
   );
 }
 
-export function LanguageSwitcher({ inverted = false }: { inverted?: boolean }) {
+export function LanguageSwitcher({ inverted = false, inline = false }: { inverted?: boolean; inline?: boolean }) {
   const { lang, setLang } = useLanguage();
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="relative">
+    <div className={inline ? "relative w-full" : "relative"}>
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
@@ -48,7 +48,7 @@ export function LanguageSwitcher({ inverted = false }: { inverted?: boolean }) {
       </button>
 
       {open && (
-        <div className="absolute right-0 z-[100] mt-2 w-44 rounded-xl border border-neutral-200 bg-white p-2 shadow-xl">
+        <div className={`${inline ? "relative w-full" : "absolute right-0 w-44"} z-[100] mt-2 rounded-xl border border-neutral-200 bg-white p-2 shadow-xl`}>
           <ul role="listbox" className="space-y-1">
             {LANGUAGES.map((opt) => (
               <li key={opt.code}>
