@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./editorial.css";
 import { Lora, Source_Sans_3 } from "next/font/google";
 import { SiteShell } from "./site-shell";
 
