@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Fragment, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useLanguage, type Language } from "../locale-provider";
 import { MENU } from "./menu-data";
@@ -7,6 +8,7 @@ import { inferAllergens, itemIsAllowedForSelectedAllergens, toggleAllergenFilter
 
 const UI_COPY: Record<Language, Record<string, string>> = {
   it: {
+    menuIntro: "Dal primo caffè all’aperitivo. Scegli una categoria e scopri le nostre proposte.",
     sparkling: "Bollicine",
     still: "Bianchi fermi",
     menu: "Menù",
@@ -27,6 +29,7 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     bottleLabel: "Bottiglia",
   },
   en: {
+    menuIntro: "From your first coffee to aperitivo. Choose a category and discover our menu.",
     sparkling: "Sparkling",
     still: "Still white wines",
     menu: "Menu",
@@ -47,6 +50,7 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     bottleLabel: "Bottle",
   },
   fr: {
+    menuIntro: "Du premier café à l’apéritif. Choisissez une catégorie et découvrez nos propositions.",
     sparkling: "Effervescents",
     still: "Blancs tranquilles",
     menu: "Menu",
@@ -67,6 +71,7 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     bottleLabel: "Bouteille",
   },
   de: {
+    menuIntro: "Vom ersten Kaffee bis zum Aperitif. Wähle eine Kategorie und entdecke unser Angebot.",
     sparkling: "Schaumweine",
     still: "Stille Weißweine",
     menu: "Menü",
@@ -87,6 +92,7 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     bottleLabel: "Flasche",
   },
   es: {
+    menuIntro: "Del primer café al aperitivo. Elige una categoría y descubre nuestras propuestas.",
     sparkling: "Espumosos",
     still: "Blancos tranquilos",
     menu: "Menú",
@@ -564,20 +570,15 @@ export default function MenuPage() {
   }, [isFriday, isThursdayOrFriday]);
 
   return (
-    <main
-      className="mx-auto max-w-5xl bg-[#fbfaf7] px-5 py-8 text-neutral-900 sm:px-6 sm:py-10"
+    <div
+      className="editorial-page menu-page home-container"
       style={{ overflowAnchor: "none" }}
     >
-      <div className="mb-6 flex flex-wrap items-center gap-4">
-        <h1 className="text-4xl font-normal tracking-tight font-serif">{t("menu")}</h1>
-        <button
-          type="button"
-          onClick={() => setShowLegend(true)}
-          className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-50"
-        >
-          {t("allergens")}
-        </button>
-      </div>
+      <header className="menu-opening">
+        <div><p className="home-eyebrow">Bar da Luciano · Padova</p><h1 className="editorial-title">{t("menu")}</h1><p className="editorial-lead">{t("menuIntro")}</p></div>
+        <div className="menu-opening-photo"><Image src="/images/brioche.jpg" alt="" fill priority sizes="(min-width: 900px) 30vw, 35vw" className="object-cover" /></div>
+      </header>
+      <div className="menu-tools"><span className="menu-tools-rule" /><button type="button" onClick={() => setShowLegend(true)} className="menu-allergen-button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" aria-hidden="true"><path d="M4 7h16M4 17h16M8 4v6M16 14v6" /></svg>{t("allergens")}</button></div>
 
       {showLegend && (
         <div
@@ -712,7 +713,7 @@ export default function MenuPage() {
 
       {hasActiveAllergenFilter && (
         <div className="mb-6 flex flex-wrap items-center gap-3 rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-600">
-          <span className="shrink-0 whitespace-nowrap text-right font-medium tabular-nums text-amber-900">{t("filterOn")}</span>
+          <span className="shrink-0 whitespace-nowrap text-right font-medium tabular-nums text-neutral-900">{t("filterOn")}</span>
           <span>{allergenFilters.map((key) => ALLERGEN_LABELS[key][lang]).join(", ")}</span>
           <span className="inline-flex items-center rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs font-medium text-neutral-700">
             {visibleResultCount} {t("resultsLabel")}
@@ -749,7 +750,7 @@ export default function MenuPage() {
           <section
             key={section.title.it}
             id={section.id ?? `menu-section-${sectionIndex}`}
-            className="scroll-mt-28 border-b border-neutral-200"
+            className="menu-category scroll-mt-28 border-b border-neutral-200"
           >
             {/* HEADER */}
             <button
@@ -770,24 +771,17 @@ export default function MenuPage() {
                 toggleSection(section.title.it, isOpen, event.currentTarget);
               }}
               onMouseDown={(event) => event.preventDefault()}
-              className="group relative flex min-h-16 w-full items-center justify-between gap-4 py-4 text-left transition-colors hover:text-amber-900 focus-visible:outline-2 focus-visible:outline-offset-2"
+              className="menu-category-toggle group relative flex min-h-16 w-full items-center justify-between gap-4 py-4 text-left transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
             >
               <h2 className="text-2xl font-normal tracking-tight font-serif">
                 {formatCategoryTitle(section.title[lang])}
               </h2>
-              <span
-                className={`text-base font-light text-neutral-400 transition-transform ${
-                  isOpen ? "rotate-90" : "rotate-0"
-                }`}
-                aria-hidden="true"
-              >
-                ›
-              </span>
+              <span className="menu-category-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2"><path d={isOpen ? "M5 9l7 7 7-7" : "M5 12h14"} strokeLinecap="round" strokeLinejoin="round" /></svg></span>
             </button>
 
             {/* CONTENUTO */}
             {isOpen && (
-              <div id={`menu-content-${sectionIndex}`} className="space-y-4 pb-6">
+              <div id={`menu-content-${sectionIndex}`} className="menu-category-content space-y-4 pb-6">
                 {section.description && (
                   <div className="max-w-2xl pb-2">
                     {section.introTitle && <h3 className="font-serif text-xl font-normal text-neutral-900">{section.introTitle[lang]}</h3>}
@@ -820,7 +814,7 @@ export default function MenuPage() {
                       </h3>
                     )}
                     <article
-                      className="border-t border-neutral-200/70 pt-4"
+                      className="menu-product border-t border-neutral-200/70 pt-4"
                     >
                       <div className="flex items-start justify-between gap-3 sm:gap-6">
                       <div className="min-w-0">
@@ -911,7 +905,7 @@ export default function MenuPage() {
                         </div>
 
                         {isWineSection ? (
-                          <div className="grid w-[120px] shrink-0 grid-cols-2 gap-2 text-sm font-medium tabular-nums text-amber-900 sm:w-[140px] sm:gap-3">
+                          <div className="grid w-[120px] shrink-0 grid-cols-2 gap-2 text-sm font-medium tabular-nums text-neutral-900 sm:w-[140px] sm:gap-3">
                             <span className="text-left">
                               {typeof item.glassPrice === "number"
                                 ? formatEURSuffix(item.glassPrice)
@@ -924,7 +918,7 @@ export default function MenuPage() {
                             </span>
                           </div>
                         ) : (
-                          <div className="shrink-0 whitespace-nowrap text-right font-medium tabular-nums text-amber-900">
+                          <div className="shrink-0 whitespace-nowrap text-right font-medium tabular-nums text-neutral-900">
                             {typeof item.price === "number" ? formatEUR(item.price) : null}
                             {item.priceNote && (
                               <span
@@ -949,6 +943,6 @@ export default function MenuPage() {
           </section>
         );
       })}
-    </main>
+    </div>
   );
 }

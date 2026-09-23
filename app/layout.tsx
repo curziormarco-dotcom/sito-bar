@@ -1,10 +1,18 @@
 import "./globals.css";
-import { Manrope } from "next/font/google";
+import { Lora, Source_Sans_3 } from "next/font/google";
 import { SiteShell } from "./site-shell";
 
-const bodyFont = Manrope({
+const bodyFont = Source_Sans_3({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const headingFont = Lora({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-heading",
+  display: "swap",
 });
 
 export default function RootLayout({
@@ -13,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="it">
+    <html lang="it" className={`${bodyFont.variable} ${headingFont.variable}`}>
       <body className={`${bodyFont.className} min-h-screen bg-[#fbfaf7] text-neutral-900`}>
         <SiteShell>{children}</SiteShell>
       </body>

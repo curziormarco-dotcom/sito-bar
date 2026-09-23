@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { CookieSettingsButton } from "./cookie-consent";
 import { useLanguage, type Language } from "./locale-provider";
 
@@ -21,13 +22,14 @@ const FOOTER_LINKS: Record<Language, { privacy: string; allergens: string }> = {
 };
 
 export function SiteFooter() {
+  const isHome = ["/", "/menu", "/lauree", "/galleria"].includes(usePathname());
   const { lang } = useLanguage();
   const year = new Date().getFullYear();
   const text = FOOTER_COPY[lang].replace("{year}", String(year));
   const links = FOOTER_LINKS[lang];
 
   return (
-    <footer className="border-t border-neutral-200">
+    <footer className={isHome ? "home-footer" : "border-t border-neutral-200"}>
       <div className="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-6 text-sm text-neutral-500">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
           <div className="inline-flex flex-col items-center self-center lg:self-start">

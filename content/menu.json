@@ -454,6 +454,7 @@
       ]
     },
     {
+      "id": "brioches-pasticceria",
       "title": {
         "it": "Brioches e pasticceria",
         "en": "Croissants & Pastries",
@@ -1433,6 +1434,7 @@
       ]
     },
     {
+      "id": "pranzi",
       "title": {
         "it": "Pranzi",
         "en": "Lunch",

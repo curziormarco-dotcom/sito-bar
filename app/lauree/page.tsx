@@ -3,7 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useScrollReveal } from "../use-scroll-reveal";
 import { useLanguage, type Language } from "../locale-provider";
+
+function LinkArrow() {
+  return <svg className="editorial-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12" /></svg>;
+}
 
 const GRADUATION_IMAGES = [
   { src: "/images/laurea.jpeg", width: 1200, height: 900 },
@@ -233,190 +238,75 @@ const COPY: Record<
   },
 };
 
+const PAGE_TITLES: Record<Language, [string, string]> = {
+  it: ["La tua laurea,", "da Luciano."], en: ["Your graduation,", "at Luciano’s."],
+  fr: ["Votre diplôme,", "chez Luciano."], de: ["Dein Abschluss,", "bei Luciano."], es: ["Tu graduación,", "en Luciano."],
+};
+const SLIDESHOW_COPY: Record<Language, [string, string]> = {
+  it: ["Pausa fotografie", "Riprendi fotografie"], en: ["Pause photos", "Resume photos"],
+  fr: ["Mettre les photos en pause", "Reprendre les photos"], de: ["Fotos pausieren", "Fotos fortsetzen"], es: ["Pausar fotos", "Reanudar fotos"],
+};
+
 export default function GraduationsPage() {
   const { lang } = useLanguage();
   const copy = COPY[lang];
+  const root = useScrollReveal();
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-
+  const [playing, setPlaying] = useState(true);
   useEffect(() => {
+    if (!playing) return;
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const timer = window.setInterval(() => {
-      setActiveImageIndex((current) => (current + 1) % GRADUATION_IMAGES.length);
-    }, 2200);
-
+      if (!motion.matches) setActiveImageIndex((current) => (current + 1) % GRADUATION_IMAGES.length);
+    }, 6000);
     return () => window.clearInterval(timer);
-  }, []);
+  }, [playing]);
 
   return (
-    <div className="bg-[#fbfaf7] text-neutral-900">
-      <div className="mx-auto max-w-6xl px-6 py-10 sm:py-12">
-        <section className="grid items-center gap-7 md:grid-cols-2 md:gap-10">
-        <div className="space-y-5">
-          <div>
-            <h1 className="flex items-center gap-3 text-4xl font-semibold tracking-tight font-serif sm:text-5xl">
-              <span>{copy.title}</span>
-              <span className="text-3xl leading-none sm:text-4xl" aria-hidden="true">
-                🎓
-              </span>
-            </h1>
-            <p className="mt-3 max-w-2xl text-lg leading-8 text-neutral-600">
-              {copy.subtitle}
-            </p>
+    <div ref={root} className="editorial-page graduation-page">
+      <noscript><style>{`.editorial-page [data-reveal] { opacity: 1 !important; }`}</style></noscript>
+      <div className="home-container">
+        <section className="graduation-opening" aria-labelledby="graduation-title">
+          <div className="graduation-opening-copy">
+            <p className="home-eyebrow">{copy.title}</p>
+            <h1 id="graduation-title" className="editorial-title"><span>{PAGE_TITLES[lang][0]}</span><em>{PAGE_TITLES[lang][1]}</em></h1>
+            <p className="editorial-lead">{copy.subtitle}</p>
+            <div className="graduation-opening-actions"><a href="tel:+390499813795" className="home-text-link">{copy.ctaCall} <LinkArrow /></a><a href="https://wa.me/393498183485" target="_blank" rel="noreferrer" className="home-text-link">{copy.ctaWhatsApp} <LinkArrow /></a></div>
           </div>
-
-          <p className="max-w-2xl text-base leading-7 text-neutral-700">
-            {copy.intro}
-          </p>
-
-          <div className="border-t border-neutral-200 pt-5">
-            <h2 className="text-xl font-semibold font-serif">{copy.detailsTitle}</h2>
-            <ul className="mt-4 space-y-3 text-neutral-700">
-              {copy.details.map((detail) => (
-                <li key={detail} className="flex gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-600" />
-                  <span>{detail}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="graduation-slideshow">
+            {GRADUATION_IMAGES.map((image, index) => <Image key={image.src} src={image.src} alt={index === activeImageIndex ? copy.imageAlt : ""} aria-hidden={index !== activeImageIndex} fill sizes="(min-width: 900px) 50vw, 100vw" priority={index === 0} className={`graduation-slide ${index === activeImageIndex ? "is-active" : ""}`} />)}
+            <div className="graduation-slide-controls">
+              <div>{GRADUATION_IMAGES.map((image, index) => <button type="button" key={image.src} aria-label={`${copy.imageAlt} ${index + 1}`} aria-pressed={activeImageIndex === index} onClick={() => { setActiveImageIndex(index); setPlaying(false); }}><span className={activeImageIndex === index ? "is-active" : ""} /></button>)}</div>
+              <button type="button" onClick={() => setPlaying(!playing)} aria-label={SLIDESHOW_COPY[lang][playing ? 0 : 1]}><span aria-hidden="true">{playing ? "Ⅱ" : "▷"}</span></button>
+            </div>
           </div>
-
-        </div>
-        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-neutral-100">
-          {GRADUATION_IMAGES.map((image, index) => (
-            <Image
-              key={image.src}
-              src={image.src}
-              alt={copy.imageAlt}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              priority={index === 0}
-              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
-                index === activeImageIndex ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          ))}
-          <div className="absolute inset-x-0 bottom-0 flex justify-center gap-2 bg-gradient-to-t from-black/35 to-transparent px-4 pb-4 pt-12">
-            {GRADUATION_IMAGES.map((image, index) => (
-              <span
-                key={image.src}
-                className={`h-2 w-2 rounded-full transition ${
-                  index === activeImageIndex ? "bg-white" : "bg-white/45"
-                }`}
-              />
-            ))}
-          </div>
-        </div>
         </section>
 
-        <div className="mt-10 space-y-8 sm:mt-12">
-          <section className="space-y-5 border-t border-neutral-200 pt-8">
-            <div>
-              <h2 className="text-2xl font-semibold tracking-tight font-serif">
-                {copy.foodTitle}
-              </h2>
-              <p className="mt-2 text-neutral-600">{copy.foodIntro}</p>
-            </div>
+        <section className="graduation-intro editorial-section" aria-labelledby="organise-title">
+          <div data-reveal="up"><p className="home-eyebrow">Bar da Luciano · Padova</p><h2 id="organise-title" className="home-heading">{copy.detailsTitle}</h2><p className="editorial-lead">{copy.intro}</p></div>
+          <ul className="graduation-details">{copy.details.map(detail => <li key={detail}>{detail}</li>)}</ul>
+        </section>
 
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div className="rounded-2xl border border-neutral-200 bg-white p-5 sm:p-6">
-                <Image
-                  src="/images/proposta-laurea-9.png"
-                  alt={copy.proposal9Title}
-                  width={1448}
-                  height={1086}
-                  sizes="(min-width: 640px) 50vw, 100vw"
-                  className="aspect-[4/3] w-full rounded-xl object-cover"
-                />
-                <p className="mt-2 mb-4 text-sm italic leading-5 text-neutral-600">
-                  {copy.proposal9Caption}
-                </p>
-                <div className="flex items-baseline justify-between gap-4">
-                  <h3 className="text-xl font-semibold text-amber-900">
-                    {copy.proposal9Title}
-                  </h3>
-                </div>
-                <p className="mt-3 text-base leading-7 text-neutral-700">{copy.proposal9Text}</p>
-              </div>
-
-              <div className="rounded-2xl border border-neutral-200 bg-white p-5 sm:p-6">
-                <Image
-                  src="/images/proposta-laurea-12.png"
-                  alt={copy.proposal12Title}
-                  width={1448}
-                  height={1086}
-                  sizes="(min-width: 640px) 50vw, 100vw"
-                  className="aspect-[4/3] w-full rounded-xl object-cover"
-                />
-                <p className="mt-2 mb-4 text-sm italic leading-5 text-neutral-600">
-                  {copy.proposal12Caption}
-                </p>
-                <div className="flex items-baseline justify-between gap-4">
-                  <h3 className="text-xl font-semibold text-amber-900">
-                    {copy.proposal12Title}
-                  </h3>
-                </div>
-                <p className="mt-3 text-base leading-7 text-neutral-700">{copy.proposal12Text}</p>
-              </div>
-            </div>
-
-            <p className="max-w-4xl text-base leading-7 text-neutral-600">
-              {copy.foodCustomText}
-            </p>
-          </section>
-
-          <section className="border-t border-neutral-200 pt-8">
-            <h2 className="text-2xl font-semibold tracking-tight font-serif">
-              {copy.drinksTitle}
-            </h2>
-            <p className="mt-3 text-neutral-700">{copy.drinksText}</p>
-            <div className="mt-5 max-w-3xl divide-y divide-neutral-200 border-y border-neutral-200">
-              {copy.drinksItems.map((item) => (
-                <div
-                  key={item.name}
-                  className="flex items-baseline justify-between gap-4 py-3"
-                >
-                  <span className="text-neutral-800">{item.name}</span>
-                  <span className="font-semibold text-neutral-950">{item.price}</span>
-                </div>
-              ))}
-            </div>
-            <p className="mt-4 text-sm leading-6 text-neutral-600">
-              {copy.drinksNote}
-            </p>
-          </section>
-
-          <section className="border-t border-neutral-200 pt-8">
-            <h2 className="text-xl font-semibold font-serif">{copy.cakeTitle}</h2>
-            <p className="mt-3 max-w-4xl text-base leading-7 text-neutral-600">{copy.cakeText}</p>
-            <p className="mt-3 text-base font-semibold text-amber-800">
-              {copy.cakeService}
-            </p>
-          </section>
-
-          <div className="flex flex-wrap gap-3 border-t border-neutral-200 pt-6">
-            <a
-              href="tel:+390499813795"
-              className="inline-flex items-center justify-center rounded-full bg-neutral-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-neutral-700"
-            >
-              {copy.ctaCall}
-            </a>
-            <a
-              href="https://wa.me/393498183485"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 px-5 py-3 text-sm font-semibold text-emerald-800 transition hover:bg-emerald-100"
-            >
-              {copy.ctaWhatsApp}
-            </a>
-            <Link
-              href="/galleria"
-              className="inline-flex items-center justify-center rounded-full border border-neutral-300 px-5 py-3 text-sm font-semibold text-neutral-700 transition hover:text-neutral-950"
-            >
-              {copy.galleryCta}
-            </Link>
+        <section className="editorial-section graduation-food" aria-labelledby="food-title">
+          <div className="editorial-section-heading"><h2 id="food-title" className="home-heading" data-reveal="up">{copy.foodTitle}</h2><p>{copy.foodIntro}</p></div>
+          <div className="graduation-proposals">
+            {[{src: "/images/proposta-laurea-9.png", title: copy.proposal9Title, caption: copy.proposal9Caption, text: copy.proposal9Text}, {src: "/images/proposta-laurea-12.png", title: copy.proposal12Title, caption: copy.proposal12Caption, text: copy.proposal12Text}].map((proposal, index) => <article key={proposal.src}>
+              <figure data-reveal={index === 0 ? "left" : "right"}><div className="graduation-proposal-photo"><Image src={proposal.src} alt={proposal.title} fill sizes="(min-width: 640px) 45vw, 100vw" className="object-cover" /></div><figcaption>{proposal.caption}</figcaption></figure>
+              <h3>{proposal.title}</h3><p>{proposal.text}</p>
+            </article>)}
           </div>
-        </div>
+          <p className="graduation-custom">{copy.foodCustomText}</p>
+        </section>
+      </div>
 
+      <section className="graduation-drinks" aria-labelledby="drinks-title"><div className="home-container graduation-drinks-inner">
+        <div className="graduation-drinks-photo" data-reveal="image"><Image src="/images/laurea-2.jpg" alt={copy.imageAlt} fill sizes="(min-width: 900px) 40vw, 100vw" className="object-cover" /></div>
+        <div><h2 id="drinks-title" className="home-heading" data-reveal="up">{copy.drinksTitle}</h2><p className="editorial-lead">{copy.drinksText}</p><dl className="graduation-price-list">{copy.drinksItems.map(item => <div key={item.name}><dt>{item.name}</dt><dd>{item.price}</dd></div>)}</dl><p className="graduation-drinks-note">{copy.drinksNote}</p></div>
+      </div></section>
 
+      <div className="home-container">
+        <section className="editorial-section graduation-cake" aria-labelledby="cake-title"><h2 id="cake-title" className="home-heading" data-reveal="up">{copy.cakeTitle}</h2><div><p className="editorial-lead">{copy.cakeText}</p><p className="graduation-cake-price">{copy.cakeService}</p></div></section>
+        <section className="editorial-contact" aria-label={copy.detailsTitle}><p>{copy.detailsTitle}</p><div><a href="tel:+390499813795" className="home-button">{copy.ctaCall} <LinkArrow /></a><a href="https://wa.me/393498183485" target="_blank" rel="noreferrer" className="home-button">{copy.ctaWhatsApp} <LinkArrow /></a><Link href="/galleria" className="home-text-link">{copy.galleryCta} <LinkArrow /></Link></div></section>
       </div>
     </div>
   );

@@ -1,17 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { useScrollReveal } from "./use-scroll-reveal";
 import openingHours from "../content/hours.json";
 import { formatOpeningHours } from "./content/opening-hours";
 import Image from "next/image";
-import { Cormorant_Garamond } from "next/font/google";
 import { useCookieConsent } from "./cookie-consent";
 import { useLanguage, type Language } from "./locale-provider";
-
-const heroSerif = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["500", "600"],
-});
 
 const HIGHLIGHTS = [
   {
@@ -293,101 +288,118 @@ function LinkArrow({ className = "" }: { className?: string }) {
   );
 }
 
+const DESIGN_COPY: Record<Language, { hero: string; heroEmphasis: string; since: string; intro: string; daily: string; friday: string; moments: string; scroll: string; gallery: string }> = {
+  it: { hero: "Ci vediamo", heroEmphasis: "da Luciano.", since: "A Padova, dal 1984", intro: "Un bar di famiglia. Un punto d’incontro. Da oltre quarant’anni.", daily: "Il tuo momento, qui.", friday: "L’appuntamento del venerdì", moments: "Caffè · Pranzo · Aperitivo", scroll: "Scorri", gallery: "Il bar, da vicino" },
+  en: { hero: "The good things,", heroEmphasis: "every day.", since: "In Padua, since 1984", intro: "A family bar. A meeting place. For over forty years.", daily: "Your moment, here.", friday: "Your Friday rendezvous", moments: "Coffee · Lunch · Aperitivo", scroll: "Scroll", gallery: "Step inside Luciano’s" },
+  fr: { hero: "Les belles choses,", heroEmphasis: "chaque jour.", since: "À Padoue, depuis 1984", intro: "Un bar familial. Un lieu de rencontre. Depuis plus de quarante ans.", daily: "Votre moment, ici.", friday: "Le rendez-vous du vendredi", moments: "Café · Déjeuner · Apéritif", scroll: "Défiler", gallery: "Entrez chez Luciano" },
+  de: { hero: "Die schönen Dinge,", heroEmphasis: "jeden Tag.", since: "In Padua, seit 1984", intro: "Eine Familienbar. Ein Treffpunkt. Seit über vierzig Jahren.", daily: "Dein Moment, hier.", friday: "Der Treffpunkt am Freitag", moments: "Kaffee · Mittagessen · Aperitif", scroll: "Scrollen", gallery: "Bei Luciano eintreten" },
+  es: { hero: "Las cosas buenas,", heroEmphasis: "cada día.", since: "En Padua, desde 1984", intro: "Un bar familiar. Un lugar de encuentro. Desde hace más de cuarenta años.", daily: "Tu momento, aquí.", friday: "La cita de los viernes", moments: "Café · Almuerzo · Aperitivo", scroll: "Desliza", gallery: "Entra en Luciano" },
+};
+
 export default function HomePage() {
+  const revealRoot = useScrollReveal();
   const { lang } = useLanguage();
   const { consent, accept } = useCookieConsent();
   const t = (key: string) => HOME_COPY[lang][key] ?? key;
-  const heading = `${heroSerif.className} text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl`;
-  const textLink = "inline-flex min-h-11 items-center gap-3 border-b border-amber-800/40 py-2 text-base font-semibold text-amber-900 transition hover:border-amber-900 focus-visible:outline-2 focus-visible:outline-offset-4";
+  const copy = DESIGN_COPY[lang];
+  const heading = "home-heading";
+  const textLink = "home-text-link";
   const moments = [
-    { title: "breakfastTitle", text: "breakfastText", src: "/images/brioche.jpg", href: "/menu" },
-    { title: "lunchTitle", text: "lunchText", src: "/images/vetrina-pranzi-estate.jpg", href: "/menu" },
+    { title: "breakfastTitle", text: "breakfastText", src: "/images/brioche.jpg", href: "/menu#brioches-pasticceria" },
+    { title: "lunchTitle", text: "lunchText", src: "/images/vetrina-pranzi-estate.jpg", href: "/menu#pranzi" },
     { title: "aperitivoTitle", text: "aperitivoText", src: "/images/negroni.jpg", href: "/menu#aperitivi-alcolici" },
   ];
 
   return (
-    <div className="bg-background text-foreground">
-      <section className="relative isolate flex min-h-[68svh] items-end bg-neutral-950 sm:min-h-[min(72svh,46rem)]">
-        <Image src="/images/hero.jpg" alt="" fill priority sizes="100vw" className="-z-20 object-cover object-center" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/85 via-black/35 to-black/15" />
-        <div className="mx-auto w-full max-w-6xl px-6 py-10 sm:py-12">
-          <p className="hero-brand-intro text-base font-medium tracking-[0.24em] text-white sm:text-lg">{t("heroKicker")}</p>
-          <h1 className={`${heroSerif.className} mt-6 max-w-[15ch] text-[clamp(2.75rem,6vw,5.5rem)] font-semibold leading-[0.98] tracking-tight text-white text-balance`}>
-            {t("heroTitle").replace("\n", " ")}
-          </h1>
-          <p className="mt-6 max-w-md text-base leading-7 text-white/90 sm:text-lg">{t("heroSubtitle")}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/menu" className="inline-flex min-h-12 items-center rounded-full bg-white px-6 py-3 text-base font-semibold text-neutral-900 transition hover:bg-amber-50">{t("ctaMenu")}</Link>
-            <a href="#prenota" onClick={(event) => {
-              const contacts = document.getElementById("prenota");
-              if (!contacts) return;
-              event.preventDefault();
-              window.history.replaceState(null, "", "#prenota");
-              contacts.scrollIntoView({
-                behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
-                block: "center",
-              });
-            }} className="inline-flex min-h-12 items-center rounded-full border border-white/60 px-6 py-3 text-base font-semibold text-white transition hover:bg-white/15">{t("ctaBook")}</a>
-          </div>
+    <div ref={revealRoot} className="home-page">
+      <noscript><style>{`.home-page [data-reveal] { visibility: visible !important; opacity: 1 !important; }`}</style></noscript>
+      <section className="home-hero" aria-labelledby="home-title">
+        <div className="home-hero-photo">
+          <Image src="/images/negroni.jpg" alt="" fill priority sizes="(min-width: 900px) 65vw, 100vw" className="hero-background" />
         </div>
-      </section>
-
-      <div className="mx-auto max-w-6xl px-6">
-        <section aria-labelledby="graduation-heading" className="grid items-center gap-6 py-10 md:grid-cols-2 md:gap-10 sm:py-12 lg:py-16">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-            <Image src="/images/laurea.jpeg" alt={t("graduationAlt")} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
-          </div>
-          <div>
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.18em] text-amber-900">{t("eventsLabel")}</p>
-            <h2 id="graduation-heading" className={heading}>{t("graduationTitle")}</h2>
-            <p className="mt-6 whitespace-pre-line text-base leading-8 text-neutral-600">{t("graduationText")}</p>
-            <Link href="/lauree" className={`${textLink} mt-6`}>{t("graduationCta")}</Link>
-          </div>
-        </section>
-
-        <section aria-labelledby="day-heading" className="border-t border-neutral-200 py-10 sm:py-12 lg:py-16">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <h2 id="day-heading" className={`${heading} max-w-xl`}>{t("dayTitle")}</h2>
-            <Link href="/menu" className={textLink}>{t("ctaMenu")} <LinkArrow /></Link>
-          </div>
-          <div className="mt-7 grid gap-8 md:grid-cols-3 md:gap-7">
-            {moments.map((moment) => (
-              <div key={moment.title} className="min-w-0">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-xl md:aspect-[4/5]">
-                  <Image src={moment.src} alt={t(moment.title)} fill sizes="(min-width: 768px) 33vw, 100vw" className={`object-cover ${moment.title === "aperitivoTitle" ? "object-bottom" : "object-center"}`} />
-                </div>
-                <div className="mt-5 flex items-center gap-2">
-                  <h3 className={`${heroSerif.className} text-3xl font-semibold text-amber-900`}>
-                    <Link href={moment.href} className="underline decoration-1 underline-offset-4 hover:text-amber-700 focus-visible:outline-2 focus-visible:outline-offset-4">{t(moment.title)}</Link>
-                  </h3>
-                  <LinkArrow className="text-amber-900" />
-                </div>
-                <p className="mt-2 text-base leading-7 text-neutral-600">{t(moment.text)}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
-
-      <section aria-labelledby="friday-heading" className="bg-neutral-900 text-white">
-        <div className="mx-auto grid max-w-6xl items-center gap-7 px-6 py-10 md:grid-cols-2 md:gap-10 md:py-14">
-          <div>
-            <p className="mb-5 text-sm font-medium uppercase tracking-[0.16em] text-amber-200">{HIGHLIGHTS[2].title[lang]}</p>
-            <h2 id="friday-heading" className={heading}>{t("fridayTitle")}</h2>
-            <p className="mt-6 text-base leading-8 text-neutral-300">{t("fridayText")}</p>
-            <Link href="/menu#pesce" className="mt-7 inline-flex min-h-11 items-center gap-3 border-b border-amber-200/50 py-2 text-base font-semibold text-amber-100 transition hover:border-amber-100">{t("fridayCta")} <LinkArrow /></Link>
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl md:aspect-square">
-            <Image src="/images/vetrina-pesce.jpg" alt={t("fishAlt")} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover object-center" />
-          </div>
-        </div>
-      </section>
-
-      <div className="mx-auto max-w-6xl px-6">
-        <section aria-labelledby="visit-heading" className="py-10 sm:py-12 lg:py-16">
-          <h2 id="visit-heading" className={heading}>{t("whereTitle")}</h2>
-          <div className="mt-7 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-10">
+        <div className="home-hero-shade" />
+        <div className="home-container home-hero-content">
+          <p className="home-eyebrow hero-enter">{copy.since} <span aria-hidden="true">—</span> Bar da Luciano</p>
+          <h1 id="home-title" className="hero-enter"><span>{copy.hero}</span><em>{copy.heroEmphasis}</em></h1>
+          <div className="home-hero-bottom hero-enter">
             <div>
+              <p>{t("heroSubtitle").split(". ")[0]}.{" "}<span className="home-since-date">{t("heroSubtitle").split(". ")[1]}</span></p>
+              <p className="home-hero-address">Via Nazareth, 20 · Padova · Italia</p>
+              <Link href="/menu" className="home-hero-menu-link">{t("ctaMenu")}</Link>
+            </div>
+            <p className="home-hero-note">Via Nazareth, 20<br />Padova, Italia</p>
+          </div>
+        </div>
+        <p className="home-mobile-address">Via Nazareth, 20 · Padova · Italia</p>
+        <a href="#scopri" className="hero-scroll" onClick={(event) => {
+          const section = document.getElementById("scopri");
+          if (!section) return;
+          event.preventDefault();
+          section.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+        }}><span>{copy.scroll}</span><span className="scroll-line" aria-hidden="true" /></a>
+      </section>
+
+      <section id="scopri" className="home-intro home-container" aria-labelledby="intro-heading">
+        <div className="home-intro-since" aria-hidden="true"><span>EST.</span><span>1984</span></div>
+        <div>
+          <p className="home-eyebrow">Bar da Luciano · Padova</p>
+          <h2 id="intro-heading" data-reveal="up">{copy.intro}</h2>
+          <Link href="/galleria" className={textLink}>{copy.gallery} <LinkArrow /></Link>
+        </div>
+      </section>
+
+      <section className="home-day home-container home-section" aria-labelledby="day-heading">
+        <div className="home-section-top"><span className="home-eyebrow">{copy.moments}</span><span className="home-rule" /></div>
+        <div className="home-section-heading">
+          <h2 id="day-heading" className={heading} data-reveal="down">{copy.daily}</h2>
+          <p>{t("dayTitle")}</p>
+        </div>
+        <div className="home-moments">
+          {moments.map((moment, index) => (
+            <article key={moment.title} className="home-moment">
+              <Link href={moment.href} className="home-moment-photo" data-reveal={index === 1 ? "image" : index === 0 ? "left" : "right"} aria-label={t(moment.title)}>
+                <Image src={moment.src} alt={t(moment.title)} fill sizes="(min-width: 768px) 32vw, 90vw" className={index === 2 ? "object-bottom" : "object-center"} />
+                <span className="home-image-arrow" aria-hidden="true"><LinkArrow /></span>
+              </Link>
+              <div className="home-moment-copy" data-reveal="up">
+                <div className="home-moment-title"><h3><Link href={moment.href}>{t(moment.title)}</Link></h3></div>
+                <p>{t(moment.text)}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="home-day-cta"><Link href="/menu" className="home-button">{t("ctaMenu")} <LinkArrow /></Link></div>
+      </section>
+
+      <section className="home-friday" aria-labelledby="friday-heading">
+        <div className="home-friday-photo" data-reveal="image">
+          <Image src="/images/vetrina-pesce.jpg" alt={t("fishAlt")} fill sizes="100vw" className="object-cover" />
+        </div>
+        <div className="home-friday-shade" />
+        <div className="home-container home-friday-content">
+          <p className="home-eyebrow">{copy.friday}</p>
+          <h2 id="friday-heading" data-reveal="up">{t("fridayTitle")}</h2>
+          <div className="home-friday-details" data-reveal="up"><p>{t("fridayText")}</p><Link href="/menu#pesce" className="home-button home-button-light">{t("fridayCta")} <LinkArrow /></Link></div>
+        </div>
+      </section>
+
+      <section className="home-celebration home-container home-section" aria-labelledby="graduation-heading">
+        <div className="home-celebration-images">
+          <div className="home-celebration-main" data-reveal="image"><Image src="/images/laurea.jpeg" alt={t("graduationAlt")} fill sizes="(min-width: 900px) 45vw, 85vw" className="object-cover" /></div>
+          <div className="home-celebration-detail" data-reveal="up"><Image src="/images/laurea-2.jpg" alt="" fill sizes="(min-width: 900px) 22vw, 45vw" className="object-cover" /></div>
+        </div>
+        <div className="home-celebration-copy">
+          <p className="home-eyebrow">{t("eventsLabel")}</p>
+          <h2 id="graduation-heading" className={heading} data-reveal="right">{t("graduationTitle")}</h2>
+          <p className="home-description" data-reveal="up">{t("graduationText")}</p>
+          <Link href="/lauree" className={textLink}>{t("graduationCta").replace(" →", "")} <LinkArrow /></Link>
+        </div>
+      </section>
+      <div className="home-container">
+        <section aria-labelledby="visit-heading" className="home-visit home-section">
+          <h2 data-reveal="up" id="visit-heading" className={heading}>{t("whereTitle")}</h2>
+          <div className="home-visit-grid">
+            <div data-reveal="up">
               <p className="text-lg font-semibold">Bar Da Luciano</p>
               <p className="mt-2 text-base leading-7 text-neutral-600">Via Nazareth 20, Padova</p>
               <a href="https://www.google.com/maps?q=via%20Nazareth%2020%2C%2035128%20Padova" target="_blank" rel="noreferrer" className={`${textLink} mt-3`}>{t("whereCta")} <LinkArrow /></a>
@@ -401,30 +413,30 @@ export default function HomePage() {
                 </dl>
               </div>
               <section id="prenota" aria-labelledby="contact-heading" className="mt-8 scroll-mt-24">
-              <h3 id="contact-heading" className={`${heroSerif.className} text-3xl font-semibold`}>{t("bookTitle")}</h3>
+              <h3 id="contact-heading" className={`font-serif text-3xl font-normal`}>{t("bookTitle")}</h3>
               <p className="mt-3 text-base leading-7 text-neutral-600">{t("bookSubtitle")}</p>
               <div className="mt-5 flex flex-wrap gap-3">
-                <a href="tel:+390499813795" className="inline-flex min-h-12 items-center rounded-full bg-neutral-900 px-6 py-3 text-base font-semibold text-white transition hover:bg-neutral-700">{t("call")} · 049 981 3795</a>
-                <a href="https://wa.me/393498183485" target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center rounded-full border border-emerald-200 bg-emerald-50 px-6 py-3 text-base font-semibold text-emerald-800 transition hover:bg-emerald-100">WhatsApp · 349 818 3485</a>
+                <a href="tel:+390499813795" className="inline-flex min-h-12 items-center rounded-none bg-neutral-900 px-6 py-3 text-base font-semibold text-white transition hover:bg-neutral-700">{t("call")} · 049 981 3795</a>
+                <a href="https://wa.me/393498183485" target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center rounded-none border border-neutral-300 bg-transparent px-6 py-3 text-base font-semibold text-neutral-900 transition hover:bg-neutral-100">WhatsApp · 349 818 3485</a>
               </div>
               </section>
             </div>
-            <div className="min-h-[340px] overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100 lg:min-h-[480px]">
+            <div data-reveal="image" className="min-h-[340px] overflow-hidden rounded-none border border-neutral-200 bg-neutral-100 lg:min-h-[480px]">
               {consent === "accepted" ? (
                 <iframe title={t("mapConsentTitle")} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.46097070022!2d11.89233677655568!3d45.40004323771666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477edafcc00abb53%3A0x837057fcf720ca6!2sBar%20Da%20Luciano!5e0!3m2!1sit!2sit!4v1769651829333!5m2!1sit!2sit" width="100%" height="100%" loading="lazy" referrerPolicy="no-referrer" className="block h-full min-h-[340px] w-full lg:min-h-[480px]" />
               ) : (
                 <div className="flex h-full min-h-[340px] flex-col items-center justify-center px-7 py-10 text-center">
                   <p className="text-lg font-semibold">{t("mapConsentTitle")}</p>
                   <p className="mt-3 max-w-sm text-base leading-7 text-neutral-600">{t("mapConsentText")}</p>
-                  <button type="button" onClick={accept} className="mt-5 min-h-12 rounded-full bg-neutral-900 px-6 py-3 text-base font-semibold text-white transition hover:bg-neutral-700">{t("mapConsentCta")}</button>
+                  <button type="button" onClick={accept} className="mt-5 min-h-12 rounded-none bg-neutral-900 px-6 py-3 text-base font-semibold text-white transition hover:bg-neutral-700">{t("mapConsentCta")}</button>
                 </div>
               )}
             </div>
           </div>
         </section>
-        <section className="flex flex-col gap-5 border-t border-neutral-200 py-8 sm:flex-row sm:items-center sm:justify-between">
+        <section data-reveal="up" className="home-reviews">
           <div>
-            <h2 className={`${heroSerif.className} text-3xl font-semibold`}>{t("leaveReviewTitle")}</h2>
+            <h2 className={`font-serif text-3xl font-normal`}>{t("leaveReviewTitle")}</h2>
             <p className="mt-2 text-base text-neutral-600">{t("leaveReviewSubtitle")}</p>
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-3">
