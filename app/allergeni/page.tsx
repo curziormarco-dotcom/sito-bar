@@ -1,5 +1,7 @@
 "use client";
 
+import { SHARED_COPY } from "../shared-copy";
+
 import { useLanguage, type Language } from "../locale-provider";
 
 const COPY: Record<
@@ -168,7 +170,7 @@ export default function AllergeniPage() {
           rel="noreferrer"
           className="mt-8 inline-flex rounded-full border border-neutral-300 px-6 py-3 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-50"
         >
-          Libro allergeni
+          {SHARED_COPY[lang].allergenBook}
         </a>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -190,7 +192,7 @@ export default function AllergeniPage() {
           <p className="text-sm text-neutral-600">
             <span className="font-semibold text-neutral-800">{copy.sourceLabel}: </span>
             <a
-              href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32011R1169"
+              href={`https://eur-lex.europa.eu/legal-content/${lang.toUpperCase()}/TXT/?uri=CELEX:32011R1169`}
               target="_blank"
               rel="noreferrer"
               className="underline underline-offset-4"

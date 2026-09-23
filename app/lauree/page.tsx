@@ -1,5 +1,7 @@
 "use client";
 
+import { SHARED_COPY } from "../shared-copy";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -90,20 +92,20 @@ const COPY: Record<
     intro: "We organize tailored aperitifs and buffets to share with friends and family.",
     detailsTitle: "Plan it with us",
     details: [
-      "Refreshments by reservation",
+      "Buffet receptions by reservation",
       "Aperitifs and sweet or savory buffet",
       "Options for small groups and celebrations with family and friends",
     ],
     foodTitle: "Food options",
-    foodIntro: "Two proposals designed around the style of party and number of guests.",
+    foodIntro: "Two options designed to suit your celebration and the number of guests.",
     foodCustomText:
-      "Alternative and personalized solutions can be arranged on request, according to the needs of the celebration and current availability. Beyond the options shown, refreshments can include, for example, focaccia, sandwiches, cicchetti, small rolls, puff pastry pizzette, meat or vegetable bites, and savory brioches.",
-    proposal9Title: "9€ proposal per person",
-    proposal9Text: "3 portions of sandwich, half a focaccia, and 1 small roll.",
+      "Alternative and personalized solutions can be arranged on request, according to the needs of the celebration and current availability. Beyond the options shown, the buffet can include, for example, focaccia, sandwiches, cicchetti, small rolls, puff pastry pizzette, meat or vegetable bites, and savory brioches.",
+    proposal9Title: "€9 option per person",
+    proposal9Text: "3 portions of tramezzini, half a focaccia, and 1 small roll.",
     proposal9Caption: "Example photo of the individual portion.",
-    proposal12Title: "12€ proposal per person",
+    proposal12Title: "€12 option per person",
     proposal12Text:
-      "3 portions of sandwich, half a focaccia, 1 small roll, and 1 meat or fish cicchetto.",
+      "3 portions of tramezzini, half a focaccia, 1 small roll, and 1 meat or fish cicchetto.",
     proposal12Caption: "Example photo of the individual portion.",
     cakeTitle: "Desserts and cake",
     cakeText: "You may bring desserts and cakes from outside only if made by a pastry shop and accompanied by documentation issued by the shop identifying their origin, ingredients, allergens and storage instructions. Products must be transported and stored according to these instructions.",
@@ -128,18 +130,18 @@ const COPY: Record<
     intro: "Nous organisons des apéritifs et des buffets personnalisés à partager avec vos amis et votre famille.",
     detailsTitle: "Organisons ensemble",
     details: [
-      "Rafraîchissements sur réservation",
+      "Buffets sur réservation",
       "Apéritifs et buffet sucré ou salé",
       "Solutions pour petits groupes et fêtes avec famille et amis",
     ],
-    foodTitle: "Propositions cuisine",
+    foodTitle: "Nos formules gourmandes",
     foodIntro: "Deux formules pensées selon le type de fête et le nombre d'invités.",
     foodCustomText:
       "Sur demande, il est possible de convenir de solutions alternatives et personnalisées, selon les besoins de la fête et les disponibilités du moment. Au-delà des formules indiquées, le buffet peut être composé, par exemple, de focaccias, tramezzini, cicchetti, petits pains, pizzette feuilletées, boulettes de viande ou de légumes et brioches salées.",
-    proposal9Title: "Proposition 9€ par personne",
+    proposal9Title: "Formule à 9 € par personne",
     proposal9Text: "3 portions de tramezzino, une demi-focaccia et 1 petit pain.",
     proposal9Caption: "Photo d'exemple de la portion par personne.",
-    proposal12Title: "Proposition 12€ par personne",
+    proposal12Title: "Formule à 12 € par personne",
     proposal12Text:
       "3 portions de tramezzino, une demi-focaccia, 1 petit pain et 1 cicchetto de viande ou de poisson.",
     proposal12Caption: "Photo d'exemple de la portion par personne.",
@@ -166,7 +168,7 @@ const COPY: Record<
     intro: "Wir organisieren individuelle Aperitifs und Buffets für gemeinsame Stunden mit Freunden und Familie.",
     detailsTitle: "Gemeinsam planen",
     details: [
-      "Erfrischungen auf Reservierung",
+      "Buffets auf Vorbestellung",
       "Aperitifs und süßes oder herzhaftes Buffet",
       "Lösungen für kleine Gruppen und Feiern mit Familie und Freunden",
     ],
@@ -174,12 +176,12 @@ const COPY: Record<
     foodIntro: "Zwei Angebote, passend zur Art der Feier und zur Anzahl der Gäste.",
     foodCustomText:
       "Auf Anfrage können alternative und individuelle Lösungen vereinbart werden, je nach den Anforderungen der Feier und der aktuellen Verfügbarkeit. Neben den angegebenen Kombinationen kann das Buffet zum Beispiel Focaccia, Tramezzini, Cicchetti, kleine Brötchen, Blätterteig-Pizzette, Fleisch- oder Gemüsebällchen und herzhafte Brioches umfassen.",
-    proposal9Title: "Angebot 9€ pro Person",
-    proposal9Text: "3 Portionen Tramezzino, eine halbe Focaccia und 1 kleines Brotchen.",
+    proposal9Title: "Angebot für 9 € pro Person",
+    proposal9Text: "3 Portionen Tramezzino, eine halbe Focaccia und 1 kleines Brötchen.",
     proposal9Caption: "Beispielfoto der Portion pro Person.",
-    proposal12Title: "Angebot 12€ pro Person",
+    proposal12Title: "Angebot für 12 € pro Person",
     proposal12Text:
-      "3 Portionen Tramezzino, eine halbe Focaccia, 1 kleines Brotchen und 1 Cicchetto mit Fleisch oder Fisch.",
+      "3 Portionen Tramezzino, eine halbe Focaccia, 1 kleines Brötchen und 1 Cicchetto mit Fleisch oder Fisch.",
     proposal12Caption: "Beispielfoto der Portion pro Person.",
     cakeTitle: "Desserts und Torte",
     cakeText: "Mitgebrachte Desserts und Torten sind nur erlaubt, wenn sie von einer Konditorei hergestellt wurden und von Unterlagen der Konditorei mit Angaben zu Herkunft, Zutaten, Allergenen und Lagerung begleitet werden. Die Produkte müssen gemäß diesen Vorgaben transportiert und gelagert werden.",
@@ -204,18 +206,18 @@ const COPY: Record<
     intro: "Organizamos aperitivos y bufés personalizados para compartir con amigos y familiares.",
     detailsTitle: "Lo organizamos juntos",
     details: [
-      "Refrigerios con reserva",
+      "Bufés con reserva",
       "Aperitivos y buffet dulce o salado",
       "Opciones para grupos pequeños y fiestas con familia y amigos",
     ],
-    foodTitle: "Propuestas de comida",
+    foodTitle: "Propuestas gastronómicas",
     foodIntro: "Dos propuestas pensadas según el tipo de fiesta y el número de invitados.",
     foodCustomText:
-      "Bajo petición, es posible acordar soluciones alternativas y personalizadas, según las necesidades de la fiesta y la disponibilidad del momento. Además de las combinaciones indicadas, el refrigerio puede incluir, por ejemplo, focaccias, tramezzini, cicchetti, panecillos, pizzette de hojaldre, albóndigas de carne o verdura y brioches saladas.",
-    proposal9Title: "Propuesta de 9€ por persona",
+      "Bajo petición, es posible acordar soluciones alternativas y personalizadas, según las necesidades de la fiesta y la disponibilidad del momento. Además de las combinaciones indicadas, el bufé puede incluir, por ejemplo, focaccias, tramezzini, cicchetti, panecillos, pizzette de hojaldre, albóndigas de carne o verdura y brioches saladas.",
+    proposal9Title: "Propuesta de 9 € por persona",
     proposal9Text: "3 porciones de tramezzino, media focaccia y 1 panecillo.",
     proposal9Caption: "Foto de ejemplo de la porción por persona.",
-    proposal12Title: "Propuesta de 12€ por persona",
+    proposal12Title: "Propuesta de 12 € por persona",
     proposal12Text:
       "3 porciones de tramezzino, media focaccia, 1 panecillo y 1 cicchetto de carne o pescado.",
     proposal12Caption: "Foto de ejemplo de la porción por persona.",
@@ -223,7 +225,7 @@ const COPY: Record<
     cakeText: "Se pueden traer dulces y tartas del exterior solo si están elaborados por una pastelería y acompañados de documentación emitida por esta que acredite su procedencia e indique los ingredientes, los alérgenos y las instrucciones de conservación. Los productos deben transportarse y conservarse siguiendo estas indicaciones.",
     cakeService: "Servicio y corte de la tarta: 1,50 € por persona.",
     drinksTitle: "Bebidas",
-    drinksText: "Propuestas pensadas para acompañar el refrigerio y el brindis.",
+    drinksText: "Propuestas pensadas para acompañar el bufé y el brindis.",
     drinksItems: [
       { name: "Jarra Aperol 1,5L", price: "30€" },
       { name: "Jarra Campari 1,5L", price: "35€" },
@@ -283,7 +285,7 @@ export default function GraduationsPage() {
         </section>
 
         <section className="graduation-intro editorial-section" aria-labelledby="organise-title">
-          <div data-reveal="up"><p className="home-eyebrow">Bar da Luciano · Padova</p><h2 id="organise-title" className="home-heading">{copy.detailsTitle}</h2><p className="editorial-lead">{copy.intro}</p></div>
+          <div data-reveal="up"><p className="home-eyebrow">Bar da Luciano · {SHARED_COPY[lang].city}</p><h2 id="organise-title" className="home-heading">{copy.detailsTitle}</h2><p className="editorial-lead">{copy.intro}</p></div>
           <ul className="graduation-details">{copy.details.map(detail => <li key={detail}>{detail}</li>)}</ul>
         </section>
 

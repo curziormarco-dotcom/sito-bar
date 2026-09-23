@@ -1,5 +1,7 @@
 "use client";
 
+import { SHARED_COPY } from "./shared-copy";
+
 import Link from "next/link";
 import { useScrollReveal } from "./use-scroll-reveal";
 import openingHours from "../content/hours.json";
@@ -112,7 +114,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     signatureSubtitle: "Three iconic picks to start with.",
     seeAll: "See all →",
     bookTitle: "Contact us",
-    bookSubtitle: "Call us to book tables, graduation parties, and refreshments.",
+    bookSubtitle: "Call us to book a table, a graduation party or a buffet reception.",
     call: "Call",
     drinkAlt: "Aperitif",
     cocktailCta: "Cocktails",
@@ -123,9 +125,9 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     leaveReviewCta: "Open reviews",
     graduationTitle: "Celebrate your graduation at Luciano",
     graduationText:
-      "We organize graduation parties and personalized refreshments in Padua.\nChoose the best option for your celebration, from a simple aperitivo to a full buffet.",
+      "We organize graduation parties and tailored buffet receptions in Padua.\nChoose the best option for your celebration, from a simple aperitivo to a full buffet.",
     graduationCta: "Discover our options →",
-    mapConsentTitle: "Google Maps map",
+    mapConsentTitle: "Google Maps",
     mapConsentText: "Accept cookies and Google Maps services to view the map.",
     mapConsentCta: "Accept and show map",
     dayTitle: "From morning coffee to the last toast.",
@@ -136,7 +138,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     aperitivoTitle: "Aperitivo",
     aperitivoText: "Cocktails, cicchetti and good company.",
     fridayTitle: "A different flavour on Fridays.",
-    fridayText: "Scampi, oysters, tartare, seafood cicchetti and much more: discover our Friday aperitivo selection.",
+    fridayText: "Langoustines, oysters, tartare, seafood cicchetti and much more: discover our Friday aperitivo selection.",
     fridayCta: "Explore the seafood menu",
     graduationAlt: "The veranda prepared for a graduation party",
     fishAlt: "Our seafood display",
@@ -154,18 +156,18 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     signatureSubtitle: "Trois incontournables pour commencer.",
     seeAll: "Voir tout →",
     bookTitle: "Contactez-nous",
-    bookSubtitle: "Appelez‑nous pour réserver des tables, des fêtes de remise de diplôme et des rafraîchissements.",
+    bookSubtitle: "Appelez-nous pour réserver une table, une fête de fin d’études ou une réception.",
     call: "Appeler",
     drinkAlt: "Apéritif",
     cocktailCta: "Cocktails",
     cocktailTitle: "Nos cocktails et apéritifs",
     fridayOnlyAlert: "Disponible uniquement le vendredi.",
     leaveReviewTitle: "Laisser un avis",
-    leaveReviewSubtitle: "Partage ton expérience sur Google.",
+    leaveReviewSubtitle: "Partagez votre expérience sur Google.",
     leaveReviewCta: "Ouvrir les avis",
     graduationTitle: "Fêtez votre diplôme chez Luciano",
     graduationText:
-      "Nous organisons des fêtes de diplôme et des rafraîchissements personnalisés à Padoue.\nChoisissez la formule la plus adaptée à votre fête, du simple apéritif au buffet complet.",
+      "Nous organisons des fêtes de fin d’études et des buffets personnalisés à Padoue.\nChoisissez la formule la plus adaptée à votre fête, du simple apéritif au buffet complet.",
     graduationCta: "Découvrez nos propositions →",
     mapConsentTitle: "Carte Google Maps",
     mapConsentText: "Acceptez les cookies et les services Google Maps pour voir la carte.",
@@ -196,7 +198,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     signatureSubtitle: "Drei ikonische Vorschläge zum Start.",
     seeAll: "Alle ansehen →",
     bookTitle: "Kontaktiere uns",
-    bookSubtitle: "Ruf uns an, um Tische, Abschlussfeiern und Erfrischungen zu reservieren.",
+    bookSubtitle: "Ruf uns an, um einen Tisch, eine Abschlussfeier oder ein Buffet zu reservieren.",
     call: "Anrufen",
     drinkAlt: "Aperitif",
     cocktailCta: "Cocktails",
@@ -207,7 +209,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     leaveReviewCta: "Bewertungen öffnen",
     graduationTitle: "Feiere deinen Abschluss bei Luciano",
     graduationText:
-      "Wir organisieren Abschlussfeiern und individuelle Erfrischungen in Padua.\nWähle die passende Lösung für deine Feier, vom einfachen Aperitif bis zum kompletten Buffet.",
+      "Wir organisieren Abschlussfeiern und individuelle Buffets in Padua.\nWähle die passende Lösung für deine Feier, vom einfachen Aperitif bis zum kompletten Buffet.",
     graduationCta: "Unsere Vorschläge entdecken →",
     mapConsentTitle: "Google Maps Karte",
     mapConsentText: "Akzeptiere Cookies und Google Maps Dienste, um die Karte zu sehen.",
@@ -238,18 +240,18 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     signatureSubtitle: "Tres propuestas icónicas para empezar.",
     seeAll: "Ver todo →",
     bookTitle: "Contáctanos",
-    bookSubtitle: "Llámanos para reservar mesas, fiestas de graduación y refrigerios.",
+    bookSubtitle: "Llámanos para reservar una mesa, una fiesta de graduación o un bufé.",
     call: "Llamar",
     drinkAlt: "Aperitivo",
-    cocktailCta: "Cocteles",
-    cocktailTitle: "Nuestros cocteles y aperitivos",
+    cocktailCta: "Cócteles",
+    cocktailTitle: "Nuestros cócteles y aperitivos",
     fridayOnlyAlert: "Disponible solo los viernes.",
     leaveReviewTitle: "Deja una reseña",
     leaveReviewSubtitle: "Comparte tu experiencia en Google.",
     leaveReviewCta: "Abrir reseñas",
     graduationTitle: "Celebra tu graduación en Luciano",
     graduationText:
-      "Organizamos fiestas de graduación y refrigerios personalizados en Padua.\nElige la fórmula más adecuada para tu fiesta, desde un aperitivo sencillo hasta un buffet completo.",
+      "Organizamos fiestas de graduación y bufés personalizados en Padua.\nElige la fórmula más adecuada para tu fiesta, desde un aperitivo sencillo hasta un buffet completo.",
     graduationCta: "Descubre nuestras propuestas →",
     mapConsentTitle: "Mapa de Google Maps",
     mapConsentText: "Acepta las cookies y los servicios de Google Maps para ver el mapa.",
@@ -290,10 +292,10 @@ function LinkArrow({ className = "" }: { className?: string }) {
 
 const DESIGN_COPY: Record<Language, { hero: string; heroEmphasis: string; since: string; intro: string; daily: string; friday: string; moments: string; scroll: string; gallery: string }> = {
   it: { hero: "Ci vediamo", heroEmphasis: "da Luciano.", since: "A Padova, dal 1984", intro: "Un bar di famiglia. Un punto d’incontro. Da oltre quarant’anni.", daily: "Il tuo momento, qui.", friday: "L’appuntamento del venerdì", moments: "Caffè · Pranzo · Aperitivo", scroll: "Scorri", gallery: "Il bar, da vicino" },
-  en: { hero: "The good things,", heroEmphasis: "every day.", since: "In Padua, since 1984", intro: "A family bar. A meeting place. For over forty years.", daily: "Your moment, here.", friday: "Your Friday rendezvous", moments: "Coffee · Lunch · Aperitivo", scroll: "Scroll", gallery: "Step inside Luciano’s" },
-  fr: { hero: "Les belles choses,", heroEmphasis: "chaque jour.", since: "À Padoue, depuis 1984", intro: "Un bar familial. Un lieu de rencontre. Depuis plus de quarante ans.", daily: "Votre moment, ici.", friday: "Le rendez-vous du vendredi", moments: "Café · Déjeuner · Apéritif", scroll: "Défiler", gallery: "Entrez chez Luciano" },
-  de: { hero: "Die schönen Dinge,", heroEmphasis: "jeden Tag.", since: "In Padua, seit 1984", intro: "Eine Familienbar. Ein Treffpunkt. Seit über vierzig Jahren.", daily: "Dein Moment, hier.", friday: "Der Treffpunkt am Freitag", moments: "Kaffee · Mittagessen · Aperitif", scroll: "Scrollen", gallery: "Bei Luciano eintreten" },
-  es: { hero: "Las cosas buenas,", heroEmphasis: "cada día.", since: "En Padua, desde 1984", intro: "Un bar familiar. Un lugar de encuentro. Desde hace más de cuarenta años.", daily: "Tu momento, aquí.", friday: "La cita de los viernes", moments: "Café · Almuerzo · Aperitivo", scroll: "Desliza", gallery: "Entra en Luciano" },
+  en: { hero: "See you", heroEmphasis: "at Luciano’s.", since: "In Padua, since 1984", intro: "A family bar. A meeting place. For over forty years.", daily: "Your moment, here.", friday: "Your Friday rendezvous", moments: "Coffee · Lunch · Aperitivo", scroll: "Scroll", gallery: "A closer look at the bar" },
+  fr: { hero: "Rendez-vous", heroEmphasis: "chez Luciano.", since: "À Padoue, depuis 1984", intro: "Un bar familial. Un lieu de rencontre. Depuis plus de quarante ans.", daily: "Votre moment, ici.", friday: "Le rendez-vous du vendredi", moments: "Café · Déjeuner · Apéritif", scroll: "Défiler", gallery: "Le bar, de près" },
+  de: { hero: "Wir sehen uns", heroEmphasis: "bei Luciano.", since: "In Padua, seit 1984", intro: "Eine Familienbar. Ein Treffpunkt. Seit über vierzig Jahren.", daily: "Dein Moment, hier.", friday: "Der Treffpunkt am Freitag", moments: "Kaffee · Mittagessen · Aperitif", scroll: "Scrollen", gallery: "Ein Blick in unsere Bar" },
+  es: { hero: "Nos vemos", heroEmphasis: "en Luciano.", since: "En Padua, desde 1984", intro: "Un bar familiar. Un lugar de encuentro. Desde hace más de cuarenta años.", daily: "Tu momento, aquí.", friday: "La cita de los viernes", moments: "Café · Almuerzo · Aperitivo", scroll: "Desliza", gallery: "El bar, de cerca" },
 };
 
 export default function HomePage() {
@@ -324,13 +326,13 @@ export default function HomePage() {
           <div className="home-hero-bottom hero-enter">
             <div>
               <p>{t("heroSubtitle").split(". ")[0]}.{" "}<span className="home-since-date">{t("heroSubtitle").split(". ")[1]}</span></p>
-              <p className="home-hero-address">Via Nazareth, 20 · Padova · Italia</p>
+              <p className="home-hero-address">Via Nazareth, 20 · {SHARED_COPY[lang].city} · {SHARED_COPY[lang].country}</p>
               <Link href="/menu" className="home-hero-menu-link">{t("ctaMenu")}</Link>
             </div>
-            <p className="home-hero-note">Via Nazareth, 20<br />Padova, Italia</p>
+            <p className="home-hero-note">Via Nazareth, 20<br />{SHARED_COPY[lang].city}, {SHARED_COPY[lang].country}</p>
           </div>
         </div>
-        <p className="home-mobile-address">Via Nazareth, 20 · Padova · Italia</p>
+        <p className="home-mobile-address">Via Nazareth, 20 · {SHARED_COPY[lang].city} · {SHARED_COPY[lang].country}</p>
         <a href="#scopri" className="hero-scroll" onClick={(event) => {
           const section = document.getElementById("scopri");
           if (!section) return;
@@ -342,7 +344,7 @@ export default function HomePage() {
       <section id="scopri" className="home-intro home-container" aria-labelledby="intro-heading">
         <div className="home-intro-since" aria-hidden="true"><span>EST.</span><span>1984</span></div>
         <div>
-          <p className="home-eyebrow">Bar da Luciano · Padova</p>
+          <p className="home-eyebrow">Bar da Luciano · {SHARED_COPY[lang].city}</p>
           <h2 id="intro-heading" data-reveal="up">{copy.intro}</h2>
           <Link href="/galleria" className={textLink}>{copy.gallery} <LinkArrow /></Link>
         </div>

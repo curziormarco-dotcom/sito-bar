@@ -1,5 +1,7 @@
 "use client";
 
+import { SHARED_COPY } from "../shared-copy";
+
 import Image from "next/image";
 import { Fragment, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useLanguage, type Language } from "../locale-provider";
@@ -74,7 +76,7 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     menuIntro: "Vom ersten Kaffee bis zum Aperitif. Wähle eine Kategorie und entdecke unser Angebot.",
     sparkling: "Schaumweine",
     still: "Stille Weißweine",
-    menu: "Menü",
+    menu: "Speisekarte",
     allergens: "Allergene",
     allergenLegend: "Allergen-Legende",
     allergenHint: "Wähle ein Allergen aus, um Produkte auszublenden, die es enthalten.",
@@ -575,7 +577,7 @@ export default function MenuPage() {
       style={{ overflowAnchor: "none" }}
     >
       <header className="menu-opening">
-        <div><p className="home-eyebrow">Bar da Luciano · Padova</p><h1 className="editorial-title">{t("menu")}</h1><p className="editorial-lead">{t("menuIntro")}</p></div>
+        <div><p className="home-eyebrow">Bar da Luciano · {SHARED_COPY[lang].city}</p><h1 className="editorial-title">{t("menu")}</h1><p className="editorial-lead">{t("menuIntro")}</p></div>
         <div className="menu-opening-photo"><Image src="/images/brioche.jpg" alt="" fill priority sizes="(min-width: 900px) 30vw, 35vw" className="object-cover" /></div>
       </header>
       <div className="menu-tools"><span className="menu-tools-rule" /><button type="button" onClick={() => setShowLegend(true)} className="menu-allergen-button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" aria-hidden="true"><path d="M4 7h16M4 17h16M8 4v6M16 14v6" /></svg>{t("allergens")}</button></div>
@@ -650,7 +652,7 @@ export default function MenuPage() {
           onClick={() => setShowCentrifugheNotice(false)}
         >
           <div className="w-full max-w-sm rounded-2xl border border-neutral-200 bg-white p-5 text-neutral-900 shadow-xl">
-            <h3 className="text-base font-medium">Info</h3>
+            <h3 className="text-base font-medium">{SHARED_COPY[lang].info}</h3>
             <p className="mt-2 text-sm text-neutral-600">
               {t("until1830")}
             </p>
@@ -672,7 +674,7 @@ export default function MenuPage() {
           onClick={() => setShowPesceNotice(false)}
         >
           <div className="w-full max-w-sm rounded-2xl border border-neutral-200 bg-white p-5 text-neutral-900 shadow-xl">
-            <h3 className="text-base font-medium">Info</h3>
+            <h3 className="text-base font-medium">{SHARED_COPY[lang].info}</h3>
             <p className="mt-2 text-sm text-neutral-600">
               {t("fridayOnly")}
             </p>
@@ -694,7 +696,7 @@ export default function MenuPage() {
           onClick={() => setShowCicchettiPesceNotice(false)}
         >
           <div className="w-full max-w-sm rounded-2xl border border-neutral-200 bg-white p-5 text-neutral-900 shadow-xl">
-            <h3 className="text-base font-medium">Info</h3>
+            <h3 className="text-base font-medium">{SHARED_COPY[lang].info}</h3>
             <p className="mt-2 text-sm text-neutral-600">
               {t("thursdayFridayOnly")}
             </p>
@@ -928,7 +930,7 @@ export default function MenuPage() {
                                     : "whitespace-nowrap"
                                 }
                               >
-                                {item.priceNote}
+                                {item.priceNote.replace(/^a partire da/, SHARED_COPY[lang].from)}
                               </span>
                             )}
                           </div>

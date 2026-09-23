@@ -1,5 +1,7 @@
 "use client";
 
+import { SHARED_COPY } from "./shared-copy";
+
 import { useState } from "react";
 import { useLanguage, type Language } from "./locale-provider";
 
@@ -40,6 +42,7 @@ export function LanguageSwitcher({ inverted = false, inline = false }: { inverte
             ? "inline-flex items-center gap-1 rounded-full border border-white/18 bg-white/10 px-2 py-1.5 text-xs font-semibold text-white backdrop-blur-md hover:bg-white/16 sm:gap-2 sm:px-3 sm:py-2 sm:text-sm"
             : "inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-white px-2 py-1.5 text-xs font-semibold text-neutral-800 hover:bg-neutral-50 sm:gap-2 sm:px-3 sm:py-2 sm:text-sm"
         }
+        aria-label={SHARED_COPY[lang].language}
         aria-haspopup="listbox"
         aria-expanded={open}
       >
@@ -49,7 +52,7 @@ export function LanguageSwitcher({ inverted = false, inline = false }: { inverte
 
       {open && (
         <div className={`${inline ? "relative w-full" : "absolute right-0 w-44"} z-[100] mt-2 rounded-xl border border-neutral-200 bg-white p-2 shadow-xl`}>
-          <ul role="listbox" className="space-y-1">
+          <ul aria-label={SHARED_COPY[lang].language} role="listbox" className="space-y-1">
             {LANGUAGES.map((opt) => (
               <li key={opt.code}>
                 <button

@@ -1,0 +1,697 @@
+{
+  "it": {
+    "title": "Privacy e Cookie Policy",
+    "label": "Privacy",
+    "updated": "Ultimo aggiornamento: 20 settembre 2026 · Versione 2026-09-20.2",
+    "intro": "Questa informativa descrive in modo sintetico come vengono trattati i dati personali degli utenti che visitano il sito di Bar da Luciano di Curzio Davide.",
+    "preferences": "Preferenze",
+    "preferencesText": "Puoi autorizzare o disattivare ciascun servizio. Le scelte vengono salvate subito.",
+    "sections": [
+      {
+        "title": "Titolare del trattamento",
+        "body": [
+          "Il titolare del trattamento e Bar da Luciano di Curzio Davide, con sede in via Nazareth 20, 35128 Padova.",
+          "Per richieste relative alla privacy e possibile contattare il locale all'indirizzo email davide_patrizia@alice.it o al numero 049 981 3795."
+        ],
+        "links": []
+      },
+      {
+        "title": "Dati trattati",
+        "body": [
+          "Le pagine pubbliche non prevedono registrazione, account cliente, form di contatto o acquisti online. L’area di gestione è riservata al personale autorizzato.",
+          "Quando l'utente contatta il locale telefonicamente o tramite servizi esterni, vengono trattati solo i dati necessari a rispondere alla richiesta, ad esempio nome, recapito e contenuto del messaggio.",
+          "Durante la navigazione possono essere trattati dati tecnici necessari al funzionamento del sito, come indirizzo IP, dati del dispositivo, browser utilizzato e log tecnici generati dal servizio di hosting.",
+          "Solo previo consenso, Vercel Web Analytics raccoglie dati sulle pagine visitate, data e ora della visita, provenienza del traffico, posizione geografica approssimativa, dispositivo, sistema operativo e browser. I report sono aggregati. Non inviamo eventi personalizzati e rimuoviamo parametri e frammenti dagli indirizzi delle pagine trasmessi; le pagine di amministrazione sono escluse."
+        ],
+        "links": []
+      },
+      {
+        "title": "Finalità e base giuridica",
+        "body": [
+          "I dati sono trattati per rispondere alle richieste dell'utente, fornire informazioni sul locale, gestire eventuali prenotazioni e garantire sicurezza e corretto funzionamento del sito.",
+          "I dati possono inoltre essere trattati per produrre statistiche aggregate sull'utilizzo del sito e comprendere in forma anonima quante visite ricevono le pagine.",
+          "Per le richieste dell’utente, la base giuridica è l’esecuzione di misure precontrattuali o contrattuali; per gli obblighi normativi è l’adempimento di obblighi di legge; per funzionamento e sicurezza è il legittimo interesse del titolare. L’attivazione delle statistiche e di Google Maps si basa invece sul consenso, facoltativo e revocabile in qualsiasi momento senza pregiudicare la liceità del trattamento precedente."
+        ],
+        "links": []
+      },
+      {
+        "title": "Cookie e strumenti simili",
+        "body": [
+          "Il sito non usa strumenti di profilazione pubblicitaria, Google Analytics o Meta Pixel.",
+          "Possono essere usati cookie o strumenti tecnici necessari al funzionamento del sito e dell'hosting. Per questi strumenti non e richiesto il consenso preventivo.",
+          "Il sito integra Vercel Web Analytics, fornito da Vercel Inc., per misurare visite e pagine visualizzate. Il servizio viene caricato solo dopo il consenso alle statistiche. Secondo Vercel, non usa cookie per identificare i visitatori e impiega un identificativo derivato dalla richiesta, senza tracciamento tra siti diversi; la sessione del visitatore viene eliminata dopo 24 ore. Questo termine non coincide con la conservazione dei report aggregati.",
+          "Il banner presenta i pulsanti Rifiuta e Accetto, riferiti a statistiche e Google Maps. È possibile autorizzare separatamente le due finalità nella sezione Preferenze di questa pagina, raggiungibile dal link Privacy del banner. Le preferenze sono salvate sul dispositivo tramite localStorage con la chiave bar-da-luciano-cookie-consent-v2, insieme alla data e ora della scelta e alla versione dell’informativa, fino alla modifica delle scelte o alla cancellazione dei dati del browser. I precedenti consensi alla sola mappa non attivano le statistiche. La registrazione resta nel browser: non viene inviato un registro centralizzato dei consensi al locale, né vengono aggiunti indirizzi IP o identificativi personali a questa registrazione.",
+          "In assenza di consenso o in caso di rifiuto, i rispettivi servizi restano bloccati: le statistiche non vengono caricate e la mappa non viene incorporata. Il pulsante di attivazione presente sulla mappa autorizza soltanto Google Maps.",
+          "L’utente può revocare il consenso e scegliere nuovamente in qualsiasi momento tramite il pulsante Preferenze cookie in fondo al sito. La revoca interrompe le nuove rilevazioni, senza eliminare automaticamente i report aggregati già prodotti.",
+          "Per maggiori informazioni su Vercel Web Analytics, l'utente puo consultare la documentazione privacy di Vercel Analytics e la Privacy Policy di Vercel.",
+          "Per maggiori informazioni sul trattamento dati da parte di Google, l’utente puo consultare la Privacy Policy di Google e i Termini aggiuntivi di Google Maps."
+        ],
+        "links": [
+          {
+            "label": "documentazione privacy di Vercel Analytics",
+            "href": "https://vercel.com/docs/analytics/privacy-policy"
+          },
+          {
+            "label": "Privacy Policy di Vercel",
+            "href": "https://vercel.com/legal/privacy-notice"
+          },
+          {
+            "label": "Privacy Policy di Google",
+            "href": "https://policies.google.com/privacy"
+          },
+          {
+            "label": "Termini aggiuntivi di Google Maps",
+            "href": "https://www.google.com/help/terms_maps/"
+          }
+        ]
+      },
+      {
+        "title": "Fornitori e destinatari dei dati",
+        "body": [
+          "I dati necessari alle richieste e alle prenotazioni sono accessibili al titolare e alle persone autorizzate del locale. Vercel Inc. fornisce l’hosting e Web Analytics; il trattamento per conto del cliente è disciplinato dal relativo accordo sul trattamento dei dati (DPA). Google fornisce la mappa incorporata, caricata solo con il consenso. I fornitori possono avvalersi dei soggetti indicati nei propri elenchi di subfornitori.",
+          "I collegamenti a Instagram, Google Recensioni e WhatsApp aprono servizi esterni. La sola presenza di questi collegamenti non incorpora i rispettivi contenuti nelle pagine. Aprendoli, i dati vengono trattati anche dal fornitore del servizio secondo la propria informativa."
+        ],
+        "links": []
+      },
+      {
+        "title": "Contatti tramite WhatsApp",
+        "body": [
+          "Il collegamento WhatsApp permette di avviare volontariamente una conversazione con il locale. Quando scrivi, possiamo ricevere numero di telefono, nome e informazioni del profilo rese disponibili, contenuto dei messaggi e allegati che scegli di inviare. Li utilizziamo per rispondere e gestire la richiesta o la prenotazione, sulla base delle misure precontrattuali o del rapporto contrattuale richiesti da te. Il rifiuto dei servizi facoltativi del sito non impedisce di contattarci telefonicamente.",
+          "WhatsApp tratta inoltre dati per il funzionamento del proprio servizio secondo la sua informativa per la regione europea. Evita di inviare documenti o informazioni personali non necessari alla richiesta."
+        ],
+        "links": [
+          {
+            "label": "informativa per la regione europea",
+            "href": "https://www.whatsapp.com/legal/privacy-policy-eea"
+          }
+        ]
+      },
+      {
+        "title": "Area amministrativa e GitHub",
+        "body": [
+          "L’area di gestione, basata su Keystatic, è riservata al personale autorizzato e utilizza GitHub per l’autenticazione e il salvataggio delle modifiche al sito. Per queste operazioni vengono trattati dati dell’account GitHub, autorizzazioni e credenziali tecniche di sessione. Le modifiche possono essere associate all’autore nella cronologia del repository. Questi strumenti non sono necessari ai visitatori delle pagine pubbliche.",
+          "La finalità è amministrare e proteggere il sito, sulla base del legittimo interesse del titolare. Gli strumenti di autenticazione necessari all’area riservata sono distinti dalle preferenze facoltative per mappa e statistiche.",
+          "Il trattamento effettuato da GitHub è descritto nella GitHub General Privacy Statement."
+        ],
+        "links": [
+          {
+            "label": "GitHub General Privacy Statement",
+            "href": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+          }
+        ]
+      },
+      {
+        "title": "Trasferimenti fuori dallo Spazio economico europeo",
+        "body": [
+          "L’utilizzo di fornitori con infrastrutture internazionali, tra cui Vercel, Google, WhatsApp e GitHub, può comportare il trattamento dei dati anche fuori dallo Spazio economico europeo. Le garanzie dipendono dal destinatario e dal servizio: possono comprendere decisioni di adeguatezza della Commissione europea, ove applicabili, oppure clausole contrattuali standard e le ulteriori misure richieste per il trasferimento.",
+          "Per Vercel, il Data Processing Addendum, sezione sui trasferimenti internazionali disciplina l’applicazione delle clausole contrattuali standard. Le informative di Google, WhatsApp e GitHub collegate in questa pagina descrivono le garanzie dei rispettivi servizi. Puoi contattare il titolare ai recapiti sopra indicati per informazioni sulle garanzie applicabili e su come ottenerne copia."
+        ],
+        "links": [
+          {
+            "label": "Data Processing Addendum, sezione sui trasferimenti internazionali",
+            "href": "https://vercel.com/legal/dpa"
+          }
+        ]
+      },
+      {
+        "title": "Conservazione",
+        "body": [
+          "Per richieste e prenotazioni, comprese quelle via WhatsApp, la conservazione è determinata dalla gestione della conversazione e dall’esecuzione della prenotazione. L’eventuale conservazione successiva è limitata ai dati necessari per obblighi amministrativi o fiscali, oppure per l’accertamento, l’esercizio o la difesa di un diritto. Le copie mantenute dai servizi di messaggistica seguono anche le condizioni del relativo fornitore.",
+          "Per i log tecnici, il periodo dipende dal servizio di hosting e dalle impostazioni contrattuali attive: i criteri sono la diagnosi degli errori, la sicurezza e l’analisi di incidenti. Le credenziali tecniche dell’area amministrativa seguono la scadenza o revoca della sessione; la cronologia delle modifiche su GitHub è distinta dalla sessione ed è mantenuta per la tracciabilità e il ripristino dei contenuti.",
+          "I limiti di disponibilità dei report sono pubblicati nella documentazione di Vercel Web Analytics.",
+          "I report statistici aggregati restano disponibili secondo i limiti di conservazione del piano Vercel attivo. La finestra di consultazione non equivale a una garanzia di cancellazione di tutte le copie detenute dal fornitore."
+        ],
+        "links": [
+          {
+            "label": "documentazione di Vercel Web Analytics",
+            "href": "https://vercel.com/docs/analytics/limits-and-pricing"
+          }
+        ]
+      },
+      {
+        "title": "Diritti dell'utente",
+        "body": [
+          "L'utente puo chiedere accesso, rettifica, cancellazione, limitazione del trattamento, opposizione al trattamento e portabilita dei dati nei casi previsti dal Regolamento UE 2016/679.",
+          "L'utente puo inoltre proporre reclamo al Garante per la protezione dei dati personali."
+        ],
+        "links": []
+      }
+    ]
+  },
+  "en": {
+    "title": "Privacy and Cookie Policy",
+    "label": "Privacy",
+    "updated": "Last updated: 20 September 2026 · Version 2026-09-20.2",
+    "intro": "This notice summarises how the personal data of visitors to the website of Bar da Luciano di Curzio Davide is processed.",
+    "preferences": "Preferences",
+    "preferencesText": "You can enable or disable each service. Your choices are saved immediately.",
+    "sections": [
+      {
+        "title": "Data controller",
+        "body": [
+          "The data controller is Bar da Luciano di Curzio Davide, based at Via Nazareth 20, 35128 Padova, Italy.",
+          "For privacy enquiries, contact the bar at davide_patrizia@alice.it or +39 049 981 3795."
+        ],
+        "links": []
+      },
+      {
+        "title": "Data processed",
+        "body": [
+          "The public pages do not offer registration, customer accounts, contact forms or online purchases. The management area is restricted to authorised staff.",
+          "When you contact the bar by telephone or through external services, we process only the data needed to respond, such as your name, contact details and message.",
+          "Browsing may involve processing technical data required to operate the website, such as your IP address, device and browser information, and technical logs generated by the hosting service.",
+          "Only with prior consent, Vercel Web Analytics collects data about pages visited, visit date and time, traffic sources, approximate location, device, operating system and browser. Reports are aggregated. We do not send custom events, and we remove query parameters and fragments from page URLs sent to the service; administration pages are excluded."
+        ],
+        "links": []
+      },
+      {
+        "title": "Purposes and legal basis",
+        "body": [
+          "Data is processed to respond to enquiries, provide information about the bar, manage reservations and ensure the security and proper operation of the website.",
+          "Data may also be processed to produce aggregated website usage statistics and understand anonymously how many views pages receive.",
+          "For user enquiries, the legal basis is taking pre-contractual steps or performing a contract; for statutory requirements, it is compliance with legal obligations; for operation and security, it is the controller’s legitimate interest. Statistics and Google Maps are activated on the basis of optional consent, which may be withdrawn at any time without affecting the lawfulness of earlier processing."
+        ],
+        "links": []
+      },
+      {
+        "title": "Cookies and similar tools",
+        "body": [
+          "The website does not use advertising profiling tools, Google Analytics or Meta Pixel.",
+          "Cookies or technical tools necessary for the website and hosting service to function may be used. Prior consent is not required for these tools.",
+          "The website integrates Vercel Web Analytics, provided by Vercel Inc., to measure visits and page views. The service loads only after consent to statistics. According to Vercel, it identifies visitors without cookies, using an identifier derived from the request and without tracking across different websites; the visitor session is discarded after 24 hours. This period is not the retention period for aggregated reports.",
+          "The banner has Reject and Accept buttons covering statistics and Google Maps. You can authorise each purpose separately in the Preferences section of this page, accessible through the banner’s Privacy link. Preferences are stored on your device in localStorage under bar-da-luciano-cookie-consent-v2, together with the date and time of your choice and the notice version, until you change them or clear your browser data. Earlier consent to the map alone does not enable statistics. The record stays in your browser: no central consent log is sent to the bar, and no IP addresses or personal identifiers are added to this record.",
+          "Without consent, or if you reject a service, it remains blocked: statistics do not load and the map is not embedded. The activation button on the map authorises Google Maps only.",
+          "You can withdraw consent and choose again at any time using the Cookies button at the bottom of the website. Withdrawal stops new measurements without automatically deleting aggregated reports already produced.",
+          "For more information about Vercel Web Analytics, consult the Vercel Analytics privacy documentation and Vercel Privacy Notice linked below.",
+          "For more information about Google’s processing, consult Google’s Privacy Policy and the Google Maps Additional Terms linked below."
+        ],
+        "links": [
+          {
+            "href": "https://vercel.com/docs/analytics/privacy-policy",
+            "label": "Vercel Analytics privacy documentation"
+          },
+          {
+            "href": "https://vercel.com/legal/privacy-notice",
+            "label": "Vercel Privacy Notice"
+          },
+          {
+            "href": "https://policies.google.com/privacy",
+            "label": "Google Privacy Policy"
+          },
+          {
+            "href": "https://www.google.com/help/terms_maps/",
+            "label": "Google Maps Additional Terms"
+          }
+        ]
+      },
+      {
+        "title": "Service providers and data recipients",
+        "body": [
+          "Data needed for enquiries and reservations is accessible to the controller and authorised staff at the bar. Vercel Inc. provides hosting and Web Analytics; processing on behalf of the customer is governed by its Data Processing Addendum (DPA). Google provides the embedded map, which loads only with consent. Providers may use the organisations listed in their subprocessor lists.",
+          "Links to Instagram, Google Reviews and WhatsApp open external services. The presence of these links alone does not embed their content in our pages. Opening them also involves processing by the service provider under its own privacy notice."
+        ],
+        "links": []
+      },
+      {
+        "title": "Contact via WhatsApp",
+        "body": [
+          "The WhatsApp link lets you voluntarily start a conversation with the bar. When you write, we may receive your telephone number, name and available profile information, messages and any attachments you choose to send. We use these to respond and manage your enquiry or reservation, on the basis of the pre-contractual steps or contractual relationship you request. Rejecting optional website services does not prevent you from contacting us by telephone.",
+          "WhatsApp also processes data to operate its service under its Privacy Policy for the European Region, linked below. Please avoid sending documents or personal information that are not necessary for your enquiry."
+        ],
+        "links": [
+          {
+            "href": "https://www.whatsapp.com/legal/privacy-policy-eea",
+            "label": "WhatsApp Privacy Policy for the European Region"
+          }
+        ]
+      },
+      {
+        "title": "Administration area and GitHub",
+        "body": [
+          "The Keystatic management area is restricted to authorised staff and uses GitHub for authentication and saving website changes. These operations involve processing GitHub account data, permissions and technical session credentials. Changes may be linked to their author in the repository history. These tools are not needed by visitors to the public pages.",
+          "The purpose is to manage and protect the website, based on the controller’s legitimate interest. Authentication tools needed for the restricted area are separate from optional preferences for maps and statistics.",
+          "GitHub’s processing is described in the GitHub General Privacy Statement linked below."
+        ],
+        "links": [
+          {
+            "href": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+            "label": "GitHub General Privacy Statement"
+          }
+        ]
+      },
+      {
+        "title": "Transfers outside the European Economic Area",
+        "body": [
+          "Using providers with international infrastructure, including Vercel, Google, WhatsApp and GitHub, may involve processing data outside the European Economic Area. Safeguards depend on the recipient and service: they may include European Commission adequacy decisions where applicable, or standard contractual clauses and any additional measures required for the transfer.",
+          "For Vercel, the international transfers section of its Data Processing Addendum governs the application of standard contractual clauses. The Google, WhatsApp and GitHub notices linked on this page describe safeguards for their services. Contact the controller using the details above for information about applicable safeguards and how to obtain a copy."
+        ],
+        "links": [
+          {
+            "href": "https://vercel.com/legal/dpa",
+            "label": "Vercel Data Processing Addendum — international transfers"
+          }
+        ]
+      },
+      {
+        "title": "Retention",
+        "body": [
+          "For enquiries and reservations, including WhatsApp messages, retention is determined by handling the conversation and fulfilling the reservation. Any subsequent retention is limited to data necessary for administrative or tax obligations, or for establishing, exercising or defending a legal claim. Copies held by messaging services are also subject to the provider’s terms.",
+          "For technical logs, the period depends on the hosting service and active contractual settings: the criteria are error diagnosis, security and incident analysis. Technical credentials for the administration area follow session expiry or revocation; the GitHub change history is separate from the session and is kept for traceability and restoring content.",
+          "Report availability limits are published in the Vercel Web Analytics documentation linked below.",
+          "Aggregated statistical reports remain available within the retention limits of the active Vercel plan. The reporting window does not guarantee deletion of all copies held by the provider."
+        ],
+        "links": [
+          {
+            "href": "https://vercel.com/docs/analytics/limits-and-pricing",
+            "label": "Vercel Web Analytics documentation"
+          }
+        ]
+      },
+      {
+        "title": "Your rights",
+        "body": [
+          "You may request access, rectification, erasure, restriction of processing, object to processing and request data portability in the cases provided for by Regulation (EU) 2016/679.",
+          "You may also lodge a complaint with the Italian Data Protection Authority (Garante per la protezione dei dati personali)."
+        ],
+        "links": []
+      }
+    ]
+  },
+  "fr": {
+    "title": "Politique de confidentialité et de cookies",
+    "label": "Confidentialité",
+    "updated": "Dernière mise à jour : 20 septembre 2026 · Version 2026-09-20.2",
+    "intro": "Cette notice résume le traitement des données personnelles des visiteurs du site de Bar da Luciano di Curzio Davide.",
+    "preferences": "Préférences",
+    "preferencesText": "Vous pouvez autoriser ou désactiver chaque service. Vos choix sont enregistrés immédiatement.",
+    "sections": [
+      {
+        "title": "Responsable du traitement",
+        "body": [
+          "Le responsable du traitement est Bar da Luciano di Curzio Davide, situé Via Nazareth 20, 35128 Padova, Italie.",
+          "Pour toute demande relative à la confidentialité, contactez le bar à davide_patrizia@alice.it ou au +39 049 981 3795."
+        ],
+        "links": []
+      },
+      {
+        "title": "Données traitées",
+        "body": [
+          "Les pages publiques ne proposent ni inscription, ni compte client, ni formulaire de contact, ni achat en ligne. L’espace de gestion est réservé au personnel autorisé.",
+          "Lorsque vous contactez le bar par téléphone ou par des services externes, seules les données nécessaires pour répondre à votre demande sont traitées, notamment votre nom, vos coordonnées et le contenu du message.",
+          "La navigation peut entraîner le traitement de données techniques nécessaires au fonctionnement du site, telles que l’adresse IP, les informations sur l’appareil et le navigateur, et les journaux techniques générés par l’hébergeur.",
+          "Uniquement avec votre consentement préalable, Vercel Web Analytics recueille des données sur les pages consultées, la date et l’heure de la visite, la provenance du trafic, la localisation approximative, l’appareil, le système d’exploitation et le navigateur. Les rapports sont agrégés. Nous n’envoyons aucun événement personnalisé et supprimons les paramètres et fragments des adresses des pages transmises ; les pages d’administration sont exclues."
+        ],
+        "links": []
+      },
+      {
+        "title": "Finalités et bases juridiques",
+        "body": [
+          "Les données sont traitées pour répondre aux demandes, fournir des informations sur le bar, gérer les réservations et assurer la sécurité et le bon fonctionnement du site.",
+          "Les données peuvent également servir à produire des statistiques agrégées sur l’utilisation du site et à connaître de manière anonyme le nombre de consultations des pages.",
+          "Pour les demandes des utilisateurs, la base juridique est l’exécution de mesures précontractuelles ou contractuelles ; pour les exigences légales, le respect des obligations légales ; pour le fonctionnement et la sécurité, l’intérêt légitime du responsable. L’activation des statistiques et de Google Maps repose sur un consentement facultatif, révocable à tout moment sans affecter la licéité du traitement antérieur."
+        ],
+        "links": []
+      },
+      {
+        "title": "Cookies et outils similaires",
+        "body": [
+          "Le site n’utilise ni outils de profilage publicitaire, ni Google Analytics, ni Meta Pixel.",
+          "Des cookies ou outils techniques nécessaires au fonctionnement du site et de l’hébergement peuvent être utilisés. Ils ne nécessitent pas de consentement préalable.",
+          "Le site intègre Vercel Web Analytics, fourni par Vercel Inc., pour mesurer les visites et les pages vues. Le service n’est chargé qu’après consentement aux statistiques. Selon Vercel, il identifie les visiteurs sans cookies, au moyen d’un identifiant dérivé de la requête, sans suivi entre différents sites ; la session du visiteur est supprimée après 24 heures. Ce délai ne correspond pas à la conservation des rapports agrégés.",
+          "Le bandeau présente les boutons Refuser et Accepter pour les statistiques et Google Maps. Vous pouvez autoriser séparément les deux finalités dans la section Préférences de cette page, accessible par le lien Confidentialité du bandeau. Les préférences sont enregistrées sur votre appareil dans localStorage, sous la clé bar-da-luciano-cookie-consent-v2, avec la date et l’heure du choix et la version de la notice, jusqu’à leur modification ou à la suppression des données du navigateur. Un ancien consentement à la carte seule n’active pas les statistiques. L’enregistrement reste dans le navigateur : aucun registre centralisé des consentements n’est envoyé au bar, et aucune adresse IP ni aucun identifiant personnel n’est ajouté à cet enregistrement.",
+          "Sans consentement ou en cas de refus, les services concernés restent bloqués : les statistiques ne sont pas chargées et la carte n’est pas intégrée. Le bouton d’activation de la carte autorise uniquement Google Maps.",
+          "Vous pouvez retirer votre consentement et choisir à nouveau à tout moment à l’aide du bouton Cookies en bas du site. Le retrait interrompt les nouvelles mesures sans supprimer automatiquement les rapports agrégés déjà produits.",
+          "Pour en savoir plus sur Vercel Web Analytics, consultez la documentation relative à la confidentialité de Vercel Analytics et la politique de confidentialité de Vercel ci-dessous.",
+          "Pour en savoir plus sur le traitement effectué par Google, consultez sa politique de confidentialité et les conditions supplémentaires de Google Maps ci-dessous."
+        ],
+        "links": [
+          {
+            "href": "https://vercel.com/docs/analytics/privacy-policy",
+            "label": "Confidentialité de Vercel Analytics"
+          },
+          {
+            "href": "https://vercel.com/legal/privacy-notice",
+            "label": "Politique de confidentialité de Vercel"
+          },
+          {
+            "href": "https://policies.google.com/privacy",
+            "label": "Politique de confidentialité de Google"
+          },
+          {
+            "href": "https://www.google.com/help/terms_maps/",
+            "label": "Conditions supplémentaires de Google Maps"
+          }
+        ]
+      },
+      {
+        "title": "Prestataires et destinataires des données",
+        "body": [
+          "Les données nécessaires aux demandes et réservations sont accessibles au responsable et au personnel autorisé du bar. Vercel Inc. fournit l’hébergement et Web Analytics ; le traitement pour le compte du client est régi par son accord de traitement des données (DPA). Google fournit la carte intégrée, chargée uniquement avec consentement. Les prestataires peuvent faire appel aux organismes figurant dans leurs listes de sous-traitants ultérieurs.",
+          "Les liens vers Instagram, les avis Google et WhatsApp ouvrent des services externes. Leur seule présence n’intègre pas les contenus correspondants dans les pages. Leur ouverture entraîne également un traitement par le prestataire selon sa propre politique de confidentialité."
+        ],
+        "links": []
+      },
+      {
+        "title": "Contact par WhatsApp",
+        "body": [
+          "Le lien WhatsApp permet d’engager volontairement une conversation avec le bar. Lorsque vous écrivez, nous pouvons recevoir votre numéro de téléphone, votre nom et les informations de profil disponibles, vos messages et les pièces jointes que vous choisissez d’envoyer. Nous les utilisons pour répondre et gérer votre demande ou réservation, sur la base des mesures précontractuelles ou de la relation contractuelle que vous sollicitez. Refuser les services facultatifs du site ne vous empêche pas de nous contacter par téléphone.",
+          "WhatsApp traite également des données pour faire fonctionner son service conformément à sa politique de confidentialité pour la région européenne, liée ci-dessous. Évitez d’envoyer des documents ou informations personnelles inutiles à votre demande."
+        ],
+        "links": [
+          {
+            "href": "https://www.whatsapp.com/legal/privacy-policy-eea",
+            "label": "Politique de confidentialité de WhatsApp pour la région européenne"
+          }
+        ]
+      },
+      {
+        "title": "Espace d’administration et GitHub",
+        "body": [
+          "L’espace de gestion Keystatic est réservé au personnel autorisé et utilise GitHub pour l’authentification et l’enregistrement des modifications du site. Ces opérations impliquent le traitement des données du compte GitHub, des autorisations et des identifiants techniques de session. Les modifications peuvent être associées à leur auteur dans l’historique du dépôt. Ces outils ne sont pas nécessaires aux visiteurs des pages publiques.",
+          "La finalité est d’administrer et de protéger le site sur la base de l’intérêt légitime du responsable. Les outils d’authentification nécessaires à l’espace réservé sont distincts des préférences facultatives pour la carte et les statistiques.",
+          "Le traitement effectué par GitHub est décrit dans sa déclaration générale de confidentialité, liée ci-dessous."
+        ],
+        "links": [
+          {
+            "href": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+            "label": "Déclaration générale de confidentialité de GitHub"
+          }
+        ]
+      },
+      {
+        "title": "Transferts hors de l’Espace économique européen",
+        "body": [
+          "Le recours à des prestataires disposant d’infrastructures internationales, dont Vercel, Google, WhatsApp et GitHub, peut entraîner le traitement de données hors de l’Espace économique européen. Les garanties dépendent du destinataire et du service : elles peuvent inclure les décisions d’adéquation de la Commission européenne, lorsqu’elles s’appliquent, ou des clauses contractuelles types et les mesures complémentaires requises pour le transfert.",
+          "Pour Vercel, la section sur les transferts internationaux du Data Processing Addendum régit l’application des clauses contractuelles types. Les notices de Google, WhatsApp et GitHub liées sur cette page décrivent les garanties de leurs services. Vous pouvez contacter le responsable aux coordonnées ci-dessus pour connaître les garanties applicables et savoir comment en obtenir une copie."
+        ],
+        "links": [
+          {
+            "href": "https://vercel.com/legal/dpa",
+            "label": "Accord Vercel sur le traitement des données — transferts internationaux"
+          }
+        ]
+      },
+      {
+        "title": "Conservation",
+        "body": [
+          "Pour les demandes et réservations, y compris par WhatsApp, la conservation est déterminée par la gestion de la conversation et l’exécution de la réservation. Toute conservation ultérieure est limitée aux données nécessaires aux obligations administratives ou fiscales, ou à la constatation, l’exercice ou la défense d’un droit. Les copies conservées par les services de messagerie suivent également les conditions du prestataire concerné.",
+          "Pour les journaux techniques, la durée dépend du service d’hébergement et des paramètres contractuels actifs : les critères sont le diagnostic des erreurs, la sécurité et l’analyse des incidents. Les identifiants techniques d’administration suivent l’expiration ou la révocation de la session ; l’historique des modifications GitHub est distinct de la session et conservé pour la traçabilité et la restauration des contenus.",
+          "Les limites de disponibilité des rapports figurent dans la documentation de Vercel Web Analytics ci-dessous.",
+          "Les rapports statistiques agrégés restent disponibles selon les limites de conservation du forfait Vercel actif. La période de consultation ne garantit pas la suppression de toutes les copies détenues par le prestataire."
+        ],
+        "links": [
+          {
+            "href": "https://vercel.com/docs/analytics/limits-and-pricing",
+            "label": "Documentation de Vercel Web Analytics"
+          }
+        ]
+      },
+      {
+        "title": "Vos droits",
+        "body": [
+          "Vous pouvez demander l’accès, la rectification, l’effacement, la limitation du traitement, vous opposer au traitement et demander la portabilité des données dans les cas prévus par le règlement (UE) 2016/679.",
+          "Vous pouvez également introduire une réclamation auprès de l’autorité italienne de protection des données personnelles (Garante per la protezione dei dati personali)."
+        ],
+        "links": []
+      }
+    ]
+  },
+  "de": {
+    "title": "Datenschutz- und Cookie-Richtlinie",
+    "label": "Datenschutz",
+    "updated": "Zuletzt aktualisiert: 20. September 2026 · Version 2026-09-20.2",
+    "intro": "Diese Hinweise erläutern zusammenfassend die Verarbeitung personenbezogener Daten beim Besuch der Website von Bar da Luciano di Curzio Davide.",
+    "preferences": "Einstellungen",
+    "preferencesText": "Du kannst jeden Dienst einzeln aktivieren oder deaktivieren. Deine Auswahl wird sofort gespeichert.",
+    "sections": [
+      {
+        "title": "Verantwortlicher",
+        "body": [
+          "Verantwortlich für die Verarbeitung ist Bar da Luciano di Curzio Davide, Via Nazareth 20, 35128 Padova, Italien.",
+          "Bei Datenschutzfragen erreichst du die Bar unter davide_patrizia@alice.it oder +39 049 981 3795."
+        ],
+        "links": []
+      },
+      {
+        "title": "Verarbeitete Daten",
+        "body": [
+          "Die öffentlichen Seiten bieten keine Registrierung, Kundenkonten, Kontaktformulare oder Onlinekäufe an. Der Verwaltungsbereich ist autorisierten Mitarbeitenden vorbehalten.",
+          "Bei Kontaktaufnahme per Telefon oder über externe Dienste werden nur die zur Beantwortung erforderlichen Daten verarbeitet, beispielsweise Name, Kontaktdaten und Nachrichteninhalt.",
+          "Beim Besuch können technische Daten verarbeitet werden, die für den Betrieb erforderlich sind, etwa IP-Adresse, Geräte- und Browserdaten sowie technische Protokolle des Hostingdienstes.",
+          "Nur mit vorheriger Einwilligung erhebt Vercel Web Analytics Daten zu besuchten Seiten, Datum und Uhrzeit, Herkunft des Datenverkehrs, ungefährer geografischer Lage, Gerät, Betriebssystem und Browser. Berichte werden aggregiert. Wir senden keine benutzerdefinierten Ereignisse und entfernen Parameter und Fragmente aus übermittelten Seitenadressen; Verwaltungsseiten sind ausgeschlossen."
+        ],
+        "links": []
+      },
+      {
+        "title": "Zwecke und Rechtsgrundlagen",
+        "body": [
+          "Die Daten werden verarbeitet, um Anfragen zu beantworten, über die Bar zu informieren, Reservierungen zu bearbeiten und die Sicherheit sowie den ordnungsgemäßen Betrieb der Website zu gewährleisten.",
+          "Daten können außerdem für aggregierte Nutzungsstatistiken verarbeitet werden, um anonym zu ermitteln, wie oft Seiten aufgerufen werden.",
+          "Rechtsgrundlage für Anfragen ist die Durchführung vorvertraglicher Maßnahmen oder eines Vertrags, für gesetzliche Anforderungen die Erfüllung rechtlicher Pflichten und für Betrieb und Sicherheit das berechtigte Interesse des Verantwortlichen. Die Aktivierung von Statistiken und Google Maps beruht auf einer freiwilligen, jederzeit widerruflichen Einwilligung. Die Rechtmäßigkeit der vorherigen Verarbeitung bleibt vom Widerruf unberührt."
+        ],
+        "links": []
+      },
+      {
+        "title": "Cookies und ähnliche Technologien",
+        "body": [
+          "Die Website verwendet keine Werkzeuge zur Erstellung von Werbeprofilen, kein Google Analytics und kein Meta Pixel.",
+          "Für den Betrieb der Website und des Hostings erforderliche Cookies oder technische Werkzeuge können verwendet werden. Dafür ist keine vorherige Einwilligung erforderlich.",
+          "Die Website integriert Vercel Web Analytics von Vercel Inc., um Besuche und Seitenaufrufe zu messen. Der Dienst wird erst nach Einwilligung in Statistiken geladen. Laut Vercel werden Besucher ohne Cookies durch eine aus der Anfrage abgeleitete Kennung erkannt, ohne websiteübergreifende Verfolgung; die Besuchersitzung wird nach 24 Stunden verworfen. Diese Frist entspricht nicht der Aufbewahrungsdauer aggregierter Berichte.",
+          "Das Banner enthält die Schaltflächen Ablehnen und Akzeptieren für Statistiken und Google Maps. Beide Zwecke können im Bereich Einstellungen dieser Seite getrennt erlaubt werden, erreichbar über den Datenschutz-Link im Banner. Die Auswahl wird auf deinem Gerät im localStorage unter bar-da-luciano-cookie-consent-v2 gespeichert, zusammen mit Datum und Uhrzeit sowie der Version dieser Hinweise, bis du sie änderst oder Browserdaten löschst. Frühere Einwilligungen nur zur Karte aktivieren keine Statistiken. Der Eintrag bleibt im Browser: Es wird kein zentrales Einwilligungsprotokoll an die Bar gesendet, und diesem Eintrag werden weder IP-Adressen noch persönliche Kennungen hinzugefügt.",
+          "Ohne Einwilligung oder bei Ablehnung bleiben die jeweiligen Dienste gesperrt: Statistiken werden nicht geladen und die Karte nicht eingebettet. Die Aktivierungsschaltfläche an der Karte erlaubt ausschließlich Google Maps.",
+          "Du kannst die Einwilligung jederzeit über Cookie-Einstellungen am Seitenende widerrufen und neu wählen. Der Widerruf beendet neue Messungen, löscht aber bereits erstellte aggregierte Berichte nicht automatisch.",
+          "Weitere Informationen zu Vercel Web Analytics findest du in den unten verlinkten Datenschutzhinweisen zu Vercel Analytics und von Vercel.",
+          "Weitere Informationen zur Datenverarbeitung durch Google findest du in der unten verlinkten Datenschutzerklärung und den zusätzlichen Nutzungsbedingungen von Google Maps."
+        ],
+        "links": [
+          {
+            "href": "https://vercel.com/docs/analytics/privacy-policy",
+            "label": "Datenschutz bei Vercel Analytics"
+          },
+          {
+            "href": "https://vercel.com/legal/privacy-notice",
+            "label": "Datenschutzhinweise von Vercel"
+          },
+          {
+            "href": "https://policies.google.com/privacy",
+            "label": "Datenschutzerklärung von Google"
+          },
+          {
+            "href": "https://www.google.com/help/terms_maps/",
+            "label": "Zusätzliche Nutzungsbedingungen für Google Maps"
+          }
+        ]
+      },
+      {
+        "title": "Dienstleister und Datenempfänger",
+        "body": [
+          "Die für Anfragen und Reservierungen erforderlichen Daten sind dem Verantwortlichen und autorisierten Mitarbeitenden der Bar zugänglich. Vercel Inc. stellt Hosting und Web Analytics bereit; die Verarbeitung im Kundenauftrag regelt die zugehörige Vereinbarung zur Datenverarbeitung (DPA). Google stellt die eingebettete Karte bereit, die nur mit Einwilligung geladen wird. Die Anbieter können die in ihren Listen genannten Unterauftragsverarbeiter einsetzen.",
+          "Links zu Instagram, Google-Bewertungen und WhatsApp öffnen externe Dienste. Allein durch diese Links werden deren Inhalte nicht in unsere Seiten eingebettet. Beim Öffnen verarbeitet auch der jeweilige Anbieter Daten gemäß seinen Datenschutzhinweisen."
+        ],
+        "links": []
+      },
+      {
+        "title": "Kontakt über WhatsApp",
+        "body": [
+          "Über den WhatsApp-Link kannst du freiwillig ein Gespräch mit der Bar beginnen. Wenn du schreibst, können wir Telefonnummer, Namen und verfügbare Profilangaben sowie Nachrichten und von dir gesendete Anhänge erhalten. Wir nutzen sie zur Beantwortung und Bearbeitung deiner Anfrage oder Reservierung auf Grundlage der von dir gewünschten vorvertraglichen Maßnahmen oder Vertragsbeziehung. Die Ablehnung optionaler Website-Dienste verhindert nicht, dass du uns telefonisch kontaktierst.",
+          "WhatsApp verarbeitet zudem Daten zum Betrieb seines Dienstes gemäß der unten verlinkten Datenschutzrichtlinie für die Europäische Region. Bitte sende keine Dokumente oder persönlichen Angaben, die für deine Anfrage nicht erforderlich sind."
+        ],
+        "links": [
+          {
+            "href": "https://www.whatsapp.com/legal/privacy-policy-eea",
+            "label": "WhatsApp-Datenschutzrichtlinie für die Europäische Region"
+          }
+        ]
+      },
+      {
+        "title": "Verwaltungsbereich und GitHub",
+        "body": [
+          "Der auf Keystatic basierende Verwaltungsbereich ist autorisierten Mitarbeitenden vorbehalten und verwendet GitHub zur Anmeldung und Speicherung von Website-Änderungen. Dafür werden GitHub-Kontodaten, Berechtigungen und technische Sitzungszugangsdaten verarbeitet. Änderungen können in der Repository-Historie ihrem Urheber zugeordnet werden. Diese Werkzeuge sind für Besucher der öffentlichen Seiten nicht erforderlich.",
+          "Zweck ist die Verwaltung und Absicherung der Website auf Grundlage des berechtigten Interesses des Verantwortlichen. Die für den geschützten Bereich erforderlichen Anmeldewerkzeuge sind von den optionalen Einstellungen für Karte und Statistiken getrennt.",
+          "Die Verarbeitung durch GitHub wird in der unten verlinkten allgemeinen Datenschutzerklärung von GitHub beschrieben."
+        ],
+        "links": [
+          {
+            "href": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+            "label": "Allgemeine Datenschutzerklärung von GitHub"
+          }
+        ]
+      },
+      {
+        "title": "Übermittlungen außerhalb des Europäischen Wirtschaftsraums",
+        "body": [
+          "Anbieter mit internationaler Infrastruktur wie Vercel, Google, WhatsApp und GitHub können Daten auch außerhalb des Europäischen Wirtschaftsraums verarbeiten. Die Garantien hängen von Empfänger und Dienst ab: Dazu können gegebenenfalls Angemessenheitsbeschlüsse der Europäischen Kommission oder Standardvertragsklauseln und weitere für die Übermittlung erforderliche Maßnahmen gehören.",
+          "Bei Vercel regelt der Abschnitt zu internationalen Übermittlungen im Data Processing Addendum die Anwendung der Standardvertragsklauseln. Die auf dieser Seite verlinkten Hinweise von Google, WhatsApp und GitHub beschreiben die Garantien ihrer Dienste. Informationen über die anwendbaren Garantien und die Möglichkeit, eine Kopie zu erhalten, kannst du beim Verantwortlichen über die oben genannten Kontaktdaten anfordern."
+        ],
+        "links": [
+          {
+            "href": "https://vercel.com/legal/dpa",
+            "label": "Vercel-Datenverarbeitungsvereinbarung — internationale Übermittlungen"
+          }
+        ]
+      },
+      {
+        "title": "Aufbewahrung",
+        "body": [
+          "Bei Anfragen und Reservierungen, auch über WhatsApp, richtet sich die Aufbewahrung nach der Bearbeitung des Gesprächs und der Durchführung der Reservierung. Eine anschließende Aufbewahrung beschränkt sich auf Daten, die für Verwaltungs- oder Steuerpflichten oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen erforderlich sind. Für Kopien bei Nachrichtendiensten gelten auch die Bedingungen des jeweiligen Anbieters.",
+          "Bei technischen Protokollen hängt die Dauer vom Hostingdienst und den aktiven Vertragsbedingungen ab. Maßgeblich sind Fehlerdiagnose, Sicherheit und die Untersuchung von Vorfällen. Technische Zugangsdaten des Verwaltungsbereichs richten sich nach Ablauf oder Widerruf der Sitzung; die GitHub-Änderungshistorie ist davon getrennt und wird zur Nachvollziehbarkeit und Wiederherstellung von Inhalten aufbewahrt.",
+          "Die Verfügbarkeitsfristen der Berichte sind in der unten verlinkten Dokumentation zu Vercel Web Analytics veröffentlicht.",
+          "Aggregierte Statistikberichte bleiben innerhalb der Aufbewahrungsgrenzen des aktiven Vercel-Tarifs verfügbar. Das Berichtsfenster garantiert nicht die Löschung aller beim Anbieter vorhandenen Kopien."
+        ],
+        "links": [
+          {
+            "href": "https://vercel.com/docs/analytics/limits-and-pricing",
+            "label": "Dokumentation zu Vercel Web Analytics"
+          }
+        ]
+      },
+      {
+        "title": "Deine Rechte",
+        "body": [
+          "Du kannst in den von der Verordnung (EU) 2016/679 vorgesehenen Fällen Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit verlangen sowie der Verarbeitung widersprechen.",
+          "Du kannst dich außerdem bei der italienischen Datenschutzbehörde (Garante per la protezione dei dati personali) beschweren."
+        ],
+        "links": []
+      }
+    ]
+  },
+  "es": {
+    "title": "Política de privacidad y cookies",
+    "label": "Privacidad",
+    "updated": "Última actualización: 20 de septiembre de 2026 · Versión 2026-09-20.2",
+    "intro": "Esta política resume cómo se tratan los datos personales de quienes visitan el sitio de Bar da Luciano di Curzio Davide.",
+    "preferences": "Preferencias",
+    "preferencesText": "Puedes autorizar o desactivar cada servicio. Tus elecciones se guardan inmediatamente.",
+    "sections": [
+      {
+        "title": "Responsable del tratamiento",
+        "body": [
+          "El responsable del tratamiento es Bar da Luciano di Curzio Davide, con sede en Via Nazareth 20, 35128 Padova, Italia.",
+          "Para consultas sobre privacidad, puedes contactar con el bar en davide_patrizia@alice.it o en el +39 049 981 3795."
+        ],
+        "links": []
+      },
+      {
+        "title": "Datos tratados",
+        "body": [
+          "Las páginas públicas no ofrecen registro, cuentas de cliente, formularios de contacto ni compras en línea. El área de gestión está reservada al personal autorizado.",
+          "Cuando contactas con el bar por teléfono o mediante servicios externos, solo se tratan los datos necesarios para responder, como el nombre, los datos de contacto y el contenido del mensaje.",
+          "Durante la navegación pueden tratarse datos técnicos necesarios para el funcionamiento del sitio, como la dirección IP, información del dispositivo y navegador, y registros técnicos generados por el servicio de alojamiento.",
+          "Solo con consentimiento previo, Vercel Web Analytics recoge datos sobre las páginas visitadas, fecha y hora, procedencia del tráfico, ubicación geográfica aproximada, dispositivo, sistema operativo y navegador. Los informes son agregados. No enviamos eventos personalizados y eliminamos parámetros y fragmentos de las direcciones de las páginas transmitidas; las páginas de administración quedan excluidas."
+        ],
+        "links": []
+      },
+      {
+        "title": "Finalidades y bases jurídicas",
+        "body": [
+          "Los datos se tratan para responder a consultas, facilitar información sobre el bar, gestionar reservas y garantizar la seguridad y el correcto funcionamiento del sitio.",
+          "También pueden tratarse para elaborar estadísticas agregadas de uso y conocer de forma anónima cuántas visitas reciben las páginas.",
+          "Para las consultas, la base jurídica es la aplicación de medidas precontractuales o contractuales; para los requisitos legales, el cumplimiento de obligaciones legales; para el funcionamiento y la seguridad, el interés legítimo del responsable. La activación de estadísticas y Google Maps se basa en un consentimiento opcional que puede retirarse en cualquier momento sin afectar a la licitud del tratamiento anterior."
+        ],
+        "links": []
+      },
+      {
+        "title": "Cookies y herramientas similares",
+        "body": [
+          "El sitio no utiliza herramientas de elaboración de perfiles publicitarios, Google Analytics ni Meta Pixel.",
+          "Pueden utilizarse cookies o herramientas técnicas necesarias para el funcionamiento del sitio y del alojamiento. Estas herramientas no requieren consentimiento previo.",
+          "El sitio integra Vercel Web Analytics, de Vercel Inc., para medir visitas y páginas vistas. El servicio solo se carga tras aceptar las estadísticas. Según Vercel, identifica a los visitantes sin cookies mediante un identificador derivado de la solicitud, sin seguimiento entre sitios distintos; la sesión del visitante se descarta después de 24 horas. Este plazo no equivale al de conservación de los informes agregados.",
+          "El aviso presenta los botones Rechazar y Aceptar para las estadísticas y Google Maps. Puedes autorizar cada finalidad por separado en la sección Preferencias de esta página, accesible desde el enlace Privacidad del aviso. Las preferencias se guardan en tu dispositivo mediante localStorage bajo la clave bar-da-luciano-cookie-consent-v2, junto con la fecha y hora de la elección y la versión de la política, hasta que las cambies o borres los datos del navegador. Los consentimientos anteriores para el mapa no activan las estadísticas. El registro permanece en el navegador: no se envía al bar un registro centralizado de consentimientos ni se añaden direcciones IP o identificadores personales a este registro.",
+          "Sin consentimiento o en caso de rechazo, los servicios correspondientes permanecen bloqueados: no se cargan las estadísticas ni se incorpora el mapa. El botón de activación del mapa autoriza únicamente Google Maps.",
+          "Puedes retirar el consentimiento y elegir de nuevo en cualquier momento mediante el botón Cookies al pie del sitio. La retirada detiene las nuevas mediciones sin eliminar automáticamente los informes agregados ya elaborados.",
+          "Para obtener más información sobre Vercel Web Analytics, consulta la documentación de privacidad de Vercel Analytics y la política de privacidad de Vercel enlazadas a continuación.",
+          "Para obtener más información sobre el tratamiento de Google, consulta su política de privacidad y las condiciones adicionales de Google Maps enlazadas a continuación."
+        ],
+        "links": [
+          {
+            "href": "https://vercel.com/docs/analytics/privacy-policy",
+            "label": "Documentación de privacidad de Vercel Analytics"
+          },
+          {
+            "href": "https://vercel.com/legal/privacy-notice",
+            "label": "Política de privacidad de Vercel"
+          },
+          {
+            "href": "https://policies.google.com/privacy",
+            "label": "Política de privacidad de Google"
+          },
+          {
+            "href": "https://www.google.com/help/terms_maps/",
+            "label": "Condiciones adicionales de Google Maps"
+          }
+        ]
+      },
+      {
+        "title": "Proveedores y destinatarios de los datos",
+        "body": [
+          "Los datos necesarios para consultas y reservas son accesibles al responsable y al personal autorizado del bar. Vercel Inc. proporciona alojamiento y Web Analytics; el tratamiento por cuenta del cliente se rige por su acuerdo de tratamiento de datos (DPA). Google proporciona el mapa incorporado, que solo se carga con consentimiento. Los proveedores pueden recurrir a las entidades indicadas en sus listas de subencargados.",
+          "Los enlaces a Instagram, las reseñas de Google y WhatsApp abren servicios externos. Su mera presencia no incorpora los contenidos de esos servicios en las páginas. Al abrirlos, el proveedor también trata datos según su propia política de privacidad."
+        ],
+        "links": []
+      },
+      {
+        "title": "Contacto mediante WhatsApp",
+        "body": [
+          "El enlace de WhatsApp permite iniciar voluntariamente una conversación con el bar. Al escribir, podemos recibir tu número de teléfono, nombre e información de perfil disponible, mensajes y los archivos adjuntos que decidas enviar. Los utilizamos para responder y gestionar la consulta o reserva, sobre la base de las medidas precontractuales o de la relación contractual que solicitas. Rechazar los servicios opcionales del sitio no impide contactar con nosotros por teléfono.",
+          "WhatsApp también trata datos para prestar su servicio conforme a su política de privacidad para la región europea, enlazada a continuación. Evita enviar documentos o información personal que no sean necesarios para tu consulta."
+        ],
+        "links": [
+          {
+            "href": "https://www.whatsapp.com/legal/privacy-policy-eea",
+            "label": "Política de privacidad de WhatsApp para la región europea"
+          }
+        ]
+      },
+      {
+        "title": "Área administrativa y GitHub",
+        "body": [
+          "El área de gestión, basada en Keystatic, está reservada al personal autorizado y utiliza GitHub para la autenticación y el guardado de cambios del sitio. Estas operaciones implican tratar datos de la cuenta de GitHub, permisos y credenciales técnicas de sesión. Los cambios pueden asociarse con su autor en el historial del repositorio. Estas herramientas no son necesarias para quienes visitan las páginas públicas.",
+          "La finalidad es administrar y proteger el sitio, sobre la base del interés legítimo del responsable. Las herramientas de autenticación necesarias para el área restringida son independientes de las preferencias opcionales del mapa y las estadísticas.",
+          "El tratamiento de GitHub se describe en su declaración general de privacidad, enlazada a continuación."
+        ],
+        "links": [
+          {
+            "href": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+            "label": "Declaración general de privacidad de GitHub"
+          }
+        ]
+      },
+      {
+        "title": "Transferencias fuera del Espacio Económico Europeo",
+        "body": [
+          "El uso de proveedores con infraestructuras internacionales, como Vercel, Google, WhatsApp y GitHub, puede implicar el tratamiento de datos fuera del Espacio Económico Europeo. Las garantías dependen del destinatario y del servicio: pueden incluir decisiones de adecuación de la Comisión Europea cuando procedan, o cláusulas contractuales tipo y las medidas adicionales necesarias para la transferencia.",
+          "En Vercel, la sección de transferencias internacionales del Data Processing Addendum regula la aplicación de las cláusulas contractuales tipo. Las políticas de Google, WhatsApp y GitHub enlazadas en esta página describen las garantías de sus servicios. Puedes contactar con el responsable mediante los datos anteriores para conocer las garantías aplicables y cómo obtener una copia."
+        ],
+        "links": [
+          {
+            "href": "https://vercel.com/legal/dpa",
+            "label": "Acuerdo de tratamiento de datos de Vercel — transferencias internacionales"
+          }
+        ]
+      },
+      {
+        "title": "Conservación",
+        "body": [
+          "Para consultas y reservas, incluidas las realizadas por WhatsApp, la conservación depende de la gestión de la conversación y de la ejecución de la reserva. Cualquier conservación posterior se limita a los datos necesarios para obligaciones administrativas o fiscales, o para formular, ejercer o defender reclamaciones. Las copias mantenidas por los servicios de mensajería también siguen las condiciones de su proveedor.",
+          "Para los registros técnicos, el plazo depende del servicio de alojamiento y de las condiciones contractuales activas: los criterios son el diagnóstico de errores, la seguridad y el análisis de incidentes. Las credenciales técnicas del área administrativa siguen la caducidad o revocación de la sesión; el historial de cambios de GitHub es independiente de la sesión y se conserva para la trazabilidad y la restauración de contenidos.",
+          "Los límites de disponibilidad de los informes se publican en la documentación de Vercel Web Analytics enlazada a continuación.",
+          "Los informes estadísticos agregados permanecen disponibles según los límites de conservación del plan Vercel activo. El período de consulta no garantiza la eliminación de todas las copias en poder del proveedor."
+        ],
+        "links": [
+          {
+            "href": "https://vercel.com/docs/analytics/limits-and-pricing",
+            "label": "Documentación de Vercel Web Analytics"
+          }
+        ]
+      },
+      {
+        "title": "Tus derechos",
+        "body": [
+          "Puedes solicitar acceso, rectificación, supresión, limitación del tratamiento y portabilidad de los datos, así como oponerte al tratamiento en los casos previstos por el Reglamento (UE) 2016/679.",
+          "También puedes presentar una reclamación ante la autoridad italiana de protección de datos personales (Garante per la protezione dei dati personali)."
+        ],
+        "links": []
+      }
+    ]
+  }
+}

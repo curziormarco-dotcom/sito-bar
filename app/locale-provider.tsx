@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 export type Language = "it" | "en" | "fr" | "de" | "es";
 
@@ -13,6 +13,7 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LocaleProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLang] = useState<Language>("it");
+  useEffect(() => { document.documentElement.lang = lang; }, [lang]);
   const value = useMemo(() => ({ lang, setLang }), [lang]);
 
   return (

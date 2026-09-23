@@ -1,5 +1,7 @@
 "use client";
 
+import { SHARED_COPY } from "./shared-copy";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CookieSettingsButton } from "./cookie-consent";
@@ -38,7 +40,7 @@ export function SiteFooter() {
             </p>
             <span className="mt-1 inline-flex items-center gap-2 text-[0.58rem] font-medium uppercase tracking-[0.22em] text-neutral-500">
               <span className="h-px w-12 bg-neutral-300" />
-              <span>since 1984</span>
+              <span>{SHARED_COPY[lang].since}</span>
               <span className="h-px w-12 bg-neutral-300" />
             </span>
           </div>

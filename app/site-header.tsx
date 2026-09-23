@@ -1,5 +1,7 @@
 "use client";
 
+import { SHARED_COPY } from "./shared-copy";
+
 import Link from "next/link";
 import { useLayoutEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -10,8 +12,8 @@ import { useLanguage, type Language } from "./locale-provider";
 const NAV_COPY: Record<Language, { home: string; menu: string; graduations: string; gallery: string; contacts: string }> = {
   it: { home: "Home", menu: "Menù", graduations: "Lauree", gallery: "Galleria", contacts: "Contatti" },
   en: { home: "Home", menu: "Menu", graduations: "Graduations", gallery: "Gallery", contacts: "Contact" },
-  fr: { home: "Accueil", menu: "Menu", graduations: "Diplômes", gallery: "Galerie", contacts: "Contact" },
-  de: { home: "Start", menu: "Menü", graduations: "Abschlüsse", gallery: "Galerie", contacts: "Kontakt" },
+  fr: { home: "Accueil", menu: "Menu", graduations: "Fêtes de fin d’études", gallery: "Galerie", contacts: "Contact" },
+  de: { home: "Start", menu: "Speisekarte", graduations: "Abschlüsse", gallery: "Galerie", contacts: "Kontakt" },
   es: { home: "Inicio", menu: "Menú", graduations: "Graduaciones", gallery: "Galería", contacts: "Contacto" },
 };
 
@@ -49,25 +51,25 @@ export function SiteHeader() {
       if (event.key === "Escape") { setMenuOpen(false); menuButtonRef.current?.focus(); }
     }}>
       <div className="home-header-inner">
-        <Link href="/" aria-label="Bar da Luciano — Home" className="flex flex-col items-center gap-1">
+        <Link href="/" aria-label={`Bar da Luciano — ${labels.home}`} className="flex flex-col items-center gap-1">
           <span className="whitespace-nowrap text-[1.65rem] italic leading-none tracking-tight sm:text-[1.85rem] [font-family:'Bickham_Script_Pro','Snell_Roundhand','Apple_Chancery','URW_Chancery_L',cursive]">Bar da Luciano</span>
           <span className="mt-1 inline-flex items-center gap-2 text-[0.5rem] font-medium uppercase tracking-[0.22em] text-neutral-500 sm:text-[0.58rem]">
             <span className="h-px w-6 bg-neutral-300" />
-            <span>since 1984</span>
+            <span>{SHARED_COPY[lang].since}</span>
             <span className="h-px w-6 bg-neutral-300" />
           </span>
         </Link>
-        <p className="home-header-location home-desktop-location"><span>Via Nazareth, 20</span><span>Padova · Italia</span></p>
+        <p className="home-header-location home-desktop-location"><span>Via Nazareth, 20</span><span>{SHARED_COPY[lang].city} · {SHARED_COPY[lang].country}</span></p>
         <div className="home-header-actions">
         <Link href="/menu" className="home-header-menu-link">{labels.menu}</Link>
-        <button ref={menuButtonRef} type="button" aria-label={menuOpen ? "Chiudi navigazione" : "Apri navigazione"} aria-expanded={menuOpen} aria-controls="home-navigation" onClick={() => setMenuOpen(!menuOpen)} className="flex h-12 w-12 flex-col items-end justify-center gap-[6px] p-2 text-neutral-900 focus-visible:outline-2 focus-visible:outline-neutral-900">
+        <button ref={menuButtonRef} type="button" aria-label={menuOpen ? SHARED_COPY[lang].closeNavigation : SHARED_COPY[lang].openNavigation} aria-expanded={menuOpen} aria-controls="home-navigation" onClick={() => setMenuOpen(!menuOpen)} className="flex h-12 w-12 flex-col items-end justify-center gap-[6px] p-2 text-neutral-900 focus-visible:outline-2 focus-visible:outline-neutral-900">
           <span className={`h-px w-7 bg-current transition-transform ${menuOpen ? "translate-y-[7px] rotate-45" : ""}`} />
           <span className={`h-px w-5 bg-current transition-opacity ${menuOpen ? "opacity-0" : ""}`} />
           <span className={`h-px w-7 bg-current transition-transform ${menuOpen ? "-translate-y-[7px] -rotate-45" : ""}`} />
         </button>
         </div>
       </div>
-      <nav id="home-navigation" hidden={!menuOpen} aria-label="Navigazione" className="home-navigation">
+      <nav id="home-navigation" hidden={!menuOpen} aria-label={SHARED_COPY[lang].navigation} className="home-navigation">
         <div className="home-navigation-inner" onClick={(event) => { if ((event.target as HTMLElement).closest("a")) setMenuOpen(false); }}>
           {!isHome && <NavLink href="/" className="font-serif">{labels.home}<MenuArrow /></NavLink>}
           <NavLink href="/menu" className="font-serif text-2xl">{labels.menu}<MenuArrow /></NavLink>
@@ -92,7 +94,7 @@ export function SiteHeader() {
             </span>
             <span className="mt-0.5 inline-flex self-center items-center gap-1 text-[0.42rem] font-medium uppercase tracking-[0.11em] text-neutral-500 min-[380px]:text-[0.46rem] sm:mt-1 sm:gap-2 sm:text-[0.58rem] sm:tracking-[0.22em]">
               <span className="h-px w-4 bg-neutral-300 min-[380px]:w-5 sm:w-8" />
-              <span className="whitespace-nowrap">since 1984</span>
+              <span className="whitespace-nowrap">{SHARED_COPY[lang].since}</span>
               <span className="h-px w-4 bg-neutral-300 min-[380px]:w-5 sm:w-8" />
             </span>
           </Link>

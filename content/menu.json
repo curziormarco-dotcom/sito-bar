@@ -14,10 +14,10 @@
         {
           "name": {
             "it": "Caffè",
-            "en": "Coffee",
-            "fr": "Café",
-            "de": "Kaffee",
-            "es": "Café"
+            "en": "Espresso",
+            "fr": "Espresso",
+            "de": "Espresso",
+            "es": "Café espresso"
           },
           "description": {},
           "price": 1.4,
@@ -44,10 +44,10 @@
         {
           "name": {
             "it": "Caffè doppio",
-            "en": "Double coffee",
-            "fr": "Café double",
-            "de": "Doppelter Kaffee",
-            "es": "Café doble"
+            "en": "Double espresso",
+            "fr": "Double espresso",
+            "de": "Doppelter Espresso",
+            "es": "Espresso doble"
           },
           "description": {},
           "price": 2.8,
@@ -93,10 +93,10 @@
         {
           "name": {
             "it": "Caffè corretto",
-            "en": "Coffee with liquor",
-            "fr": "Café correct",
-            "de": "Kaffee mit Likör",
-            "es": "Café con licor"
+            "en": "Espresso with a shot of spirits",
+            "fr": "Espresso avec une touche d’alcool",
+            "de": "Espresso mit einem Schuss Spirituose",
+            "es": "Espresso con un toque de licor"
           },
           "description": {},
           "price": 2,
@@ -110,10 +110,10 @@
         {
           "name": {
             "it": "Caffè shakerato",
-            "en": "Shaken coffee",
-            "fr": "Café frappé",
-            "de": "Shakerato",
-            "es": "Café agitado"
+            "en": "Shaken iced espresso",
+            "fr": "Espresso glacé au shaker",
+            "de": "Im Shaker gekühlter Espresso",
+            "es": "Espresso frío agitado"
           },
           "description": {},
           "price": 3,
@@ -160,8 +160,8 @@
         {
           "name": {
             "it": "Macchiatone",
-            "en": "Large macchiato",
-            "fr": "Macchiato grand",
+            "en": "Macchiatone",
+            "fr": "Grand macchiato",
             "de": "Großer Macchiato",
             "es": "Macchiato grande"
           },
@@ -177,8 +177,8 @@
         {
           "name": {
             "it": "Macchiatone deca",
-            "en": "Large decaf macchiato",
-            "fr": "Macchiato grand décaféiné",
+            "en": "Decaf macchiatone",
+            "fr": "Grand macchiato décaféiné",
             "de": "Großer entkoffeinierter Macchiato",
             "es": "Macchiato grande descafeinado"
           },
@@ -194,8 +194,8 @@
         {
           "name": {
             "it": "Macchiatone soia",
-            "en": "Large soy macchiato",
-            "fr": "Macchiato grand au soja",
+            "en": "Soy macchiatone",
+            "fr": "Grand macchiato au soja",
             "de": "Großer Soja-Macchiato",
             "es": "Macchiato grande de soja"
           },
@@ -212,10 +212,10 @@
         {
           "name": {
             "it": "Macchiatone orzo/ginseng",
-            "en": "Large barley/ginseng macchiato",
-            "fr": "Macchiato grand orge/ginseng",
-            "de": "Großer Gerste/Ginseng-Macchiato",
-            "es": "Macchiato grande cebada/ginseng"
+            "en": "Barley or ginseng macchiatone",
+            "fr": "Grand macchiato à l’orge ou au ginseng",
+            "de": "Großer Gersten- oder Ginseng-Macchiato",
+            "es": "Macchiato grande de cebada o ginseng"
           },
           "description": {},
           "price": 2,
@@ -458,9 +458,9 @@
       "title": {
         "it": "Brioches e pasticceria",
         "en": "Croissants & Pastries",
-        "fr": "Viennoiseries &...",
+        "fr": "Viennoiseries et pâtisseries",
         "de": "Croissants & Gebäck",
-        "es": "Bollería y..."
+        "es": "Bollería y pastelería"
       },
       "introTitle": {},
       "description": {},
@@ -692,9 +692,9 @@
           "name": {
             "it": "Pasticceria mignon",
             "en": "Mini pastries",
-            "fr": "Pâtisseries mignon",
-            "de": "Mignon‑Gebäck",
-            "es": "Pastelería mignon"
+            "fr": "Petits fours sucrés",
+            "de": "Kleingebäck",
+            "es": "Pastelitos"
           },
           "description": {},
           "price": 1.6,
@@ -1254,10 +1254,10 @@
         {
           "name": {
             "it": "Brioches salate",
-            "en": "Savory brioches",
-            "fr": "Brioches salées",
-            "de": "Herzhafte Brioches",
-            "es": "Brioches salados"
+            "en": "Savoury croissants",
+            "fr": "Croissants salés",
+            "de": "Herzhafte Croissants",
+            "es": "Cruasanes salados"
           },
           "description": {},
           "price": 3,
@@ -1460,17 +1460,17 @@
         {
           "name": {
             "it": "Insalatona",
-            "en": "Big salad",
+            "en": "Mixed salad",
             "fr": "Grande salade",
-            "de": "Großer Salat",
-            "es": "Ensalada grande"
+            "de": "Großer gemischter Salat",
+            "es": "Ensalada completa"
           },
           "description": {
             "it": "Base insalatona: insalata gentile, radicchio, rucola, carote, pomodorini, finocchio. Aggiunte: uovo €2,00, mozzarella €2,50, gamberetti (crostacei) €3,00, tonno (pesce) €3,00, olive €1,50, prosciutto cotto €3,00, sfilacci €3,00, mais €1,50, capperi €1,50.",
-            "en": "Base salad: lettuce, radicchio, arugula, carrots, cherry tomatoes, fennel. Add‑ons: egg €2.00, mozzarella €2.50, shrimp (crustaceans) €3.00, tuna (fish) €3.00, olives €1.50, cooked ham €3.00, shredded beef €3.00, corn €1.50, capers €1.50.",
-            "fr": "Base salade: laitue, radicchio, roquette, carottes, tomates cerises, fenouil. Suppléments : œuf 2,00 €, mozzarella 2,50 €, crevettes (crustacés) 3,00 €, thon (poisson) 3,00 €, olives 1,50 €, jambon cuit 3,00 €, effiloché de bœuf 3,00 €, maïs 1,50 €, câpres 1,50 €.",
-            "de": "Salatbasis: Kopfsalat, Radicchio, Rucola, Karotten, Cherrytomaten, Fenchel. Extras: Ei 2,00 €, Mozzarella 2,50 €, Garnelen (Krustentiere) 3,00 €, Thunfisch (Fisch) 3,00 €, Oliven 1,50 €, Kochschinken 3,00 €, Rindfleischstreifen 3,00 €, Mais 1,50 €, Kapern 1,50 €.",
-            "es": "Base de ensalada: lechuga, radicchio, rúcula, zanahorias, tomates cherry, hinojo. Extras: huevo 2,00 €, mozzarella 2,50 €, gambas (crustáceos) 3,00 €, atún (pescado) 3,00 €, aceitunas 1,50 €, jamón cocido 3,00 €, carne deshilachada 3,00 €, maíz 1,50 €, alcaparras 1,50 €."
+            "en": "Base salad: lettuce, radicchio, arugula, carrots, cherry tomatoes, fennel. Add‑ons: egg €2.00, mozzarella €2.50, shrimp (crustaceans) €3.00, tuna (fish) €3.00, olives €1.50, cooked ham €3.00, shredded dried meat €3.00, corn €1.50, capers €1.50.",
+            "fr": "Base salade: laitue, radicchio, roquette, carottes, tomates cerises, fenouil. Suppléments : œuf 2,00 €, mozzarella 2,50 €, crevettes (crustacés) 3,00 €, thon (poisson) 3,00 €, olives 1,50 €, jambon cuit 3,00 €, viande séchée effilochée 3,00 €, maïs 1,50 €, câpres 1,50 €.",
+            "de": "Salatbasis: Kopfsalat, Radicchio, Rucola, Karotten, Cherrytomaten, Fenchel. Extras: Ei 2,00 €, Mozzarella 2,50 €, Garnelen (Krustentiere) 3,00 €, Thunfisch (Fisch) 3,00 €, Oliven 1,50 €, Kochschinken 3,00 €, getrocknete Fleischstreifen 3,00 €, Mais 1,50 €, Kapern 1,50 €.",
+            "es": "Base de ensalada: lechuga, radicchio, rúcula, zanahorias, tomates cherry, hinojo. Extras: huevo 2,00 €, mozzarella 2,50 €, gambas (crustáceos) 3,00 €, atún (pescado) 3,00 €, aceitunas 1,50 €, jamón cocido 3,00 €, carne seca deshilachada 3,00 €, maíz 1,50 €, alcaparras 1,50 €."
           },
           "priceNote": "a partire da 7 €",
           "allergens": [],
@@ -1596,8 +1596,8 @@
         {
           "name": {
             "it": "Scampi crudi",
-            "en": "Raw scampi",
-            "fr": "Scampis crus",
+            "en": "Raw langoustines",
+            "fr": "Langoustines crues",
             "de": "Rohe Scampi",
             "es": "Cigalas crudas"
           },
