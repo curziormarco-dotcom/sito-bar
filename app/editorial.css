@@ -574,12 +574,12 @@
 /* Outlined links on the editorial pages. */
 .home-text-link:hover { background: var(--home-ink); color: var(--home-paper); }
 
-@media (min-width: 900px) {
+@media (min-width: 640px) {
   .home-moment:nth-child(2) .home-moment-copy { text-align: center; }
   .home-moment:nth-child(2) .home-moment-title { justify-content: center; text-align: center; }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 640px) {
   .home-moment:nth-child(3) .home-moment-copy { text-align: right; }
   .home-moment:nth-child(3) .home-moment-title { justify-content: flex-end; }
 }
