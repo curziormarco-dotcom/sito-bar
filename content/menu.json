@@ -454,7 +454,6 @@
       ]
     },
     {
-      "id": "brioches-pasticceria",
       "title": {
         "it": "Brioches e pasticceria",
         "en": "Croissants & Pastries",
@@ -462,6 +461,7 @@
         "de": "Croissants & Gebäck",
         "es": "Bollería y pastelería"
       },
+      "id": "brioches-pasticceria",
       "introTitle": {},
       "description": {},
       "items": [
@@ -1434,7 +1434,6 @@
       ]
     },
     {
-      "id": "pranzi",
       "title": {
         "it": "Pranzi",
         "en": "Lunch",
@@ -1442,6 +1441,7 @@
         "de": "Mittagessen",
         "es": "Almuerzos"
       },
+      "id": "pranzi",
       "introTitle": {
         "it": "Primi e secondi di gastronomia",
         "en": "Deli first courses and main dishes",
@@ -2229,7 +2229,7 @@
             "es": "Gin lemon"
           },
           "description": {},
-          "price": 7,
+          "price": 8,
           "allergens": [],
           "allergenAdd": [],
           "allergenRemove": [],
