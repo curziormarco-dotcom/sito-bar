@@ -55,6 +55,7 @@ const COPY: Record<
     detailsTitle: "Organizziamo insieme",
     details: [
       "Rinfreschi su prenotazione",
+      "Due sale disponibili: veranda e saletta, ciascuna con capienza massima di 20–25 persone",
       "Aperitivi e buffet dolce/salato",
       "Soluzioni per piccoli gruppi e feste con famiglia e amici",
     ],
@@ -93,6 +94,7 @@ const COPY: Record<
     detailsTitle: "Plan it with us",
     details: [
       "Buffet receptions by reservation",
+      "Two spaces available: the veranda and the small room, each with a maximum capacity of 20–25 people",
       "Aperitifs and sweet or savory buffet",
       "Options for small groups and celebrations with family and friends",
     ],
@@ -131,6 +133,7 @@ const COPY: Record<
     detailsTitle: "Organisons ensemble",
     details: [
       "Buffets sur réservation",
+      "Deux espaces disponibles : la véranda et la petite salle, chacun d’une capacité maximale de 20 à 25 personnes",
       "Apéritifs et buffet sucré ou salé",
       "Solutions pour petits groupes et fêtes avec famille et amis",
     ],
@@ -169,6 +172,7 @@ const COPY: Record<
     detailsTitle: "Gemeinsam planen",
     details: [
       "Buffets auf Vorbestellung",
+      "Zwei Räume stehen zur Verfügung: die Veranda und der kleine Saal, jeweils mit einer maximalen Kapazität von 20–25 Personen",
       "Aperitifs und süßes oder herzhaftes Buffet",
       "Lösungen für kleine Gruppen und Feiern mit Familie und Freunden",
     ],
@@ -207,6 +211,7 @@ const COPY: Record<
     detailsTitle: "Lo organizamos juntos",
     details: [
       "Bufés con reserva",
+      "Dos espacios disponibles: la veranda y la sala pequeña, cada uno con una capacidad máxima de 20–25 personas",
       "Aperitivos y buffet dulce o salado",
       "Opciones para grupos pequeños y fiestas con familia y amigos",
     ],
