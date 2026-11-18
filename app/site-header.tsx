@@ -47,7 +47,9 @@ export function SiteHeader() {
 
   return (
     <>
-    {usesEditorialHeader && <header className="home-header" onKeyDown={(event) => {
+    {usesEditorialHeader && <>
+    <div ref={spacerRef} aria-hidden="true" className="h-[72px] sm:h-24" />
+    <header ref={headerRef} className="home-header" onKeyDown={(event) => {
       if (event.key === "Escape") { setMenuOpen(false); menuButtonRef.current?.focus(); }
     }}>
       <div className="home-header-inner">
@@ -79,7 +81,7 @@ export function SiteHeader() {
           <LanguageSwitcher inline />
         </div>
       </nav>
-    </header>}
+    </header></>}
     {!usesEditorialHeader && <>
     <div ref={spacerRef} aria-hidden="true" className="h-16 sm:h-28" />
     <header ref={headerRef} className="fixed inset-x-0 top-0 z-50 w-full border-b border-neutral-200 bg-white/90 backdrop-blur transition-all duration-300">

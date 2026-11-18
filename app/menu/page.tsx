@@ -10,6 +10,8 @@ import { inferAllergens, itemIsAllowedForSelectedAllergens, toggleAllergenFilter
 
 const UI_COPY: Record<Language, Record<string, string>> = {
   it: {
+    wineAvailable: "Disponibile",
+    wineUnavailable: "Non disponibile",
     menuIntro: "Dal primo caffè all’aperitivo. Scegli una categoria e scopri le nostre proposte.",
     sparkling: "Bollicine",
     still: "Bianchi fermi",
@@ -31,6 +33,8 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     bottleLabel: "Bottiglia",
   },
   en: {
+    wineAvailable: "Available",
+    wineUnavailable: "Unavailable",
     menuIntro: "From your first coffee to aperitivo. Choose a category and discover our menu.",
     sparkling: "Sparkling",
     still: "Still white wines",
@@ -52,6 +56,8 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     bottleLabel: "Bottle",
   },
   fr: {
+    wineAvailable: "Disponible",
+    wineUnavailable: "Indisponible",
     menuIntro: "Du premier café à l’apéritif. Choisissez une catégorie et découvrez nos propositions.",
     sparkling: "Effervescents",
     still: "Blancs tranquilles",
@@ -73,6 +79,8 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     bottleLabel: "Bouteille",
   },
   de: {
+    wineAvailable: "Verfügbar",
+    wineUnavailable: "Nicht verfügbar",
     menuIntro: "Vom ersten Kaffee bis zum Aperitif. Wähle eine Kategorie und entdecke unser Angebot.",
     sparkling: "Schaumweine",
     still: "Stille Weißweine",
@@ -94,6 +102,8 @@ const UI_COPY: Record<Language, Record<string, string>> = {
     bottleLabel: "Flasche",
   },
   es: {
+    wineAvailable: "Disponible",
+    wineUnavailable: "No disponible",
     menuIntro: "Del primer café al aperitivo. Elige una categoría y descubre nuestras propuestas.",
     sparkling: "Espumosos",
     still: "Blancos tranquilos",
@@ -824,6 +834,12 @@ export default function MenuPage() {
                           <h3 className="font-normal leading-6">
                             {item.name[lang]}
                           </h3>
+                          {isWineSection && (
+                          <span className={`rounded-full border px-2 py-0.5 text-[11px] font-medium ${item.unavailable ? "border-red-200 bg-red-50 text-red-700" : "border-emerald-200 bg-emerald-50 text-emerald-800"}`}>
+                            {t(item.unavailable ? "wineUnavailable" : "wineAvailable")}
+                          </span>
+                          )}
+
                           {item.allergens && item.allergens.length > 0 && (
                             <div className="flex flex-wrap items-center gap-1">
                               {([...(item.allergens as AllergenKey[])] as AllergenKey[])
@@ -907,7 +923,8 @@ export default function MenuPage() {
                         </div>
 
                         {isWineSection ? (
-                          <div className="grid w-[120px] shrink-0 grid-cols-2 gap-2 text-sm font-medium tabular-nums text-neutral-900 sm:w-[140px] sm:gap-3">
+                          <div className="w-[120px] shrink-0 text-right sm:w-[140px]">
+                          <div className="grid grid-cols-2 gap-2 text-sm font-medium tabular-nums text-neutral-900 sm:gap-3">
                             <span className="text-left">
                               {typeof item.glassPrice === "number"
                                 ? formatEURSuffix(item.glassPrice)
@@ -918,6 +935,7 @@ export default function MenuPage() {
                                 ? formatEURSuffix(item.bottlePrice)
                                 : ""}
                             </span>
+                          </div>
                           </div>
                         ) : (
                           <div className="shrink-0 whitespace-nowrap text-right font-medium tabular-nums text-neutral-900">

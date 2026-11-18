@@ -8,6 +8,7 @@ export type MenuItem = {
   glassPrice?: number;
   bottlePrice?: number;
   tag?: string;
+  unavailable?: boolean;
   allergens?: string[];
   allergenAdd?: string[];
   allergenRemove?: string[];

@@ -2456,21 +2456,7 @@
           "tag": "bollicine"
         },
         {
-          "name": {
-            "it": "Chardonnay MASETTO D'ORÈ - Endrizzi",
-            "en": "Chardonnay MASETTO D'ORÈ - Endrizzi",
-            "fr": "Chardonnay MASETTO D'ORÈ - Endrizzi",
-            "de": "Chardonnay MASETTO D'ORÈ - Endrizzi",
-            "es": "Chardonnay MASETTO D'ORÈ - Endrizzi"
-          },
-          "description": {},
-          "bottlePrice": 35,
-          "allergens": [],
-          "allergenAdd": [],
-          "allergenRemove": [],
-          "tag": "fermi"
-        },
-        {
+          "unavailable": true,
           "name": {
             "it": "Crémant brut",
             "en": "Crémant brut",
@@ -2559,6 +2545,7 @@
           "tag": "bollicine"
         },
         {
+          "unavailable": true,
           "name": {
             "it": "Lugana - Fattori",
             "en": "Lugana - Fattori",
@@ -2619,6 +2606,7 @@
           "tag": "fermi"
         },
         {
+          "unavailable": true,
           "name": {
             "it": "Dalis bianco - Endrizzi",
             "en": "Dalis white - Endrizzi",
@@ -2685,6 +2673,7 @@
           "tag": "fermi"
         },
         {
+          "unavailable": true,
           "name": {
             "it": "Ribolla gialla",
             "en": "Ribolla gialla",
@@ -2729,6 +2718,7 @@
           "tag": "fermi"
         },
         {
+          "unavailable": true,
           "name": {
             "it": "Soave - Fattori",
             "en": "Soave - Fattori",
@@ -2824,6 +2814,7 @@
           "tag": ""
         },
         {
+          "unavailable": true,
           "name": {
             "it": "Lagrein - Meran",
             "en": "Lagrein - Meran",
@@ -2846,6 +2837,7 @@
           "tag": ""
         },
         {
+          "unavailable": true,
           "name": {
             "it": "Valpolicella ripasso - Bisano",
             "en": "Valpolicella ripasso - Bisano",

@@ -48,6 +48,7 @@ export function normalizeMenu(value: unknown): MenuSection[] {
         const item = record(entry);
         return defined({
           name: translated(item.name, true)!,
+          unavailable: typeof item.unavailable === 'boolean' ? item.unavailable : undefined,
           description: typeof item.description === 'string' ? text(item.description) : translated(item.description),
           price: price(item.price), priceNote: text(item.priceNote),
           glassPrice: price(item.glassPrice), bottlePrice: price(item.bottlePrice),
