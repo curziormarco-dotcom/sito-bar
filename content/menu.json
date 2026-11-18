@@ -1075,21 +1075,6 @@
         },
         {
           "name": {
-            "it": "Coca‑Cola asporto",
-            "en": "Coca‑Cola (to go)",
-            "fr": "Coca‑Cola à emporter",
-            "de": "Coca‑Cola (zum Mitnehmen)",
-            "es": "Coca‑Cola para llevar"
-          },
-          "description": {},
-          "price": 3.5,
-          "allergens": [],
-          "allergenAdd": [],
-          "allergenRemove": [],
-          "tag": ""
-        },
-        {
-          "name": {
             "it": "Coca‑Cola bottiglia in vetro",
             "en": "Coca‑Cola (glass bottle)",
             "fr": "Coca‑Cola (bouteille en verre)",
