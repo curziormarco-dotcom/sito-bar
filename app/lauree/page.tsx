@@ -3,7 +3,6 @@
 import { SHARED_COPY } from "../shared-copy";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useScrollReveal } from "../use-scroll-reveal";
 import { useLanguage, type Language } from "../locale-provider";
@@ -44,7 +43,6 @@ const COPY: Record<
     drinksNote: string;
     ctaCall: string;
     ctaWhatsApp: string;
-    galleryCta: string;
     imageAlt: string;
   }
 > = {
@@ -84,7 +82,6 @@ const COPY: Record<
     drinksNote: "Le bevande sono accompagnate da patatine e arachidi.",
     ctaCall: "Chiama",
     ctaWhatsApp: "WhatsApp",
-    galleryCta: "Vedi foto",
     imageAlt: "Festa di laurea al Bar da Luciano",
   },
   en: {
@@ -123,7 +120,6 @@ const COPY: Record<
     drinksNote: "Drinks are served with crisps and peanuts.",
     ctaCall: "Call",
     ctaWhatsApp: "WhatsApp",
-    galleryCta: "View photos",
     imageAlt: "Graduation party at Bar da Luciano",
   },
   fr: {
@@ -162,7 +158,6 @@ const COPY: Record<
     drinksNote: "Les boissons sont accompagnées de chips et de cacahuètes.",
     ctaCall: "Appeler",
     ctaWhatsApp: "WhatsApp",
-    galleryCta: "Voir les photos",
     imageAlt: "Fête de fin d’études au Bar da Luciano",
   },
   de: {
@@ -201,7 +196,6 @@ const COPY: Record<
     drinksNote: "Die Getränke werden mit Chips und Erdnüssen serviert.",
     ctaCall: "Anrufen",
     ctaWhatsApp: "WhatsApp",
-    galleryCta: "Fotos ansehen",
     imageAlt: "Abschlussfeier in der Bar da Luciano",
   },
   es: {
@@ -240,7 +234,6 @@ const COPY: Record<
     drinksNote: "Las bebidas se acompañan con patatas chips y cacahuetes.",
     ctaCall: "Llamar",
     ctaWhatsApp: "WhatsApp",
-    galleryCta: "Ver fotos",
     imageAlt: "Fiesta de graduación en Bar da Luciano",
   },
 };
@@ -313,7 +306,7 @@ export default function GraduationsPage() {
 
       <div className="home-container">
         <section className="editorial-section graduation-cake" aria-labelledby="cake-title"><h2 id="cake-title" className="home-heading" data-reveal="up">{copy.cakeTitle}</h2><div><p className="editorial-lead">{copy.cakeText}</p><p className="graduation-cake-price">{copy.cakeService}</p></div></section>
-        <section className="editorial-contact" aria-label={copy.detailsTitle}><p>{copy.detailsTitle}</p><div><a href="tel:+390499813795" className="home-button">{copy.ctaCall} <LinkArrow /></a><a href="https://wa.me/393498183485" target="_blank" rel="noreferrer" className="home-button">{copy.ctaWhatsApp} <LinkArrow /></a><Link href="/galleria" className="home-text-link">{copy.galleryCta} <LinkArrow /></Link></div></section>
+        <section className="editorial-contact" aria-label={copy.detailsTitle}><p>{copy.detailsTitle}</p><div><a href="tel:+390499813795" className="home-button">{copy.ctaCall} <LinkArrow /></a><a href="https://wa.me/393498183485" target="_blank" rel="noreferrer" className="home-button">{copy.ctaWhatsApp} <LinkArrow /></a></div></section>
       </div>
     </div>
   );
