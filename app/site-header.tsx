@@ -13,7 +13,7 @@ const NAV_COPY: Record<Language, { home: string; menu: string; graduations: stri
   it: { home: "Home", menu: "Menù", graduations: "Lauree", gallery: "Galleria", contacts: "Contatti" },
   en: { home: "Home", menu: "Menu", graduations: "Graduations", gallery: "Gallery", contacts: "Contact" },
   fr: { home: "Accueil", menu: "Menu", graduations: "Fêtes de fin d’études", gallery: "Galerie", contacts: "Contact" },
-  de: { home: "Start", menu: "Speisekarte", graduations: "Abschlüsse", gallery: "Galerie", contacts: "Kontakt" },
+  de: { home: "Start", menu: "Speisekarte", graduations: "Abschlussfeiern", gallery: "Galerie", contacts: "Kontakt" },
   es: { home: "Inicio", menu: "Menú", graduations: "Graduaciones", gallery: "Galería", contacts: "Contacto" },
 };
 

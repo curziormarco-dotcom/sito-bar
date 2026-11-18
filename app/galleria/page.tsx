@@ -54,7 +54,7 @@ const IMAGES = [
   { src: "/images/insalatona.png", alt: {"it": "Insalatona", "en": "Mixed salad", "fr": "Grande salade", "de": "Großer gemischter Salat", "es": "Ensalada completa"} },
   { src: "/images/brioche.jpg", alt: {"it": "Brioches", "en": "Croissants", "fr": "Viennoiseries", "de": "Croissants", "es": "Bollería"} },
   { src: "/images/italian-75.jpeg", alt: {"it": "Italian 75", "en": "Italian 75", "fr": "Italian 75", "de": "Italian 75", "es": "Italian 75"} },
-  { src: "/images/laurea.jpeg", alt: {"it": "La veranda di Bar da Luciano", "en": "The veranda at Bar da Luciano", "fr": "La véranda du Bar da Luciano", "de": "Die Veranda der Bar da Luciano", "es": "La terraza de Bar da Luciano"} },
+  { src: "/images/laurea.jpeg", alt: {"it": "La veranda di Bar da Luciano", "en": "The veranda at Bar da Luciano", "fr": "La véranda du Bar da Luciano", "de": "Die Veranda der Bar da Luciano", "es": "La veranda de Bar da Luciano"} },
   { src: "/images/laurea-3.jpg", alt: {"it": "Feste di laurea", "en": "Graduation parties", "fr": "Fêtes de fin d’études", "de": "Abschlussfeiern", "es": "Fiestas de graduación"} },
   { src: "/images/laurea-2.jpg", alt: {"it": "Il brindisi di laurea", "en": "A graduation toast", "fr": "Un toast pour fêter le diplôme", "de": "Anstoßen zum Abschluss", "es": "El brindis de graduación"} },
 ];

@@ -516,7 +516,7 @@
             "it": "Brioches vegana",
             "en": "Vegan croissant",
             "fr": "Croissant végan",
-            "de": "Veganer Croissant",
+            "de": "Veganes Croissant",
             "es": "Cruasán vegano"
           },
           "description": {},
@@ -557,7 +557,7 @@
             "en": "Mini pastries",
             "fr": "Petites pâtisseries",
             "de": "Mini‑Gebäck",
-            "es": "Pastelería pequeña"
+            "es": "Pastelitos"
           },
           "description": {
             "it": "Riso, ricotta o ricotta e cioccolato",
@@ -1259,9 +1259,9 @@
         {
           "name": {
             "it": "Bottiglietta d'acqua naturale/gasata 0,5 L",
-            "en": "Water bottle still/sparkling 0.5L",
+            "en": "Still or sparkling water, 0.5 L bottle",
             "fr": "Bouteille d’eau plate/gazeuse 0,5 l",
-            "de": "Wasser still/sprudel 0,5 l",
+            "de": "Mineralwasser still oder mit Kohlensäure, 0,5 l",
             "es": "Botella de agua natural/con gas 0,5 l"
           },
           "description": {},
@@ -1336,10 +1336,10 @@
         {
           "name": {
             "it": "Toast",
-            "en": "Toast",
-            "fr": "Toast",
+            "en": "Toasted sandwich",
+            "fr": "Sandwich toasté",
             "de": "Toast",
-            "es": "Tostada"
+            "es": "Sándwich tostado"
           },
           "description": {},
           "price": 4,
@@ -1480,7 +1480,7 @@
         {
           "name": {
             "it": "Polpette verdura o carne",
-            "en": "Vegetable or meatballs",
+            "en": "Vegetable balls or meatballs",
             "fr": "Boulettes de légumes ou de viande",
             "de": "Gemüse- oder Fleischbällchen",
             "es": "Albóndigas de verdura o carne"
@@ -1506,16 +1506,16 @@
       "id": "pranzi",
       "introTitle": {
         "it": "Primi e secondi di gastronomia",
-        "en": "Deli first courses and main dishes",
-        "fr": "Entrées et plats du traiteur",
-        "de": "Vorspeisen und Hauptgerichte aus der Feinkost",
-        "es": "Primeros y segundos platos de gastronomía"
+        "en": "Freshly prepared first and main courses",
+        "fr": "Plats cuisinés : primi et plats principaux",
+        "de": "Frisch zubereitete Primi und Hauptgerichte",
+        "es": "Primeros y segundos platos preparados"
       },
       "description": {
         "it": "Primi e secondi di gastronomia e proposte per un pranzo veloce. La selezione varia ogni giorno: scopri i piatti disponibili in vetrina.",
-        "en": "Deli first courses and main dishes, with options for a quick lunch. Our selection changes daily: discover the dishes in our display counter.",
-        "fr": "Entrées et plats du traiteur pour un déjeuner rapide. La sélection varie chaque jour : découvrez les plats disponibles en vitrine.",
-        "de": "Vor- und Hauptspeisen aus der Feinkost für ein schnelles Mittagessen. Die Auswahl wechselt täglich: Entdecke die Gerichte in unserer Vitrine.",
+        "en": "Freshly prepared first and main courses, with options for a quick lunch. Our selection changes daily: discover the dishes at our display counter.",
+        "fr": "Plats cuisinés, primi et plats principaux pour un déjeuner rapide. La sélection varie chaque jour : découvrez les plats disponibles en vitrine.",
+        "de": "Frisch zubereitete Primi und Hauptgerichte für ein schnelles Mittagessen. Die Auswahl wechselt täglich: Entdecke die Gerichte in unserer Vitrine.",
         "es": "Primeros y segundos platos preparados y propuestas para un almuerzo rápido. La selección cambia cada día: descubre los platos disponibles en la vitrina."
       },
       "items": [
@@ -1874,9 +1874,9 @@
           "name": {
             "it": "Grapes al pompelmo",
             "en": "Grapes with grapefruit",
-            "fr": "Grapes pamplemousse",
-            "de": "Grapes Grapefruit",
-            "es": "Grapes pomelo"
+            "fr": "Grapes au pamplemousse",
+            "de": "Grapes mit Grapefruit",
+            "es": "Grapes de pomelo"
           },
           "description": {},
           "price": 4.5,
@@ -2262,7 +2262,7 @@
             "en": "Grapefruit tonic",
             "fr": "Tonic pamplemousse",
             "de": "Grapefruit Tonic",
-            "es": "Tónico de pomelo"
+            "es": "Gin-tonic de pomelo"
           },
           "description": {
             "it": "Malfi gin rosa al pompelmo, acqua tonica",
@@ -2604,7 +2604,7 @@
             "it": "Chardonnay. Maturazione sui lieviti in bottiglia di oltre 24 mesi. Sapido al gusto, ma allo stesso tempo vivace e fresco.",
             "en": "Chardonnay. Bottle ageing on the lees for over 24 months. Savory on the palate, yet lively and fresh.",
             "fr": "Chardonnay. Élevage sur lies en bouteille pendant plus de 24 mois. Savoureux en bouche, tout en restant vif et frais.",
-            "de": "Chardonnay. Flaschengärung auf der Hefe über 24 Monate. Würzig am Gaumen, zugleich lebendig und frisch.",
+            "de": "Chardonnay. Über 24 Monate Reifung auf der Hefe in der Flasche. Würzig am Gaumen, zugleich lebendig und frisch.",
             "es": "Chardonnay. Crianza sobre lías en botella durante más de 24 meses. Sabroso en boca, pero a la vez vivo y fresco."
           },
           "unavailable": false,
@@ -2648,10 +2648,10 @@
           },
           "description": {
             "it": "Offre profumo fragrante, di timbro floreale dal glicine all’acacia e continua nel gusto appena morbido, gaio, tipicamente fruttato con note di mela, pesca nettarina e pera Williams.",
-            "en": "It offers a fragrant aroma with floral tones from wisteria to acacia, and continues on the palate, softly smooth, cheerful and typically fruity with notes of apple, nectarine peach and Williams pear.",
-            "fr": "Arôme parfumé aux accents floraux de glycine et d'acacia, puis une bouche souple, joyeuse, typiquement fruitée avec des notes de pomme, pêche nectarine et poire Williams.",
-            "de": "Duftend mit floralen Noten von Glyzinie bis Akazie, am Gaumen weich, heiter und typisch fruchtig mit Noten von Apfel, Nektarine und Williamsbirne.",
-            "es": "Aroma fragante con tonos florales de glicina a acacia, y en boca es suavemente amable, alegre y típicamente frutal con notas de manzana, melocotón nectarina y pera Williams."
+            "en": "A fragrant bouquet with floral notes of wisteria and acacia. Slightly soft, lively and characteristically fruity on the palate, with notes of apple, nectarine and Williams pear.",
+            "fr": "Un bouquet parfumé aux notes florales de glycine et d’acacia. En bouche, il est légèrement souple, vif et typiquement fruité, avec des notes de pomme, de nectarine et de poire Williams.",
+            "de": "Duftiges Bouquet mit floralen Noten von Glyzinie und Akazie. Am Gaumen leicht weich, lebhaft und typisch fruchtig, mit Noten von Apfel, Nektarine und Williamsbirne.",
+            "es": "Aroma fragante con notas florales de glicina y acacia. En boca es ligeramente suave, vivaz y característicamente afrutado, con notas de manzana, nectarina y pera Williams."
           },
           "unavailable": false,
           "glassPrice": 4.5,
@@ -3055,7 +3055,7 @@
         {
           "name": {
             "it": "Leffe rossa — 33 cl",
-            "en": "Leffe rouge — 33 cl",
+            "en": "Leffe red — 33 cl",
             "fr": "Leffe rouge — 33 cl",
             "de": "Leffe Rot — 33 cl",
             "es": "Leffe roja — 33 cl"
