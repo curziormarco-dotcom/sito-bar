@@ -737,3 +737,8 @@ textarea.booking-control { resize: vertical; min-height: 112px; }
   .home-hero-content { padding-top: 32px; }
   .home-hero-actions { padding-top: 24px; }
 }
+
+@media (max-width: 639px) {
+  .home-hero h1 { font-size: clamp(2.9rem, 12vw, 4.35rem); line-height: 1.08; }
+  .home-hero h1 em { margin-top: 4px; font-size: 1.14em; }
+}
