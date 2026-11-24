@@ -41,7 +41,7 @@ test('calendar stays open for day clicks and fills all date segments', () => {
   const instance = picker();
   let tree = instance.render();
   assert.equal(tree.props.onBlur, undefined, 'blur must not remove the panel before a Safari button click');
-  nodes(tree).find(node => node.props?.className === 'booking-calendar-toggle').props.onClick();
+  nodes(tree).find(node => node.props?.name === 'bookingDate').props.onClick();
   tree = instance.render();
   const day = nodes(tree).find(node => node.type === 'button' && node.props.children === 25);
   day.props.onClick();
@@ -49,13 +49,18 @@ test('calendar stays open for day clicks and fills all date segments', () => {
   assert(!nodes(instance.render()).some(node => node.props?.className === 'booking-calendar-panel'));
 });
 
-test('month selector changes days; previous dates remain disabled', () => {
+test('month arrows change months and Sundays are crossed out and disabled', () => {
   const instance = picker();
-  nodes(instance.render()).find(node => node.props?.className === 'booking-calendar-toggle').props.onClick();
+  nodes(instance.render()).find(node => node.props?.name === 'bookingDate').props.onClick();
   let tree = instance.render();
   assert(nodes(tree).find(node => node.type === 'button' && node.props.children === 23).props.disabled);
-  nodes(tree).find(node => node.type === 'select' && node.props['aria-label'] === 'Mese').props.onChange({ target: { value: '12' } });
+  const sunday = nodes(tree).find(node => node.type === 'button' && node.props.children === 29);
+  assert(sunday.props.disabled);
+  assert.equal(sunday.props.className, 'booking-calendar-sunday');
+  nodes(tree).find(node => node.type === 'button' && node.props['aria-label'] === 'Mese successivo').props.onClick();
   tree = instance.render();
-  nodes(tree).find(node => node.type === 'button' && node.props.children === 1).props.onClick();
+  const first = nodes(tree).find(node => node.type === 'button' && node.props.children === 1);
+  assert.equal(first.props.disabled, false);
+  first.props.onClick();
   assert.equal(instance.selected(), '01/12/2026');
 });

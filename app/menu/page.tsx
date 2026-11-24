@@ -460,6 +460,28 @@ function formatEURSuffix(value: number) {
 function VariantInfo({ item, lang, closeLabel }: { item: MenuItem; lang: Language; closeLabel: string }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const titleId = useId();
+  const unlockScroll = useRef<(() => void) | null>(null);
+  useEffect(() => () => unlockScroll.current?.(), []);
+
+  function openDialog() {
+    if (!dialog.current || dialog.current.open) return;
+    const body = document.body;
+    const scrollY = window.scrollY;
+    const previous = { position: body.style.position, top: body.style.top, width: body.style.width, overflow: body.style.overflow };
+    const previousRootOverflow = document.documentElement.style.overflow;
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.width = "100%";
+    body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    unlockScroll.current = () => {
+      Object.assign(body.style, previous);
+      document.documentElement.style.overflow = previousRootOverflow;
+      window.scrollTo({ top: scrollY, left: 0, behavior: "instant" });
+      unlockScroll.current = null;
+    };
+    dialog.current.showModal();
+  }
   if (!item.variants?.length) return null;
   return (
     <>
@@ -468,7 +490,7 @@ function VariantInfo({ item, lang, closeLabel }: { item: MenuItem; lang: Languag
         aria-label={`${SHARED_COPY[lang].info}: ${item.name[lang]}`}
         title={item.variants.map((variant) => `${variant.name[lang]} — ${formatEUR(variant.price)}`).join("\n")}
         aria-haspopup="dialog"
-        onClick={() => dialog.current?.showModal()}
+        onClick={openDialog}
         className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-neutral-600 hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-2"
       >
         <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
@@ -480,14 +502,18 @@ function VariantInfo({ item, lang, closeLabel }: { item: MenuItem; lang: Languag
       <dialog
         ref={dialog}
         aria-labelledby={titleId}
+        onClose={() => unlockScroll.current?.()}
         onClick={(event) => { if (event.target === event.currentTarget) dialog.current?.close(); }}
-        className="fixed inset-0 m-auto max-h-[85dvh] w-[calc(100%-2rem)] max-w-md overflow-y-auto rounded-2xl border border-neutral-200 bg-white p-5 text-neutral-900 shadow-xl backdrop:bg-black/40"
+        className="brioche-dialog"
       >
-        <div className="flex items-center justify-between gap-4">
+        <div className="brioche-dialog-panel">
+        <div className="flex items-center justify-between gap-4 border-b border-neutral-200 p-5">
           <h2 id={titleId} className="font-serif text-2xl">{item.name[lang]}</h2>
-          <button type="button" autoFocus onClick={() => dialog.current?.close()} className="rounded-full border border-neutral-200 px-3 py-2 text-sm hover:bg-neutral-50">{closeLabel}</button>
+          <button type="button" autoFocus aria-label={closeLabel} onClick={() => dialog.current?.close()} className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-neutral-600 hover:bg-neutral-100">
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" strokeLinecap="round" /></svg>
+          </button>
         </div>
-        <ul className="mt-4 divide-y divide-neutral-200">
+        <ul className="brioche-dialog-list divide-y divide-neutral-200">
           {item.variants.map((variant) => (
             <li key={variant.name.it} className="flex items-baseline justify-between gap-4 py-3">
               <span>{variant.name[lang]}</span>
@@ -495,6 +521,7 @@ function VariantInfo({ item, lang, closeLabel }: { item: MenuItem; lang: Languag
             </li>
           ))}
         </ul>
+        </div>
       </dialog>
     </>
   );

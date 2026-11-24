@@ -650,7 +650,7 @@ textarea.booking-control { resize: vertical; min-height: 112px; }
 }
 
 
-.booking-date-picker { min-width: 0; }
+.booking-date-picker { position: relative; min-width: 0; }
 .booking-date-entry { display: flex; align-items: center; min-height: 54px; padding: 4px 6px; border: 1px solid #dcded8; border-radius: 8px; background: #fcfcfa; transition: border-color .2s, box-shadow .2s; }
 .booking-date-entry:focus-within { border-color: #626d58; box-shadow: 0 0 0 3px #626d581a; background: #fff; }
 .booking-date-part { display: inline-flex; align-items: center; min-width: 0; }
@@ -661,7 +661,7 @@ textarea.booking-control { resize: vertical; min-height: 112px; }
 .booking-date-slash { color: #9b9f96; font-size: 1rem; font-weight: 400; padding-inline: 2px; }
 .booking-calendar-toggle { display: grid; place-items: center; width: 40px; min-height: 44px; margin-left: auto; flex-shrink: 0; border-radius: 6px; color: #526447; cursor: pointer; }
 .booking-calendar-toggle:hover { background: #eaf0e5; }
-.booking-calendar-panel { margin-top: 10px; padding: 12px; border: 1px solid var(--home-line); border-radius: 10px; background: #fff; box-shadow: 0 8px 24px #20211f08; }
+.booking-calendar-panel { position: absolute; top: calc(100% + 8px); left: 0; z-index: 20; width: min(320px, calc(200% + 20px)); max-height: 60dvh; overflow-y: auto; overscroll-behavior: contain; padding: 12px; border: 1px solid var(--home-line); border-radius: 10px; background: #fff; box-shadow: 0 8px 24px #20211f08; }
 .booking-calendar-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 8px; }
 .booking-calendar-header strong { font-size: 1rem; font-weight: 500; text-transform: capitalize; }
 .booking-calendar-header button { min-height: 44px; padding: 8px; color: #526447; font-size: .875rem; text-decoration: underline; text-underline-offset: 3px; }
@@ -688,5 +688,23 @@ textarea.booking-control { resize: vertical; min-height: 112px; }
   .booking-date-part:last-of-type input { width: 4.3ch; }
   .booking-date-slash { padding-inline: 1px; }
   .booking-calendar-toggle { position: absolute; right: -2px; top: -47px; width: 36px; min-height: 36px; }
-  .booking-calendar-panel { position: absolute; top: calc(100% + 8px); left: 0; right: 0; z-index: 10; margin: 0; box-shadow: 0 12px 32px #20211f20; }
+  .booking-calendar-panel { width: calc(200% + 12px); box-shadow: 0 12px 32px #20211f20; }
 }
+
+.booking-date-select { padding: 0 10px; gap: 6px; cursor: pointer; }
+.booking-date-display { width: 100%; min-width: 0; min-height: 52px; border: 0; outline: none; background: transparent; font-size: 1rem; font-weight: 400; color: var(--home-ink); cursor: pointer; }
+.booking-date-display::placeholder { color: #83877e; }
+.booking-date-select > svg { flex-shrink: 0; color: #526447; pointer-events: none; }
+.booking-calendar-month-header { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; align-items: center; gap: 4px; }
+.booking-calendar-month-header strong { text-align: center; text-transform: capitalize; font-size: 1rem; font-weight: 500; }
+.booking-calendar-month-header button { display: grid; place-items: center; width: 44px; min-height: 44px; border-radius: 6px; }
+.booking-calendar-sunday { text-decoration: line-through; text-decoration-thickness: 1.5px; }
+.booking-calendar-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; margin-top: 12px; border-top: 1px solid var(--home-line); padding-top: 8px; font-size: .875rem; font-weight: 400; color: var(--home-muted); }
+.booking-calendar-footer button { min-height: 44px; padding: 8px; color: #526447; text-decoration: underline; text-underline-offset: 3px; }
+
+.brioche-dialog { position: fixed; inset: 0; width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; padding: 20px 16px; border: 0; background: transparent; overflow: hidden; color: #20211f; }
+.brioche-dialog[open] { display: flex; align-items: center; justify-content: center; }
+.brioche-dialog::backdrop { background: #0006; }
+.brioche-dialog-panel { display: flex; flex-direction: column; width: 100%; max-width: 448px; max-height: 85dvh; min-height: 0; overflow: hidden; border: 1px solid #d7d8d1; border-radius: 16px; background: #fff; box-shadow: 0 20px 60px #0003; }
+.brioche-dialog-panel > div { flex-shrink: 0; }
+.brioche-dialog-list { min-height: 0; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; padding: 0 20px 12px; }
