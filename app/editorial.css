@@ -719,3 +719,10 @@ textarea.booking-control { resize: vertical; min-height: 112px; }
 @media (min-width: 1024px) {
   .home-hero-actions { align-items: flex-start; }
 }
+
+@media (max-width: 639px) {
+  .home-hero-content { display: flex; flex-direction: column; min-height: calc(100svh - 96px); padding-block: 56px 100px; }
+  .home-hero-bottom { display: flex; flex: 1; align-items: stretch; padding-right: 0; }
+  .home-hero-bottom > div { display: flex; flex: 1; flex-direction: column; align-items: flex-start; }
+  .home-hero-actions { align-items: flex-start; margin-top: auto; padding-top: 32px; }
+}
