@@ -406,7 +406,10 @@ export default function HomePage() {
             <div>
               <p>{t("heroSubtitle").split(". ")[0]}.{" "}<span className="home-since-date">{t("heroSubtitle").split(". ")[1]}</span></p>
               <p className="home-hero-address">Via Nazareth, 20 · {SHARED_COPY[lang].city} · {SHARED_COPY[lang].country}</p>
-              <Link href="/menu" className="home-hero-menu-link">{t("ctaMenu")}</Link>
+              <div className="home-hero-actions">
+                <Link href="/menu" className="home-hero-menu-link">{t("ctaMenu")}</Link>
+                <a href="#prenota" className="home-hero-menu-link home-hero-book-link">{t("ctaBook")}</a>
+              </div>
             </div>
             <p className="home-hero-note">Via Nazareth, 20<br />{SHARED_COPY[lang].city}, {SHARED_COPY[lang].country}</p>
           </div>
