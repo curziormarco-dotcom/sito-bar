@@ -729,7 +729,7 @@ textarea.booking-control { resize: vertical; min-height: 112px; }
   .home-hero-bottom p { max-width: 290px; line-height: 1.65; }
   .home-hero-actions { align-items: flex-start; gap: 10px; margin-top: auto; padding-top: 32px; }
   .home-hero-actions .home-hero-menu-link { width: 210px; max-width: 100%; min-width: 0; min-height: 50px; font-size: .875rem; letter-spacing: .08em; }
-  .home-hero-actions .home-hero-menu-link:first-child { background: #fbfaf7; border-color: #fbfaf7; color: #20211f; }
+  .home-hero-actions .home-hero-menu-link:first-child { background: #202522b8; border-color: #ffffff80; color: #fff; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
   .home-hero-actions .home-hero-book-link { background: transparent; border-color: #ffffffb3; color: #fff; }
   .home-mobile-address { bottom: 24px; }
 }
