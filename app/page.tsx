@@ -593,7 +593,6 @@ export default function HomePage() {
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-3">
             <a href="https://www.google.com/search?client=safari&hs=FPz9&sca_esv=074920bdea4960d4&rls=en&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_xztH0BMykLPYJ2yUKG24IswJDdqjMpbJsR6pZofdiNDCebTRuBkcKRCunEOQyf_gcLSItw9QjEmHthYUk5XMsr1zNmOf&q=Bar+Da+Luciano+Recensioni&sa=X&ved=2ahUKEwiAlZbHxM2SAxWXhP0HHUv-A6kQ0bkNegQIHxAH&biw=960&bih=933&dpr=1" target="_blank" rel="noreferrer" className={textLink}>{t("leaveReviewCta")} <LinkArrow /></a>
-            <a href="https://www.instagram.com/bar_da_luciano/" target="_blank" rel="noreferrer" className={textLink}>Instagram <LinkArrow /></a>
           </div>
         </section>
       </div>

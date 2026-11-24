@@ -487,17 +487,13 @@ function VariantInfo({ item, lang, closeLabel }: { item: MenuItem; lang: Languag
     <>
       <button
         type="button"
-        aria-label={`${SHARED_COPY[lang].info}: ${item.name[lang]}`}
+        aria-label={`${({ it: "Vedi prezzi", en: "View prices", fr: "Voir les prix", de: "Preise ansehen", es: "Ver precios" })[lang]}: ${item.name[lang]}`}
         title={item.variants.map((variant) => `${variant.name[lang]} — ${formatEUR(variant.price)}`).join("\n")}
         aria-haspopup="dialog"
         onClick={openDialog}
-        className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-neutral-600 hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-2"
+        className="brioche-prices-button"
       >
-        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-          <circle cx="12" cy="12" r="9" />
-          <path d="M12 11v6" strokeLinecap="round" />
-          <circle cx="12" cy="7" r="1" fill="currentColor" stroke="none" />
-        </svg>
+        {({ it: "Vedi prezzi", en: "View prices", fr: "Voir les prix", de: "Preise ansehen", es: "Ver precios" })[lang]}
       </button>
       <dialog
         ref={dialog}
@@ -905,7 +901,6 @@ export default function MenuPage() {
                           <h3 className="font-normal leading-6">
                             {item.name[lang]}
                           </h3>
-                          <VariantInfo item={item} lang={lang} closeLabel={t("close")} />
                           {isWineSection && (
                           <span className={`rounded-full border px-2 py-0.5 text-[11px] font-medium ${item.unavailable ? "border-red-200 bg-red-50 text-red-700" : "border-emerald-200 bg-emerald-50 text-emerald-800"}`}>
                             {t(item.unavailable ? "wineUnavailable" : "wineAvailable")}
@@ -1009,6 +1004,8 @@ export default function MenuPage() {
                             </span>
                           </div>
                           </div>
+                        ) : item.variants?.length ? (
+                          <VariantInfo item={item} lang={lang} closeLabel={t("close")} />
                         ) : (
                           <div className="shrink-0 whitespace-nowrap text-right font-medium tabular-nums text-neutral-900">
                             {typeof item.price === "number" ? formatEUR(item.price) : null}
