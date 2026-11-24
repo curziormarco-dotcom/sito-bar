@@ -5,10 +5,12 @@ import { SHARED_COPY } from "./shared-copy";
 import Link from "next/link";
 import { useScrollReveal } from "./use-scroll-reveal";
 import openingHours from "../content/hours.json";
-import { formatOpeningHours } from "./content/opening-hours";
+import OpeningHoursList from "./opening-hours-list";
+import BookingDatePicker from "./booking-date-picker";
 import Image from "next/image";
 import { useCookieConsent } from "./cookie-consent";
 import { useLanguage, type Language } from "./locale-provider";
+import { useState, type FormEvent } from "react";
 
 const HIGHLIGHTS = [
   {
@@ -55,9 +57,7 @@ const HIGHLIGHTS = [
   },
 ];
 
-function splitLines(text: string) {
-  return text.split("\n").filter(Boolean);
-}
+
 
 const HOME_COPY: Record<Language, Record<string, string>> = {
   it: {
@@ -251,7 +251,7 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     leaveReviewCta: "Abrir reseñas",
     graduationTitle: "Celebra tu graduación en Luciano",
     graduationText:
-      "Organizamos fiestas de graduación y bufés personalizados en Padua.\nElige la fórmula más adecuada para tu fiesta, desde un aperitivo sencillo hasta un bufé completo.",
+      "Organizamos fiestas de graduación y bufés personalizados en Padova.\nElige la fórmula más adecuada para tu fiesta, desde un aperitivo sencillo hasta un bufé completo.",
     graduationCta: "Descubre nuestras propuestas →",
     mapConsentTitle: "Mapa de Google Maps",
     mapConsentText: "Acepta las cookies y los servicios de Google Maps para ver el mapa.",
@@ -271,6 +271,49 @@ const HOME_COPY: Record<Language, Record<string, string>> = {
     eventsLabel: "Graduaciones y celebraciones",
   },
 };
+
+const BOOKING_COPY = {
+  it: { requestType: "Tipo di richiesta", table: "Prenotazione tavolo", graduation: "Rinfresco di laurea", other: "Altro", name: "Nome", guests: "Numero di persone", date: "Data", time: "Orario", notes: "Note", notesPlaceholder: "Allergie, richieste particolari…", send: "Invia richiesta su WhatsApp", messageTitle: "Richiesta dal sito", call: "Oppure chiama", confirmationHint: "Su WhatsApp premi Invia per mandare la richiesta. La prenotazione è confermata solo quando ricevi una risposta di conferma dal bar.", confirmationStatus: "In attesa della conferma del bar.", guestsPlaceholder: "Massimo 25 persone", timePlaceholder: "Seleziona un orario", closedDay: "Chiuso nel giorno selezionato", eyebrow: "Organizziamo il tuo momento", formTitle: "Prepara la tua richiesta", formIntro: "Compila i dettagli e continua su WhatsApp per inviarci il messaggio.", contactTitle: "Contattaci", directCall: "Chiama il bar", directWhatsApp: "Scrivici su WhatsApp", alternativeTitle: "Oppure prepara la tua richiesta", invalidDate: "Inserisci una data valida nel formato giorno/mese/anno, da oggi in poi." },
+  en: { requestType: "Request type", table: "Table reservation", graduation: "Graduation reception", other: "Other", name: "Name", guests: "Number of guests", date: "Date", time: "Time", notes: "Notes", notesPlaceholder: "Allergies, special requests…", send: "Send request on WhatsApp", messageTitle: "Request from the website", call: "Or call", confirmationHint: "Press Send in WhatsApp to submit your request. Your booking is confirmed only when the bar replies to confirm it.", confirmationStatus: "Awaiting confirmation from the bar.", guestsPlaceholder: "Maximum 25 guests", timePlaceholder: "Select a time", closedDay: "Closed on the selected day", eyebrow: "Plan your visit", formTitle: "Prepare your request", formIntro: "Fill in the details, then continue on WhatsApp to send us your message.", contactTitle: "Contact us", directCall: "Call the bar", directWhatsApp: "Message us on WhatsApp", alternativeTitle: "Or prepare your request", invalidDate: "Enter a valid date in day/month/year format, today or later." },
+  fr: { requestType: "Type de demande", table: "Réservation de table", graduation: "Réception de fin d’études", other: "Autre", name: "Nom", guests: "Nombre de personnes", date: "Date", time: "Heure", notes: "Notes", notesPlaceholder: "Allergies, demandes particulières…", send: "Envoyer la demande sur WhatsApp", messageTitle: "Demande depuis le site", call: "Ou appeler", confirmationHint: "Appuyez sur Envoyer dans WhatsApp pour transmettre votre demande. La réservation est confirmée uniquement après une réponse de confirmation du bar.", confirmationStatus: "En attente de confirmation du bar.", guestsPlaceholder: "25 personnes maximum", timePlaceholder: "Choisissez un horaire", closedDay: "Fermé le jour sélectionné", eyebrow: "Préparez votre visite", formTitle: "Préparez votre demande", formIntro: "Renseignez les détails puis continuez sur WhatsApp pour nous envoyer votre message.", contactTitle: "Contactez-nous", directCall: "Appelez le bar", directWhatsApp: "Écrivez-nous sur WhatsApp", alternativeTitle: "Ou préparez votre demande", invalidDate: "Saisissez une date valide au format jour/mois/année, à partir d’aujourd’hui." },
+  de: { requestType: "Anfragetyp", table: "Tischreservierung", graduation: "Abschlussbuffet", other: "Sonstiges", name: "Name", guests: "Personenanzahl", date: "Datum", time: "Uhrzeit", notes: "Hinweise", notesPlaceholder: "Allergien, besondere Wünsche…", send: "Anfrage über WhatsApp senden", messageTitle: "Anfrage über die Website", call: "Oder anrufen", confirmationHint: "Tippe in WhatsApp auf Senden, um deine Anfrage abzuschicken. Die Reservierung ist erst bestätigt, wenn die Bar mit einer Bestätigung antwortet.", confirmationStatus: "Bestätigung der Bar ausstehend.", guestsPlaceholder: "Maximal 25 Personen", timePlaceholder: "Uhrzeit auswählen", closedDay: "Am gewählten Tag geschlossen", eyebrow: "Plane deinen Besuch", formTitle: "Bereite deine Anfrage vor", formIntro: "Trage die Details ein und sende uns deine Nachricht anschließend über WhatsApp.", contactTitle: "Kontaktiere uns", directCall: "Bar anrufen", directWhatsApp: "Schreib uns auf WhatsApp", alternativeTitle: "Oder bereite deine Anfrage vor", invalidDate: "Gib ein gültiges Datum im Format Tag/Monat/Jahr ab heute ein." },
+  es: { requestType: "Tipo de solicitud", table: "Reserva de mesa", graduation: "Bufé de graduación", other: "Otro", name: "Nombre", guests: "Número de personas", date: "Fecha", time: "Hora", notes: "Notas", notesPlaceholder: "Alergias, peticiones especiales…", send: "Enviar solicitud por WhatsApp", messageTitle: "Solicitud desde el sitio web", call: "O llamar", confirmationHint: "Pulsa Enviar en WhatsApp para mandar la solicitud. La reserva queda confirmada solo cuando recibes una respuesta de confirmación del bar.", confirmationStatus: "Pendiente de confirmación del bar.", guestsPlaceholder: "Máximo 25 personas", timePlaceholder: "Selecciona una hora", closedDay: "Cerrado el día seleccionado", eyebrow: "Organiza tu visita", formTitle: "Prepara tu solicitud", formIntro: "Completa los datos y continúa en WhatsApp para enviarnos el mensaje.", contactTitle: "Contacta con nosotros", directCall: "Llama al bar", directWhatsApp: "Escríbenos por WhatsApp", alternativeTitle: "O prepara tu solicitud", invalidDate: "Introduce una fecha válida en formato día/mes/año, a partir de hoy." },
+} satisfies Record<Language, Record<string, string>>;
+
+function getBookingToday() {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/Rome", year: "numeric", month: "2-digit", day: "2-digit",
+  }).formatToParts(new Date());
+  return ["year", "month", "day"].map(type => parts.find(part => part.type === type)?.value).join("-");
+}
+
+function parseBookingDate(value: string) {
+  const match = value.trim().match(/^(\d{1,2})[/.\-](\d{1,2})[/.\-](\d{4})$/);
+  if (!match) return "";
+  const [, day, month, year] = match;
+  const iso = `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+  const date = new Date(`${iso}T12:00:00Z`);
+  return Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === iso ? iso : "";
+}
+
+function formatBookingDate(iso: string) {
+  return iso.split("-").reverse().join("/");
+}
+
+function getBookingTimeSlots(date: string) {
+  const days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"] as const;
+  const day = date ? days[new Date(`${date}T12:00:00Z`).getUTCDay()] : "monday";
+  const hours = openingHours[day];
+  if (hours.closed) return [];
+  const [endHour, endMinute] = hours.closes.split(":").map(Number);
+  const [startHour, startMinute] = hours.opens.split(":").map(Number);
+  const start = Math.ceil(Math.max(7 * 60, startHour * 60 + startMinute) / 15) * 15;
+  const slots: string[] = [];
+  for (let minute = start; minute < endHour * 60 + endMinute; minute += 15) {
+    slots.push(`${String(Math.floor(minute / 60)).padStart(2, "0")}:${String(minute % 60).padStart(2, "0")}`);
+  }
+  return slots;
+}
 
 function LinkArrow({ className = "" }: { className?: string }) {
   return (
@@ -311,6 +354,42 @@ export default function HomePage() {
     { title: "lunchTitle", text: "lunchText", src: "/images/vetrina-pranzi-estate.jpg", href: "/menu#pranzi" },
     { title: "aperitivoTitle", text: "aperitivoText", src: "/images/negroni.jpg", href: "/menu#aperitivi-alcolici" },
   ];
+
+  const [bookingType, setBookingType] = useState("table");
+  const [bookingName, setBookingName] = useState("");
+  const [bookingGuests, setBookingGuests] = useState("");
+  const [bookingDate, setBookingDate] = useState("");
+  const [bookingTime, setBookingTime] = useState("");
+  const [bookingNotes, setBookingNotes] = useState("");
+
+  const bookingCopy = BOOKING_COPY[lang];
+  const bookingTimeSlots = getBookingTimeSlots(parseBookingDate(bookingDate));
+
+  const sendBookingToWhatsApp = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const dateInput = event.currentTarget.elements.namedItem("bookingDate") as HTMLInputElement;
+    const isoDate = parseBookingDate(bookingDate);
+    dateInput.setCustomValidity(isoDate && isoDate >= getBookingToday() ? "" : bookingCopy.invalidDate);
+    if (!event.currentTarget.reportValidity()) return;
+    const typeLabel = bookingType === "graduation"
+      ? bookingCopy.graduation
+      : bookingType === "other"
+          ? bookingCopy.other
+          : bookingCopy.table;
+
+    const message = [
+      `*${bookingCopy.messageTitle}*`,
+      `${bookingCopy.requestType}: ${typeLabel}`,
+      `${bookingCopy.name}: ${bookingName}`,
+      `${bookingCopy.guests}: ${bookingGuests}`,
+      `${bookingCopy.date}: ${formatBookingDate(isoDate)}`,
+      `${bookingCopy.time}: ${bookingTime}`,
+      bookingNotes ? `${bookingCopy.notes}: ${bookingNotes}` : null,
+      bookingCopy.confirmationStatus,
+    ].filter(Boolean).join("\n");
+
+    window.open(`https://wa.me/393498183485?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <div ref={revealRoot} className="home-page">
@@ -407,21 +486,9 @@ export default function HomePage() {
               <a href="https://www.google.com/maps?q=via%20Nazareth%2020%2C%2035128%20Padova" target="_blank" rel="noreferrer" className={`${textLink} mt-3`}>{t("whereCta")} <LinkArrow /></a>
               <div className="mt-6 border-y border-neutral-200 py-5">
                 <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-neutral-600">{HIGHLIGHTS[0].title[lang]}</h3>
-                <dl className="mt-4 space-y-3 text-base">
-                  {splitLines(formatOpeningHours(openingHours, lang)).map((line) => {
-                    const [day, ...hours] = line.split(" ");
-                    return <div key={day} className="flex flex-wrap justify-between gap-x-6 gap-y-1"><dt>{day}</dt><dd className="font-medium tabular-nums">{hours.join(" ")}</dd></div>;
-                  })}
-                </dl>
+                <OpeningHoursList schedule={openingHours} lang={lang} />
               </div>
-              <section id="prenota" aria-labelledby="contact-heading" className="mt-8 scroll-mt-24">
-              <h3 id="contact-heading" className={`font-serif text-3xl font-normal`}>{t("bookTitle")}</h3>
-              <p className="mt-3 text-base leading-7 text-neutral-600">{t("bookSubtitle")}</p>
-              <div className="mt-5 flex flex-wrap gap-3">
-                <a href="tel:+390499813795" className="inline-flex min-h-12 items-center rounded-none bg-neutral-900 px-6 py-3 text-base font-semibold text-white transition hover:bg-neutral-700">{t("call")} · 049 981 3795</a>
-                <a href="https://wa.me/393498183485" target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center rounded-none border border-neutral-300 bg-transparent px-6 py-3 text-base font-semibold text-neutral-900 transition hover:bg-neutral-100">WhatsApp · 349 818 3485</a>
-              </div>
-              </section>
+
             </div>
             <div data-reveal="image" className="min-h-[340px] overflow-hidden rounded-none border border-neutral-200 bg-neutral-100 lg:min-h-[480px]">
               {consent === "accepted" ? (
@@ -435,6 +502,89 @@ export default function HomePage() {
               )}
             </div>
           </div>
+
+          <section id="prenota" aria-labelledby="contact-heading" className="booking-section">
+            <div className="booking-direct">
+              <div>
+                <p className="booking-eyebrow">Bar da Luciano</p>
+                <h3 id="contact-heading">{bookingCopy.contactTitle}</h3>
+              </div>
+              <div className="booking-contact-actions">
+                <a href="tel:+390499813795" className="booking-contact-button">
+                  <span>{bookingCopy.directCall}</span>
+                  <span className="booking-contact-number">049 981 3795</span>
+                </a>
+                <a href="https://wa.me/393498183485" target="_blank" rel="noopener noreferrer" className="booking-contact-button booking-contact-whatsapp">
+                  <span>{bookingCopy.directWhatsApp}</span>
+                  <span className="booking-contact-number">349 818 3485</span>
+                </a>
+              </div>
+            </div>
+            <div className="booking-intro">
+              <h4 id="booking-form-heading">{bookingCopy.alternativeTitle}</h4>
+              <p className="booking-description">{bookingCopy.formIntro}</p>
+            </div>
+                <form onSubmit={sendBookingToWhatsApp} aria-labelledby="booking-form-heading" className="booking-form">
+                  <label className="booking-field">
+                    {bookingCopy.requestType}
+                    <select value={bookingType} onChange={(event) => setBookingType(event.target.value)} className="booking-control">
+                      <option value="table">{bookingCopy.table}</option>
+                      <option value="graduation">{bookingCopy.graduation}</option>
+                      <option value="other">{bookingCopy.other}</option>
+                    </select>
+                  </label>
+                  <div className="booking-fields">
+                    <label className="booking-field">
+                      {bookingCopy.name}
+                      <input required value={bookingName} onChange={(event) => setBookingName(event.target.value)} autoComplete="name" className="booking-control" />
+                    </label>
+                    <label className="booking-field">
+                      {bookingCopy.guests}
+                      <input
+                        required
+                        type="text"
+                        inputMode="numeric"
+                        pattern="([1-9]|1[0-9]|2[0-5])"
+                        placeholder={bookingCopy.guestsPlaceholder}
+                        value={bookingGuests}
+                        onChange={(event) => {
+                          const value = event.target.value;
+                          if (value === "" || /^([1-9]|1[0-9]|2[0-5])$/.test(value)) {
+                            setBookingGuests(value);
+                          }
+                        }}
+                        className="booking-control"
+                      />
+                    </label>
+                    <div className="booking-field">
+                      <span id="booking-date-label">{bookingCopy.date}</span>
+                      <BookingDatePicker value={bookingDate} onChange={(date) => { setBookingDate(date); setBookingTime(""); }} min={getBookingToday()} lang={lang} labelId="booking-date-label" />
+                    </div>
+                    <label className="booking-field">
+                      {bookingCopy.time}
+                      <select
+                        required
+                        value={bookingTime}
+                        onChange={(event) => setBookingTime(event.target.value)}
+                        className="booking-control"
+                      >
+                        <option value="" disabled>{bookingTimeSlots.length ? bookingCopy.timePlaceholder : bookingCopy.closedDay}</option>
+                        {bookingTimeSlots.map((time) => <option key={time} value={time}>{time}</option>)}
+                      </select>
+                    </label>
+                  </div>
+                  <label className="booking-field">
+                    {bookingCopy.notes}
+                    <textarea rows={3} value={bookingNotes} onChange={(event) => setBookingNotes(event.target.value)} placeholder={bookingCopy.notesPlaceholder} className="booking-control" />
+                  </label>
+                  <p id="booking-confirmation-hint" className="booking-notice">
+                    {bookingCopy.confirmationHint}
+                  </p>
+                  <button aria-describedby="booking-confirmation-hint" type="submit" className="booking-submit">
+                    {bookingCopy.send}
+                  </button>
+                </form>
+          </section>
         </section>
         <section data-reveal="up" className="home-reviews">
           <div>
