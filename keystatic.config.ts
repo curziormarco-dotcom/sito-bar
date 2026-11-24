@@ -38,6 +38,10 @@ export default config({
             name: translated('Nome del prodotto', true),
             description: translated('Descrizione', false, true),
             price: price('Prezzo'),
+            variants: fields.array(fields.object({
+              name: translated('Nome della variante', true),
+              price: price('Prezzo della variante'),
+            }), { label: 'Varianti nel punto info', itemLabel: (props) => props.fields.name.fields.it.value || 'Nuova variante' }),
             priceNote: fields.text({ label: 'Prezzo variabile / nota', description: 'Per esempio €1,00–€1,20. Per un intervallo lascia vuoto il prezzo fisso.' }),
             unavailable: fields.checkbox({ label: 'Vino non disponibile', defaultValue: false, description: 'Attiva quando il vino è esaurito. Rimane visibile nel menù con lo stato Non disponibile.' }),
             glassPrice: price('Prezzo al calice (vini)'),

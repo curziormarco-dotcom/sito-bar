@@ -509,7 +509,199 @@
           ],
           "allergenAdd": [],
           "allergenRemove": [],
-          "tag": ""
+          "tag": "",
+          "variants": [
+            {
+              "name": {
+                "it": "Vuota",
+                "en": "Vuota",
+                "fr": "Vuota",
+                "de": "Vuota",
+                "es": "Vuota"
+              },
+              "price": 1.8
+            },
+            {
+              "name": {
+                "it": "Marmellata",
+                "en": "Marmellata",
+                "fr": "Marmellata",
+                "de": "Marmellata",
+                "es": "Marmellata"
+              },
+              "price": 1.8
+            },
+            {
+              "name": {
+                "it": "Cioccolato",
+                "en": "Cioccolato",
+                "fr": "Cioccolato",
+                "de": "Cioccolato",
+                "es": "Cioccolato"
+              },
+              "price": 1.8
+            },
+            {
+              "name": {
+                "it": "Crema",
+                "en": "Crema",
+                "fr": "Crema",
+                "de": "Crema",
+                "es": "Crema"
+              },
+              "price": 1.8
+            },
+            {
+              "name": {
+                "it": "Ciambella alla crema",
+                "en": "Ciambella alla crema",
+                "fr": "Ciambella alla crema",
+                "de": "Ciambella alla crema",
+                "es": "Ciambella alla crema"
+              },
+              "price": 1.8
+            },
+            {
+              "name": {
+                "it": "Krapfen alla crema",
+                "en": "Krapfen alla crema",
+                "fr": "Krapfen alla crema",
+                "de": "Krapfen alla crema",
+                "es": "Krapfen alla crema"
+              },
+              "price": 1.8
+            },
+            {
+              "name": {
+                "it": "Krapfen alla marmellata",
+                "en": "Krapfen alla marmellata",
+                "fr": "Krapfen alla marmellata",
+                "de": "Krapfen alla marmellata",
+                "es": "Krapfen alla marmellata"
+              },
+              "price": 1.8
+            },
+            {
+              "name": {
+                "it": "Uvetta",
+                "en": "Uvetta",
+                "fr": "Uvetta",
+                "de": "Uvetta",
+                "es": "Uvetta"
+              },
+              "price": 2
+            },
+            {
+              "name": {
+                "it": "Crema cotta",
+                "en": "Crema cotta",
+                "fr": "Crema cotta",
+                "de": "Crema cotta",
+                "es": "Crema cotta"
+              },
+              "price": 2
+            },
+            {
+              "name": {
+                "it": "Mandorle",
+                "en": "Mandorle",
+                "fr": "Mandorle",
+                "de": "Mandorle",
+                "es": "Mandorle"
+              },
+              "price": 2
+            },
+            {
+              "name": {
+                "it": "Mele",
+                "en": "Mele",
+                "fr": "Mele",
+                "de": "Mele",
+                "es": "Mele"
+              },
+              "price": 2
+            },
+            {
+              "name": {
+                "it": "Pere e cioccolato",
+                "en": "Pere e cioccolato",
+                "fr": "Pere e cioccolato",
+                "de": "Pere e cioccolato",
+                "es": "Pere e cioccolato"
+              },
+              "price": 2.2
+            },
+            {
+              "name": {
+                "it": "Cereali al miele",
+                "en": "Multigrain with honey",
+                "fr": "Aux céréales et au miel",
+                "de": "Mehrkorn mit Honig",
+                "es": "Multicereales con miel"
+              },
+              "price": 2.2
+            },
+            {
+              "name": {
+                "it": "Cereali alla marmellata di arancia",
+                "en": "Multigrain with orange marmalade",
+                "fr": "Aux céréales et à la marmelade d’orange",
+                "de": "Mehrkorn mit Orangenmarmelade",
+                "es": "Multicereales con mermelada de naranja"
+              },
+              "price": 2.2
+            },
+            {
+              "name": {
+                "it": "Cereali alla marmellata di lamponi",
+                "en": "Multigrain with raspberry jam",
+                "fr": "Aux céréales et à la confiture de framboises",
+                "de": "Mehrkorn mit Himbeermarmelade",
+                "es": "Multicereales con mermelada de frambuesa"
+              },
+              "price": 2.2
+            },
+            {
+              "name": {
+                "it": "Pistacchio",
+                "en": "Pistacchio",
+                "fr": "Pistacchio",
+                "de": "Pistacchio",
+                "es": "Pistacchio"
+              },
+              "price": 2.5
+            },
+            {
+              "name": {
+                "it": "Ricotta e lamponi",
+                "en": "Ricotta e lamponi",
+                "fr": "Ricotta e lamponi",
+                "de": "Ricotta e lamponi",
+                "es": "Ricotta e lamponi"
+              },
+              "price": 2.5
+            },
+            {
+              "name": {
+                "it": "Pain au chocolat",
+                "en": "Pain au chocolat",
+                "fr": "Pain au chocolat",
+                "de": "Pain au chocolat",
+                "es": "Pain au chocolat"
+              },
+              "price": 3.5
+            },
+            {
+              "name": {
+                "it": "Pain suisse",
+                "en": "Pain suisse",
+                "fr": "Pain suisse",
+                "de": "Pain suisse",
+                "es": "Pain suisse"
+              },
+              "price": 3.5
+            }
+          ]
         },
         {
           "name": {

@@ -3,9 +3,10 @@
 import { SHARED_COPY } from "../shared-copy";
 
 import Image from "next/image";
-import { Fragment, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useId, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useLanguage, type Language } from "../locale-provider";
 import { MENU } from "./menu-data";
+import type { MenuItem } from "./menu-types";
 import { inferAllergens, itemIsAllowedForSelectedAllergens, toggleAllergenFilter } from "./menu-logic";
 
 const UI_COPY: Record<Language, Record<string, string>> = {
@@ -456,6 +457,49 @@ function formatEURSuffix(value: number) {
   return formatEUR(value);
 }
 
+function VariantInfo({ item, lang, closeLabel }: { item: MenuItem; lang: Language; closeLabel: string }) {
+  const dialog = useRef<HTMLDialogElement>(null);
+  const titleId = useId();
+  if (!item.variants?.length) return null;
+  return (
+    <>
+      <button
+        type="button"
+        aria-label={`${SHARED_COPY[lang].info}: ${item.name[lang]}`}
+        title={item.variants.map((variant) => `${variant.name[lang]} — ${formatEUR(variant.price)}`).join("\n")}
+        aria-haspopup="dialog"
+        onClick={() => dialog.current?.showModal()}
+        className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-neutral-600 hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-2"
+      >
+        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 11v6" strokeLinecap="round" />
+          <circle cx="12" cy="7" r="1" fill="currentColor" stroke="none" />
+        </svg>
+      </button>
+      <dialog
+        ref={dialog}
+        aria-labelledby={titleId}
+        onClick={(event) => { if (event.target === event.currentTarget) dialog.current?.close(); }}
+        className="fixed inset-0 m-auto max-h-[85dvh] w-[calc(100%-2rem)] max-w-md overflow-y-auto rounded-2xl border border-neutral-200 bg-white p-5 text-neutral-900 shadow-xl backdrop:bg-black/40"
+      >
+        <div className="flex items-center justify-between gap-4">
+          <h2 id={titleId} className="font-serif text-2xl">{item.name[lang]}</h2>
+          <button type="button" autoFocus onClick={() => dialog.current?.close()} className="rounded-full border border-neutral-200 px-3 py-2 text-sm hover:bg-neutral-50">{closeLabel}</button>
+        </div>
+        <ul className="mt-4 divide-y divide-neutral-200">
+          {item.variants.map((variant) => (
+            <li key={variant.name.it} className="flex items-baseline justify-between gap-4 py-3">
+              <span>{variant.name[lang]}</span>
+              <span className="shrink-0 whitespace-nowrap font-medium tabular-nums">{formatEUR(variant.price)}</span>
+            </li>
+          ))}
+        </ul>
+      </dialog>
+    </>
+  );
+}
+
 /* =======================
    PAGINA MENU
 ======================= */
@@ -834,6 +878,7 @@ export default function MenuPage() {
                           <h3 className="font-normal leading-6">
                             {item.name[lang]}
                           </h3>
+                          <VariantInfo item={item} lang={lang} closeLabel={t("close")} />
                           {isWineSection && (
                           <span className={`rounded-full border px-2 py-0.5 text-[11px] font-medium ${item.unavailable ? "border-red-200 bg-red-50 text-red-700" : "border-emerald-200 bg-emerald-50 text-emerald-800"}`}>
                             {t(item.unavailable ? "wineUnavailable" : "wineAvailable")}

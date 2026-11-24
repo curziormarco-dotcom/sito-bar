@@ -51,6 +51,15 @@ export function normalizeMenu(value: unknown): MenuSection[] {
           unavailable: typeof item.unavailable === 'boolean' ? item.unavailable : undefined,
           description: typeof item.description === 'string' ? text(item.description) : translated(item.description),
           price: price(item.price), priceNote: text(item.priceNote),
+          variants: item.variants == null ? undefined : (() => {
+            if (!Array.isArray(item.variants)) throw new Error('Varianti non valide');
+            return item.variants.length ? item.variants.map(entry => {
+              const variant = record(entry);
+              const amount = price(variant.price);
+              if (amount === undefined) throw new Error('Prezzo variante mancante');
+              return { name: translated(variant.name, true)!, price: amount };
+            }) : undefined;
+          })(),
           glassPrice: price(item.glassPrice), bottlePrice: price(item.bottlePrice),
           tag: text(item.tag), allergens: list(item.allergens),
           allergenAdd: list(item.allergenAdd), allergenRemove: list(item.allergenRemove),

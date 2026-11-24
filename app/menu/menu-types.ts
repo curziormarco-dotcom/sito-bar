@@ -5,6 +5,7 @@ export type MenuItem = {
   description?: Record<Language, string> | string;
   price?: number;
   priceNote?: string;
+  variants?: { name: Record<Language, string>; price: number }[];
   glassPrice?: number;
   bottlePrice?: number;
   tag?: string;
