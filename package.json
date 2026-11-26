@@ -7,10 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "npm run test:menu-logic && npm run test:cms && npm run test:analytics",
+    "test": "npm run test:menu-logic && npm run test:cms && npm run test:analytics && npm run test:booking",
     "test:menu-logic": "rm -rf .test-dist && tsc --noEmit false --module commonjs --moduleResolution node --target es2020 --rootDir app/menu --outDir .test-dist app/menu/menu-logic.ts app/menu/menu-types.ts && node --test tests/menu-logic.test.mjs",
     "test:cms": "node --test tests/cms-content.test.mjs",
-    "test:analytics": "node --test tests/analytics-consent.test.mjs"
+    "test:analytics": "node --test tests/analytics-consent.test.mjs",
+    "test:booking": "node --test tests/booking-date-picker.test.mjs"
   },
   "dependencies": {
     "@keystatic/core": "^0.6.9",

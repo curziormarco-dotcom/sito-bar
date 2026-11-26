@@ -11,8 +11,21 @@ const { cmsIsConfigured } = require('../lib/cms-configured.ts');
 const menu = JSON.parse(readFileSync(new URL('../content/menu.json', import.meta.url)));
 const hours = JSON.parse(readFileSync(new URL('../content/hours.json', import.meta.url)));
 
-test('all existing menu content survives the CMS boundary', () => {
-  assert.deepEqual(normalizeMenu(menu.sections), menu.sections);
+// The CMS stores empty optional fields; the UI deliberately omits them.
+// Preserve every populated value, including false and zero, in this comparison.
+function omitEmptyFields(value) {
+  if (Array.isArray(value)) return value.map(omitEmptyFields);
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(Object.entries(value)
+      .filter(([, entry]) => entry !== '' && entry != null &&
+        !(typeof entry === 'object' && Object.keys(entry).length === 0))
+      .map(([key, entry]) => [key, omitEmptyFields(entry)]));
+  }
+  return value;
+}
+
+test('all populated menu content survives the CMS boundary', () => {
+  assert.deepEqual(normalizeMenu(menu.sections), omitEmptyFields(menu.sections));
 });
 test('CMS blank optional fields do not create zero prices or empty descriptions', () => {
   const [section] = normalizeMenu([{ title: { it: 'Test' }, items: [{ name: { it: 'Caffè', en: '' }, price: null, description: { it: '' }, allergens: [], priceNote: '' }] }]);

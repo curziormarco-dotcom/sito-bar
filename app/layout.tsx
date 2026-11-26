@@ -1,17 +1,20 @@
 import "./globals.css";
 import "./editorial.css";
-import { Lora, Source_Sans_3 } from "next/font/google";
+import localFont from "next/font/local";
 import { SiteShell } from "./site-shell";
 
-const bodyFont = Source_Sans_3({
-  subsets: ["latin"],
+const bodyFont = localFont({
+  src: "./fonts/source-sans-3.ttf",
+  weight: "200 900",
   variable: "--font-body",
   display: "swap",
 });
 
-const headingFont = Lora({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
+const headingFont = localFont({
+  src: [
+    { path: "./fonts/lora-normal.ttf", weight: "400 700", style: "normal" },
+    { path: "./fonts/lora-italic.ttf", weight: "400 700", style: "italic" },
+  ],
   variable: "--font-heading",
   display: "swap",
 });

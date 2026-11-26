@@ -5,11 +5,11 @@ import vm from 'node:vm';
 import ts from 'typescript';
 
 function load(file, mocks, extras = {}) {
-  const module = { exports: {} };
+  const testModule = { exports: {} };
   vm.runInNewContext(ts.transpileModule(readFileSync(new URL(file, import.meta.url), 'utf8'), {
     compilerOptions: { module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX }
-  }).outputText, { module, exports: module.exports, require: name => mocks[name] || {}, URL, ...extras });
-  return module.exports;
+  }).outputText, { module: testModule, exports: testModule.exports, require: name => mocks[name] || {}, URL, ...extras });
+  return testModule.exports;
 }
 
 test('old, absent, invalid or inaccessible stored consent never authorizes analytics', () => {

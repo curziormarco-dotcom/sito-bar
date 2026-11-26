@@ -20,14 +20,14 @@ function picker() {
     useId: () => 'calendar',
     useEffect() {},
   };
-  const module = { exports: {} };
+  const testModule = { exports: {} };
   const source = ts.transpileModule(readFileSync(new URL('../app/booking-date-picker.tsx', import.meta.url), 'utf8'), {
     compilerOptions: { module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX, target: ts.ScriptTarget.ES2020 },
   }).outputText;
-  vm.runInNewContext(source, { module, exports: module.exports, require: name => name === 'react' ? react : require(name) });
+  vm.runInNewContext(source, { module: testModule, exports: testModule.exports, require: name => name === 'react' ? react : require(name) });
   const render = () => {
     cursor = 0;
-    return module.exports.default({ value: selected, onChange: value => { selected = value; }, min: '2026-11-24', lang: 'it', labelId: 'date' });
+    return testModule.exports.default({ value: selected, onChange: value => { selected = value; }, min: '2026-11-24', lang: 'it', labelId: 'date' });
   };
   return { render, selected: () => selected };
 }
@@ -41,8 +41,16 @@ test('calendar stays open for day clicks and fills all date segments', () => {
   const instance = picker();
   let tree = instance.render();
   assert.equal(tree.props.onBlur, undefined, 'blur must not remove the panel before a Safari button click');
-  nodes(tree).find(node => node.props?.name === 'bookingDate').props.onClick();
+  const field = nodes(tree).find(node => node.props?.name === 'bookingDate');
+  assert.equal(field.props.role, 'combobox');
+  assert.equal(field.props['aria-expanded'], false);
+  assert.equal(field.props['aria-haspopup'], 'dialog');
+  field.props.onClick();
   tree = instance.render();
+  const expandedField = nodes(tree).find(node => node.props?.name === 'bookingDate');
+  const panel = nodes(tree).find(node => node.props?.role === 'dialog');
+  assert.equal(expandedField.props['aria-expanded'], true);
+  assert.equal(expandedField.props['aria-controls'], panel.props.id);
   const day = nodes(tree).find(node => node.type === 'button' && node.props.children === 25);
   day.props.onClick();
   assert.equal(instance.selected(), '25/11/2026');

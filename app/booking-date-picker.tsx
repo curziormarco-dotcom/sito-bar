@@ -63,6 +63,7 @@ export default function BookingDatePicker({ value, onChange, min, lang, labelId 
       }}>
       <div className="booking-date-entry booking-date-select" onClick={showCalendar}>
         <input ref={input} type="text" name="bookingDate" value={value} required inputMode="none" onChange={() => {}} onInvalid={showCalendar}
+          role="combobox" aria-autocomplete="none" aria-haspopup="dialog"
           aria-labelledby={labelId} aria-expanded={open} aria-controls={calendarId}
           placeholder={copy[0]} className="booking-date-display"
           onClick={showCalendar}
@@ -72,7 +73,7 @@ export default function BookingDatePicker({ value, onChange, min, lang, labelId 
           }} />
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M7 3v4m10-4v4M3 11h18" /></svg>
       </div>
-      {open && <div id={calendarId} className="booking-calendar-panel" role="region" aria-label={copy[1]}>
+      {open && <div id={calendarId} className="booking-calendar-panel" role="dialog" aria-label={copy[1]}>
         <div className="booking-calendar-month-header">
           <button type="button" disabled={month <= min.slice(0, 7)} aria-label={copy[3]} onClick={() => moveMonth(-1)}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="m15 6-6 6 6 6" /></svg>
