@@ -21,6 +21,7 @@
           },
           "description": {},
           "price": 1.4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -37,6 +38,7 @@
           },
           "description": {},
           "price": 1.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -53,6 +55,7 @@
           },
           "description": {},
           "price": 2.8,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -69,6 +72,7 @@
           },
           "description": {},
           "price": 1.8,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte"
@@ -87,6 +91,7 @@
           },
           "description": {},
           "price": 1.8,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "orzo"
@@ -105,6 +110,7 @@
           },
           "description": {},
           "price": 2,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "alcol"
@@ -123,6 +129,7 @@
           },
           "description": {},
           "price": 3,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -139,6 +146,7 @@
           },
           "description": {},
           "price": 2.2,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte"
@@ -157,6 +165,7 @@
           },
           "description": {},
           "price": 2.2,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "frutta_guscio",
@@ -176,6 +185,7 @@
           },
           "description": {},
           "price": 1.7,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte"
@@ -194,6 +204,7 @@
           },
           "description": {},
           "price": 1.8,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte"
@@ -212,6 +223,7 @@
           },
           "description": {},
           "price": 2,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "soia",
@@ -231,6 +243,7 @@
           },
           "description": {},
           "price": 2,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte",
@@ -250,6 +263,7 @@
           },
           "description": {},
           "price": 1.9,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte"
@@ -268,6 +282,7 @@
           },
           "description": {},
           "price": 2,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte"
@@ -286,6 +301,7 @@
           },
           "description": {},
           "price": 2.3,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte"
@@ -304,6 +320,7 @@
           },
           "description": {},
           "price": 2.2,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte",
@@ -323,6 +340,7 @@
           },
           "description": {},
           "price": 2.2,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte",
@@ -342,6 +360,7 @@
           },
           "description": {},
           "price": 1.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte"
@@ -360,6 +379,7 @@
           },
           "description": {},
           "price": 2.9,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte"
@@ -378,6 +398,7 @@
           },
           "description": {},
           "price": 3,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte"
@@ -396,6 +417,7 @@
           },
           "description": {},
           "price": 2,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "soia"
@@ -414,6 +436,7 @@
           },
           "description": {},
           "price": 3.2,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte",
@@ -433,6 +456,7 @@
           },
           "description": {},
           "price": 4.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "frutta_guscio",
@@ -452,6 +476,7 @@
           },
           "description": {},
           "price": 5,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte",
@@ -471,6 +496,7 @@
           },
           "description": {},
           "price": 3,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -500,16 +526,6 @@
             "es": "Cruasanes"
           },
           "description": {},
-          "priceNote": "€1,80–€3,50",
-          "unavailable": false,
-          "allergens": [
-            "latte",
-            "glutine",
-            "uova"
-          ],
-          "allergenAdd": [],
-          "allergenRemove": [],
-          "tag": "",
           "variants": [
             {
               "name": {
@@ -701,7 +717,17 @@
               },
               "price": 3.5
             }
-          ]
+          ],
+          "priceNote": "€1,80–€3,50",
+          "unavailable": false,
+          "allergens": [
+            "latte",
+            "glutine",
+            "uova"
+          ],
+          "allergenAdd": [],
+          "allergenRemove": [],
+          "tag": ""
         },
         {
           "name": {
@@ -713,6 +739,7 @@
           },
           "description": {},
           "price": 2,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "vegano",
@@ -733,6 +760,7 @@
           },
           "description": {},
           "price": 1.3,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "uova",
@@ -759,6 +787,7 @@
             "es": "Arroz, ricotta o ricotta y chocolate"
           },
           "price": 2.2,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "glutine",
@@ -785,6 +814,7 @@
             "es": "Crema de guinda o crema de chocolate"
           },
           "price": 2.8,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "glutine",
@@ -805,6 +835,7 @@
           },
           "description": {},
           "price": 2.8,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte",
@@ -830,6 +861,7 @@
             "de": "Mais, Schokolade oder Kaffee",
             "es": "Maíz, chocolate o café"
           },
+          "variants": [],
           "priceNote": "€1,00–€1,20",
           "unavailable": false,
           "allergens": [
@@ -857,6 +889,7 @@
             "es": "Mermelada"
           },
           "price": 1.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "congelato",
@@ -884,6 +917,7 @@
             "es": "Mermelada o chocolate"
           },
           "price": 2.8,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "congelato",
@@ -905,6 +939,7 @@
           },
           "description": {},
           "price": 2.8,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "congelato",
@@ -926,6 +961,7 @@
           },
           "description": {},
           "price": 1.6,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte",
@@ -946,6 +982,7 @@
           },
           "description": {},
           "price": 3,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte",
@@ -972,6 +1009,7 @@
             "es": "Crema pastelera o zabaione"
           },
           "price": 2.6,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte",
@@ -998,6 +1036,7 @@
             "es": "Crema, zabaione o sola con pasas y piñones"
           },
           "price": 1.3,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "latte",
@@ -1031,6 +1070,7 @@
           },
           "description": {},
           "price": 3,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1047,6 +1087,7 @@
           },
           "description": {},
           "price": 3,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1063,6 +1104,7 @@
           },
           "description": {},
           "price": 3,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1079,6 +1121,7 @@
           },
           "description": {},
           "price": 3,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1095,6 +1138,7 @@
           },
           "description": {},
           "price": 3,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1111,6 +1155,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1127,6 +1172,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1163,6 +1209,7 @@
             "es": "Naranja, zanahoria, limón"
           },
           "price": 5.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1185,6 +1232,7 @@
             "es": "Manzana, naranja, zanahoria, jengibre"
           },
           "price": 5.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1207,6 +1255,7 @@
             "es": "Apio, manzana, kiwi"
           },
           "price": 5.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "sedano"
@@ -1231,6 +1280,7 @@
             "es": "Pera, piña, limón, canela"
           },
           "price": 5.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1253,6 +1303,7 @@
             "es": "Manzana, hinojo, piña, zanahoria"
           },
           "price": 5.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1282,6 +1333,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1298,6 +1350,7 @@
           },
           "description": {},
           "price": 4.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1314,6 +1367,7 @@
           },
           "description": {},
           "price": 5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1330,6 +1384,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1346,6 +1401,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1362,6 +1418,7 @@
           },
           "description": {},
           "price": 3.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1378,6 +1435,7 @@
           },
           "description": {},
           "price": 2.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1394,6 +1452,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1410,6 +1469,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1426,6 +1486,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1442,6 +1503,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1458,6 +1520,7 @@
           },
           "description": {},
           "price": 1.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1487,6 +1550,7 @@
           },
           "description": {},
           "price": 2.4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1503,6 +1567,7 @@
           },
           "description": {},
           "price": 3,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1519,6 +1584,7 @@
           },
           "description": {},
           "price": 2.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1535,6 +1601,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1551,6 +1618,7 @@
           },
           "description": {},
           "price": 6,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1567,6 +1635,7 @@
           },
           "description": {},
           "price": 6,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1583,6 +1652,7 @@
           },
           "description": {},
           "price": 5.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1599,6 +1669,7 @@
           },
           "description": {},
           "price": 6,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1615,6 +1686,7 @@
           },
           "description": {},
           "price": 3,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1631,6 +1703,7 @@
           },
           "description": {},
           "price": 6,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1647,6 +1720,7 @@
           },
           "description": {},
           "price": 4.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1663,6 +1737,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1679,6 +1754,7 @@
           },
           "description": {},
           "price": 2.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1726,6 +1802,7 @@
             "de": "Salatbasis: Kopfsalat, Radicchio, Rucola, Karotten, Cherrytomaten, Fenchel. Extras: Ei 2,00 €, Mozzarella 2,50 €, Garnelen (Krustentiere) 3,00 €, Thunfisch (Fisch) 3,00 €, Oliven 1,50 €, Kochschinken 3,00 €, getrocknete Fleischstreifen 3,00 €, Mais 1,50 €, Kapern 1,50 €.",
             "es": "Base de ensalada: lechuga, radicchio, rúcula, zanahorias, tomates cherry, hinojo. Extras: huevo 2,00 €, mozzarella 2,50 €, gambas (crustáceos) 3,00 €, atún (pescado) 3,00 €, aceitunas 1,50 €, jamón cocido 3,00 €, carne seca deshilachada 3,00 €, maíz 1,50 €, alcaparras 1,50 €."
           },
+          "variants": [],
           "priceNote": "a partire da 7 €",
           "unavailable": false,
           "allergens": [],
@@ -1757,6 +1834,7 @@
           },
           "description": {},
           "price": 3,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "pesce",
@@ -1776,6 +1854,7 @@
           },
           "description": {},
           "price": 3,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "pesce",
@@ -1795,6 +1874,7 @@
           },
           "description": {},
           "price": 3,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "pesce"
@@ -1813,6 +1893,7 @@
           },
           "description": {},
           "price": 3,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "crostacei"
@@ -1845,6 +1926,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "molluschi"
@@ -1863,6 +1945,7 @@
           },
           "description": {},
           "price": 3,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "crostacei"
@@ -1881,6 +1964,7 @@
           },
           "description": {},
           "price": 8,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "pesce"
@@ -1899,6 +1983,7 @@
           },
           "description": {},
           "price": 8,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "crostacei"
@@ -1917,6 +2002,7 @@
           },
           "description": {},
           "price": 8,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "molluschi"
@@ -1937,6 +2023,7 @@
           },
           "description": {},
           "price": 4.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [
             "molluschi"
@@ -1974,6 +2061,7 @@
             "es": "Maracuyá, granadina, limón, ginger beer"
           },
           "price": 6,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -1996,6 +2084,7 @@
             "es": "Zumo de lima, azúcar, limonada, menta"
           },
           "price": 6,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2018,6 +2107,7 @@
             "es": "Zumo de piña, limón, ginger beer"
           },
           "price": 6,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2040,6 +2130,7 @@
             "es": "Ginebra sin alcohol Tanqueray 0, agua tónica"
           },
           "price": 7,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2056,6 +2147,7 @@
           },
           "description": {},
           "price": 4.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2072,6 +2164,7 @@
           },
           "description": {},
           "price": 4.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2088,6 +2181,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2104,6 +2198,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2120,6 +2215,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2136,6 +2232,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2166,6 +2263,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2182,6 +2280,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2198,6 +2297,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2214,6 +2314,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2230,6 +2331,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2246,6 +2348,7 @@
           },
           "description": {},
           "price": 3.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2262,6 +2365,7 @@
           },
           "description": {},
           "price": 4.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2278,6 +2382,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2300,6 +2405,7 @@
             "es": "Vermut rojo, Campari, soda"
           },
           "price": 7,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2322,6 +2428,7 @@
             "es": "Vermut rojo, Campari, ginebra"
           },
           "price": 8,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2344,6 +2451,7 @@
             "es": "Vermut rojo, Campari, prosecco"
           },
           "price": 8,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2360,6 +2468,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2376,6 +2485,7 @@
           },
           "description": {},
           "price": 5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2398,6 +2508,7 @@
             "es": "Ginebra Greenall's London dry, agua tónica"
           },
           "price": 8,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2420,6 +2531,7 @@
             "es": "Ginebra Bombay Sapphire dry, agua tónica"
           },
           "price": 8.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2442,6 +2554,7 @@
             "es": "Ginebra Tanqueray London dry, agua tónica"
           },
           "price": 8.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2464,6 +2577,7 @@
             "es": "Ginebra Malfi rosa al pomelo, agua tónica"
           },
           "price": 9,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2486,6 +2600,7 @@
             "es": "Gin Mare Mediterranean, agua tónica"
           },
           "price": 10,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2508,6 +2623,7 @@
             "es": "Ginebra Brockmans con frutos del bosque, agua tónica"
           },
           "price": 10,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2524,6 +2640,7 @@
           },
           "description": {},
           "price": 8,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2540,6 +2657,7 @@
           },
           "description": {},
           "price": 8,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2556,6 +2674,7 @@
           },
           "description": {},
           "price": 8,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2578,6 +2697,7 @@
             "es": "Vodka, lima, azúcar, menta o albahaca"
           },
           "price": 8,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2600,6 +2720,7 @@
             "es": "Vodka, ginger beer, zumo de lima"
           },
           "price": 8,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2622,6 +2743,7 @@
             "es": "Fernet Branca, ginger beer, zumo de lima"
           },
           "price": 8,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2644,6 +2766,7 @@
             "es": "Ginebra, zumo de limón, azúcar, Trento DOC"
           },
           "price": 9,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2666,6 +2789,7 @@
             "es": "Zumo de pomelo, ginebra, Campari, seltz"
           },
           "price": 9,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2688,6 +2812,7 @@
             "es": "Zumo de piña, ginebra, limón, granadina"
           },
           "price": 9,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -2722,6 +2847,7 @@
             "de": "Ein Trentodoc, der lange gelagert und ausschließlich für die Familie reserviert wurde und à la volée geöffnet wurde. Zum 130‑jährigen Jubiläum teilt Endrizzi diese besondere Cuvée ohne Dosage mit allen, die ihre Einzigartigkeit schätzen. Nach einer langen Reifezeit von mindestens 84 Monaten auf der Hefe zeigt er elegante, reife Aromen von weißem Tabak, kandierten Früchten und Lakritz, begleitet von würzigen Noten und einer lebhaften Mineralität.",
             "es": "Un Trentodoc conservado durante mucho tiempo y reservado exclusivamente para la familia, abierto à la volée. Con motivo de sus 130 años, Endrizzi comparte esta cuvée especial sin dosificación con quienes sepan apreciar su unicidad. Tras una larga crianza de al menos 84 meses sobre lías, muestra aromas elegantes y maduros de tabaco blanco, fruta confitada y regaliz, junto con notas especiadas y una mineralidad viva."
           },
+          "variants": [],
           "unavailable": false,
           "bottlePrice": 100,
           "allergens": [],
@@ -2738,6 +2864,7 @@
             "es": "Champagne \"Launois Lebrun\" Millesime by Blanc de Blancs Brut Grand' Cru 100% Chardonnay - Launois Lebrun"
           },
           "description": {},
+          "variants": [],
           "unavailable": false,
           "bottlePrice": 70,
           "allergens": [],
@@ -2754,6 +2881,7 @@
             "es": "Champagne \"Launois Lebrun\" Tradition Brut 70% Chardonnay 30% Pinot Nero - Launois Lebrun"
           },
           "description": {},
+          "variants": [],
           "unavailable": false,
           "bottlePrice": 60,
           "allergens": [],
@@ -2776,6 +2904,7 @@
             "de": "Crémant wird nach der traditionellen Champagnermethode aus einem Jahrgang hergestellt. Reife Äpfel und Zitrusaromen prägen die Nase. Am Gaumen elegant, mit feiner Perlage und frischem Finale.",
             "es": "El Crémant se elabora con el método tradicional champenoise a partir de una sola añada. Manzanas maduras y aromas cítricos perfuman la nariz. En boca es elegante y las burbujas finas llevan a un final fresco."
           },
+          "variants": [],
           "unavailable": true,
           "glassPrice": 6,
           "bottlePrice": 30,
@@ -2799,6 +2928,7 @@
             "de": "Chardonnay. Über 24 Monate Reifung auf der Hefe in der Flasche. Würzig am Gaumen, zugleich lebendig und frisch.",
             "es": "Chardonnay. Crianza sobre lías en botella durante más de 24 meses. Sabroso en boca, pero a la vez vivo y fresco."
           },
+          "variants": [],
           "unavailable": false,
           "glassPrice": 5,
           "bottlePrice": 27,
@@ -2822,6 +2952,7 @@
             "de": "Fruchtiges Bouquet mit feinen Veilchennoten. Frisch im Charakter, zart fruchtig am Gaumen mit Noten von Kirsche, Erdbeere und Beeren, mit einem leicht mandeligen Finale.",
             "es": "Bouquet frutal con delicadas notas de violeta. Fresco de carácter, el sabor es suavemente frutal con notas de cereza, fresa y frutos del bosque, con un final ligeramente almendrado."
           },
+          "variants": [],
           "unavailable": false,
           "glassPrice": 5,
           "bottlePrice": 25,
@@ -2845,6 +2976,7 @@
             "de": "Duftiges Bouquet mit floralen Noten von Glyzinie und Akazie. Am Gaumen leicht weich, lebhaft und typisch fruchtig, mit Noten von Apfel, Nektarine und Williamsbirne.",
             "es": "Aroma fragante con notas florales de glicina y acacia. En boca es ligeramente suave, vivaz y característicamente afrutado, con notas de manzana, nectarina y pera Williams."
           },
+          "variants": [],
           "unavailable": false,
           "glassPrice": 4.5,
           "bottlePrice": 18,
@@ -2868,6 +3000,7 @@
             "de": "Strohgelbe Farbe mit grünlichen Reflexen, dazu ein intensives und komplexes Bouquet mit Noten von weißen Blüten, exotischen Früchten und Zitrus. Am Gaumen frisch und ausgewogen, mit angenehmer Säure und aromatischer Persistenz.",
             "es": "Color amarillo pajizo con reflejos verdosos que anticipa un bouquet aromático intenso y complejo, con notas de flores blancas, fruta exótica y cítricos. En boca es fresco y equilibrado, con una agradable acidez y persistencia aromática."
           },
+          "variants": [],
           "unavailable": true,
           "glassPrice": 4.5,
           "bottlePrice": 17,
@@ -2885,6 +3018,7 @@
             "es": "Chardonnay - Endrizzi"
           },
           "description": {},
+          "variants": [],
           "unavailable": false,
           "glassPrice": 4.5,
           "bottlePrice": 20,
@@ -2908,6 +3042,7 @@
             "de": "Die Farbe ist ein leuchtendes Strohgelb mit moschusartigen Reflexen. Das Bouquet ist floral mit Noten von Rose, Minze und Zitronenmelisse. Der Geschmack ist harmonisch frisch, mit Weichheit und gut ausbalanciertem Aroma, nachhaltiger Abgang.",
             "es": "El color es un amarillo pajizo vivo con reflejos almizclados. El bouquet es floral con notas de rosa, menta y melisa. El sabor es armoniosamente fresco, con suavidad y aroma bien equilibrado, con final persistente."
           },
+          "variants": [],
           "unavailable": false,
           "glassPrice": 5,
           "bottlePrice": 27,
@@ -2931,6 +3066,7 @@
             "de": "Chardonnay, Sauvignon Blanc, Nosiola. Eine Cuvée aus drei Rebsorten. Helles Strohgelb mit grünlichen Reflexen. Intensives, floral‑vegetales Bouquet mit Noten von Holunderblüten, weißer Johannisbeere, grünem Apfel, Zitronatzeste und Honig. Am Gaumen frisch, direkt und sauber, in schöner Übereinstimmung mit der Nase. Gut strukturiert mit angenehm langem Nachhall.",
             "es": "Chardonnay, Sauvignon Blanc, Nosiola. Una cuvée de tres uvas. Color amarillo pajizo pálido con reflejos verdosos. Aroma intenso floral y vegetal, con notas de flor de saúco, grosella blanca, manzana verde, piel de cidra y miel. En boca es fresco, inmediato y limpio, en perfecta sintonía con lo percibido en nariz. Vino de buena estructura y con un final agradablemente largo."
           },
+          "variants": [],
           "unavailable": true,
           "glassPrice": 4.5,
           "bottlePrice": 22,
@@ -2954,6 +3090,7 @@
             "de": "Erfolgreiche Kreuzung aus Schiava und Riesling. Strohgelb mit grünen Reflexen. Zartes Bouquet mit Pfirsich‑ und Muskatnoten. Am Gaumen reich und intensiv, mit anhaltendem Nachhall.",
             "es": "Cruce exitoso entre Schiava y Riesling. Amarillo pajizo con reflejos verdes. Bouquet delicado con notas de melocotón y moscatel. En boca es rico e intenso, con un final persistente."
           },
+          "variants": [],
           "unavailable": false,
           "glassPrice": 4.5,
           "bottlePrice": 25,
@@ -2977,6 +3114,7 @@
             "de": "Strohgelbe Farbe mit kupferfarbenen Reflexen, angenehme Noten von Birne und Pfirsich mit floralen Anklängen.",
             "es": "Color amarillo pajizo con reflejos cobrizos, agradables notas de pera y melocotón con toques florales."
           },
+          "variants": [],
           "unavailable": false,
           "glassPrice": 4.5,
           "bottlePrice": 17,
@@ -3000,6 +3138,7 @@
             "de": "Noten von Akazienblüten und ein trockener, samtiger Geschmack, zugleich aber säurebetont und anhaltend.",
             "es": "Notas de flores de acacia y un sabor seco y aterciopelado, pero al mismo tiempo ácido y persistente."
           },
+          "variants": [],
           "unavailable": true,
           "glassPrice": 4.5,
           "bottlePrice": 17,
@@ -3023,6 +3162,7 @@
             "de": "Die Farbe ist strohgelb mit grünlichen Reflexen. In der Nase lassen sich Noten von Pfirsich, Grapefruit und Zitrus erkennen, verbunden mit floralen, würzigen und mineralischen Anklängen. Am Gaumen frisch und prägnant, angenehm säurebetont, spiegelt er die Eigenschaften nördlicher Lagen wider.",
             "es": "Su color es amarillo pajizo con reflejos verdosos. En nariz se identifican notas de melocotón, pomelo y cítricos, junto con matices florales, especiados y minerales. En boca es fresco y decidido, agradablemente ácido, y refleja fielmente las características de los climas del norte."
           },
+          "variants": [],
           "unavailable": false,
           "glassPrice": 4.5,
           "bottlePrice": 25,
@@ -3040,6 +3180,7 @@
             "es": "Soave - Fattori"
           },
           "description": {},
+          "variants": [],
           "unavailable": true,
           "glassPrice": 3.5,
           "bottlePrice": 15,
@@ -3076,6 +3217,7 @@
             "de": "Typisch kräuterig, mit Noten von Pfeffer und grüner Paprika.",
             "es": "Típicamente herbáceo, con notas de pimienta y pimiento verde."
           },
+          "variants": [],
           "unavailable": false,
           "glassPrice": 4.5,
           "bottlePrice": 18,
@@ -3099,6 +3241,7 @@
             "de": "Tief dunkelrubin, typische Noten von Beeren, Vanille und Kaffee, samtige Tannine, gute Persistenz.",
             "es": "Color rubí oscuro intenso, notas típicas de frutos del bosque, vainilla y café, taninos aterciopelados, buena persistencia."
           },
+          "variants": [],
           "unavailable": false,
           "glassPrice": 5,
           "bottlePrice": 27,
@@ -3122,6 +3265,7 @@
             "de": "Teilweise Pressung ganzer Trauben und die Reifung in Eichenfässern ausgewählter kleiner Trauben geben dem König der Rotweine den letzten Schliff. Ein Reservewein mit hohem Reifepotenzial, gut integrierter Säure und anhaltendem Finale.",
             "es": "Un prensado parcial de uva entera y la crianza en barricas de roble de pequeños racimos cuidadosamente seleccionados dan el toque final al rey de los vinos tintos. Un vino reserva con gran potencial de envejecimiento, con una acidez bien integrada y un final persistente."
           },
+          "variants": [],
           "unavailable": false,
           "glassPrice": 6,
           "bottlePrice": 35,
@@ -3145,6 +3289,7 @@
             "de": "Die Farbe ist tief granatrot. In der Nase Aromen von Veilchen, Kirschen und Bitterschokolade. Am Gaumen harmonisch und fein, mit gut strukturierten Tanninen und anhaltendem Finale.",
             "es": "El color es rojo granate oscuro. En nariz presenta aromas de violeta, cereza y chocolate amargo. En boca es armonioso y delicado, con taninos bien estructurados y un final persistente."
           },
+          "variants": [],
           "unavailable": true,
           "glassPrice": 5,
           "bottlePrice": 27,
@@ -3168,6 +3313,7 @@
             "de": "Rubinrote Farbe, kräftiges Blumenbouquet mit Noten von Waldbeeren und Marmelade; reich und weich am Gaumen.",
             "es": "Color rojo rubí, intenso bouquet floral con notas de frutos del bosque y mermelada; rico y suave en boca."
           },
+          "variants": [],
           "unavailable": true,
           "glassPrice": 5,
           "bottlePrice": 20,
@@ -3191,6 +3337,7 @@
             "de": "Eine Cuvée aus drei Rotweinen: Merlot, Cabernet Sauvignon und Teroldego. Ein würziger, komplexer Wein mit vollem, besonders harmonischem Geschmack und Noten von Heidelbeere, Himbeere, Kakao und Vanille.",
             "es": "Una cuvée de tres vinos tintos: Merlot, Cabernet Sauvignon y Teroldego. Un vino especiado y complejo, de sabor pleno y especialmente armonioso, con notas de arándano, frambuesa, cacao y vainilla."
           },
+          "variants": [],
           "unavailable": true,
           "glassPrice": 5,
           "bottlePrice": 25,
@@ -3222,6 +3369,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -3238,6 +3386,7 @@
           },
           "description": {},
           "price": 5.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -3253,7 +3402,8 @@
             "es": "Leffe roja — 33 cl"
           },
           "description": {},
-          "price": 4,
+          "price": 5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -3270,6 +3420,7 @@
           },
           "description": {},
           "price": 6,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -3286,6 +3437,7 @@
           },
           "description": {},
           "price": 6,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -3302,6 +3454,7 @@
           },
           "description": {},
           "price": 6,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -3318,6 +3471,7 @@
           },
           "description": {},
           "price": 6,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -3334,6 +3488,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -3350,6 +3505,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -3366,6 +3522,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -3382,6 +3539,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -3411,6 +3569,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -3427,6 +3586,7 @@
           },
           "description": {},
           "price": 5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -3443,6 +3603,7 @@
           },
           "description": {},
           "price": 6,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -3459,6 +3620,7 @@
           },
           "description": {},
           "price": 6,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -3475,6 +3637,7 @@
           },
           "description": {},
           "price": 4,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
@@ -3491,6 +3654,7 @@
           },
           "description": {},
           "price": 4.5,
+          "variants": [],
           "unavailable": false,
           "allergens": [],
           "allergenAdd": [],
